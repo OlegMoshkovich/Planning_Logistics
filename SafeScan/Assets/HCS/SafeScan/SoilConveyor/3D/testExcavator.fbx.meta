@@ -1,0 +1,589 @@
+fileFormatVersion: 2
+guid: b84381aa1ec9e85488e019e321aa7ac7
+timeCreated: 1477600557
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Excavator:KepceRigPalet:Agiz
+    100002: Excavator:KepceRigPalet:ArkaDaire
+    100004: Excavator:KepceRigPalet:ArkaDaire 1
+    100006: Excavator:KepceRigPalet:Char_B_1
+    100008: Excavator:KepceRigPalet:Char_D_1
+    100010: Excavator:KepceRigPalet:Char_e_1
+    100012: Excavator:KepceRigPalet:Char_i_1
+    100014: Excavator:KepceRigPalet:Char_i_2
+    100016: Excavator:KepceRigPalet:Char_l_1
+    100018: Excavator:KepceRigPalet:Char_m_1
+    100020: Excavator:KepceRigPalet:Char_r_1
+    100022: Excavator:KepceRigPalet:Char_x_1
+    100024: Excavator:KepceRigPalet:ikHandle1
+    100026: Excavator:KepceRigPalet:ikHandle2
+    100028: Excavator:KepceRigPalet:ikHandle3
+    100030: Excavator:KepceRigPalet:joint1
+    100032: Excavator:KepceRigPalet:joint2
+    100034: Excavator:KepceRigPalet:joint3
+    100036: Excavator:KepceRigPalet:joint4
+    100038: Excavator:KepceRigPalet:joint5
+    100040: Excavator:KepceRigPalet:joint6
+    100042: Excavator:KepceRigPalet:joint7
+    100044: Excavator:KepceRigPalet:Kol
+    100046: Excavator:KepceRigPalet:OnDaire
+    100048: Excavator:KepceRigPalet:OnDaire 1
+    100050: Excavator:KepceRigPalet:Palet0:nurbsCircle1
+    100052: Excavator:KepceRigPalet:Palet0:nurbsCircle1BaseWire
+    100054: Excavator:KepceRigPalet:Palet1:nurbsCircle1BaseWire
+    100056: Excavator:KepceRigPalet:pCube55
+    100058: Excavator:KepceRigPalet:pCylinder1
+    100060: Excavator:KepceRigPalet:pCylinder10
+    100062: Excavator:KepceRigPalet:pCylinder11
+    100064: Excavator:KepceRigPalet:pCylinder13
+    100066: Excavator:KepceRigPalet:pCylinder14
+    100068: Excavator:KepceRigPalet:pCylinder15
+    100070: Excavator:KepceRigPalet:pCylinder16
+    100072: Excavator:KepceRigPalet:pCylinder2
+    100074: Excavator:KepceRigPalet:pCylinder3
+    100076: Excavator:KepceRigPalet:pCylinder4
+    100078: Excavator:KepceRigPalet:pCylinder5
+    100080: Excavator:KepceRigPalet:pCylinder6
+    100082: Excavator:KepceRigPalet:pCylinder7
+    100084: Excavator:KepceRigPalet:pCylinder8
+    100086: Excavator:KepceRigPalet:pCylinder9
+    100088: Excavator:KepceRigPalet:polySurface1
+    100090: Excavator:KepceRigPalet:polySurface12
+    100092: Excavator:KepceRigPalet:polySurface14
+    100094: Excavator:KepceRigPalet:polySurface2
+    100096: Excavator:KepceRigPalet:polySurface22
+    100098: Excavator:KepceRigPalet:polySurface233
+    100100: Excavator:KepceRigPalet:polySurface236
+    100102: Excavator:KepceRigPalet:polySurface236 1
+    100104: Excavator:KepceRigPalet:polySurface237
+    100106: Excavator:KepceRigPalet:polySurface237 1
+    100108: Excavator:KepceRigPalet:polySurface24
+    100110: Excavator:KepceRigPalet:polySurface246
+    100112: Excavator:KepceRigPalet:polySurface246 1
+    100114: Excavator:KepceRigPalet:polySurface247
+    100116: Excavator:KepceRigPalet:polySurface247 1
+    100118: Excavator:KepceRigPalet:polySurface248
+    100120: Excavator:KepceRigPalet:polySurface248 1
+    100122: Excavator:KepceRigPalet:polySurface249
+    100124: Excavator:KepceRigPalet:polySurface249 1
+    100126: Excavator:KepceRigPalet:polySurface25
+    100128: Excavator:KepceRigPalet:polySurface250
+    100130: Excavator:KepceRigPalet:polySurface250 1
+    100132: Excavator:KepceRigPalet:polySurface251
+    100134: Excavator:KepceRigPalet:polySurface251 1
+    100136: Excavator:KepceRigPalet:polySurface252
+    100138: Excavator:KepceRigPalet:polySurface252 1
+    100140: Excavator:KepceRigPalet:polySurface253
+    100142: Excavator:KepceRigPalet:polySurface253 1
+    100144: Excavator:KepceRigPalet:polySurface254
+    100146: Excavator:KepceRigPalet:polySurface254 1
+    100148: Excavator:KepceRigPalet:polySurface255
+    100150: Excavator:KepceRigPalet:polySurface255 1
+    100152: Excavator:KepceRigPalet:polySurface26
+    100154: Excavator:KepceRigPalet:polySurface27
+    100156: Excavator:KepceRigPalet:polySurface29
+    100158: Excavator:KepceRigPalet:polySurface3
+    100160: Excavator:KepceRigPalet:polySurface30
+    100162: Excavator:KepceRigPalet:polySurface31
+    100164: Excavator:KepceRigPalet:polySurface32
+    100166: Excavator:KepceRigPalet:polySurface33
+    100168: Excavator:KepceRigPalet:polySurface34
+    100170: Excavator:KepceRigPalet:polySurface35
+    100172: Excavator:KepceRigPalet:polySurface36
+    100174: Excavator:KepceRigPalet:polySurface38
+    100176: Excavator:KepceRigPalet:polySurface39
+    100178: Excavator:KepceRigPalet:polySurface40
+    100180: Excavator:KepceRigPalet:polySurface41
+    100182: Excavator:KepceRigPalet:polySurface42
+    100184: Excavator:KepceRigPalet:polySurface43
+    100186: Excavator:KepceRigPalet:polySurface44
+    100188: Excavator:KepceRigPalet:polySurface47
+    100190: Excavator:KepceRigPalet:polySurface5
+    100192: Excavator:KepceRigPalet:polySurface6
+    100194: Excavator:KepceRigPalet:polySurface8
+    100196: Excavator:KepceRigPalet:polySurface9
+    100198: Excavator:KepceRigPalet:pPipe1
+    100200: Excavator:KepceRigPalet:pPipe2
+    100202: Excavator:KepceRigPalet:pPipe3
+    100204: Excavator:KepceRigPalet:pPipe4
+    100206: Excavator:KepceRigPalet:pPipe5
+    100208: Excavator:KepceRigPalet:pPipe6
+    100210: Excavator:KepceRigPalet:pPipe7
+    100212: Excavator:KepceRigPalet:pPipe8
+    100214: Excavator:KepceRigPalet:pPipe9
+    100216: Excavator:KepceRigPalet:pPlane1
+    100218: Excavator:KepceRigPalet:pPlane3
+    100220: Excavator:KepceRigPalet:pPlane4
+    100222: Excavator:KepceRigPalet:pPlane5
+    100224: Excavator:KepceRigPalet:pPlane6
+    100226: Excavator:KepceRigPalet:SagPAlet
+    100228: Excavator:KepceRigPalet:SagPAletMesh
+    100230: Excavator:KepceRigPalet:SolPalet
+    100232: Excavator:KepceRigPalet:SolPalet 1
+    100234: Excavator:KepceRigPalet:SolPalet1
+    100236: Excavator:KepceRigPalet:Text_BilimerxxD_1
+    100238: Excavator:KepceRigPalet:transform68
+    100240: Excavator:KepceRigPalet:transform69
+    100242: Excavator:MainBodyMOVEWITHTHIS
+    100244: //RootNode
+    400000: Excavator:KepceRigPalet:Agiz
+    400002: Excavator:KepceRigPalet:ArkaDaire
+    400004: Excavator:KepceRigPalet:ArkaDaire 1
+    400006: Excavator:KepceRigPalet:Char_B_1
+    400008: Excavator:KepceRigPalet:Char_D_1
+    400010: Excavator:KepceRigPalet:Char_e_1
+    400012: Excavator:KepceRigPalet:Char_i_1
+    400014: Excavator:KepceRigPalet:Char_i_2
+    400016: Excavator:KepceRigPalet:Char_l_1
+    400018: Excavator:KepceRigPalet:Char_m_1
+    400020: Excavator:KepceRigPalet:Char_r_1
+    400022: Excavator:KepceRigPalet:Char_x_1
+    400024: Excavator:KepceRigPalet:ikHandle1
+    400026: Excavator:KepceRigPalet:ikHandle2
+    400028: Excavator:KepceRigPalet:ikHandle3
+    400030: Excavator:KepceRigPalet:joint1
+    400032: Excavator:KepceRigPalet:joint2
+    400034: Excavator:KepceRigPalet:joint3
+    400036: Excavator:KepceRigPalet:joint4
+    400038: Excavator:KepceRigPalet:joint5
+    400040: Excavator:KepceRigPalet:joint6
+    400042: Excavator:KepceRigPalet:joint7
+    400044: Excavator:KepceRigPalet:Kol
+    400046: Excavator:KepceRigPalet:OnDaire
+    400048: Excavator:KepceRigPalet:OnDaire 1
+    400050: Excavator:KepceRigPalet:Palet0:nurbsCircle1
+    400052: Excavator:KepceRigPalet:Palet0:nurbsCircle1BaseWire
+    400054: Excavator:KepceRigPalet:Palet1:nurbsCircle1BaseWire
+    400056: Excavator:KepceRigPalet:pCube55
+    400058: Excavator:KepceRigPalet:pCylinder1
+    400060: Excavator:KepceRigPalet:pCylinder10
+    400062: Excavator:KepceRigPalet:pCylinder11
+    400064: Excavator:KepceRigPalet:pCylinder13
+    400066: Excavator:KepceRigPalet:pCylinder14
+    400068: Excavator:KepceRigPalet:pCylinder15
+    400070: Excavator:KepceRigPalet:pCylinder16
+    400072: Excavator:KepceRigPalet:pCylinder2
+    400074: Excavator:KepceRigPalet:pCylinder3
+    400076: Excavator:KepceRigPalet:pCylinder4
+    400078: Excavator:KepceRigPalet:pCylinder5
+    400080: Excavator:KepceRigPalet:pCylinder6
+    400082: Excavator:KepceRigPalet:pCylinder7
+    400084: Excavator:KepceRigPalet:pCylinder8
+    400086: Excavator:KepceRigPalet:pCylinder9
+    400088: Excavator:KepceRigPalet:polySurface1
+    400090: Excavator:KepceRigPalet:polySurface12
+    400092: Excavator:KepceRigPalet:polySurface14
+    400094: Excavator:KepceRigPalet:polySurface2
+    400096: Excavator:KepceRigPalet:polySurface22
+    400098: Excavator:KepceRigPalet:polySurface233
+    400100: Excavator:KepceRigPalet:polySurface236
+    400102: Excavator:KepceRigPalet:polySurface236 1
+    400104: Excavator:KepceRigPalet:polySurface237
+    400106: Excavator:KepceRigPalet:polySurface237 1
+    400108: Excavator:KepceRigPalet:polySurface24
+    400110: Excavator:KepceRigPalet:polySurface246
+    400112: Excavator:KepceRigPalet:polySurface246 1
+    400114: Excavator:KepceRigPalet:polySurface247
+    400116: Excavator:KepceRigPalet:polySurface247 1
+    400118: Excavator:KepceRigPalet:polySurface248
+    400120: Excavator:KepceRigPalet:polySurface248 1
+    400122: Excavator:KepceRigPalet:polySurface249
+    400124: Excavator:KepceRigPalet:polySurface249 1
+    400126: Excavator:KepceRigPalet:polySurface25
+    400128: Excavator:KepceRigPalet:polySurface250
+    400130: Excavator:KepceRigPalet:polySurface250 1
+    400132: Excavator:KepceRigPalet:polySurface251
+    400134: Excavator:KepceRigPalet:polySurface251 1
+    400136: Excavator:KepceRigPalet:polySurface252
+    400138: Excavator:KepceRigPalet:polySurface252 1
+    400140: Excavator:KepceRigPalet:polySurface253
+    400142: Excavator:KepceRigPalet:polySurface253 1
+    400144: Excavator:KepceRigPalet:polySurface254
+    400146: Excavator:KepceRigPalet:polySurface254 1
+    400148: Excavator:KepceRigPalet:polySurface255
+    400150: Excavator:KepceRigPalet:polySurface255 1
+    400152: Excavator:KepceRigPalet:polySurface26
+    400154: Excavator:KepceRigPalet:polySurface27
+    400156: Excavator:KepceRigPalet:polySurface29
+    400158: Excavator:KepceRigPalet:polySurface3
+    400160: Excavator:KepceRigPalet:polySurface30
+    400162: Excavator:KepceRigPalet:polySurface31
+    400164: Excavator:KepceRigPalet:polySurface32
+    400166: Excavator:KepceRigPalet:polySurface33
+    400168: Excavator:KepceRigPalet:polySurface34
+    400170: Excavator:KepceRigPalet:polySurface35
+    400172: Excavator:KepceRigPalet:polySurface36
+    400174: Excavator:KepceRigPalet:polySurface38
+    400176: Excavator:KepceRigPalet:polySurface39
+    400178: Excavator:KepceRigPalet:polySurface40
+    400180: Excavator:KepceRigPalet:polySurface41
+    400182: Excavator:KepceRigPalet:polySurface42
+    400184: Excavator:KepceRigPalet:polySurface43
+    400186: Excavator:KepceRigPalet:polySurface44
+    400188: Excavator:KepceRigPalet:polySurface47
+    400190: Excavator:KepceRigPalet:polySurface5
+    400192: Excavator:KepceRigPalet:polySurface6
+    400194: Excavator:KepceRigPalet:polySurface8
+    400196: Excavator:KepceRigPalet:polySurface9
+    400198: Excavator:KepceRigPalet:pPipe1
+    400200: Excavator:KepceRigPalet:pPipe2
+    400202: Excavator:KepceRigPalet:pPipe3
+    400204: Excavator:KepceRigPalet:pPipe4
+    400206: Excavator:KepceRigPalet:pPipe5
+    400208: Excavator:KepceRigPalet:pPipe6
+    400210: Excavator:KepceRigPalet:pPipe7
+    400212: Excavator:KepceRigPalet:pPipe8
+    400214: Excavator:KepceRigPalet:pPipe9
+    400216: Excavator:KepceRigPalet:pPlane1
+    400218: Excavator:KepceRigPalet:pPlane3
+    400220: Excavator:KepceRigPalet:pPlane4
+    400222: Excavator:KepceRigPalet:pPlane5
+    400224: Excavator:KepceRigPalet:pPlane6
+    400226: Excavator:KepceRigPalet:SagPAlet
+    400228: Excavator:KepceRigPalet:SagPAletMesh
+    400230: Excavator:KepceRigPalet:SolPalet
+    400232: Excavator:KepceRigPalet:SolPalet 1
+    400234: Excavator:KepceRigPalet:SolPalet1
+    400236: Excavator:KepceRigPalet:Text_BilimerxxD_1
+    400238: Excavator:KepceRigPalet:transform68
+    400240: Excavator:KepceRigPalet:transform69
+    400242: Excavator:MainBodyMOVEWITHTHIS
+    400244: //RootNode
+    2300000: Excavator:KepceRigPalet:ArkaDaire
+    2300002: Excavator:KepceRigPalet:ArkaDaire 1
+    2300004: Excavator:KepceRigPalet:OnDaire
+    2300006: Excavator:KepceRigPalet:OnDaire 1
+    2300008: Excavator:KepceRigPalet:pCube55
+    2300010: Excavator:KepceRigPalet:pCylinder1
+    2300012: Excavator:KepceRigPalet:pCylinder10
+    2300014: Excavator:KepceRigPalet:pCylinder11
+    2300016: Excavator:KepceRigPalet:pCylinder13
+    2300018: Excavator:KepceRigPalet:pCylinder14
+    2300020: Excavator:KepceRigPalet:pCylinder15
+    2300022: Excavator:KepceRigPalet:pCylinder16
+    2300024: Excavator:KepceRigPalet:pCylinder2
+    2300026: Excavator:KepceRigPalet:pCylinder3
+    2300028: Excavator:KepceRigPalet:pCylinder4
+    2300030: Excavator:KepceRigPalet:pCylinder5
+    2300032: Excavator:KepceRigPalet:pCylinder6
+    2300034: Excavator:KepceRigPalet:pCylinder7
+    2300036: Excavator:KepceRigPalet:pCylinder8
+    2300038: Excavator:KepceRigPalet:pCylinder9
+    2300040: Excavator:KepceRigPalet:polySurface1
+    2300042: Excavator:KepceRigPalet:polySurface12
+    2300044: Excavator:KepceRigPalet:polySurface14
+    2300046: Excavator:KepceRigPalet:polySurface2
+    2300048: Excavator:KepceRigPalet:polySurface22
+    2300050: Excavator:KepceRigPalet:polySurface236
+    2300052: Excavator:KepceRigPalet:polySurface236 1
+    2300054: Excavator:KepceRigPalet:polySurface237
+    2300056: Excavator:KepceRigPalet:polySurface237 1
+    2300058: Excavator:KepceRigPalet:polySurface24
+    2300060: Excavator:KepceRigPalet:polySurface246
+    2300062: Excavator:KepceRigPalet:polySurface246 1
+    2300064: Excavator:KepceRigPalet:polySurface247
+    2300066: Excavator:KepceRigPalet:polySurface247 1
+    2300068: Excavator:KepceRigPalet:polySurface248
+    2300070: Excavator:KepceRigPalet:polySurface248 1
+    2300072: Excavator:KepceRigPalet:polySurface249
+    2300074: Excavator:KepceRigPalet:polySurface249 1
+    2300076: Excavator:KepceRigPalet:polySurface25
+    2300078: Excavator:KepceRigPalet:polySurface250
+    2300080: Excavator:KepceRigPalet:polySurface250 1
+    2300082: Excavator:KepceRigPalet:polySurface251
+    2300084: Excavator:KepceRigPalet:polySurface251 1
+    2300086: Excavator:KepceRigPalet:polySurface252
+    2300088: Excavator:KepceRigPalet:polySurface252 1
+    2300090: Excavator:KepceRigPalet:polySurface253
+    2300092: Excavator:KepceRigPalet:polySurface253 1
+    2300094: Excavator:KepceRigPalet:polySurface254
+    2300096: Excavator:KepceRigPalet:polySurface254 1
+    2300098: Excavator:KepceRigPalet:polySurface255
+    2300100: Excavator:KepceRigPalet:polySurface255 1
+    2300102: Excavator:KepceRigPalet:polySurface26
+    2300104: Excavator:KepceRigPalet:polySurface27
+    2300106: Excavator:KepceRigPalet:polySurface29
+    2300108: Excavator:KepceRigPalet:polySurface3
+    2300110: Excavator:KepceRigPalet:polySurface30
+    2300112: Excavator:KepceRigPalet:polySurface31
+    2300114: Excavator:KepceRigPalet:polySurface32
+    2300116: Excavator:KepceRigPalet:polySurface33
+    2300118: Excavator:KepceRigPalet:polySurface34
+    2300120: Excavator:KepceRigPalet:polySurface35
+    2300122: Excavator:KepceRigPalet:polySurface36
+    2300124: Excavator:KepceRigPalet:polySurface38
+    2300126: Excavator:KepceRigPalet:polySurface39
+    2300128: Excavator:KepceRigPalet:polySurface40
+    2300130: Excavator:KepceRigPalet:polySurface41
+    2300132: Excavator:KepceRigPalet:polySurface42
+    2300134: Excavator:KepceRigPalet:polySurface43
+    2300136: Excavator:KepceRigPalet:polySurface44
+    2300138: Excavator:KepceRigPalet:polySurface5
+    2300140: Excavator:KepceRigPalet:polySurface6
+    2300142: Excavator:KepceRigPalet:polySurface8
+    2300144: Excavator:KepceRigPalet:polySurface9
+    2300146: Excavator:KepceRigPalet:pPipe1
+    2300148: Excavator:KepceRigPalet:pPipe2
+    2300150: Excavator:KepceRigPalet:pPipe3
+    2300152: Excavator:KepceRigPalet:pPipe4
+    2300154: Excavator:KepceRigPalet:pPipe5
+    2300156: Excavator:KepceRigPalet:pPipe6
+    2300158: Excavator:KepceRigPalet:pPipe7
+    2300160: Excavator:KepceRigPalet:pPipe8
+    2300162: Excavator:KepceRigPalet:pPipe9
+    2300164: Excavator:KepceRigPalet:pPlane1
+    2300166: Excavator:KepceRigPalet:pPlane3
+    2300168: Excavator:KepceRigPalet:pPlane4
+    2300170: Excavator:KepceRigPalet:pPlane5
+    2300172: Excavator:KepceRigPalet:pPlane6
+    2300174: Excavator:KepceRigPalet:SagPAletMesh
+    2300176: Excavator:KepceRigPalet:SolPalet
+    2300178: Excavator:MainBodyMOVEWITHTHIS
+    3300000: Excavator:KepceRigPalet:ArkaDaire
+    3300002: Excavator:KepceRigPalet:ArkaDaire 1
+    3300004: Excavator:KepceRigPalet:OnDaire
+    3300006: Excavator:KepceRigPalet:OnDaire 1
+    3300008: Excavator:KepceRigPalet:pCube55
+    3300010: Excavator:KepceRigPalet:pCylinder1
+    3300012: Excavator:KepceRigPalet:pCylinder10
+    3300014: Excavator:KepceRigPalet:pCylinder11
+    3300016: Excavator:KepceRigPalet:pCylinder13
+    3300018: Excavator:KepceRigPalet:pCylinder14
+    3300020: Excavator:KepceRigPalet:pCylinder15
+    3300022: Excavator:KepceRigPalet:pCylinder16
+    3300024: Excavator:KepceRigPalet:pCylinder2
+    3300026: Excavator:KepceRigPalet:pCylinder3
+    3300028: Excavator:KepceRigPalet:pCylinder4
+    3300030: Excavator:KepceRigPalet:pCylinder5
+    3300032: Excavator:KepceRigPalet:pCylinder6
+    3300034: Excavator:KepceRigPalet:pCylinder7
+    3300036: Excavator:KepceRigPalet:pCylinder8
+    3300038: Excavator:KepceRigPalet:pCylinder9
+    3300040: Excavator:KepceRigPalet:polySurface1
+    3300042: Excavator:KepceRigPalet:polySurface12
+    3300044: Excavator:KepceRigPalet:polySurface14
+    3300046: Excavator:KepceRigPalet:polySurface2
+    3300048: Excavator:KepceRigPalet:polySurface22
+    3300050: Excavator:KepceRigPalet:polySurface236
+    3300052: Excavator:KepceRigPalet:polySurface236 1
+    3300054: Excavator:KepceRigPalet:polySurface237
+    3300056: Excavator:KepceRigPalet:polySurface237 1
+    3300058: Excavator:KepceRigPalet:polySurface24
+    3300060: Excavator:KepceRigPalet:polySurface246
+    3300062: Excavator:KepceRigPalet:polySurface246 1
+    3300064: Excavator:KepceRigPalet:polySurface247
+    3300066: Excavator:KepceRigPalet:polySurface247 1
+    3300068: Excavator:KepceRigPalet:polySurface248
+    3300070: Excavator:KepceRigPalet:polySurface248 1
+    3300072: Excavator:KepceRigPalet:polySurface249
+    3300074: Excavator:KepceRigPalet:polySurface249 1
+    3300076: Excavator:KepceRigPalet:polySurface25
+    3300078: Excavator:KepceRigPalet:polySurface250
+    3300080: Excavator:KepceRigPalet:polySurface250 1
+    3300082: Excavator:KepceRigPalet:polySurface251
+    3300084: Excavator:KepceRigPalet:polySurface251 1
+    3300086: Excavator:KepceRigPalet:polySurface252
+    3300088: Excavator:KepceRigPalet:polySurface252 1
+    3300090: Excavator:KepceRigPalet:polySurface253
+    3300092: Excavator:KepceRigPalet:polySurface253 1
+    3300094: Excavator:KepceRigPalet:polySurface254
+    3300096: Excavator:KepceRigPalet:polySurface254 1
+    3300098: Excavator:KepceRigPalet:polySurface255
+    3300100: Excavator:KepceRigPalet:polySurface255 1
+    3300102: Excavator:KepceRigPalet:polySurface26
+    3300104: Excavator:KepceRigPalet:polySurface27
+    3300106: Excavator:KepceRigPalet:polySurface29
+    3300108: Excavator:KepceRigPalet:polySurface3
+    3300110: Excavator:KepceRigPalet:polySurface30
+    3300112: Excavator:KepceRigPalet:polySurface31
+    3300114: Excavator:KepceRigPalet:polySurface32
+    3300116: Excavator:KepceRigPalet:polySurface33
+    3300118: Excavator:KepceRigPalet:polySurface34
+    3300120: Excavator:KepceRigPalet:polySurface35
+    3300122: Excavator:KepceRigPalet:polySurface36
+    3300124: Excavator:KepceRigPalet:polySurface38
+    3300126: Excavator:KepceRigPalet:polySurface39
+    3300128: Excavator:KepceRigPalet:polySurface40
+    3300130: Excavator:KepceRigPalet:polySurface41
+    3300132: Excavator:KepceRigPalet:polySurface42
+    3300134: Excavator:KepceRigPalet:polySurface43
+    3300136: Excavator:KepceRigPalet:polySurface44
+    3300138: Excavator:KepceRigPalet:polySurface5
+    3300140: Excavator:KepceRigPalet:polySurface6
+    3300142: Excavator:KepceRigPalet:polySurface8
+    3300144: Excavator:KepceRigPalet:polySurface9
+    3300146: Excavator:KepceRigPalet:pPipe1
+    3300148: Excavator:KepceRigPalet:pPipe2
+    3300150: Excavator:KepceRigPalet:pPipe3
+    3300152: Excavator:KepceRigPalet:pPipe4
+    3300154: Excavator:KepceRigPalet:pPipe5
+    3300156: Excavator:KepceRigPalet:pPipe6
+    3300158: Excavator:KepceRigPalet:pPipe7
+    3300160: Excavator:KepceRigPalet:pPipe8
+    3300162: Excavator:KepceRigPalet:pPipe9
+    3300164: Excavator:KepceRigPalet:pPlane1
+    3300166: Excavator:KepceRigPalet:pPlane3
+    3300168: Excavator:KepceRigPalet:pPlane4
+    3300170: Excavator:KepceRigPalet:pPlane5
+    3300172: Excavator:KepceRigPalet:pPlane6
+    3300174: Excavator:KepceRigPalet:SagPAletMesh
+    3300176: Excavator:KepceRigPalet:SolPalet
+    3300178: Excavator:MainBodyMOVEWITHTHIS
+    4300000: Excavator:KepceRigPalet:pPlane1
+    4300002: Excavator:KepceRigPalet:SolPalet
+    4300004: Excavator:MainBodyMOVEWITHTHIS
+    4300006: Excavator:KepceRigPalet:pCylinder11
+    4300008: Excavator:KepceRigPalet:pCylinder6
+    4300010: Excavator:KepceRigPalet:pCylinder13
+    4300012: Excavator:KepceRigPalet:pCylinder3
+    4300014: Excavator:KepceRigPalet:polySurface33
+    4300016: Excavator:KepceRigPalet:polySurface32
+    4300018: Excavator:KepceRigPalet:polySurface34
+    4300020: Excavator:KepceRigPalet:polySurface35
+    4300022: Excavator:KepceRigPalet:polySurface36
+    4300024: Excavator:KepceRigPalet:pCylinder10
+    4300026: Excavator:KepceRigPalet:polySurface38
+    4300028: Excavator:KepceRigPalet:polySurface14
+    4300030: Excavator:KepceRigPalet:polySurface25
+    4300032: Excavator:KepceRigPalet:pPipe7
+    4300034: Excavator:KepceRigPalet:polySurface26
+    4300036: Excavator:KepceRigPalet:polySurface12
+    4300038: Excavator:KepceRigPalet:polySurface39
+    4300040: Excavator:KepceRigPalet:polySurface40
+    4300042: Excavator:KepceRigPalet:polySurface41
+    4300044: Excavator:KepceRigPalet:polySurface42
+    4300046: Excavator:KepceRigPalet:polySurface22
+    4300048: Excavator:KepceRigPalet:polySurface27
+    4300050: Excavator:KepceRigPalet:pPipe8
+    4300052: Excavator:KepceRigPalet:pCylinder9
+    4300054: Excavator:KepceRigPalet:polySurface31
+    4300056: Excavator:KepceRigPalet:polySurface29
+    4300058: Excavator:KepceRigPalet:polySurface30
+    4300060: Excavator:KepceRigPalet:polySurface24
+    4300062: Excavator:KepceRigPalet:pPipe3
+    4300064: Excavator:KepceRigPalet:polySurface6
+    4300066: Excavator:KepceRigPalet:polySurface9
+    4300068: Excavator:KepceRigPalet:pPlane3
+    4300070: Excavator:KepceRigPalet:pPlane4
+    4300072: Excavator:KepceRigPalet:pPipe2
+    4300074: Excavator:KepceRigPalet:pCylinder2
+    4300076: Excavator:KepceRigPalet:pPipe9
+    4300078: Excavator:KepceRigPalet:pPipe5
+    4300080: Excavator:KepceRigPalet:pCylinder8
+    4300082: Excavator:KepceRigPalet:polySurface1
+    4300084: Excavator:KepceRigPalet:polySurface2
+    4300086: Excavator:KepceRigPalet:polySurface3
+    4300088: Excavator:KepceRigPalet:polySurface44
+    4300090: Excavator:KepceRigPalet:pPipe1
+    4300092: Excavator:KepceRigPalet:pPipe6
+    4300094: Excavator:KepceRigPalet:pPlane5
+    4300096: Excavator:KepceRigPalet:pPlane6
+    4300098: Excavator:KepceRigPalet:polySurface5
+    4300100: Excavator:KepceRigPalet:polySurface8
+    4300102: Excavator:KepceRigPalet:pPipe4
+    4300104: Excavator:KepceRigPalet:pCylinder1
+    4300106: Excavator:KepceRigPalet:pCylinder7
+    4300108: Excavator:KepceRigPalet:pCylinder5
+    4300110: Excavator:KepceRigPalet:pCylinder4
+    4300112: Excavator:KepceRigPalet:pCylinder16
+    4300114: Excavator:KepceRigPalet:polySurface43
+    4300116: Excavator:KepceRigPalet:OnDaire
+    4300118: Excavator:KepceRigPalet:polySurface247
+    4300120: Excavator:KepceRigPalet:polySurface237
+    4300122: Excavator:KepceRigPalet:polySurface246
+    4300124: Excavator:KepceRigPalet:ArkaDaire
+    4300126: Excavator:KepceRigPalet:polySurface236
+    4300128: Excavator:KepceRigPalet:polySurface255
+    4300130: Excavator:KepceRigPalet:polySurface254
+    4300132: Excavator:KepceRigPalet:polySurface253
+    4300134: Excavator:KepceRigPalet:polySurface252
+    4300136: Excavator:KepceRigPalet:polySurface251
+    4300138: Excavator:KepceRigPalet:polySurface250
+    4300140: Excavator:KepceRigPalet:polySurface248
+    4300142: Excavator:KepceRigPalet:polySurface249
+    4300144: Excavator:KepceRigPalet:pCylinder15
+    4300146: Excavator:KepceRigPalet:pCylinder14
+    4300148: Excavator:KepceRigPalet:pCube55
+    4300150: Excavator:KepceRigPalet:OnDaire
+    4300152: Excavator:KepceRigPalet:polySurface247
+    4300154: Excavator:KepceRigPalet:polySurface237
+    4300156: Excavator:KepceRigPalet:polySurface246
+    4300158: Excavator:KepceRigPalet:ArkaDaire
+    4300160: Excavator:KepceRigPalet:polySurface236
+    4300162: Excavator:KepceRigPalet:polySurface255
+    4300164: Excavator:KepceRigPalet:polySurface254
+    4300166: Excavator:KepceRigPalet:polySurface253
+    4300168: Excavator:KepceRigPalet:polySurface252
+    4300170: Excavator:KepceRigPalet:polySurface251
+    4300172: Excavator:KepceRigPalet:polySurface250
+    4300174: Excavator:KepceRigPalet:polySurface248
+    4300176: Excavator:KepceRigPalet:polySurface249
+    4300178: Excavator:KepceRigPalet:SagPAletMesh
+    9500000: //RootNode
+    11100000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: Excavator:KepceRigPalet:joint2
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
