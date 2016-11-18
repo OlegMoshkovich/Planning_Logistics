@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/HCS/SafeScan/SafeLocateMenu/Scenes/MenuScreen.unity
+- path: Assets/Battlehub/UIControls/Demo/TreeView.unity
   isLoaded: 1
   isActive: 1
