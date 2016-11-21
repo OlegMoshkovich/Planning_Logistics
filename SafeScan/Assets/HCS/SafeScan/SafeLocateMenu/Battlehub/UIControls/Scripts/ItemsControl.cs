@@ -260,6 +260,10 @@ namespace Battlehub.UIControls
         /// </summary>
         [SerializeField]
         private GameObject ItemContainerPrefab;
+        [SerializeField]
+        private GameObject ItemContainerPrefabWorker;
+        [SerializeField]
+        private GameObject ItemContainerPrefabFolder;
 
         /// <summary>
         /// Items Panel
@@ -704,7 +708,6 @@ namespace Battlehub.UIControls
             {
                 itemContainerIndex = m_itemContainers.Count;
             }
-
             m_items.Insert(index, item);
             itemContainer = InstantiateItemContainer(itemContainerIndex);
             if (itemContainer != null)
@@ -1476,7 +1479,11 @@ namespace Battlehub.UIControls
                 {
                     for (int i = 0; i < deltaItems; ++i)
                     {
-                        InstantiateItemContainer(m_itemContainers.Count);
+                        GameObject goItem = (GameObject)m_items[m_itemContainers.Count];
+                        Debug.Log(goItem.name);
+                        if (goItem.GetComponent<Folder>() !=null) InstantiateItemContainer(m_itemContainers.Count, "folder");
+                        else if(goItem.GetComponent<WorkerMovement>() != null) InstantiateItemContainer(m_itemContainers.Count, "worker");
+                        else InstantiateItemContainer(m_itemContainers.Count, "");
                     }
                 }
                 else
@@ -1518,9 +1525,22 @@ namespace Battlehub.UIControls
             }
         }
 
-        protected ItemContainer InstantiateItemContainer(int siblingIndex)
+        protected ItemContainer InstantiateItemContainer(int siblingIndex, string prefab = "")
         {
-            GameObject container = Instantiate(ItemContainerPrefab);
+            GameObject container = new GameObject();
+            switch (prefab)
+            {
+                case "worker":
+                    container = Instantiate(ItemContainerPrefabWorker);
+                    break;
+                case "folder":
+                    container = Instantiate(ItemContainerPrefabFolder);
+                    break;
+                case "":
+                    container = Instantiate(ItemContainerPrefab);
+                    break;
+            }
+
             container.name = "ItemContainer";
             container.transform.SetParent(Panel, false);
             container.transform.SetSiblingIndex(siblingIndex);

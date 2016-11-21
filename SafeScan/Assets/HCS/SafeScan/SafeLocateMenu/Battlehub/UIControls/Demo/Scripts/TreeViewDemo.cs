@@ -30,7 +30,8 @@ namespace Battlehub.UIControls
                 Debug.LogError("Set TreeView field");
                 return;
             }
-            IEnumerable<GameObject> dataItems = Resources.FindObjectsOfTypeAll<GameObject>().Where(go => !IsPrefab(go.transform) && go.transform.parent == null).OrderBy(t => t.transform.GetSiblingIndex());
+            //IEnumerable<GameObject> dataItems = Resources.FindObjectsOfTypeAll<GameObject>().Where(go => !IsPrefab(go.transform) && go.transform.parent == null).OrderBy(t => t.transform.GetSiblingIndex());
+            IEnumerable<GameObject> dataItems = Resources.FindObjectsOfTypeAll<GameObject>().Where(go => go.GetComponent<WorkerMovement>() !=null || go.GetComponent<Folder>() != null).OrderBy(t => t.transform.GetSiblingIndex());
 
             //subscribe to events
             TreeView.ItemDataBinding += OnItemDataBinding;
@@ -87,7 +88,10 @@ namespace Battlehub.UIControls
             #if UNITY_EDITOR
             //Do something on selection changed (just syncronized with editor's hierarchy for demo purposes)
             UnityEditor.Selection.objects = e.NewItems.OfType<GameObject>().ToArray();
-            #endif
+#endif
+            //GameObject goItem = (GameObject)UnityEditor.Selection.objects[0];
+            //Camera.main.transform.position = new Vector3(goItem.transform.position.x, goItem.transform.position.y + 2, goItem.transform.position.z - 5);
+
         }
 
         private void OnItemsRemoved(object sender, ItemsRemovedArgs e)
@@ -117,16 +121,16 @@ namespace Battlehub.UIControls
                 //We display dataItem.name using UI.Text 
                 Text text = e.ItemPresenter.GetComponentInChildren<Text>(true);
                 text.text = dataItem.name;
-
                 //Load icon from resources
-                Image icon = e.ItemPresenter.GetComponentsInChildren<Image>()[4];
-                icon.sprite = Resources.Load<Sprite>("cube");
+                //Image icon = e.ItemPresenter.GetComponentsInChildren<Image>()[4];
+                //icon.sprite = Resources.Load<Sprite>("cube");
 
                 //And specify whether data item has children (to display expander arrow if needed)
-                if(dataItem.name != "TreeView")
+                if(dataItem.name != "TreeView" && dataItem.GetComponent<WorkerMovement>()==null)
                 {
                     e.HasChildren = dataItem.transform.childCount > 0;
                 }
+
                 
             }
         }

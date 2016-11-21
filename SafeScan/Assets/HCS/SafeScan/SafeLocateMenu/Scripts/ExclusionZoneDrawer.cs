@@ -13,6 +13,12 @@ namespace Safescan
         public List<Vector3> linePoints = new List<Vector3>();
         public Material exclusionZoneMaterial;
 
+        private float yValue;
+
+        public void setDrawerActive(bool value)
+        {
+            drawerActive = value;
+        }
         // Use this for initialization
         void Start()
         {
@@ -29,12 +35,19 @@ namespace Safescan
             {
                 if (Input.GetMouseButtonDown(0))
                 {
-                    Debug.Log(Input.mousePosition);
                     Vector3 mouseClick = Input.mousePosition;
-                    mouseClick.z = 30;
-                    Vector3 worldPosition = Camera.main.ScreenToWorldPoint(mouseClick);
-                    linePoints.Add(worldPosition);
-                    UpdateLine();
+                    RaycastHit hit;
+                    Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                    if (Physics.Raycast(ray, out hit, 100.0f))
+                    {
+                        if (yValue == null) yValue = hit.point.y+0.2f;
+                        Vector3 worldPoint = new Vector3(hit.point.x, yValue, hit.point.z);
+                        linePoints.Add(worldPoint);
+                        GameObject newPoint = GameObject.CreatePrimitive(PrimitiveType.Cube);
+                        newPoint.GetComponent<Renderer>().material = exclusionZoneMaterial;
+                        newPoint.transform.position = worldPoint;
+                        UpdateLine();
+                    }
                 }
                 if (Input.GetMouseButtonDown(1))
                 {
@@ -69,7 +82,8 @@ namespace Safescan
             Vector2[] vertices2D = new Vector2[lineCount];
             for (int i = 0; i < lineCount; i++)
             {
-                vertices2D[i] = linePoints[i];
+                vertices2D[i].x = linePoints[i].x;
+                vertices2D[i].y = linePoints[i].z;
             }
 
             Triangulator tr = new Triangulator(vertices2D);
@@ -93,11 +107,13 @@ namespace Safescan
             GameObject newExclusionZone = new GameObject();
             newExclusionZone.AddComponent(typeof(MeshRenderer));
             newExclusionZone.name = "New Exclusion Zone";
+            newExclusionZone.transform.Translate(new Vector3(0, 0.1f, 0));
             MeshFilter filter = newExclusionZone.AddComponent(typeof(MeshFilter)) as MeshFilter;
             filter.mesh = msh;
             newExclusionZone.GetComponent<MeshRenderer>().material = exclusionZoneMaterial;
             newExclusionZone.AddComponent<MeshCollider>();
         }
+
 
     }
 }
