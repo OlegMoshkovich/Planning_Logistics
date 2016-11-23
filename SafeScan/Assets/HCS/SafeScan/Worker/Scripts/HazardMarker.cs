@@ -21,17 +21,20 @@ public class HazardMarker : MonoBehaviour {
 
 	void Start()
 	{
-		if(HazardController.main!=null)
-		HazardController.main.AddMarker(this, type);
+        if (HazardController.main != null)
+        {
+            HazardController.main.AddMarker(this, type);
 
-		if(type == 0)
-		gameObject.SetActive(HazardController.main.showDangers);
+            if (type == 0)
+                gameObject.SetActive(HazardController.main.showDangers);
 
-		if(type == 1)
-		gameObject.SetActive(HazardController.main.showPersons);
+            if (type == 1)
+                gameObject.SetActive(HazardController.main.showPersons);
 
-		if(type == 2)
-		gameObject.SetActive(HazardController.main.showFalls);
+            if (type == 2)
+                gameObject.SetActive(HazardController.main.showFalls);
+        }
+        else Debug.Log("No Hazard controller found");
 	}
 
 	public void SetTransparent()

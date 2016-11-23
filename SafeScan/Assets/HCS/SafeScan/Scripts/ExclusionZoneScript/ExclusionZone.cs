@@ -3,7 +3,8 @@ using System.Collections;
 
     public class ExclusionZone : MonoBehaviour
     {
-
+    public float percentOfDanger = 0.8f;
+    public string shape; // "Circle", "rectangle", "Mesh "
         // Use this for initialization
         void Start()
         {

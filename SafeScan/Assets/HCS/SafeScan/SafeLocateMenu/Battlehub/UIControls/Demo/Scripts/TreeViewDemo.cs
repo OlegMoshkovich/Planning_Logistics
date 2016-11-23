@@ -25,13 +25,17 @@ namespace Battlehub.UIControls
 
         private void Start()
         {
+            //InvokeRepeating("updateTree", 1, 1);
             if(!TreeView)
             {
                 Debug.LogError("Set TreeView field");
                 return;
             }
             //IEnumerable<GameObject> dataItems = Resources.FindObjectsOfTypeAll<GameObject>().Where(go => !IsPrefab(go.transform) && go.transform.parent == null).OrderBy(t => t.transform.GetSiblingIndex());
-            IEnumerable<GameObject> dataItems = Resources.FindObjectsOfTypeAll<GameObject>().Where(go => go.GetComponent<WorkerMovement>() !=null || go.GetComponent<Folder>() != null).OrderBy(t => t.transform.GetSiblingIndex());
+            IEnumerable<GameObject> dataItems = GameObject.FindObjectOfType<WorkerManager>().listOfWorkers.OrderBy(t => t.transform.GetSiblingIndex());
+            dataItems.Concat(GameObject.FindObjectOfType<WorkerManager>().listOfDangerIndicators);
+            dataItems.Concat(GameObject.FindObjectOfType<WorkerManager>().listOfFallIndicators);
+            dataItems.Concat(GameObject.FindObjectOfType<WorkerManager>().listOfWorkerIndicators);
 
             //subscribe to events
             TreeView.ItemDataBinding += OnItemDataBinding;
@@ -45,6 +49,16 @@ namespace Battlehub.UIControls
 
             //Bind data items
             TreeView.Items = dataItems;
+        }
+
+        public void updateTree()
+        {
+            if (WorkerManager.main != null)
+            {
+                IEnumerable<GameObject> dataItems = GameObject.FindObjectsOfType<Folder>().Select(c => c.gameObject); ;
+                TreeView.Items = dataItems.OrderBy(t => t.transform.GetSiblingIndex());
+            }
+            else Debug.Log("Worker Manager not found.");
         }
 
         private void OnDestroy()

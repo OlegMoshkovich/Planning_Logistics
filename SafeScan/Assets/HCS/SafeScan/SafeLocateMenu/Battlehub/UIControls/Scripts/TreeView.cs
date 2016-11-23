@@ -322,7 +322,6 @@ namespace Battlehub.UIControls
             RaiseItemDataBinding(args);
 
             TreeViewItem treeViewItem = (TreeViewItem)itemContainer;
-            Debug.Log(itemContainer);
             treeViewItem.CanExpand = args.HasChildren;
             
         }

@@ -14,7 +14,8 @@ public class TreeViewClickManager : MonoBehaviour {
         if (Input.GetMouseButtonUp(0) && Treeview.SelectedItem !=null)
         {
             GameObject selectedGO = (GameObject)Treeview.SelectedItem;
-            Camera.main.transform.position = new Vector3(selectedGO.transform.position.x, selectedGO.transform.position.y + 2, selectedGO.transform.position.z - 5);
+            CameraSwitch myCameraSwitch = GameObject.FindObjectOfType<CameraSwitch>();
+            myCameraSwitch.SetTarget(selectedGO.transform);
         }
 	}
   

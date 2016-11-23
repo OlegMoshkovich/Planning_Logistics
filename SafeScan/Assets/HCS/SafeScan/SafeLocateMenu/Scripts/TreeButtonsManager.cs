@@ -16,14 +16,14 @@ public class TreeButtonsManager : MonoBehaviour {
 	}
     public void CreateWorker()
     {
-        Instantiate(GameObject.Find("John"));
-        treeview.SendMessage("Start");
+        GameObject.FindObjectOfType<WorkerManager>().CreateWorker();
+        treeview.GetComponent<TreeViewDemo>().updateTree();
     }
     public void CreateFolder()
     {
         GameObject newFolder = new GameObject();
         newFolder.name = "New Folder";
         newFolder.AddComponent<Folder>();
-        treeview.SendMessage("Start");
+        treeview.GetComponent<TreeViewDemo>().updateTree();
     }
 }
