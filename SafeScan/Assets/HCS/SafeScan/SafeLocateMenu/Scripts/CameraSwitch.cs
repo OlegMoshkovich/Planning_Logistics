@@ -11,29 +11,36 @@ public class CameraSwitch : MonoBehaviour {
     public List<Camera> listOfCameras = new List<Camera>();
     public float locationSmoothTime = 0.3F;
     public float rotateSmoothFactor = 2.0F;
-    private Vector3 targetLocation;
-    private Quaternion targetRotation;
     private Vector3 cameraVelocity = Vector3.zero;
-    private bool followTarget = false;
-    private Transform targetTransform;
+    public bool followTarget = false;
+    public Transform targetTransform;
     private Vector3 cameraOffset = new Vector3();
+
+    public static CameraSwitch main;
 
     // Use this for initialization
     void Start() {
+        main = this;
         selectedCamera = listOfCameras[0];
+        targetTransform = selectedCamera.transform;
         listOfCameras.Select(c => c.enabled = false);
 		populateCameraDropDown ();
 	}
 
     void Update()
     {
+        /*if(Input.GetMouseButton(1)==true || Input.GetAxis("Mouse ScrollWheel") != 0 || Input.GetAxis("JoystickHorizontal") != 0 || Input.GetAxis("JoystickVertical") != 0)
+        {
+            followTarget = false;
+            Camera.main.GetComponent<CameraControl>().enabled = true;
+        }*/
         if (followTarget)
         {
             updateCameraWithOffset(targetTransform);
         }
         else
         {
-            updateCameraWithoutOffset(selectedCamera.transform);
+            //updateCameraWithoutOffset(targetTransform);
             
         }
         //Debug.Log("Selected Camera: " + targetTransform.position);
@@ -52,7 +59,7 @@ public class CameraSwitch : MonoBehaviour {
         {
             bounds.Encapsulate(renderer.bounds);
         }
-        cameraOffset = new Vector3(0, bounds.size.y, -bounds.size.z);
+        cameraOffset = new Vector3(0, bounds.size.y, -bounds.size.z-2);
         cameraOffset = transform.rotation * cameraOffset;
         Camera.main.transform.localPosition = Vector3.SmoothDamp(Camera.main.transform.position, transform.position + cameraOffset, ref cameraVelocity, locationSmoothTime);
         Camera.main.transform.rotation = Quaternion.Slerp(Camera.main.transform.rotation, transform.rotation, Time.deltaTime * rotateSmoothFactor);
@@ -67,8 +74,10 @@ public class CameraSwitch : MonoBehaviour {
 	}
 
 	public void dropDown_IndexChange(int index){
-        followTarget = false;
+        followTarget = true;
         selectedCamera = listOfCameras[index];
+        targetTransform = selectedCamera.transform;
+        Camera.main.GetComponent<CameraControl>().isometric = true;
 	}
 
 }

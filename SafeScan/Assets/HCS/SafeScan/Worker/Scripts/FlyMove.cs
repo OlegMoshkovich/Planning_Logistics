@@ -34,7 +34,7 @@ public class FlyMove : MonoBehaviour {
 		speed*=2f;
 		//print("sdlkfjsdf "+speed);
 		}
-		transform.position+=((Input.GetAxis("Vertical")*transform.TransformDirection(Vector3.forward))+(Input.GetAxis("Horizontal")*transform.TransformDirection(Vector3.right))+(Input.GetAxis("UpAxis")*transform.TransformDirection(Vector3.up)))*speed*Time.deltaTime*60*(1/Time.timeScale);
+		transform.position+=((Input.GetAxis("Vertical")*transform.TransformDirection(Vector3.forward))+(Input.GetAxis("Horizontal")*transform.TransformDirection(Vector3.right))+(Input.GetAxis("Vertical")*transform.TransformDirection(Vector3.up)))*speed*Time.deltaTime*60*(1/Time.timeScale);
 	
 
 		if(Input.GetKeyDown("p"))
