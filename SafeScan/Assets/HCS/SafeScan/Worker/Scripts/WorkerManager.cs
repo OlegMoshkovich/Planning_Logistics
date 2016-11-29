@@ -29,8 +29,6 @@ public class WorkerManager : MonoBehaviour {
         dangerIndicatorsParent.name = "Danger Indicators";
         warningIndicatorsParent = new GameObject();
         warningIndicatorsParent.name = "Warning Indicators";
-        warningIndicatorsParent = new GameObject();
-        warningIndicatorsParent.name = "Warning Indicators";
         warningIndicatorsParent.AddComponent<Folder>();
         workers = new GameObject();
         workers.name = "Workers";
@@ -51,6 +49,6 @@ public class WorkerManager : MonoBehaviour {
     {
         GameObject newWorker = Instantiate(WorkerPrefab, workers.transform) as GameObject;
         listOfWorkers.Add(newWorker);
-        GameObject.FindObjectOfType<TreeViewDemo>().updateTree();
+        TreeViewManager.main.TreeView.AddChild(workers, newWorker);
     }
 }

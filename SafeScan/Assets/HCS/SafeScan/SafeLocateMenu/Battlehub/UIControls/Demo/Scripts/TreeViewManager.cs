@@ -3,16 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
-
-namespace Battlehub.UIControls
-{
+using Battlehub.UIControls;
     /// <summary>
     /// In this demo we use game objects hierarchy as data source (each data item is game object)
     /// You can use any hierarchical data with treeview.
     /// </summary>
-    public class TreeViewDemo : MonoBehaviour
+    public class TreeViewManager : MonoBehaviour
     {
         public TreeView TreeView;
+        public static TreeViewManager main;
 
         public static bool IsPrefab(Transform This)
         {
@@ -25,7 +24,7 @@ namespace Battlehub.UIControls
 
         private void Start()
         {
-            
+            main = this;
             if(!TreeView)
             {
                 Debug.LogError("Set TreeView field");
@@ -43,7 +42,8 @@ namespace Battlehub.UIControls
             TreeView.ItemEndDrag += OnItemEndDrag;
 
 
-            InvokeRepeating("updateTree", 1, 1);
+            //InvokeRepeating("updateTree", 1, 1);
+            updateTree();
         }
 
         public void updateTree()
@@ -225,4 +225,3 @@ namespace Battlehub.UIControls
         {            
         }
     }
-}

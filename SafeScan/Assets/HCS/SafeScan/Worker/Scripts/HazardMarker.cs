@@ -6,7 +6,6 @@ public class HazardMarker : MonoBehaviour {
 
 	public Material opaqueMaterial;
 	public Material transparentMaterial;
-
 	public int type = 0;
 
 	// // Use this for initialization

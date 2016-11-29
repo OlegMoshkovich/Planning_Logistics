@@ -709,7 +709,17 @@ namespace Battlehub.UIControls
                 itemContainerIndex = m_itemContainers.Count;
             }
             m_items.Insert(index, item);
-            itemContainer = InstantiateItemContainer(itemContainerIndex);
+            try
+            {
+                GameObject go = (GameObject)item;
+                if (go.GetComponent<Folder>() != null) itemContainer = InstantiateItemContainer(itemContainerIndex, "folder");
+                else if (go.GetComponent<WorkerMovement>() != null) itemContainer = InstantiateItemContainer(itemContainerIndex, "worker");
+                else itemContainer = InstantiateItemContainer(itemContainerIndex, "");
+            }
+            catch
+            {
+                itemContainer = InstantiateItemContainer(itemContainerIndex);
+            }
             if (itemContainer != null)
             {
                 itemContainer.Item = item;
@@ -1480,7 +1490,6 @@ namespace Battlehub.UIControls
                     for (int i = 0; i < deltaItems; ++i)
                     {
                         GameObject goItem = (GameObject)m_items[m_itemContainers.Count];
-                        Debug.Log(goItem.name);
                         if (goItem.GetComponent<Folder>() !=null) InstantiateItemContainer(m_itemContainers.Count, "folder");
                         else if(goItem.GetComponent<WorkerMovement>() != null) InstantiateItemContainer(m_itemContainers.Count, "worker");
                         else InstantiateItemContainer(m_itemContainers.Count, "");

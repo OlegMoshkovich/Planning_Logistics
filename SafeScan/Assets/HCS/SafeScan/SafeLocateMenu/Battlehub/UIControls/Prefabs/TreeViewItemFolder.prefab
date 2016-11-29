@@ -94,6 +94,7 @@ GameObject:
   - 114: {fileID: 114000010205148452}
   - 114: {fileID: 114000012179931100}
   - 114: {fileID: 114000010639586350}
+  - 114: {fileID: 114000013689970102}
   m_Layer: 5
   m_Name: TreeViewItemFolder
   m_TagString: Untagged
@@ -674,9 +675,9 @@ MonoBehaviour:
   m_OnEndEdit:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: OnEndEdit
-        m_Mode: 1
+      - m_Target: {fileID: 114000013689970102}
+        m_MethodName: OnInputChange
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -786,6 +787,17 @@ MonoBehaviour:
   m_PreferredHeight: -1
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
+--- !u!114 &114000013689970102
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012093823752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef7b9f53bb423ae4cb5e2aca026c3c52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114000013943104738
 MonoBehaviour:
   m_ObjectHideFlags: 1

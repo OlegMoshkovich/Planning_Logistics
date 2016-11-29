@@ -74,9 +74,11 @@ public class CameraSwitch : MonoBehaviour {
 	}
 
 	public void dropDown_IndexChange(int index){
-        followTarget = true;
+        //TreeViewManager.main.TreeView.Unselect();
         selectedCamera = listOfCameras[index];
         targetTransform = selectedCamera.transform;
+        this.SetTarget(targetTransform);
+        Debug.Log(targetTransform.position);
         Camera.main.GetComponent<CameraControl>().isometric = true;
 	}
 

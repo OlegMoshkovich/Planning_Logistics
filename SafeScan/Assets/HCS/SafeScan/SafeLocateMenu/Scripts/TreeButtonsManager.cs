@@ -16,14 +16,13 @@ public class TreeButtonsManager : MonoBehaviour {
 	}
     public void CreateWorker()
     {
-        GameObject.FindObjectOfType<WorkerManager>().CreateWorker();
-        treeview.GetComponent<TreeViewDemo>().updateTree();
+        WorkerManager.main.CreateWorker();
     }
     public void CreateFolder()
     {
         GameObject newFolder = new GameObject();
         newFolder.name = "New Folder";
         newFolder.AddComponent<Folder>();
-        treeview.GetComponent<TreeViewDemo>().updateTree();
+        TreeViewManager.main.TreeView.Add(newFolder);
     }
 }
