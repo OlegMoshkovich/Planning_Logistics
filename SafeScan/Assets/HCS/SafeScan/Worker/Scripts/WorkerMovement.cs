@@ -60,9 +60,9 @@ public class WorkerMovement : MonoBehaviour {
 
 	public float lastMarkerTime;
 
-	public bool makePinIcon;
-	public GameObject pinIconPrefab;
-	public Transform pinIconTarget;
+	//public bool makePinIcon;
+	//public GameObject pinIconPrefab;
+	//public Transform pinIconTarget;
 
     private WorkerManager workerManager;
 
@@ -74,7 +74,7 @@ public class WorkerMovement : MonoBehaviour {
 
 
 
-	if(makePinIcon)
+	/*if(makePinIcon)
 	{
 		
 		GameObject pi = Instantiate(pinIconPrefab);
@@ -82,7 +82,7 @@ public class WorkerMovement : MonoBehaviour {
 		if(pi!=null)
 		pi.GetComponent<PinIcon>().target = pinIconTarget;
 
-	}
+	}*/
 
 
 	animator.SetFloat("Speed",0);

@@ -5,6 +5,7 @@ using System.Collections;
     {
     public float percentOfDanger = 0.8f;
     public string shape; // "Circle", "rectangle", "Mesh "
+    public GameObject gameObject;
         // Use this for initialization
         void Start()
         {

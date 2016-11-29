@@ -16,7 +16,7 @@ public class WorkerTagMovement : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
           Debug.Log("Velocity: "+ velocity);
-        foreach (Tag selectedTag in FindObjectOfType<mqttManager>().listOfTags)
+        foreach (Tag selectedTag in mqttManager.main.listOfQTrackTags)
         {
             if (frequency == selectedTag.Frequency) tag = selectedTag;
         }

@@ -13,7 +13,7 @@ public class FollowTag : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        foreach (Tag selectedTag in FindObjectOfType<mqttManager>().listOfTags)
+        foreach (Tag selectedTag in FindObjectOfType<mqttManager>().listOfQTrackTags)
         {
             if (frequency == selectedTag.Frequency) tag = selectedTag;
         }

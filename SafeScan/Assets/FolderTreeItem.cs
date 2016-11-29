@@ -14,7 +14,6 @@ public class FolderTreeItem : MonoBehaviour {
 	}
     public void OnInputChange(string value)
     {
-        Debug.Log(value);
         this.name = value;
     }
 }
