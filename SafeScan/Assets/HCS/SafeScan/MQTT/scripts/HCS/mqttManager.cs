@@ -30,7 +30,7 @@ public class mqttManager : MonoBehaviour {
 
         string clientId = Guid.NewGuid().ToString(); 
 		client.Connect(clientId);
-        client2.Connect(clientId);
+        //client2.Connect(clientId);
 		
 		// Q-Track Subscribe
 		client.Subscribe(new string[] { "qtrack/+" }, new byte[] { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE });
@@ -91,11 +91,24 @@ public class mqttManager : MonoBehaviour {
             incomingTag = JsonUtility.FromJson<HCSTag>(message);
             incomingTag.macAddress = mac;
             bool createNewTag = true;
-            foreach (HCSTag tag in listOfHCSTags)
+            for(int i=0; i<listOfHCSTags.Count;i++)
             {
-                if (tag.macAddress == mac && messageType == "orin")
+                if (listOfHCSTags[i].macAddress == mac)
                 {
-                    //tag = incomingTag;
+                    switch (messageType)
+                    {
+                        case "orin":
+                            listOfHCSTags[i].ori = incomingTag.ori;
+                            listOfHCSTags[i].gyr = incomingTag.gyr;
+                            break;
+                        case "envi":
+                            listOfHCSTags[i].light = incomingTag.light;
+                            listOfHCSTags[i].uvi = incomingTag.uvi;
+                            break;
+                        case "time":
+                            break;
+                    }
+                    listOfHCSTags[i] = incomingTag;
                     createNewTag = false;
                 }
             }

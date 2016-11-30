@@ -26,12 +26,13 @@ public class TagMenuManager : MonoBehaviour {
         try
         {   
             listOfQTrackTags = mqttManager.main.listOfQTrackTags;
-            for(int i=0; i<listOfQTrackTags.Count; i++)
+            for(int i=0; i<WorkerManager.main.listOfWorkers.Count; i++)
             {
                 GameObject newRow = (GameObject) UnityEngine.Object.Instantiate(dataRow, GameObject.Find("TagTable").transform);
                 newRow.transform.position = new Vector3(dataRow.transform.position.x, dataRow.transform.position.y - 40 * (i+1), dataRow.transform.position.z);
                 newRow.transform.localScale = Vector3.one;
-                newRow.GetComponentsInChildren<Text>()[3].text = listOfQTrackTags[i].Frequency.ToString();
+                newRow.GetComponentsInChildren<Text>()[0].text = WorkerManager.main.listOfWorkers[i].name;
+                newRow.GetComponentsInChildren<Text>()[3].text = WorkerManager.main.listOfWorkers[i].GetComponent<WorkerTagMovement>().frequency.ToString();
                 listOfDataRows.Add(newRow);
             }
         }
@@ -47,5 +48,9 @@ public class TagMenuManager : MonoBehaviour {
             Destroy(dataRow);
         }
         listOfDataRows = new List<GameObject>();
+    }
+    public void SubmitData()
+    {
+        
     }
 }

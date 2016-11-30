@@ -5,12 +5,11 @@ using System.Collections.Generic;
 
     public class ExclusionZoneDrawer : MonoBehaviour
     {
-        private GameObject newExclusionZone;
+        private GameObject lineRendererGO;
         private LineRenderer lineRenderer;
         private int lineCount = 0;
         public bool drawerActive = true;
         public List<Vector3> linePoints = new List<Vector3>();
-        public Material exclusionZoneMaterial;
 
         private float yValue;
 
@@ -21,9 +20,10 @@ using System.Collections.Generic;
         // Use this for initialization
         void Start()
         {
-            newExclusionZone = new GameObject();
-            newExclusionZone.AddComponent<LineRenderer>();
-            lineRenderer = newExclusionZone.GetComponent<LineRenderer>();
+            lineRendererGO = new GameObject();
+            lineRendererGO.AddComponent<LineRenderer>();
+            lineRenderer = lineRendererGO.GetComponent<LineRenderer>();
+        lineRenderer.material = ExclusionZoneManager.main.exclusionZoneWarningMaterial;
             linePoints = new List<Vector3>();
         }
 
@@ -43,7 +43,7 @@ using System.Collections.Generic;
                         Vector3 worldPoint = new Vector3(hit.point.x, yValue, hit.point.z);
                         linePoints.Add(worldPoint);
                         GameObject newPoint = GameObject.CreatePrimitive(PrimitiveType.Cube);
-                        newPoint.GetComponent<Renderer>().material = exclusionZoneMaterial;
+                        newPoint.GetComponent<Renderer>().material = ExclusionZoneManager.main.exclusionZoneDangerMaterial;
                         newPoint.transform.position = worldPoint;
                         UpdateLine();
                     }
@@ -51,6 +51,7 @@ using System.Collections.Generic;
                 if (Input.GetMouseButtonDown(1))
                 {
                     drawerActive = false;
+                    ClearDrawing();
                 }
             }
         }
@@ -69,8 +70,8 @@ using System.Collections.Generic;
                 {
                     drawerActive = false;
                     CreateMesh();
-                    Destroy(lineRenderer);
-                }
+                    
+            }
 
             }
         }
@@ -104,18 +105,29 @@ using System.Collections.Generic;
 
             // Set up game object with mesh;
             GameObject newExclusionZone = new GameObject();
+            newExclusionZone.transform.parent = ExclusionZoneManager.main.exclusionZones.transform;
             newExclusionZone.AddComponent(typeof(MeshRenderer));
-            newExclusionZone.name = "New Exclusion Zone";
+            newExclusionZone.name = "Exclusion Zone";
             newExclusionZone.transform.Translate(new Vector3(0, 0.1f, 0));
             MeshFilter filter = newExclusionZone.AddComponent(typeof(MeshFilter)) as MeshFilter;
             filter.mesh = msh;
-            newExclusionZone.GetComponent<MeshRenderer>().material = exclusionZoneMaterial;
+            newExclusionZone.GetComponent<MeshRenderer>().material = ExclusionZoneManager.main.exclusionZoneDangerMaterial;
             newExclusionZone.AddComponent<MeshCollider>();
         //Add to list of Exclusion Zones
-        ExclusionZone ez = new ExclusionZone();
-        ez.gameObject = newExclusionZone;
+            ExclusionZone ez = new ExclusionZone();
+            ez.gameObject = newExclusionZone;
             ExclusionZoneManager.main.listOfExclusionZones.Add(ez);
-        }
+        //Update Tree
+            TreeViewManager.main.TreeView.AddChild(ExclusionZoneManager.main.exclusionZones, newExclusionZone);
+            //Clear Drawing
+            ClearDrawing();
+
+    }
+    public void ClearDrawing()
+    {
+        lineRenderer.SetVertexCount(0);
+        linePoints = new List<Vector3>();
+    }
 
 
 }
