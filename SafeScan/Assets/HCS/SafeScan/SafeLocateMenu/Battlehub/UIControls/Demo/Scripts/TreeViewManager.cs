@@ -4,6 +4,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 using Battlehub.UIControls;
+using UnityEngine.EventSystems;
     /// <summary>
     /// In this demo we use game objects hierarchy as data source (each data item is game object)
     /// You can use any hierarchical data with treeview.
@@ -21,10 +22,17 @@ using Battlehub.UIControls;
             }
             return This.gameObject.scene.buildIndex < 0;
         }
-
+        public void onEventSystemClick(BaseEventData eventData)
+    {
+        Debug.Log("Click"+ eventData);
+    }
+        private void Awake()
+    {
+        main = this;
+    }
         private void Start()
         {
-            main = this;
+            
             if(!TreeView)
             {
                 Debug.LogError("Set TreeView field");
@@ -42,10 +50,14 @@ using Battlehub.UIControls;
             TreeView.ItemEndDrag += OnItemEndDrag;
 
 
-            //InvokeRepeating("updateTree", 1, 1);
+            
             updateTree();
         }
-
+        
+        private void Update()
+    {
+        UnselectIfClickedOutside();
+    }
         public void updateTree()
         {
             if (WorkerManager.main != null)
@@ -115,14 +127,25 @@ using Battlehub.UIControls;
                 }
             }
         }
-
-        /// <summary>
-        /// This method called for each data item during databinding operation
-        /// You have to bind data item properties to ui elements in order to display them.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void OnItemDataBinding(object sender, TreeViewItemDataBindingArgs e)
+    private void UnselectIfClickedOutside()
+    {
+        
+        if (Input.GetMouseButton(0) && this.transform.gameObject.activeSelf &&
+            !RectTransformUtility.RectangleContainsScreenPoint(
+                this.transform.gameObject.GetComponent<RectTransform>(),
+                Input.mousePosition,
+                null))
+        {
+            TreeView.SelectedItems = "";
+        }
+    }
+    /// <summary>
+    /// This method called for each data item during databinding operation
+    /// You have to bind data item properties to ui elements in order to display them.
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void OnItemDataBinding(object sender, TreeViewItemDataBindingArgs e)
         {
             GameObject dataItem = e.Item as GameObject;
             if (dataItem != null)

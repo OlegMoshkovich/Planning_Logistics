@@ -9,11 +9,15 @@ using System.Collections.Generic;
         public List<ExclusionZone> listOfExclusionZones= new List<ExclusionZone>();
         public GameObject exclusionZones;
 
-        public static ExclusionZoneManager main = new ExclusionZoneManager();
-        // Use this for initialization
-        void Start()
+        public static ExclusionZoneManager main;
+    // Use this for initialization
+        void Awake()
+    {
+        main = this;
+    }
+    void Start()
         {
-            main = this;
+          
         exclusionZones = new GameObject();
         exclusionZones.name = "Exclusion Zones";
         exclusionZones.AddComponent<Folder>();

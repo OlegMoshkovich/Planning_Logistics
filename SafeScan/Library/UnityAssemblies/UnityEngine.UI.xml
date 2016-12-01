@@ -662,51 +662,6 @@
         <para>Data as T.</para>
       </returns>
     </member>
-    <member name="T:UnityEngine.EventSystems.HoloLensInputModule">
-      <summary>
-        <para>A BaseInputModule designed for HoloLens input.</para>
-      </summary>
-    </member>
-    <member name="F:UnityEngine.EventSystems.HoloLensInputModule.m_NormalizedNavigationToScreenOffsetScalar">
-      <summary>
-        <para>Defines the number of pixels of emulated mouse movement when a value of positive or negative 1 is reported by the device for a navigation gesture.</para>
-      </summary>
-    </member>
-    <member name="F:UnityEngine.EventSystems.HoloLensInputModule.m_TimeToPressOnTap">
-      <summary>
-        <para>Controls the number of seconds that taps (emulated mouse clicks) will leave any tapped UI object in the Pressed state for better user feedback.</para>
-      </summary>
-    </member>
-    <member name="M:UnityEngine.EventSystems.HoloLensInputModule.ActivateModule">
-      <summary>
-        <para>See BaseInputModule.</para>
-      </summary>
-    </member>
-    <member name="M:UnityEngine.EventSystems.HoloLensInputModule.DeactivateModule">
-      <summary>
-        <para>See BaseInputModule.</para>
-      </summary>
-    </member>
-    <member name="M:UnityEngine.EventSystems.HoloLensInputModule.IsModuleSupported">
-      <summary>
-        <para>See BaseInputModule.</para>
-      </summary>
-    </member>
-    <member name="M:UnityEngine.EventSystems.HoloLensInputModule.Process">
-      <summary>
-        <para>See BaseInputModule.</para>
-      </summary>
-    </member>
-    <member name="M:UnityEngine.EventSystems.HoloLensInputModule.ShouldActivateModule">
-      <summary>
-        <para>See BaseInputModule.</para>
-      </summary>
-    </member>
-    <member name="M:UnityEngine.EventSystems.HoloLensInputModule.UpdateModule">
-      <summary>
-        <para>See BaseInputModule.</para>
-      </summary>
-    </member>
     <member name="?:UnityEngine.EventSystems.IBeginDragHandler">
       <summary>
         <para>Interface to implement if you wish to receive OnBeginDrag callbacks.</para>

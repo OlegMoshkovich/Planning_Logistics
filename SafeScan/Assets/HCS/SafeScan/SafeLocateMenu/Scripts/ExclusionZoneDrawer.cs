@@ -23,7 +23,7 @@ using System.Collections.Generic;
             lineRendererGO = new GameObject();
             lineRendererGO.AddComponent<LineRenderer>();
             lineRenderer = lineRendererGO.GetComponent<LineRenderer>();
-        lineRenderer.material = ExclusionZoneManager.main.exclusionZoneWarningMaterial;
+            lineRenderer.material = ExclusionZoneManager.main.exclusionZoneWarningMaterial;
             linePoints = new List<Vector3>();
         }
 
