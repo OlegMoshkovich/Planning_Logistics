@@ -4,14 +4,11 @@ using System.Collections;
 public class WorkerTagMovement : MonoBehaviour {
     public int frequency;
     private Tag tag;
-    private GameObject target;
+    public GameObject target;
     // Use this for initialization
     void Start()
     {
         tag = new Tag();
-        target = new GameObject();
-        target.transform.parent = this.gameObject.transform;
-        this.GetComponent<WorkerMovement>().navMeshGoal = target;
     }
 	
 	// Update is called once per frame
@@ -20,7 +17,7 @@ public class WorkerTagMovement : MonoBehaviour {
         {
             if (frequency == selectedTag.Frequency) tag = selectedTag;
         }
-        if (tag != null) target.transform.position = new Vector3(tag.X, 0, tag.Y);
+        if (tag != null) target.transform.position = new Vector3(tag.X, 0.1f, tag.Y);
         else Debug.LogError("couldn't find tag data");
     }
 }

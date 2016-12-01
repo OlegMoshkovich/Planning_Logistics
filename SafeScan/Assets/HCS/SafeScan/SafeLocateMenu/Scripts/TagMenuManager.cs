@@ -6,9 +6,9 @@ using UnityEngine.UI;
 
 public class TagMenuManager : MonoBehaviour {
 
-    // Use this for initialization
-    private List<Tag> listOfQTrackTags = new List<Tag>();
-    private List<GameObject> listOfDataRows = new List<GameObject>();
+
+
+    public Dictionary<GameObject, GameObject> tagRows  = new Dictionary<GameObject, GameObject>(); //<Worker, Tag Row>
     public GameObject dataRow;
 	void Start () {
         
@@ -21,36 +21,45 @@ public class TagMenuManager : MonoBehaviour {
     {
         
     }
+    public void ClearRows()
+    {
+        foreach(KeyValuePair<GameObject, GameObject> entry in tagRows)
+        {
+            Destroy(entry.Value);
+        }
+        tagRows.Clear();
+    }
     public void RefreshTagTable()
     {
+        //Clear rows
+        ClearRows();
+        //Populate Rows
         try
-        {   
-            listOfQTrackTags = mqttManager.main.listOfQTrackTags;
-            for(int i=0; i<WorkerManager.main.listOfWorkers.Count; i++)
+        {
+            for (int i = 0; i < WorkerManager.main.listOfWorkers.Count; i++)
             {
-                GameObject newRow = (GameObject) UnityEngine.Object.Instantiate(dataRow, GameObject.Find("TagTable").transform);
-                newRow.transform.position = new Vector3(dataRow.transform.position.x, dataRow.transform.position.y - 40 * (i+1), dataRow.transform.position.z);
-                newRow.transform.localScale = Vector3.one;
-                newRow.GetComponentsInChildren<Text>()[0].text = WorkerManager.main.listOfWorkers[i].name;
-                newRow.GetComponentsInChildren<Text>()[3].text = WorkerManager.main.listOfWorkers[i].GetComponent<WorkerTagMovement>().frequency.ToString();
-                listOfDataRows.Add(newRow);
+                GameObject selectedRow = (GameObject)UnityEngine.Object.Instantiate(dataRow, this.transform);
+                tagRows.Add(WorkerManager.main.listOfWorkers[i],selectedRow);
+                selectedRow.transform.localScale = Vector3.one;
+                selectedRow.transform.position = new Vector3(600, 400 - 40 * (i + 1), 0);
+                selectedRow.GetComponentsInChildren<Text>()[0].text = WorkerManager.main.listOfWorkers[i].name;
+                selectedRow.GetComponentsInChildren<Text>()[3].text = WorkerManager.main.listOfWorkers[i].GetComponent<WorkerTagMovement>().frequency.ToString();
             }
+        
         }
         catch (Exception error)
         {
-            Debug.Log("error");
+            Debug.Log(error.ToString());
         }
     }
-    public void EmptyTagTable()
-    {
-        foreach(GameObject dataRow in listOfDataRows)
-        {
-            Destroy(dataRow);
-        }
-        listOfDataRows = new List<GameObject>();
-    }
+
     public void SubmitData()
     {
-        
+        foreach (KeyValuePair<GameObject, GameObject> entry in tagRows)
+        {
+            entry.Key.GetComponent<WorkerTagMovement>().frequency = int.Parse(entry.Value.GetComponentsInChildren<Text>()[4].text);
+            entry.Key.name = entry.Value.GetComponentsInChildren<Text>()[1].text;
+            Debug.Log("!!!!!!!!!"+entry.Value.GetComponentsInChildren<Text>()[4].text);
+        }
     }
 }

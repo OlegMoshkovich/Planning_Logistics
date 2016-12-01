@@ -19,6 +19,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000010672821222}
+  - 114: {fileID: 114000011040141940}
+  - 114: {fileID: 114000012245711908}
   m_Layer: 0
   m_Name: ExclusionZoneManager
   m_TagString: Untagged
@@ -32,10 +34,40 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011597938378}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 19.155916, y: 3.8332577, z: 15.488655}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 16.785648, y: 3.8332577, z: 22.329208}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114000011040141940
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011597938378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcdbc588f6fbb6b48bc697d04a8a0631, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drawerActive: 0
+  linePoints: []
+--- !u!114 &114000012245711908
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011597938378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90ece937bb7c13b45bf4846d4f403285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  exclusionZoneDangerMaterial: {fileID: 2100000, guid: 18b85ee38e9d24745ad2acc705ae633d,
+    type: 2}
+  exclusionZoneWarningMaterial: {fileID: 2100000, guid: 60d952d6b1a044947bedf5deadc83962,
+    type: 2}
+  listOfExclusionZones: []
+  exclusionZones: {fileID: 0}

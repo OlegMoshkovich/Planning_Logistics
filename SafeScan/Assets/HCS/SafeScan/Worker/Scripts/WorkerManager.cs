@@ -43,6 +43,11 @@ public class WorkerManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        //Check for deletes
+        for(int i=0; i<listOfWorkers.Count; i++)
+        {
+            if (listOfWorkers[i] == null) listOfWorkers.RemoveAt(i);
+        }
 
 	}
     public void CreateWorker()
