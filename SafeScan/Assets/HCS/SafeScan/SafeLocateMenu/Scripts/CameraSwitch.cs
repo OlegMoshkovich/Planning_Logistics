@@ -37,6 +37,8 @@ public class CameraSwitch : MonoBehaviour {
         if (followTarget)
         {
             updateCameraWithOffset(targetTransform);
+            //updateCameraWithoutOffset(targetTransform);
+            //FocusCameraOnGameObject(Camera.main, targetTransform.gameObject);
         }
         else
         {
@@ -53,16 +55,33 @@ public class CameraSwitch : MonoBehaviour {
 
     private void updateCameraWithOffset(Transform transform)
     {
-        Bounds bounds = new Bounds(transform.position, Vector3.one);
-        Renderer[] renderers = transform.GetComponentsInChildren<Renderer>();
-        foreach (Renderer renderer in renderers)
-        {
-            bounds.Encapsulate(renderer.bounds);
-        }
-        cameraOffset = new Vector3(0, bounds.size.y, -bounds.size.z-2);
-        cameraOffset = transform.rotation * cameraOffset;
-        Camera.main.transform.localPosition = Vector3.SmoothDamp(Camera.main.transform.position, transform.position + cameraOffset, ref cameraVelocity, locationSmoothTime);
+        Bounds b = CalculateBounds(transform.gameObject);
+        float frustrumHeight = b.size.y;
+        float distance = frustrumHeight * 0.5f / Mathf.Tan(Camera.main.fieldOfView * 0.5f * Mathf.Deg2Rad);
+        cameraOffset = transform.forward * -distance + transform.up * distance;
+        Camera.main.transform.position = Vector3.SmoothDamp(Camera.main.transform.position,transform.position + cameraOffset, ref cameraVelocity, locationSmoothTime);
         Camera.main.transform.rotation = Quaternion.Slerp(Camera.main.transform.rotation, transform.rotation, Time.deltaTime * rotateSmoothFactor);
+    }
+    private Bounds CalculateBounds(GameObject go)
+    {
+        Bounds b = new Bounds(go.transform.position, Vector3.zero);
+        Object[] rList = go.GetComponentsInChildren(typeof(Renderer));
+        foreach (Renderer r in rList)
+        {
+            b.Encapsulate(r.bounds);
+        }
+        return b;
+    }
+    private void FocusCameraOnGameObject(Camera c, GameObject go)
+    {
+        Bounds b = CalculateBounds(go);
+        Vector3 max = b.size;
+        float radius = Mathf.Max(max.x, Mathf.Max(max.y, max.z));
+        float dist = radius / (Mathf.Sin(c.fieldOfView * Mathf.Deg2Rad / 2f));
+        Debug.Log("Radius = " + radius + " dist = " + dist);
+        Vector3 pos = Random.onUnitSphere * dist + b.center;
+        c.transform.position = pos;
+        c.transform.LookAt(b.center);
     }
     private void updateCameraWithoutOffset(Transform transform)
     {

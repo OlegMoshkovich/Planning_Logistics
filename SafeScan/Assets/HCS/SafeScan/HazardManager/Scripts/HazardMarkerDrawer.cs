@@ -18,7 +18,7 @@ public class HazardMarkerDrawer : MonoBehaviour {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out hit, 100.0f))
             {
-                Vector3 worldPoint = new Vector3(hit.point.x, hit.point.y + 1, hit.point.z);
+                Vector3 worldPoint = new Vector3(hit.point.x, hit.point.y + 0.1f, hit.point.z);
                 GameObject newHazardMarker = (GameObject)Instantiate(HazardManager.main.HazardMarkerPrefab, HazardManager.main.transform);
                 newHazardMarker.transform.position = worldPoint;
                 newHazardMarker.transform.rotation.SetEulerAngles(Camera.main.transform.eulerAngles.x, Camera.main.transform.eulerAngles.y, Camera.main.transform.eulerAngles.z);

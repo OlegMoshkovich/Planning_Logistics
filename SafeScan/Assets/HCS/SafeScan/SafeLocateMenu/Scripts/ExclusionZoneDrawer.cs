@@ -43,6 +43,7 @@ using System.Collections.Generic;
                         Vector3 worldPoint = new Vector3(hit.point.x, yValue, hit.point.z);
                         linePoints.Add(worldPoint);
                         GameObject newPoint = GameObject.CreatePrimitive(PrimitiveType.Cube);
+                    newPoint.transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
                         newPoint.GetComponent<Renderer>().material = ExclusionZoneManager.main.exclusionZoneDangerMaterial;
                         newPoint.transform.position = worldPoint;
                         UpdateLine();
