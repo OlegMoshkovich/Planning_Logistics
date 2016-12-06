@@ -10,10 +10,9 @@ public class LookAtCamera : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (CameraSwitch.main.targetTransform != this.transform)
-        {
-            if (!inverse) this.transform.LookAt(Camera.main.transform.position);
-            if (inverse) this.transform.LookAt(-1* Camera.main.transform.position);
-        }
+
+			Vector3 activeCamera = Camera.current.transform.position;	
+			this.transform.rotation = Quaternion.LookRotation(this.transform.position - activeCamera);
+
         }
 }
