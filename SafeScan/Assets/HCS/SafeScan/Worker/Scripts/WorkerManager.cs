@@ -20,7 +20,8 @@ public class WorkerManager : MonoBehaviour {
     // Use this for initialization
     public delegate void ListAction();
     public static event ListAction OnChange;
-	void Start () {
+    private void Awake()
+    {
         main = this;
         fallIndicatorsParent = new GameObject();
         fallIndicatorsParent.name = "Fall Indicators";
@@ -33,6 +34,10 @@ public class WorkerManager : MonoBehaviour {
         workers = new GameObject();
         workers.name = "Workers";
         workers.AddComponent<Folder>();
+    }
+    void Start () {
+       
+        
         foreach (WorkerMovement wm in GameObject.FindObjectsOfType<WorkerMovement>())
         {
             listOfWorkers.Add(wm.gameObject);
