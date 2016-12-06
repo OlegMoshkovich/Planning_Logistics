@@ -7,6 +7,11 @@ using System.Linq;
 public class CameraSwitch : MonoBehaviour {
 
 	public Dropdown dropdown;
+	private float extraOffsetX = 1F;
+	private float extraOffsetY = 1F;
+	private float extraOffsetZ = 1F;
+
+
     private Camera selectedCamera;
     public List<Camera> listOfCameras = new List<Camera>();
     public float locationSmoothTime = 0.3F;
@@ -47,6 +52,7 @@ public class CameraSwitch : MonoBehaviour {
         }
         //Debug.Log("Selected Camera: " + targetTransform.position);
     }
+	 
     public void SetTarget(Transform transform)
     {
         followTarget = true;
@@ -59,9 +65,12 @@ public class CameraSwitch : MonoBehaviour {
         {
             Bounds b = CalculateBounds(transform.gameObject);
             float frustrumHeight = b.size.y;
+			Vector3 extraOffset = new Vector3 (extraOffsetX, extraOffsetY, extraOffsetZ);
+
             float distance = frustrumHeight * 0.5f / Mathf.Tan(Camera.main.fieldOfView * 0.5f * Mathf.Deg2Rad);
             cameraOffset = transform.forward * -distance + transform.up * distance;
-            Camera.main.transform.position = Vector3.SmoothDamp(Camera.main.transform.position, transform.position + cameraOffset, ref cameraVelocity, locationSmoothTime);
+
+			Camera.main.transform.position = Vector3.SmoothDamp(Camera.main.transform.position, transform.position + cameraOffset + extraOffset, ref cameraVelocity, locationSmoothTime);
             Camera.main.transform.rotation = Quaternion.Slerp(Camera.main.transform.rotation, transform.rotation, Time.deltaTime * rotateSmoothFactor);
         }
     }
@@ -75,6 +84,7 @@ public class CameraSwitch : MonoBehaviour {
         }
         return b;
     }
+
     private void FocusCameraOnGameObject(Camera c, GameObject go)
     {
         Bounds b = CalculateBounds(go);
@@ -86,11 +96,13 @@ public class CameraSwitch : MonoBehaviour {
         c.transform.position = pos;
         c.transform.LookAt(b.center);
     }
+
     private void updateCameraWithoutOffset(Transform transform)
     {
         Camera.main.transform.position = Vector3.SmoothDamp(Camera.main.transform.position, transform.position, ref cameraVelocity, locationSmoothTime);
         Camera.main.transform.rotation = Quaternion.Slerp(Camera.main.transform.rotation, transform.rotation, Time.deltaTime * rotateSmoothFactor);
     }
+
     private void populateCameraDropDown(){
         dropdown.AddOptions(listOfCameras.Select(i => i.name).ToList());
 	}
