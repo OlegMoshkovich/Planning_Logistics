@@ -55,12 +55,15 @@ public class CameraSwitch : MonoBehaviour {
 
     private void updateCameraWithOffset(Transform transform)
     {
-        Bounds b = CalculateBounds(transform.gameObject);
-        float frustrumHeight = b.size.y;
-        float distance = frustrumHeight * 0.5f / Mathf.Tan(Camera.main.fieldOfView * 0.5f * Mathf.Deg2Rad);
-        cameraOffset = transform.forward * -distance + transform.up * distance;
-        Camera.main.transform.position = Vector3.SmoothDamp(Camera.main.transform.position,transform.position + cameraOffset, ref cameraVelocity, locationSmoothTime);
-        Camera.main.transform.rotation = Quaternion.Slerp(Camera.main.transform.rotation, transform.rotation, Time.deltaTime * rotateSmoothFactor);
+        if(transform != null)
+        {
+            Bounds b = CalculateBounds(transform.gameObject);
+            float frustrumHeight = b.size.y;
+            float distance = frustrumHeight * 0.5f / Mathf.Tan(Camera.main.fieldOfView * 0.5f * Mathf.Deg2Rad);
+            cameraOffset = transform.forward * -distance + transform.up * distance;
+            Camera.main.transform.position = Vector3.SmoothDamp(Camera.main.transform.position, transform.position + cameraOffset, ref cameraVelocity, locationSmoothTime);
+            Camera.main.transform.rotation = Quaternion.Slerp(Camera.main.transform.rotation, transform.rotation, Time.deltaTime * rotateSmoothFactor);
+        }
     }
     private Bounds CalculateBounds(GameObject go)
     {

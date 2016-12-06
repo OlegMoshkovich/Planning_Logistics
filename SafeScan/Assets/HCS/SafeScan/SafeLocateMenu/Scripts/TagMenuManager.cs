@@ -11,7 +11,7 @@ public class TagMenuManager : MonoBehaviour {
     public Dictionary<GameObject, GameObject> tagRows  = new Dictionary<GameObject, GameObject>(); //<Worker, Tag Row>
     public GameObject dataRow;
 	void Start () {
-        
+        RefreshTagTable();
     }
 	
 	// Update is called once per frame
@@ -40,8 +40,11 @@ public class TagMenuManager : MonoBehaviour {
             {
                 GameObject selectedRow = (GameObject)UnityEngine.Object.Instantiate(dataRow, this.transform);
                 tagRows.Add(WorkerManager.main.listOfWorkers[i],selectedRow);
+                //selectedRow
                 selectedRow.transform.localScale = Vector3.one;
-                selectedRow.transform.position = new Vector3(600, 400 - 40 * (i + 1), 0);
+                selectedRow.GetComponent<RectTransform>().SetInsetAndSizeFromParentEdge(RectTransform.Edge.Top, -10 +  30 * (i + 1), 35);
+                selectedRow.GetComponent<RectTransform>().SetInsetAndSizeFromParentEdge(RectTransform.Edge.Left, 420,665);
+                //selectedRow.transform.position = new Vector3(600, -20 - 40 * (i + 1), 0);
                 selectedRow.GetComponentsInChildren<Text>()[0].text = WorkerManager.main.listOfWorkers[i].name;
                 selectedRow.GetComponentsInChildren<Text>()[3].text = WorkerManager.main.listOfWorkers[i].GetComponent<WorkerTagMovement>().frequency.ToString();
             }

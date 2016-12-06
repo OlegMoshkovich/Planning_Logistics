@@ -13,6 +13,7 @@ public class mqttManager : MonoBehaviour {
     public bool convertUnitsToMeters = true;
 	private MqttClient client;
     private MqttClient client2;
+    private MqttClient clientBlueMix;
     public List<Tag> listOfQTrackTags = new List<Tag>();
     public List<HCSTag> listOfHCSTags = new List<HCSTag>();
 
@@ -24,17 +25,23 @@ public class mqttManager : MonoBehaviour {
 		// create client instance 
 		client = new MqttClient(IPAddress.Parse("137.135.91.79"),1883 , false , null );
         client2 = new MqttClient(IPAddress.Parse("137.135.91.79"), 1883, false, null);
+        clientBlueMix = new MqttClient("tmsmv4.messaging.internetofthings.ibmcloud.com", 1883, false, null);
         // register to message received 
         client.MqttMsgPublishReceived += client_MqttMsgPublishReceived;
         client2.MqttMsgPublishReceived += client2_MqttMsgPublishReceived;
+        clientBlueMix.MqttMsgPublishReceived += clientBlueMix_MqttMsgPusblishReceived;
 
         string clientId = Guid.NewGuid().ToString(); 
 		client.Connect(clientId);
         //client2.Connect(clientId);
-		
-		// Q-Track Subscribe
-		client.Subscribe(new string[] { "qtrack/+" }, new byte[] { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE });
+        //clientBlueMix.Connect( clientID, username, password)
+        clientBlueMix.Connect("a: tmsmv4:493fpablo", "a-tmsmv4-ubooo5duzq", "7mAjKMKu@aWG0c4f08");
+
+        // Q-Track Subscribe
+        client.Subscribe(new string[] { "qtrack/+" }, new byte[] { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE });
         client2.Subscribe(new string[] { "V1/vest/#" }, new byte[] { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE });
+        //topic to publish {"Alarm": 0}
+        clientBlueMix.Subscribe(new string[] { "iot-2/type/HCSTag/id/493f/cmd/calib/fml/json" }, new byte[] { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE });
 
 
     }
@@ -122,12 +129,16 @@ public class mqttManager : MonoBehaviour {
             Debug.LogError("error" + error);
         }
     }
+    void clientBlueMix_MqttMsgPusblishReceived(object sender, MqttMsgPublishEventArgs e)
+    {
+        Debug.Log("BLUEMIX received");
+    }
     void OnGUI(){
-		if ( GUI.Button (new Rect (20,40,80,20), "Send Alert")) {
+		/*if ( GUI.Button (new Rect (20,40,80,20), "Send Alert")) {
 			Debug.Log("sending...");
 			client.Publish("alerts", System.Text.Encoding.UTF8.GetBytes("Sending from Unity3D!!!"), MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE, true);
 			Debug.Log("sent");
-		}
+		}*/
 	}
 
 	// Update is called once per frame
