@@ -1,27 +1,29 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 
 public class CameraSwitch : MonoBehaviour {
 
 	public Dropdown dropdown;
+	public List<Camera> listOfCameras = new List<Camera>();
+	public float locationSmoothTime = 0.3F;
+	public float rotateSmoothFactor = 2.0F;
+	public bool followTarget = false;
+
+	public Transform targetTransform;
+
+	public static CameraSwitch main;
+
 	private float extraOffsetX = 1F;
 	private float extraOffsetY = 1F;
 	private float extraOffsetZ = 1F;
 
-
     private Camera selectedCamera;
-    public List<Camera> listOfCameras = new List<Camera>();
-    public float locationSmoothTime = 0.3F;
-    public float rotateSmoothFactor = 2.0F;
-    private Vector3 cameraVelocity = Vector3.zero;
-    public bool followTarget = false;
-    public Transform targetTransform;
-    private Vector3 cameraOffset = new Vector3();
-
-    public static CameraSwitch main;
+	private Vector3 cameraVelocity = Vector3.zero;
+	private Vector3 cameraOffset = new Vector3 ();
+  
 
     // Use this for initialization
     void Start() {
@@ -32,40 +34,44 @@ public class CameraSwitch : MonoBehaviour {
 		populateCameraDropDown ();
 	}
 
-    void Update()
-    {
-        /*if(Input.GetMouseButton(1)==true || Input.GetAxis("Mouse ScrollWheel") != 0 || Input.GetAxis("JoystickHorizontal") != 0 || Input.GetAxis("JoystickVertical") != 0)
-        {
-            followTarget = false;
-            Camera.main.GetComponent<CameraControl>().enabled = true;
-        }*/
-        if (followTarget)
-        {
-            updateCameraWithOffset(targetTransform);
-            //updateCameraWithoutOffset(targetTransform);
-            //FocusCameraOnGameObject(Camera.main, targetTransform.gameObject);
-        }
-        else
-        {
-            //updateCameraWithoutOffset(targetTransform);
-            
-        }
-        //Debug.Log("Selected Camera: " + targetTransform.position);
-    }
-	 
-    public void SetTarget(Transform transform)
-    {
-        followTarget = true;
-        targetTransform = transform;
-    }
+	private void populateCameraDropDown(){
+		dropdown.AddOptions(listOfCameras.Select(i => i.name).ToList());
+	}
 
+
+	public void dropDown_IndexChange(int index){//this function is tirggered by the dropdown change
+		selectedCamera = listOfCameras[index];// get the index of the selected camera
+		targetTransform = selectedCamera.transform;// get the transform of the selected camera
+		Camera.main.GetComponent<CameraControl>().isometric = true; // Change the isometric boolean of the main camera to true - QUESTION
+		this.SetTarget(targetTransform);//pass the transform of the selected camera to the SetTarget Function
+		//Debug.Log(targetTransform.position);
+	}
+
+	public void SetTarget(Transform transform) //pass the selected camera transform to the function
+	{
+		followTarget = true; // when the function is called trigger the followTarget Switch of the Manager
+		targetTransform = transform;//set the public targetTransform variable to the selected camera transorm
+	}
+
+
+
+    void Update()// watch for change of the follow Target to true
+    {
+        if (followTarget) // if follow target switch is triggered
+        {
+            updateCameraWithOffset(targetTransform);//Update the Main camera with the Transform of the selected Camera / Target
+        }
+    }
+		
     private void updateCameraWithOffset(Transform transform)
     {
-        if(transform != null)
+        if(transform != null)// check for the valifity of the transform variabl
         {
-            Bounds b = CalculateBounds(transform.gameObject);
+            Bounds b = CalculateBounds(transform.gameObject); // Calculate the bounding box of the target GameObject
+
             float frustrumHeight = b.size.y;
-			Vector3 extraOffset = new Vector3 (extraOffsetX, extraOffsetY, extraOffsetZ);
+
+			Vector3 extraOffset = new Vector3 (extraOffsetX, extraOffsetY, extraOffsetZ);// added the variable to set the exta offset of the camera
 
             float distance = frustrumHeight * 0.5f / Mathf.Tan(Camera.main.fieldOfView * 0.5f * Mathf.Deg2Rad);
             cameraOffset = transform.forward * -distance + transform.up * distance;
@@ -74,46 +80,34 @@ public class CameraSwitch : MonoBehaviour {
             Camera.main.transform.rotation = Quaternion.Slerp(Camera.main.transform.rotation, transform.rotation, Time.deltaTime * rotateSmoothFactor);
         }
     }
+
     private Bounds CalculateBounds(GameObject go)
     {
-        Bounds b = new Bounds(go.transform.position, Vector3.zero);
-        Object[] rList = go.GetComponentsInChildren(typeof(Renderer));
-        foreach (Renderer r in rList)
+        Bounds b = new Bounds(go.transform.position, Vector3.zero);// Bounding Box - axis aligned - fully enclosed - the method accepts Center + Size
+        Object[] rList = go.GetComponentsInChildren(typeof(Renderer));// get all the of the renderer components attacehd to the current target ???
+       
+		foreach (Renderer r in rList)// clarify?
         {
             b.Encapsulate(r.bounds);
         }
         return b;
     }
 
-    private void FocusCameraOnGameObject(Camera c, GameObject go)
-    {
-        Bounds b = CalculateBounds(go);
-        Vector3 max = b.size;
-        float radius = Mathf.Max(max.x, Mathf.Max(max.y, max.z));
-        float dist = radius / (Mathf.Sin(c.fieldOfView * Mathf.Deg2Rad / 2f));
-        Debug.Log("Radius = " + radius + " dist = " + dist);
-        Vector3 pos = Random.onUnitSphere * dist + b.center;
-        c.transform.position = pos;
-        c.transform.LookAt(b.center);
-    }
 
-    private void updateCameraWithoutOffset(Transform transform)
-    {
-        Camera.main.transform.position = Vector3.SmoothDamp(Camera.main.transform.position, transform.position, ref cameraVelocity, locationSmoothTime);
-        Camera.main.transform.rotation = Quaternion.Slerp(Camera.main.transform.rotation, transform.rotation, Time.deltaTime * rotateSmoothFactor);
-    }
 
-    private void populateCameraDropDown(){
-        dropdown.AddOptions(listOfCameras.Select(i => i.name).ToList());
-	}
+//    private void FocusCameraOnGameObject(Camera c, GameObject go)
+//    {
+//        Bounds b = CalculateBounds(go);
+//        Vector3 max = b.size;
+//        float radius = Mathf.Max(max.x, Mathf.Max(max.y, max.z));
+//        float dist = radius / (Mathf.Sin(c.fieldOfView * Mathf.Deg2Rad / 2f));
+//        Debug.Log("Radius = " + radius + " dist = " + dist);
+//        Vector3 pos = Random.onUnitSphere * dist + b.center;
+//        c.transform.position = pos;
+//        c.transform.LookAt(b.center);
+//    }
+		
 
-	public void dropDown_IndexChange(int index){
-        //TreeViewManager.main.TreeView.Unselect();
-        selectedCamera = listOfCameras[index];
-        targetTransform = selectedCamera.transform;
-        this.SetTarget(targetTransform);
-        Debug.Log(targetTransform.position);
-        Camera.main.GetComponent<CameraControl>().isometric = true;
-	}
+
 
 }

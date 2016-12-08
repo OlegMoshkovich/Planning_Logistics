@@ -2,7 +2,6 @@
 
 public class Movement : MonoBehaviour
 {
-	//spublic int m_PlayerNumber = 1;              // Used to identify which object belongs to which player.  This is set by this tank's manager.
 	public float m_Speed = 12f;                 // How fast the object moves forward and back.
 	public float m_TurnSpeed = 180f;            // How fast the object turns in degrees per second.
 
@@ -15,7 +14,7 @@ public class Movement : MonoBehaviour
 
 	private void Awake ()
 	{
-		m_Rigidbody = GetComponent<Rigidbody> ();
+//		m_Rigidbody = GetComponent<Rigidbody> ();
 	}
 		
 
@@ -24,6 +23,8 @@ public class Movement : MonoBehaviour
 		// The axes names are based on player number.
 		m_MovementAxisName = "Vertical";
 		m_TurnAxisName = "Horizontal";
+
+	
 	}
 
 
@@ -49,7 +50,7 @@ public class Movement : MonoBehaviour
 		Vector3 movement = transform.forward * m_MovementInputValue * m_Speed * Time.deltaTime;
 
 		// Apply this movement to the rigidbody's position.
-		m_Rigidbody.MovePosition(m_Rigidbody.position + movement);
+		//m_Rigidbody.MovePosition(m_Rigidbody.position + movement);
 	}
 
 
@@ -62,6 +63,6 @@ public class Movement : MonoBehaviour
 		Quaternion turnRotation = Quaternion.Euler (0f, turn, 0f);
 
 		// Apply this rotation to the rigidbody's rotation.
-		m_Rigidbody.MoveRotation (m_Rigidbody.rotation * turnRotation);
+//		m_Rigidbody.MoveRotation (m_Rigidbody.rotation * turnRotation);
 	}
 }

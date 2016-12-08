@@ -4,12 +4,7 @@ using System.Collections;
 public class CameraControl : MonoBehaviour {
     public Texture2D cursorPan;
     public Texture2D cursorZoom;
-
     public bool isometric = true;
-    // Use this for initialization
-    void Start () {
-	
-	}
 	
 	// Update is called once per frame
 	void Update () {
@@ -23,6 +18,7 @@ public class CameraControl : MonoBehaviour {
                 Cursor.SetCursor(cursorPan, Vector2.zero, CursorMode.Auto);
                 this.transform.position -= Input.GetAxis("Horizontal") * transform.TransformDirection(Vector3.right) + Input.GetAxis("Vertical") * transform.TransformDirection(Vector3.up);
             }
+
             //ZOOM ON SCROLL
             if (Input.GetAxis("Mouse ScrollWheel") != 0)
             {
@@ -31,7 +27,8 @@ public class CameraControl : MonoBehaviour {
                 this.transform.position += Input.GetAxis("Mouse ScrollWheel") * transform.TransformDirection(Vector3.forward) + Input.GetAxis("Horizontal") * transform.TransformDirection(Vector3.right) + Input.GetAxis("Vertical") * transform.TransformDirection(Vector3.up);
             }
         }
-        if (!isometric)
+      
+		if (!isometric)
         {
             if(Input.GetAxis("JoystickHorizontal") != 0 || Input.GetAxis("JoystickVertical") != 0)
             {
@@ -40,17 +37,9 @@ public class CameraControl : MonoBehaviour {
             }
             if (Input.GetMouseButton(1))
             {
-                /*float x = this.transform.eulerAngles.x + Input.GetAxis("Horizontal");
-                float y = this.transform.eulerAngles.y + Input.GetAxis("Vertical");
-                
-                var rotation = Quaternion.Euler(y, x, 0);
-                transform.rotation = rotation;
-                */
                 CameraSwitch.main.followTarget = false;
                 float dx = Input.GetAxis("Horizontal");
-
                 float dy = Input.GetAxis("Vertical");
-
                 float rotationX = transform.localEulerAngles.y + dx * 0.4f;
                 float rotationY = transform.localEulerAngles.x - dy * 0.4f;
                 Mathf.Clamp(rotationY, 0, 180);
