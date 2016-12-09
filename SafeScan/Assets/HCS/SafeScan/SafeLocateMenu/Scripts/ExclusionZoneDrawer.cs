@@ -114,10 +114,10 @@ using System.Collections.Generic;
             filter.mesh = msh;
             newExclusionZone.GetComponent<MeshRenderer>().material = ExclusionZoneManager.main.exclusionZoneDangerMaterial;
             newExclusionZone.AddComponent<MeshCollider>();
+
         //Add to list of Exclusion Zones
-            ExclusionZone ez = new ExclusionZone();
-            ez.gameObject = newExclusionZone;
-            ExclusionZoneManager.main.listOfExclusionZones.Add(ez);
+            newExclusionZone.AddComponent<ExclusionZone>();
+            ExclusionZoneManager.main.listOfExclusionZones.Add(newExclusionZone);
         //Update Tree
             TreeViewManager.main.TreeView.AddChild(ExclusionZoneManager.main.exclusionZones, newExclusionZone);
             //Clear Drawing

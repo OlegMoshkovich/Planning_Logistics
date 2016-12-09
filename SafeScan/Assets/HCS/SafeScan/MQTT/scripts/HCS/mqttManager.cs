@@ -16,6 +16,8 @@ public class mqttManager : MonoBehaviour {
     private MqttClient clientBlueMix;
     public List<Tag> listOfQTrackTags = new List<Tag>();
     public List<HCSTag> listOfHCSTags = new List<HCSTag>();
+    public List<string> incomingLog = new List<string>();
+    public List<string> outgoingLog = new List<string>();
 
     public static mqttManager main;
 	// Use this for initialization
@@ -30,6 +32,17 @@ public class mqttManager : MonoBehaviour {
         client.MqttMsgPublishReceived += client_MqttMsgPublishReceived;
         client2.MqttMsgPublishReceived += client2_MqttMsgPublishReceived;
         clientBlueMix.MqttMsgPublishReceived += clientBlueMix_MqttMsgPusblishReceived;
+
+        //Register Messages To IncomingLog
+        client.MqttMsgPublishReceived += logIncomingData;
+        client2.MqttMsgPublishReceived += logIncomingData;
+        clientBlueMix.MqttMsgPublishReceived += logIncomingData;
+
+        //Registe Messages to OutgoingLog
+        client.MqttMsgPublished += logOutgoingData;
+        client2.MqttMsgPublished += logOutgoingData;
+        clientBlueMix.MqttMsgPublished += logOutgoingData;
+
 
         string clientId = Guid.NewGuid().ToString(); 
 		client.Connect(clientId);
@@ -132,6 +145,19 @@ public class mqttManager : MonoBehaviour {
     void clientBlueMix_MqttMsgPusblishReceived(object sender, MqttMsgPublishEventArgs e)
     {
         Debug.Log("BLUEMIX received");
+    }
+    void logOutgoingData(object sender, MqttMsgPublishedEventArgs e)
+    {
+        if (outgoingLog.Count > 1000) outgoingLog = new List<string>();
+        string message = "Sender: " + sender.ToString() + " Message: " + e.ToString();
+        outgoingLog.Add(message);
+    }
+    void logIncomingData(object sender, MqttMsgPublishEventArgs e)
+    {
+        if (incomingLog.Count > 1000) incomingLog = new List<string>();
+        string message = "Time :"+ DateTime.Now + "Topic: " + e.Topic;
+        message += " Message: "+ System.Text.Encoding.UTF8.GetString(e.Message);
+        incomingLog.Add(message);
     }
     void OnGUI(){
 		/*if ( GUI.Button (new Rect (20,40,80,20), "Send Alert")) {

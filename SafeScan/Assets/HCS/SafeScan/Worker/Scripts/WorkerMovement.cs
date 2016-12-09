@@ -104,7 +104,7 @@ public class WorkerMovement : MonoBehaviour {
 		agent.enabled = false;
 	}
 
-	//InvokeRepeating("CheckFloor",1,1);
+	InvokeRepeating("CheckFloor",1,1);
 
 	// Rag();
 
@@ -169,10 +169,11 @@ public class WorkerMovement : MonoBehaviour {
 
 	public void CheckFloor()
 	{
+        Debug.Log("CheckFloor");
 		RaycastHit hit;
         //float distanceToGround = 0;
         
-        if (Physics.Raycast(transform.position+new Vector3(0,1,0), -Vector3.up, out hit, 3))
+        if (Physics.Raycast(transform.position+new Vector3(0,1,0), -Vector3.up, out hit, 2))
        {
        	//print("Hit something"+hit.collider.gameObject.name);
        		if(hit.collider.tag == "Danger")
@@ -186,6 +187,10 @@ public class WorkerMovement : MonoBehaviour {
 
        			HighlightWarning(true);
        		}
+            else if (hit.collider.GetComponent<ExclusionZone>() != null)
+            {
+                ExclusionZoneManager.main.OnWorkerHitExclusionZone(hit.collider);
+            }
        		else
        		{
        			currentFloor = 0;
