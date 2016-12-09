@@ -8,6 +8,7 @@ public class CameraSwitch : MonoBehaviour {
 
 	public Dropdown dropdown;
 	public List<Camera> listOfCameras = new List<Camera>();
+	public List<Camera> listOfCameras_Dynamic = new List<Camera>();
 	public float locationSmoothTime = 0.3F;
 	public float rotateSmoothFactor = 2.0F;
 	public bool followTarget = false;
@@ -40,11 +41,17 @@ public class CameraSwitch : MonoBehaviour {
 
 
 	public void dropDown_IndexChange(int index){//this function is tirggered by the dropdown change
+
+		for (int i = 0; i < listOfCameras.Count - 1; i++) {
+			listOfCameras [i].gameObject.SetActive (false);	
+		}
+		Camera.main.gameObject.SetActive (true);
+
 		selectedCamera = listOfCameras[index];// get the index of the selected camera
 		targetTransform = selectedCamera.transform;// get the transform of the selected camera
 		Camera.main.GetComponent<CameraControl>().isometric = true; // Change the isometric boolean of the main camera to true - QUESTION
 		this.SetTarget(targetTransform);//pass the transform of the selected camera to the SetTarget Function
-		//Debug.Log(targetTransform.position);
+	
 	}
 
 	public void SetTarget(Transform transform) //pass the selected camera transform to the function
@@ -61,6 +68,8 @@ public class CameraSwitch : MonoBehaviour {
         {
             updateCameraWithOffset(targetTransform);//Update the Main camera with the Transform of the selected Camera / Target
         }
+
+
     }
 		
     private void updateCameraWithOffset(Transform transform)

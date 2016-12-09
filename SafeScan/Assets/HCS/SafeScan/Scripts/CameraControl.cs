@@ -34,7 +34,8 @@ public class CameraControl : MonoBehaviour {
             {
                 CameraSwitch.main.followTarget = false;
                 this.transform.position += Input.GetAxis("JoystickVertical") * transform.TransformDirection(Vector3.forward) + Input.GetAxis("JoystickHorizontal") * transform.TransformDirection(Vector3.right);
-            }
+           
+			}
             if (Input.GetMouseButton(1))
             {
                 CameraSwitch.main.followTarget = false;

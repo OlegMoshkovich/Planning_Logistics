@@ -142,6 +142,7 @@
 'Assets/HCS/SafeScan/SafeLocateMenu/Battlehub/UIControls/Scripts/TreeViewExpander.cs'
 'Assets/HCS/SafeScan/SafeLocateMenu/Battlehub/UIControls/Scripts/TreeViewItem.cs'
 'Assets/HCS/SafeScan/SafeLocateMenu/Scripts/CameraSwitch.cs'
+'Assets/HCS/SafeScan/SafeLocateMenu/Scripts/CameraSwitch_Dynamic.cs'
 'Assets/HCS/SafeScan/SafeLocateMenu/Scripts/ExclusionZoneDrawer.cs'
 'Assets/HCS/SafeScan/SafeLocateMenu/Scripts/ExclusionZoneManager.cs'
 'Assets/HCS/SafeScan/SafeLocateMenu/Scripts/FocusCameraOnStart.cs'
