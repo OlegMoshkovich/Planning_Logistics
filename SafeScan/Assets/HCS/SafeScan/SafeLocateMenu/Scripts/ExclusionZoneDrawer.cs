@@ -11,6 +11,7 @@ using System.Collections.Generic;
         public bool drawerActive = true;
         public List<Vector3> linePoints = new List<Vector3>();
 
+    private List<GameObject> cubePoints = new List<GameObject>();
         private float yValue;
 
         public void setDrawerActive(bool value)
@@ -25,6 +26,7 @@ using System.Collections.Generic;
             lineRenderer = lineRendererGO.GetComponent<LineRenderer>();
             lineRenderer.material = ExclusionZoneManager.main.exclusionZoneWarningMaterial;
             linePoints = new List<Vector3>();
+        cubePoints = new List<GameObject>();
         }
 
         // Update is called once per frame
@@ -43,7 +45,8 @@ using System.Collections.Generic;
                         Vector3 worldPoint = new Vector3(hit.point.x, yValue, hit.point.z);
                         linePoints.Add(worldPoint);
                         GameObject newPoint = GameObject.CreatePrimitive(PrimitiveType.Cube);
-                    newPoint.transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
+                        cubePoints.Add(newPoint);
+                        newPoint.transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
                         newPoint.GetComponent<Renderer>().material = ExclusionZoneManager.main.exclusionZoneDangerMaterial;
                         newPoint.transform.position = worldPoint;
                         UpdateLine();
@@ -107,12 +110,16 @@ using System.Collections.Generic;
             // Set up game object with mesh;
             GameObject newExclusionZone = new GameObject();
             newExclusionZone.transform.parent = ExclusionZoneManager.main.exclusionZones.transform;
-            newExclusionZone.AddComponent(typeof(MeshRenderer));
+            MeshRenderer newExclusionZone_meshRenderer = newExclusionZone.AddComponent<MeshRenderer>();
             newExclusionZone.name = "Exclusion Zone";
             newExclusionZone.transform.Translate(new Vector3(0, 0.1f, 0));
-            MeshFilter filter = newExclusionZone.AddComponent(typeof(MeshFilter)) as MeshFilter;
+            foreach(GameObject cube in cubePoints)
+            {
+            cube.transform.parent = newExclusionZone.transform;
+            }
+            MeshFilter filter = newExclusionZone.AddComponent<MeshFilter>();
             filter.mesh = msh;
-            newExclusionZone.GetComponent<MeshRenderer>().material = ExclusionZoneManager.main.exclusionZoneDangerMaterial;
+            newExclusionZone_meshRenderer.material = ExclusionZoneManager.main.exclusionZoneDangerMaterial;
             newExclusionZone.AddComponent<MeshCollider>();
 
         //Add to list of Exclusion Zones

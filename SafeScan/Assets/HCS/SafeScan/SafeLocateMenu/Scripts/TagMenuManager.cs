@@ -14,13 +14,6 @@ public class TagMenuManager : MonoBehaviour {
         RefreshTagTable();
     }
 	
-	// Update is called once per frame
-	void Update () {
-    }
-    void LateUpdate()
-    {
-        
-    }
     public void ClearRows()
     {
         foreach(KeyValuePair<GameObject, GameObject> entry in tagRows)
@@ -38,21 +31,22 @@ public class TagMenuManager : MonoBehaviour {
         {
             for (int i = 0; i < WorkerManager.main.listOfWorkers.Count; i++)
             {
+                //Create one Row for every worker.
                 GameObject selectedRow = (GameObject)UnityEngine.Object.Instantiate(dataRow, this.transform);
-                tagRows.Add(WorkerManager.main.listOfWorkers[i],selectedRow);
-                //selectedRow
+                //Bind Worker to Tag
+                tagRows.Add(WorkerManager.main.listOfWorkers[i], selectedRow);
+                //Move Row to end of list and show text
                 selectedRow.transform.localScale = Vector3.one;
-                selectedRow.GetComponent<RectTransform>().SetInsetAndSizeFromParentEdge(RectTransform.Edge.Top, -10 +  30 * (i + 1), 35);
-                selectedRow.GetComponent<RectTransform>().SetInsetAndSizeFromParentEdge(RectTransform.Edge.Left, 420,665);
-                //selectedRow.transform.position = new Vector3(600, -20 - 40 * (i + 1), 0);
+                selectedRow.GetComponent<RectTransform>().SetInsetAndSizeFromParentEdge(RectTransform.Edge.Top, -10 + 30 * (i + 1), 35);
+                selectedRow.GetComponent<RectTransform>().SetInsetAndSizeFromParentEdge(RectTransform.Edge.Left, 420, 665);
                 selectedRow.GetComponentsInChildren<Text>()[0].text = WorkerManager.main.listOfWorkers[i].name;
                 selectedRow.GetComponentsInChildren<Text>()[3].text = WorkerManager.main.listOfWorkers[i].GetComponent<WorkerTagMovement>().frequency.ToString();
+
             }
-        
         }
         catch (Exception error)
         {
-            Debug.Log(error.ToString());
+            Debug.LogError(error.ToString());
         }
     }
 

@@ -21,7 +21,8 @@ public class HazardMarkerDrawer : MonoBehaviour {
 
             if (Physics.Raycast(ray, out hit, 100.0f))
             {
-                Vector3 worldPoint = new Vector3(hit.point.x, hit.point.y + 0.1f, hit.point.z);
+                Vector3 worldPoint = new Vector3(hit.point.x, hit.point.y, hit.point.z);
+                worldPoint -= ray.direction*0.1f;
                 GameObject newHazardMarker = (GameObject)Instantiate(HazardManager.main.HazardMarkerPrefab, HazardManager.main.transform);
                 
 				newHazardMarker.transform.position = worldPoint;

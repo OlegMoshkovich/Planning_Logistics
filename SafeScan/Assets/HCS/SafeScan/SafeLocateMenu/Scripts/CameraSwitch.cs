@@ -13,13 +13,11 @@ public class CameraSwitch : MonoBehaviour {
 	public float rotateSmoothFactor = 2.0F;
 	public bool followTarget = false;
 
+    public InputField cameraNameInputField;
+
 	public Transform targetTransform;
 
 	public static CameraSwitch main;
-
-	private float extraOffsetX = 1F;
-	private float extraOffsetY = 1F;
-	private float extraOffsetZ = 1F;
 
     private Camera selectedCamera;
 	private Vector3 cameraVelocity = Vector3.zero;
@@ -36,7 +34,13 @@ public class CameraSwitch : MonoBehaviour {
 	}
 
 	private void populateCameraDropDown(){
-		dropdown.AddOptions(listOfCameras.Select(i => i.name).ToList());
+        Debug.Log("PopulateCamera");
+        if (dropdown != null)
+        {
+            Debug.Log("PopulateCamera not null");
+            dropdown.ClearOptions();
+            dropdown.AddOptions(listOfCameras.Select(i => i.name).ToList());
+        }
 	}
 
 
@@ -49,7 +53,6 @@ public class CameraSwitch : MonoBehaviour {
 
 		selectedCamera = listOfCameras[index];// get the index of the selected camera
 		targetTransform = selectedCamera.transform;// get the transform of the selected camera
-		Camera.main.GetComponent<CameraControl>().isometric = true; // Change the isometric boolean of the main camera to true - QUESTION
 		this.SetTarget(targetTransform);//pass the transform of the selected camera to the SetTarget Function
 	
 	}
@@ -80,12 +83,10 @@ public class CameraSwitch : MonoBehaviour {
 
             float frustrumHeight = b.size.y;
 
-			Vector3 extraOffset = new Vector3 (extraOffsetX, extraOffsetY, extraOffsetZ);// added the variable to set the exta offset of the camera
-
             float distance = frustrumHeight * 0.5f / Mathf.Tan(Camera.main.fieldOfView * 0.5f * Mathf.Deg2Rad);
-            cameraOffset = transform.forward * -distance + transform.up * distance;
+            cameraOffset = transform.forward * (-distance-1) + transform.up * distance;
 
-			Camera.main.transform.position = Vector3.SmoothDamp(Camera.main.transform.position, transform.position + cameraOffset + extraOffset, ref cameraVelocity, locationSmoothTime);
+			Camera.main.transform.position = Vector3.SmoothDamp(Camera.main.transform.position, transform.position + cameraOffset, ref cameraVelocity, locationSmoothTime);
             Camera.main.transform.rotation = Quaternion.Slerp(Camera.main.transform.rotation, transform.rotation, Time.deltaTime * rotateSmoothFactor);
         }
     }
@@ -100,6 +101,24 @@ public class CameraSwitch : MonoBehaviour {
             b.Encapsulate(r.bounds);
         }
         return b;
+    }
+    public void RecordCameraPosition()
+    {
+        GameObject newCamera = new GameObject();
+        newCamera.name = cameraNameInputField.text;
+        newCamera.SetActive(false);
+        Camera newCamera_CameraComponent = newCamera.AddComponent<Camera>();
+        //Add properties of current camera
+        newCamera.transform.position = Camera.main.transform.position;
+        newCamera.transform.rotation = Camera.main.transform.rotation;
+        newCamera_CameraComponent = Camera.main;
+        listOfCameras.Add(newCamera.GetComponent<Camera>());
+        populateCameraDropDown();
+    }
+    public void On2D3DButtonClick_Handler()
+    {
+        bool isometric = Camera.main.GetComponent<CameraControl>().isometric;
+        Camera.main.GetComponent<CameraControl>().isometric = !isometric;
     }
 
 

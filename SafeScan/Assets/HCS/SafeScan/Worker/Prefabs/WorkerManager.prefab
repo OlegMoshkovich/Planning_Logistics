@@ -36,10 +36,10 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -2.370268, y: 5.9, z: 6.8405533}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &114000011116502616
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -51,4 +51,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03e8bf86e3eb9b14885ac95f68a1f7d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WorkerPrefab: {fileID: 161448, guid: 0f510d7f42bfe442f80e624ded3988d0, type: 2}
+  listOfWorkers: []
+  listOfFallIndicators: []
+  listOfDangerIndicators: []
+  listOfWorkerIndicators: []
+  WorkerPrefab: {fileID: 1000012379482536, guid: 0f510d7f42bfe442f80e624ded3988d0,
+    type: 2}
+  fallIndicatorsParent: {fileID: 0}
+  dangerIndicatorsParent: {fileID: 0}
+  warningIndicatorsParent: {fileID: 0}
+  workers: {fileID: 0}
