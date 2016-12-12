@@ -4013,6 +4013,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 224000013164484708, guid: 19c8bbf171788ad46912594c859325a9,
+        type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224000013164484708, guid: 19c8bbf171788ad46912594c859325a9,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 224000012570658782, guid: 19c8bbf171788ad46912594c859325a9,
         type: 2}
       propertyPath: m_AnchorMax.x
@@ -4023,15 +4033,10 @@ Prefab:
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 224000013164484708, guid: 19c8bbf171788ad46912594c859325a9,
+    - target: {fileID: 224000010710322666, guid: 19c8bbf171788ad46912594c859325a9,
         type: 2}
-      propertyPath: m_AnchorMax.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 224000013164484708, guid: 19c8bbf171788ad46912594c859325a9,
-        type: 2}
-      propertyPath: m_AnchorMax.y
-      value: 1
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224000010710322666, guid: 19c8bbf171788ad46912594c859325a9,
         type: 2}
