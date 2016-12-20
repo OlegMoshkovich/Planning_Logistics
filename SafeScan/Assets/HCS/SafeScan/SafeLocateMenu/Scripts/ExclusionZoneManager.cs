@@ -16,7 +16,6 @@ public class ExclusionZoneManager : MonoBehaviour
     }
     void Start()
     {
-
         exclusionZones = new GameObject();
         exclusionZones.name = "Exclusion Zones";
         exclusionZones.AddComponent<Folder>();
@@ -54,11 +53,29 @@ public class ExclusionZoneManager : MonoBehaviour
     {
         Debug.Log(collision.collider.name + " + GameObject: " + collision.gameObject.name);
         collision.gameObject.GetComponentInChildren<SkinnedMeshRenderer>().material = exclusionZoneDangerMaterial;
+        //Activate worker telemetry alarm
+        if (collision.gameObject.GetComponent<WorkerTelemetry>() !=null) {
+            mqttManager.main.ActivateAlarm(collision.gameObject.GetComponent<WorkerTelemetry>().macAddress);
+        }
+        else
+        {
+            Debug.Log("Worker doesn't have WorkerTelemetry class Assigned");
+        }
+    }
+    public void OnExclusionZoneStay_Handler(Collision collision)
+    {
+        if (collision.gameObject.GetComponent<WorkerTelemetry>() != null)
+        {
+            mqttManager.main.ActivateAlarm(collision.gameObject.GetComponent<WorkerTelemetry>().macAddress);
+        }
     }
     public void OnExclusionZoneExit_Handler(Collision collision)
     {
-        Debug.Log(collision.collider.name + " + GameObject: " + collision.gameObject.name);
-        //collision.gameObject.GetComponentInChildren<SkinnedMeshRenderer>().material = null;
+        Debug.Log("ExclusionExit");
+        if (collision.gameObject.GetComponent<WorkerTelemetry>() != null)
+        {
+            mqttManager.main.DeactivateAlarm(collision.gameObject.GetComponent<WorkerTelemetry>().macAddress);
+        }
     }
     public void OnWorkerHitExclusionZone ( Collider collider)
     {

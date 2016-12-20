@@ -11,6 +11,38 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1000011437451372}
   m_IsPrefabParent: 1
+--- !u!1 &1000010119459658
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000010645510664}
+  - 114: {fileID: 114000012732802466}
+  m_Layer: 0
+  m_Name: MQTT Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1000011216829558
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000014163802466}
+  - 114: {fileID: 114000010233222840}
+  m_Layer: 0
+  m_Name: WorkerManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1000011437451372
 GameObject:
   m_ObjectHideFlags: 0
@@ -36,7 +68,6 @@ GameObject:
   - 4: {fileID: 4000010590422960}
   - 114: {fileID: 114000011441570804}
   - 114: {fileID: 114000013876041452}
-  - 114: {fileID: 114000011832641266}
   m_Layer: 0
   m_Name: HazardManager
   m_TagString: Untagged
@@ -58,38 +89,6 @@ GameObject:
   - 114: {fileID: 114000013183279574}
   m_Layer: 0
   m_Name: ExclusionZoneManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &1000012219510436
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 4000013119609730}
-  - 114: {fileID: 114000013921236830}
-  m_Layer: 0
-  m_Name: WorkerManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &1000014247424008
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 4000011097406224}
-  - 114: {fileID: 114000011143212296}
-  m_Layer: 0
-  m_Name: MQTT Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -139,10 +138,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 4000011097406224}
+  - {fileID: 4000010645510664}
   - {fileID: 4000012922232160}
   - {fileID: 4000013780227848}
-  - {fileID: 4000013119609730}
+  - {fileID: 4000014163802466}
   - {fileID: 4000010590422960}
   - {fileID: 4000014178681506}
   m_Father: {fileID: 0}
@@ -160,12 +159,12 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4000010209753160}
   m_RootOrder: 4
---- !u!4 &4000011097406224
+--- !u!4 &4000010645510664
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000014247424008}
+  m_GameObject: {fileID: 1000010119459658}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -186,19 +185,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4000010209753160}
   m_RootOrder: 1
---- !u!4 &4000013119609730
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012219510436}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.370268, y: 5.9, z: 6.8405533}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children: []
-  m_Father: {fileID: 4000010209753160}
-  m_RootOrder: 3
 --- !u!4 &4000013780227848
 Transform:
   m_ObjectHideFlags: 1
@@ -212,6 +198,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4000010209753160}
   m_RootOrder: 2
+--- !u!4 &4000014163802466
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011216829558}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.370268, y: 5.9, z: 6.8405533}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 4000010209753160}
+  m_RootOrder: 3
 --- !u!4 &4000014178681506
 Transform:
   m_ObjectHideFlags: 1
@@ -248,6 +247,25 @@ MonoBehaviour:
   followTarget: 0
   cameraNameInputField: {fileID: 0}
   targetTransform: {fileID: 0}
+--- !u!114 &114000010233222840
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011216829558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03e8bf86e3eb9b14885ac95f68a1f7d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  listOfWorkers: []
+  listOfFallIndicators: []
+  listOfDangerIndicators: []
+  listOfWorkerIndicators: []
+  WorkerPrefab: {fileID: 1000012379482536, guid: 0f510d7f42bfe442f80e624ded3988d0,
+    type: 2}
+  indicatorsParent: {fileID: 0}
+  workers: {fileID: 0}
 --- !u!114 &114000010963911010
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -277,22 +295,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Model: {fileID: 0}
---- !u!114 &114000011143212296
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000014247424008}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0187419888f217944bc599b2e15cdffb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  convertUnitsToMeters: 1
-  listOfQTrackTags: []
-  listOfHCSTags: []
-  incomingLog: []
-  outgoingLog: []
 --- !u!114 &114000011333125784
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -318,6 +320,7 @@ MonoBehaviour:
   HazardMarkerPrefab: {fileID: 1000012671666276, guid: dec22de74ea89284b9dfe19097c2d26d,
     type: 2}
   listOfHazards: []
+  Hazards: {fileID: 0}
 --- !u!114 &114000011765781728
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -335,17 +338,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
---- !u!114 &114000011832641266
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000011740441076}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 053d66c32a45672448934756f0cfe9b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114000012131543202
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -359,6 +351,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   drawerActive: 0
   linePoints: []
+--- !u!114 &114000012732802466
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010119459658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0187419888f217944bc599b2e15cdffb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  convertUnitsToMeters: 1
+  listOfQTrackTags: []
+  listOfHCSTags: []
+  incomingLog: []
+  outgoingLog: []
 --- !u!114 &114000013183279574
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -381,24 +389,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84b44cc203f4dd54aa15177dfc073367, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114000013921236830
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012219510436}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03e8bf86e3eb9b14885ac95f68a1f7d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  listOfWorkers: []
-  listOfFallIndicators: []
-  listOfDangerIndicators: []
-  listOfWorkerIndicators: []
-  WorkerPrefab: {fileID: 1000012379482536, guid: 0f510d7f42bfe442f80e624ded3988d0,
-    type: 2}
-  fallIndicatorsParent: {fileID: 0}
-  dangerIndicatorsParent: {fileID: 0}
-  warningIndicatorsParent: {fileID: 0}
-  workers: {fileID: 0}

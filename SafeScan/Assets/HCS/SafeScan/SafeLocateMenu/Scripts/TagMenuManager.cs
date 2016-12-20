@@ -6,8 +6,6 @@ using UnityEngine.UI;
 
 public class TagMenuManager : MonoBehaviour {
 
-
-
     public Dictionary<GameObject, GameObject> tagRows  = new Dictionary<GameObject, GameObject>(); //<Worker, Tag Row>
     public GameObject dataRow;
 	void Start () {
@@ -39,8 +37,9 @@ public class TagMenuManager : MonoBehaviour {
                 selectedRow.transform.localScale = Vector3.one;
                 selectedRow.GetComponent<RectTransform>().SetInsetAndSizeFromParentEdge(RectTransform.Edge.Top, -10 + 30 * (i + 1), 35);
                 selectedRow.GetComponent<RectTransform>().SetInsetAndSizeFromParentEdge(RectTransform.Edge.Left, 420, 665);
-                selectedRow.GetComponentsInChildren<Text>()[0].text = WorkerManager.main.listOfWorkers[i].name;
-                selectedRow.GetComponentsInChildren<Text>()[3].text = WorkerManager.main.listOfWorkers[i].GetComponent<WorkerTagMovement>().frequency.ToString();
+                selectedRow.GetComponent<TagRow>().NameText.text = WorkerManager.main.listOfWorkers[i].name;
+                selectedRow.GetComponent<TagRow>().QTrackKHzText.text = WorkerManager.main.listOfWorkers[i].GetComponent<WorkerTagMovement>().frequency.ToString();
+                selectedRow.GetComponent<TagRow>().HCSTagIDText.text = WorkerManager.main.listOfWorkers[i].GetComponent<WorkerTelemetry>().macAddress;
 
             }
         }
@@ -54,9 +53,9 @@ public class TagMenuManager : MonoBehaviour {
     {
         foreach (KeyValuePair<GameObject, GameObject> entry in tagRows)
         {
-            entry.Key.GetComponent<WorkerTagMovement>().frequency = int.Parse(entry.Value.GetComponentsInChildren<Text>()[4].text);
-            entry.Key.name = entry.Value.GetComponentsInChildren<Text>()[1].text;
-            Debug.Log("!!!!!!!!!"+entry.Value.GetComponentsInChildren<Text>()[4].text);
+            entry.Key.GetComponent<WorkerTagMovement>().frequency = int.Parse(entry.Value.GetComponent<TagRow>().QTrackKHzText.text);
+            entry.Key.name = entry.Value.GetComponent<TagRow>().NameText.text;
+            entry.Key.GetComponent<WorkerTelemetry>().macAddress = entry.Value.GetComponent<TagRow>().HCSTagIDText.text;
         }
     }
 }

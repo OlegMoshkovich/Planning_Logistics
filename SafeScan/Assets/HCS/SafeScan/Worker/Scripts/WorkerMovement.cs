@@ -60,13 +60,16 @@ public class WorkerMovement : MonoBehaviour {
 
 	public float lastMarkerTime;
 
-	//public bool makePinIcon;
-	//public GameObject pinIconPrefab;
-	//public Transform pinIconTarget;
+    private GameObject indicatorsParent;
+
+    //public bool makePinIcon;
+    //public GameObject pinIconPrefab;
+    //public Transform pinIconTarget;
 
     private WorkerManager workerManager;
 
 	void Start () {
+        indicatorsParent = WorkerManager.main.indicatorsParent;
         if (GameObject.FindObjectOfType<WorkerManager>() != null) workerManager = GameObject.FindObjectOfType<WorkerManager>();
         else Debug.Log("You are missing Worker Manager");
 	rigidbody = GetComponent<Rigidbody>();
@@ -154,8 +157,7 @@ public class WorkerMovement : MonoBehaviour {
  		Invoke("RandomNavGoal", Random.Range(randomWalkTimeMin, randomWalkTimeMax));
  		}
 	}
-
-	public void UpdateNavGoal()
+    public void UpdateNavGoal()
 	{
 		agent.destination = navMeshGoal.transform.position;
 		float dist = Vector3.Distance(transform.position,agent.destination);
@@ -295,9 +297,11 @@ public class WorkerMovement : MonoBehaviour {
         		{
 				if(!hitSomething)
 				{
-				GameObject fi = Instantiate(fallIndicator, transform.position-new Vector3(0,0,0), Quaternion.identity, WorkerManager.main.fallIndicatorsParent.transform) as GameObject;
+				GameObject fi = Instantiate(fallIndicator, transform.position-new Vector3(0,0,0), Quaternion.identity, indicatorsParent.transform) as GameObject;
 				fi.transform.localScale*=.5f;
                     workerManager.listOfFallIndicators.Add(fi);
+                    TreeViewManager.main.TreeView.AddChild(indicatorsParent, fi);
+
 				}
 
 				lastMarkerTime = Time.time;
@@ -316,10 +320,11 @@ public class WorkerMovement : MonoBehaviour {
         		{
 				if(!hitSomething)
 				{
-				GameObject fi = Instantiate(fallIndicator, transform.position-new Vector3(0,0,0), Quaternion.identity, WorkerManager.main.fallIndicatorsParent.transform) as GameObject;
+				GameObject fi = Instantiate(fallIndicator, transform.position-new Vector3(0,0,0), Quaternion.identity, indicatorsParent.transform) as GameObject;
 				fi.transform.localScale*=.5f;
                     workerManager.listOfFallIndicators.Add(fi);
-				}
+                    TreeViewManager.main.TreeView.AddChild(indicatorsParent, fi);
+                }
 				lastMarkerTime = Time.time;
 				}
 				if(shouldRagdoll)
@@ -335,9 +340,10 @@ public class WorkerMovement : MonoBehaviour {
         		{
 				if(!hitSomething)
 				{
-				GameObject fi = Instantiate(fallIndicator, transform.position-new Vector3(0,0,0), Quaternion.identity, WorkerManager.main.fallIndicatorsParent.transform) as GameObject;
+				GameObject fi = Instantiate(fallIndicator, transform.position-new Vector3(0,0,0), Quaternion.identity, indicatorsParent.transform) as GameObject;
 				fi.transform.localScale*=.5f;
                     workerManager.listOfFallIndicators.Add(fi);
+                    TreeViewManager.main.TreeView.AddChild(indicatorsParent, fi);
                 }
 				lastMarkerTime = Time.time;
 				}
@@ -528,8 +534,9 @@ public class WorkerMovement : MonoBehaviour {
         {
 
             if (!hitSomething) {
-                GameObject fi = Instantiate(fallIndicator, collision.contacts[0].point, Quaternion.identity, WorkerManager.main.fallIndicatorsParent.transform) as GameObject;
+                GameObject fi = Instantiate(fallIndicator, collision.contacts[0].point, Quaternion.identity, indicatorsParent.transform) as GameObject;
                 workerManager.listOfFallIndicators.Add(fi);
+                TreeViewManager.main.TreeView.AddChild(indicatorsParent, fi);
             }
                 
             hitSomething = true;
@@ -546,10 +553,11 @@ public class WorkerMovement : MonoBehaviour {
 
         	if(ShouldSpawnMarkers())
         	{
-        	GameObject hg = Instantiate(workerIndicator, collision.contacts[0].point, Quaternion.identity, WorkerManager.main.fallIndicatorsParent.transform) as GameObject;
+        	GameObject hg = Instantiate(workerIndicator, collision.contacts[0].point, Quaternion.identity, indicatorsParent.transform) as GameObject;
         	hg.transform.localScale*=.5f;
                 workerManager.listOfWorkerIndicators.Add(hg);
-            lastMarkerTime = Time.time;
+                TreeViewManager.main.TreeView.AddChild(indicatorsParent, hg);
+                lastMarkerTime = Time.time;
         	}
 
         	agent.destination = transform.position+(transform.position-collision.contacts[0].point).normalized*1;
@@ -563,10 +571,11 @@ public class WorkerMovement : MonoBehaviour {
         	{
         if(!hitSomething)
         {
-        GameObject hg = Instantiate(dangerIndicator, collision.contacts[0].point, Quaternion.identity, WorkerManager.main.dangerIndicatorsParent.transform) as GameObject;
+        GameObject hg = Instantiate(dangerIndicator, collision.contacts[0].point, Quaternion.identity, indicatorsParent.transform) as GameObject;
         hg.transform.localScale*=.5f;
                     workerManager.listOfDangerIndicators.Add(hg);
-        lastMarkerTime = Time.time;
+                    TreeViewManager.main.TreeView.AddChild(indicatorsParent, hg);
+                    lastMarkerTime = Time.time;
     	}
 
     	}

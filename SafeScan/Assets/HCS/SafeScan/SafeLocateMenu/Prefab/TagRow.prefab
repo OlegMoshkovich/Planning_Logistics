@@ -441,6 +441,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c673f588e5226e41a1c7cac5d487573, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NameText: {fileID: 114000012564046608}
+  QTrackKHzText: {fileID: 114000011049436518}
+  HCSTagIDText: {fileID: 114000012215326924}
   index: 0
 --- !u!114 &114000010702477610
 MonoBehaviour:
@@ -1058,7 +1061,11 @@ MonoBehaviour:
       m_Image: {fileID: 0}
     - m_Text: Excavator
       m_Image: {fileID: 0}
+    - m_Text: Welder
+      m_Image: {fileID: 0}
     - m_Text: General Worker
+      m_Image: {fileID: 0}
+    - m_Text: Other
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:

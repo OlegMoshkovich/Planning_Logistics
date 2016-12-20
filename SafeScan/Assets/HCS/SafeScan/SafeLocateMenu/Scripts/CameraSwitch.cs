@@ -34,10 +34,8 @@ public class CameraSwitch : MonoBehaviour {
 	}
 
 	private void populateCameraDropDown(){
-        Debug.Log("PopulateCamera");
         if (dropdown != null)
         {
-            Debug.Log("PopulateCamera not null");
             dropdown.ClearOptions();
             dropdown.AddOptions(listOfCameras.Select(i => i.name).ToList());
         }

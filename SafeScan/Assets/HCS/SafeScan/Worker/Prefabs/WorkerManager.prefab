@@ -57,7 +57,5 @@ MonoBehaviour:
   listOfWorkerIndicators: []
   WorkerPrefab: {fileID: 1000012379482536, guid: 0f510d7f42bfe442f80e624ded3988d0,
     type: 2}
-  fallIndicatorsParent: {fileID: 0}
-  dangerIndicatorsParent: {fileID: 0}
-  warningIndicatorsParent: {fileID: 0}
+  indicatorsParent: {fileID: 0}
   workers: {fileID: 0}

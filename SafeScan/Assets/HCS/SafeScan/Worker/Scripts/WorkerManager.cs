@@ -12,9 +12,7 @@ public class WorkerManager : MonoBehaviour {
 
     public static WorkerManager main;
 
-    public GameObject fallIndicatorsParent;
-    public GameObject dangerIndicatorsParent;
-    public GameObject warningIndicatorsParent;
+    public GameObject indicatorsParent;
     public GameObject workers;
 
     // Use this for initialization
@@ -23,14 +21,9 @@ public class WorkerManager : MonoBehaviour {
     private void Awake()
     {
         main = this;
-        fallIndicatorsParent = new GameObject();
-        fallIndicatorsParent.name = "Fall Indicators";
-        fallIndicatorsParent.AddComponent<Folder>();
-        dangerIndicatorsParent = new GameObject();
-        dangerIndicatorsParent.name = "Danger Indicators";
-        warningIndicatorsParent = new GameObject();
-        warningIndicatorsParent.name = "Warning Indicators";
-        warningIndicatorsParent.AddComponent<Folder>();
+        indicatorsParent = new GameObject();
+        indicatorsParent.name = "Safescan indicators";
+        indicatorsParent.AddComponent<Folder>();
         workers = new GameObject();
         workers.name = "Workers";
         workers.AddComponent<Folder>();

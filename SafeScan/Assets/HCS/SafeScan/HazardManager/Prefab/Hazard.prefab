@@ -123,7 +123,6 @@ GameObject:
   - 223: {fileID: 223000012401831338}
   - 114: {fileID: 114000012285609742}
   - 114: {fileID: 114000010993188670}
-  - 114: {fileID: 114000012626015990}
   - 114: {fileID: 114000013958712802}
   m_Layer: 5
   m_Name: WorldCanvas
@@ -364,7 +363,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000013149115640}
-  - 114: {fileID: 114000011989853022}
   m_Layer: 0
   m_Name: Hazard
   m_TagString: Untagged
@@ -964,18 +962,6 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &114000011989853022
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012671666276}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b7d6b6fe6bce6448a5025155a545bd2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inverse: 0
 --- !u!114 &114000012076032672
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1121,17 +1107,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114000012626015990
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000011273858564}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69e1211bdad5b4f0eb29fa6dd73bb2a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114000012643021290
 MonoBehaviour:
   m_ObjectHideFlags: 1

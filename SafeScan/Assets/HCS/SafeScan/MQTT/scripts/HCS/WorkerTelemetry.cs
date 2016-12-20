@@ -2,9 +2,9 @@
 using System.Collections;
 
 public class WorkerTelemetry : MonoBehaviour {
-    private string macAddress { get; set; }
+    public string macAddress;
     public GameObject WorkerDataPanel;
-
+    public bool badBendActivated;
 	// Use this for initialization
 	void Start () {
 	

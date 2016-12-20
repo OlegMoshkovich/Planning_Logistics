@@ -23,9 +23,13 @@ using System.Collections;
     public void OnCollisionEnter(Collision collision)
     {
         //Trigger Event if it has subscribers
-        if(OnExclusionZoneEnter != null) OnExclusionZoneEnter(collision);
+        if (OnExclusionZoneEnter != null) OnExclusionZoneEnter(collision);
         //Call ExclusionZoneManagerHandler
         ExclusionZoneManager.main.OnExclusionZoneEnter_Handler(collision);
+    }
+    public void OnCollisionStay(Collision collision)
+    {
+        ExclusionZoneManager.main.OnExclusionZoneStay_Handler(collision);
     }
     public void OnCollisionExit(Collision collision)
     {
@@ -34,6 +38,7 @@ using System.Collections;
         //Call ExclusionZoneManagerHandler
         ExclusionZoneManager.main.OnExclusionZoneExit_Handler(collision);
     }
+    
 }
 
 

@@ -24,33 +24,39 @@ public class mqttManager : MonoBehaviour {
 	void Start () {
         main = this;
         Debug.Log("start");
-		// create client instance 
+		
+        // create client instance 
 		client = new MqttClient(IPAddress.Parse("137.135.91.79"),1883 , false , null );
-        //client2 = new MqttClient(IPAddress.Parse("137.135.91.79"), 1883, false, null);
         clientBlueMix = new MqttClient("tmsmv4.messaging.internetofthings.ibmcloud.com", 1883, false, null);
+        
         // register to message received 
         client.MqttMsgPublishReceived += client_MqttMsgPublishReceived;
-        //client2.MqttMsgPublishReceived += client2_MqttMsgPublishReceived;
         clientBlueMix.MqttMsgPublishReceived += clientBlueMix_MqttMsgPusblishReceived;
 
         //Register Messages To IncomingLog
         client.MqttMsgPublishReceived += logIncomingData;
-        //client2.MqttMsgPublishReceived += logIncomingData;
         clientBlueMix.MqttMsgPublishReceived += logIncomingData;
 
-        //Registe Messages to OutgoingLog
+        //Register Messages to OutgoingLog
         client.MqttMsgPublished += logOutgoingData;
-        //client2.MqttMsgPublished += logOutgoingData;
         clientBlueMix.MqttMsgPublished += logOutgoingData;
 
+        try{
+            string clientId = Guid.NewGuid().ToString();
+            var QtrackStatus = client.Connect(clientId);
+            Debug.Log("QTrack MQTT Client status: " + QtrackStatus.ToString());
+        }
+                catch (MqttCommunicationException e)
+        {
+            Debug.LogError(e.ToString());
+        }
 
-        string clientId = Guid.NewGuid().ToString(); 
-		client.Connect(clientId);
+		
         //clientBlueMix.Connect( clientID, username, password)
         try
         {
-            var status = clientBlueMix.Connect("a:tmsmv4:pablo", "a-tmsmv4-r2pl0u7lrz", "@BAr8DooQs(Eih0Ocb");
-            Debug.Log("Bluemix connected + status: " + status.ToString());
+            var blueMixStatus = clientBlueMix.Connect("a:tmsmv4:pablo", "a-tmsmv4-r2pl0u7lrz", "@BAr8DooQs(Eih0Ocb");
+            Debug.Log("Bluemix connected + status: " + blueMixStatus.ToString());
 
         }
         catch (MqttCommunicationException e)
@@ -60,7 +66,6 @@ public class mqttManager : MonoBehaviour {
 
 
         client.Subscribe(new string[] { "qtrack/+" }, new byte[] { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE });
-        //client2.Subscribe(new string[] { "V1/vest/#" }, new byte[] { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE });
         clientBlueMix.Subscribe(new string[] { "iot-2/type/HCSTag/id/+/evt/+/fmt/json" }, new byte[] { MqttMsgBase.QOS_LEVEL_AT_MOST_ONCE });
 
 
@@ -103,56 +108,10 @@ public class mqttManager : MonoBehaviour {
             Debug.LogError("error" + error);
         }
     }
-    /*void client2_MqttMsgPublishReceived(object sender, MqttMsgPublishEventArgs e)
-    {
-
-        string message = System.Text.Encoding.UTF8.GetString(e.Message);
-        Debug.Log("Received: " + message);
-        string mac = e.Topic.ToString().Split('/')[2];
-        string messageType = e.Topic.ToString().Split('/')[3];
-        Debug.Log("Topic: " + mac);
-        Debug.Log("messageType: " + messageType);
-        try
-        {
-            HCSTag incomingTag = new HCSTag();
-            incomingTag = JsonUtility.FromJson<HCSTag>(message);
-            incomingTag.macAddress = mac;
-            bool createNewTag = true;
-            for(int i=0; i<listOfHCSTags.Count;i++)
-            {
-                if (listOfHCSTags[i].macAddress == mac)
-                {
-                    switch (messageType)
-                    {
-                        case "orin":
-                            listOfHCSTags[i].ori = incomingTag.ori;
-                            listOfHCSTags[i].gyr = incomingTag.gyr;
-                            break;
-                        case "envi":
-                            listOfHCSTags[i].light = incomingTag.light;
-                            listOfHCSTags[i].uvi = incomingTag.uvi;
-                            break;
-                        case "time":
-                            break;
-                    }
-                    listOfHCSTags[i] = incomingTag;
-                    createNewTag = false;
-                }
-            }
-            if (createNewTag == true)
-            {
-                listOfHCSTags.Add(incomingTag);
-            }
-        }
-        catch (Exception error)
-        {
-            Debug.LogError("error" + error);
-        }
-    }*/
+    
     void clientBlueMix_MqttMsgPusblishReceived(object sender, MqttMsgPublishEventArgs e)
     {
         string message = System.Text.Encoding.UTF8.GetString(e.Message);
-        Debug.Log("Received: Topic" + e.Topic +" Message: " + message);
         string evt = e.Topic.ToString().Split('/')[6];
         string macAddress = e.Topic.ToString().Split('/')[4];
         try
@@ -160,7 +119,6 @@ public class mqttManager : MonoBehaviour {
             HCSTag incomingTag = new HCSTag();
             incomingTag = JsonUtility.FromJson<HCSTag>(message);
             incomingTag.macAddress = macAddress;
-            Debug.Log(incomingTag);
             bool createNewTag = true;
             for(int i =0; i <listOfHCSTags.Count; i++)
             {
@@ -202,12 +160,15 @@ public class mqttManager : MonoBehaviour {
             Debug.LogError("error" + error);
         }
     }
+
     void logOutgoingData(object sender, MqttMsgPublishedEventArgs e)
     {
         if (outgoingLog.Count > 1000) outgoingLog = new List<string>();
         string message = "Sender: " + sender.ToString() + " Message: " + e.ToString();
         outgoingLog.Add(message);
+        Debug.Log(e.ToString());
     }
+
     void logIncomingData(object sender, MqttMsgPublishEventArgs e)
     {
         if (incomingLog.Count > 1000) incomingLog = new List<string>();
@@ -215,14 +176,27 @@ public class mqttManager : MonoBehaviour {
         message += " Message: "+ System.Text.Encoding.UTF8.GetString(e.Message);
         incomingLog.Add(message);
     }
-    /*void OnGUI(){
-		/*if ( GUI.Button (new Rect (20,40,80,20), "Send Alert")) {
-			Debug.Log("sending...");
-			client.Publish("alerts", System.Text.Encoding.UTF8.GetBytes("Sending from Unity3D!!!"), MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE, true);
-			Debug.Log("sent");
-		}
-	}*/
 
-	// Update is called once per frame
+    public void ActivateAlarm(string macAddress)
+    {
+        string topic = "iot-2/type/HCSTag/id/" + macAddress + "/cmd/alert/fmt/json";
+        clientBlueMix.Publish(topic, System.Text.Encoding.UTF8.GetBytes("{alarm:1}"), MqttMsgBase.QOS_LEVEL_AT_MOST_ONCE, true);
+    }
+
+    public void DeactivateAlarm(string macAddress)
+    {
+        string topic = "iot-2/type/HCSTag/id/" + macAddress + "/cmd/alert/fmt/json";
+        clientBlueMix.Publish(topic, System.Text.Encoding.UTF8.GetBytes("{alarm:0}"), MqttMsgBase.QOS_LEVEL_AT_MOST_ONCE, true);
+    }
+
+    public void ActivateAllAlarms()
+    {
+        foreach(HCSTag tag in listOfHCSTags)
+        {
+            string topic = "iot-2/type/HCSTag/id/" + tag.macAddress + "/cmd/alert/fmt/json";
+            clientBlueMix.Publish(topic, System.Text.Encoding.UTF8.GetBytes("{alarm:1}"), MqttMsgBase.QOS_LEVEL_AT_MOST_ONCE, true);
+        }
+    }
+
 
 }
