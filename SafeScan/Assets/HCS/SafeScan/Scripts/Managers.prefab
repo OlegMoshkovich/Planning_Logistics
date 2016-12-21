@@ -337,7 +337,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
 --- !u!114 &114000012131543202
 MonoBehaviour:
   m_ObjectHideFlags: 1

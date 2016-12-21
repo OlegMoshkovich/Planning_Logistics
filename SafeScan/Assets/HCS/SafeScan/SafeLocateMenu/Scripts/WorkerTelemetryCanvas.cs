@@ -29,7 +29,7 @@ public class WorkerTelemetryCanvas : MonoBehaviour {
     {
         panel.SetActive(true);
         worker = selectedWorker;
-        workerTelemetry = workerTelemetry.GetComponent<WorkerTelemetry>();
+        workerTelemetry = worker.GetComponent<WorkerTelemetry>();
     }
     private void Awake()
     {
@@ -49,7 +49,11 @@ public class WorkerTelemetryCanvas : MonoBehaviour {
             }
         }
     }
-	
+	public void OnBadBendToggleChange_Handler(bool value)
+    {
+        if (value) mqttManager.main.ActivateBadBend(workerTelemetry.macAddress);
+        else mqttManager.main.DeactivateBadBend(workerTelemetry.macAddress);
+    }
 	
 	void Update () {
         if (panel.active)
@@ -73,7 +77,7 @@ public class WorkerTelemetryCanvas : MonoBehaviour {
             nameText.text = worker.name;
             HCSTagIdText.text = workerTelemetry.macAddress;
             QTrackText.text = worker.GetComponent<WorkerTagMovement>().frequency.ToString();
-            OrientationObject.transform.localRotation = Quaternion.Slerp(OrientationObject.transform.localRotation, Quaternion.Euler(mqttManager.main.listOfHCSTags[0].ori[0], mqttManager.main.listOfHCSTags[0].ori[1], mqttManager.main.listOfHCSTags[0].ori[2]), 2 * Time.deltaTime);
+            OrientationObject.transform.rotation = Quaternion.Slerp(OrientationObject.transform.rotation, Quaternion.Euler(mqttManager.main.listOfHCSTags[0].ori[0], mqttManager.main.listOfHCSTags[0].ori[1], mqttManager.main.listOfHCSTags[0].ori[2]), 2 * Time.deltaTime);
         }
 
     }

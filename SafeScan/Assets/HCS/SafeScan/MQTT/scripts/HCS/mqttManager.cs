@@ -182,6 +182,16 @@ public class mqttManager : MonoBehaviour {
         string topic = "iot-2/type/HCSTag/id/" + macAddress + "/cmd/alert/fmt/json";
         clientBlueMix.Publish(topic, System.Text.Encoding.UTF8.GetBytes("{alarm:1}"), MqttMsgBase.QOS_LEVEL_AT_MOST_ONCE, true);
     }
+    public void ActivateBadBend(string macAddress)
+    {
+        string topic = "iot-2/type/HCSTag/id/" + macAddress + "/cmd/alert/fmt/json";
+        clientBlueMix.Publish(topic, System.Text.Encoding.UTF8.GetBytes("{bndbz:1}"), MqttMsgBase.QOS_LEVEL_AT_MOST_ONCE, true);
+    }
+    public void DeactivateBadBend(string macAddress)
+    {
+        string topic = "iot-2/type/HCSTag/id/" + macAddress + "/cmd/alert/fmt/json";
+        clientBlueMix.Publish(topic, System.Text.Encoding.UTF8.GetBytes("{bndbz:0}"), MqttMsgBase.QOS_LEVEL_AT_MOST_ONCE, true);
+    }
 
     public void DeactivateAlarm(string macAddress)
     {
