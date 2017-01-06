@@ -1,4 +1,0 @@
-sceneSetups:
-- path: Assets/HCS/SafeScan/SafeLocateMenu/Scenes/MenuScreen.unity
-  isLoaded: 1
-  isActive: 1

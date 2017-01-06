@@ -1,0 +1,1975 @@
+fileFormatVersion: 2
+guid: 12f1f5447bd6ef34aafa7a44eaffd1ca
+timeCreated: 1477596664
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Female000COM1
+    100002: Female000COM2
+    100004: Female000Head
+    100006: Female000LCalf
+    100008: Female000LClavicle
+    100010: Female000LFoot
+    100012: Female000LForeArm
+    100014: Female000LHand
+    100016: Female000LThigh
+    100018: Female000LToe
+    100020: Female000LUpperArm
+    100022: Female000Neck
+    100024: Female000Pelvis
+    100026: Female000RCalf
+    100028: Female000RClavicle
+    100030: Female000RFoot
+    100032: Female000RForeArm
+    100034: Female000RHand
+    100036: Female000RThigh
+    100038: Female000RToe
+    100040: Female000RUpperArm
+    100042: Female000Skin_001
+    100044: Female000Spine0
+    100046: Female000Spine1
+    100048: Female000Spine2
+    100050: Female000Spine3
+    100052: Female000Spine4
+    100054: Female001COM1
+    100056: Female001COM2
+    100058: Female001Head
+    100060: Female001LCalf
+    100062: Female001LClavicle
+    100064: Female001LFoot
+    100066: Female001LForeArm
+    100068: Female001LHand
+    100070: Female001LThigh
+    100072: Female001LToe
+    100074: Female001LUpperArm
+    100076: Female001Neck
+    100078: Female001Pelvis
+    100080: Female001RCalf
+    100082: Female001RClavicle
+    100084: Female001RFoot
+    100086: Female001RForeArm
+    100088: Female001RHand
+    100090: Female001RThigh
+    100092: Female001RToe
+    100094: Female001RUpperArm
+    100096: Female001Skin_001
+    100098: Female001Spine0
+    100100: Female001Spine1
+    100102: Female001Spine2
+    100104: Female001Spine3
+    100106: Female001Spine4
+    100108: Female002COM1
+    100110: Female002COM2
+    100112: Female002Head
+    100114: Female002LCalf
+    100116: Female002LClavicle
+    100118: Female002LFoot
+    100120: Female002LForeArm
+    100122: Female002LHand
+    100124: Female002LThigh
+    100126: Female002LToe
+    100128: Female002LUpperArm
+    100130: Female002Neck
+    100132: Female002Pelvis
+    100134: Female002RCalf
+    100136: Female002RClavicle
+    100138: Female002RFoot
+    100140: Female002RForeArm
+    100142: Female002RHand
+    100144: Female002RThigh
+    100146: Female002RToe
+    100148: Female002RUpperArm
+    100150: Female002Skin_001
+    100152: Female002Spine0
+    100154: Female002Spine1
+    100156: Female002Spine2
+    100158: Female002Spine3
+    100160: Female002Spine4
+    100162: Female003COM1
+    100164: Female003COM2
+    100166: Female003Head
+    100168: Female003LCalf
+    100170: Female003LClavicle
+    100172: Female003LFoot
+    100174: Female003LForeArm
+    100176: Female003LHand
+    100178: Female003LThigh
+    100180: Female003LToe
+    100182: Female003LUpperArm
+    100184: Female003Neck
+    100186: Female003Pelvis
+    100188: Female003RCalf
+    100190: Female003RClavicle
+    100192: Female003RFoot
+    100194: Female003RForeArm
+    100196: Female003RHand
+    100198: Female003RThigh
+    100200: Female003RToe
+    100202: Female003RUpperArm
+    100204: Female003Skin_001
+    100206: Female003Spine0
+    100208: Female003Spine1
+    100210: Female003Spine2
+    100212: Female003Spine3
+    100214: Female003Spine4
+    100216: Female004COM1
+    100218: Female004COM2
+    100220: Female004Head
+    100222: Female004LCalf
+    100224: Female004LClavicle
+    100226: Female004LFoot
+    100228: Female004LForeArm
+    100230: Female004LHand
+    100232: Female004LThigh
+    100234: Female004LToe
+    100236: Female004LUpperArm
+    100238: Female004Neck
+    100240: Female004Pelvis
+    100242: Female004RCalf
+    100244: Female004RClavicle
+    100246: Female004RFoot
+    100248: Female004RForeArm
+    100250: Female004RHand
+    100252: Female004RThigh
+    100254: Female004RToe
+    100256: Female004RUpperArm
+    100258: Female004Skin_001
+    100260: Female004Spine0
+    100262: Female004Spine1
+    100264: Female004Spine2
+    100266: Female004Spine3
+    100268: Female004Spine4
+    100270: Female005COM1
+    100272: Female005COM2
+    100274: Female005Head
+    100276: Female005LCalf
+    100278: Female005LClavicle
+    100280: Female005LFoot
+    100282: Female005LForeArm
+    100284: Female005LHand
+    100286: Female005LThigh
+    100288: Female005LToe
+    100290: Female005LUpperArm
+    100292: Female005Neck
+    100294: Female005Pelvis
+    100296: Female005RCalf
+    100298: Female005RClavicle
+    100300: Female005RFoot
+    100302: Female005RForeArm
+    100304: Female005RHand
+    100306: Female005RThigh
+    100308: Female005RToe
+    100310: Female005RUpperArm
+    100312: Female005Skin_001
+    100314: Female005Spine0
+    100316: Female005Spine1
+    100318: Female005Spine2
+    100320: Female005Spine3
+    100322: Female005Spine4
+    100324: Male000COM1
+    100326: Male000COM2
+    100328: Male000Head
+    100330: Male000LCalf
+    100332: Male000LClavicle
+    100334: Male000LFoot
+    100336: Male000LForeArm
+    100338: Male000LHand
+    100340: Male000LThigh
+    100342: Male000LToe
+    100344: Male000LUpperArm
+    100346: Male000Neck
+    100348: Male000Pelvis
+    100350: Male000RCalf
+    100352: Male000RClavicle
+    100354: Male000RFoot
+    100356: Male000RForeArm
+    100358: Male000RHand
+    100360: Male000RThigh
+    100362: Male000RToe
+    100364: Male000RUpperArm
+    100366: Male000Skin_001
+    100368: Male000Spine0
+    100370: Male000Spine1
+    100372: Male000Spine2
+    100374: Male000Spine3
+    100376: Male000Spine4
+    100378: Male001COM1
+    100380: Male001COM2
+    100382: Male001Head
+    100384: Male001LCalf
+    100386: Male001LClavicle
+    100388: Male001LFoot
+    100390: Male001LForeArm
+    100392: Male001LHand
+    100394: Male001LThigh
+    100396: Male001LToe
+    100398: Male001LUpperArm
+    100400: Male001Neck
+    100402: Male001Pelvis
+    100404: Male001RCalf
+    100406: Male001RClavicle
+    100408: Male001RFoot
+    100410: Male001RForeArm
+    100412: Male001RHand
+    100414: Male001RThigh
+    100416: Male001RToe
+    100418: Male001RUpperArm
+    100420: Male001Skin_001
+    100422: Male001Spine0
+    100424: Male001Spine1
+    100426: Male001Spine2
+    100428: Male001Spine3
+    100430: Male001Spine4
+    100432: Male002COM1
+    100434: Male002COM2
+    100436: Male002Head
+    100438: Male002LCalf
+    100440: Male002LClavicle
+    100442: Male002LFoot
+    100444: Male002LForeArm
+    100446: Male002LHand
+    100448: Male002LThigh
+    100450: Male002LToe
+    100452: Male002LUpperArm
+    100454: Male002Neck
+    100456: Male002Pelvis
+    100458: Male002RCalf
+    100460: Male002RClavicle
+    100462: Male002RFoot
+    100464: Male002RForeArm
+    100466: Male002RHand
+    100468: Male002RThigh
+    100470: Male002RToe
+    100472: Male002RUpperArm
+    100474: Male002Skin_001
+    100476: Male002Spine0
+    100478: Male002Spine1
+    100480: Male002Spine2
+    100482: Male002Spine3
+    100484: Male002Spine4
+    100486: Male003COM1
+    100488: Male003COM2
+    100490: Male003Head
+    100492: Male003LCalf
+    100494: Male003LClavicle
+    100496: Male003LFoot
+    100498: Male003LForeArm
+    100500: Male003LHand
+    100502: Male003LThigh
+    100504: Male003LToe
+    100506: Male003LUpperArm
+    100508: Male003Neck
+    100510: Male003Pelvis
+    100512: Male003RCalf
+    100514: Male003RClavicle
+    100516: Male003RFoot
+    100518: Male003RForeArm
+    100520: Male003RHand
+    100522: Male003RThigh
+    100524: Male003RToe
+    100526: Male003RUpperArm
+    100528: Male003Skin_001
+    100530: Male003Spine0
+    100532: Male003Spine1
+    100534: Male003Spine2
+    100536: Male003Spine3
+    100538: Male003Spine4
+    100540: Male004COM1
+    100542: Male004COM2
+    100544: Male004Head
+    100546: Male004LCalf
+    100548: Male004LClavicle
+    100550: Male004LFoot
+    100552: Male004LForeArm
+    100554: Male004LHand
+    100556: Male004LThigh
+    100558: Male004LToe
+    100560: Male004LUpperArm
+    100562: Male004Neck
+    100564: Male004Pelvis
+    100566: Male004RCalf
+    100568: Male004RClavicle
+    100570: Male004RFoot
+    100572: Male004RForeArm
+    100574: Male004RHand
+    100576: Male004RThigh
+    100578: Male004RToe
+    100580: Male004RUpperArm
+    100582: Male004Skin_001
+    100584: Male004Spine0
+    100586: Male004Spine1
+    100588: Male004Spine2
+    100590: Male004Spine3
+    100592: Male004Spine4
+    100594: Male005COM1
+    100596: Male005COM2
+    100598: Male005Head
+    100600: Male005LCalf
+    100602: Male005LClavicle
+    100604: Male005LFoot
+    100606: Male005LForeArm
+    100608: Male005LHand
+    100610: Male005LThigh
+    100612: Male005LToe
+    100614: Male005LUpperArm
+    100616: Male005Neck
+    100618: Male005Pelvis
+    100620: Male005RCalf
+    100622: Male005RClavicle
+    100624: Male005RFoot
+    100626: Male005RForeArm
+    100628: Male005RHand
+    100630: Male005RThigh
+    100632: Male005RToe
+    100634: Male005RUpperArm
+    100636: Male005Skin_001
+    100638: Male005Spine0
+    100640: Male005Spine1
+    100642: Male005Spine2
+    100644: Male005Spine3
+    100646: Male005Spine4
+    100648: Male006COM1
+    100650: Male006COM2
+    100652: Male006Head
+    100654: Male006LCalf
+    100656: Male006LClavicle
+    100658: Male006LFoot
+    100660: Male006LForeArm
+    100662: Male006LHand
+    100664: Male006LThigh
+    100666: Male006LToe
+    100668: Male006LUpperArm
+    100670: Male006Neck
+    100672: Male006Pelvis
+    100674: Male006RCalf
+    100676: Male006RClavicle
+    100678: Male006RFoot
+    100680: Male006RForeArm
+    100682: Male006RHand
+    100684: Male006RThigh
+    100686: Male006RToe
+    100688: Male006RUpperArm
+    100690: Male006Skin_001
+    100692: Male006Spine0
+    100694: Male006Spine1
+    100696: Male006Spine2
+    100698: Male006Spine3
+    100700: Male006Spine4
+    100702: Male007COM1
+    100704: Male007COM2
+    100706: Male007Head
+    100708: Male007LCalf
+    100710: Male007LClavicle
+    100712: Male007LFoot
+    100714: Male007LForeArm
+    100716: Male007LHand
+    100718: Male007LThigh
+    100720: Male007LToe
+    100722: Male007LUpperArm
+    100724: Male007Neck
+    100726: Male007Pelvis
+    100728: Male007RCalf
+    100730: Male007RClavicle
+    100732: Male007RFoot
+    100734: Male007RForeArm
+    100736: Male007RHand
+    100738: Male007RThigh
+    100740: Male007RToe
+    100742: Male007RUpperArm
+    100744: Male007Skin_001
+    100746: Male007Spine0
+    100748: Male007Spine1
+    100750: Male007Spine2
+    100752: Male007Spine3
+    100754: Male007Spine4
+    100756: Male008COM1
+    100758: Male008COM2
+    100760: Male008Head
+    100762: Male008LCalf
+    100764: Male008LClavicle
+    100766: Male008LFoot
+    100768: Male008LForeArm
+    100770: Male008LHand
+    100772: Male008LThigh
+    100774: Male008LToe
+    100776: Male008LUpperArm
+    100778: Male008Neck
+    100780: Male008Pelvis
+    100782: Male008RCalf
+    100784: Male008RClavicle
+    100786: Male008RFoot
+    100788: Male008RForeArm
+    100790: Male008RHand
+    100792: Male008RThigh
+    100794: Male008RToe
+    100796: Male008RUpperArm
+    100798: Male008Skin_001
+    100800: Male008Spine0
+    100802: Male008Spine1
+    100804: Male008Spine2
+    100806: Male008Spine3
+    100808: Male008Spine4
+    100810: Male009COM1
+    100812: Male009COM2
+    100814: Male009Head
+    100816: Male009LCalf
+    100818: Male009LClavicle
+    100820: Male009LFoot
+    100822: Male009LForeArm
+    100824: Male009LHand
+    100826: Male009LThigh
+    100828: Male009LToe
+    100830: Male009LUpperArm
+    100832: Male009Neck
+    100834: Male009Pelvis
+    100836: Male009RCalf
+    100838: Male009RClavicle
+    100840: Male009RFoot
+    100842: Male009RForeArm
+    100844: Male009RHand
+    100846: Male009RThigh
+    100848: Male009RToe
+    100850: Male009RUpperArm
+    100852: Male009Skin_001
+    100854: Male009Spine0
+    100856: Male009Spine1
+    100858: Male009Spine2
+    100860: Male009Spine3
+    100862: Male009Spine4
+    100864: Male010COM1
+    100866: Male010COM2
+    100868: Male010Head
+    100870: Male010LCalf
+    100872: Male010LClavicle
+    100874: Male010LFoot
+    100876: Male010LForeArm
+    100878: Male010LHand
+    100880: Male010LThigh
+    100882: Male010LToe
+    100884: Male010LUpperArm
+    100886: Male010Neck
+    100888: Male010Pelvis
+    100890: Male010RCalf
+    100892: Male010RClavicle
+    100894: Male010RFoot
+    100896: Male010RForeArm
+    100898: Male010RHand
+    100900: Male010RThigh
+    100902: Male010RToe
+    100904: Male010RUpperArm
+    100906: Male010Skin_001
+    100908: Male010Spine0
+    100910: Male010Spine1
+    100912: Male010Spine2
+    100914: Male010Spine3
+    100916: Male010Spine4
+    100918: //RootNode
+    400000: Female000COM1
+    400002: Female000COM2
+    400004: Female000Head
+    400006: Female000LCalf
+    400008: Female000LClavicle
+    400010: Female000LFoot
+    400012: Female000LForeArm
+    400014: Female000LHand
+    400016: Female000LThigh
+    400018: Female000LToe
+    400020: Female000LUpperArm
+    400022: Female000Neck
+    400024: Female000Pelvis
+    400026: Female000RCalf
+    400028: Female000RClavicle
+    400030: Female000RFoot
+    400032: Female000RForeArm
+    400034: Female000RHand
+    400036: Female000RThigh
+    400038: Female000RToe
+    400040: Female000RUpperArm
+    400042: Female000Skin_001
+    400044: Female000Spine0
+    400046: Female000Spine1
+    400048: Female000Spine2
+    400050: Female000Spine3
+    400052: Female000Spine4
+    400054: Female001COM1
+    400056: Female001COM2
+    400058: Female001Head
+    400060: Female001LCalf
+    400062: Female001LClavicle
+    400064: Female001LFoot
+    400066: Female001LForeArm
+    400068: Female001LHand
+    400070: Female001LThigh
+    400072: Female001LToe
+    400074: Female001LUpperArm
+    400076: Female001Neck
+    400078: Female001Pelvis
+    400080: Female001RCalf
+    400082: Female001RClavicle
+    400084: Female001RFoot
+    400086: Female001RForeArm
+    400088: Female001RHand
+    400090: Female001RThigh
+    400092: Female001RToe
+    400094: Female001RUpperArm
+    400096: Female001Skin_001
+    400098: Female001Spine0
+    400100: Female001Spine1
+    400102: Female001Spine2
+    400104: Female001Spine3
+    400106: Female001Spine4
+    400108: Female002COM1
+    400110: Female002COM2
+    400112: Female002Head
+    400114: Female002LCalf
+    400116: Female002LClavicle
+    400118: Female002LFoot
+    400120: Female002LForeArm
+    400122: Female002LHand
+    400124: Female002LThigh
+    400126: Female002LToe
+    400128: Female002LUpperArm
+    400130: Female002Neck
+    400132: Female002Pelvis
+    400134: Female002RCalf
+    400136: Female002RClavicle
+    400138: Female002RFoot
+    400140: Female002RForeArm
+    400142: Female002RHand
+    400144: Female002RThigh
+    400146: Female002RToe
+    400148: Female002RUpperArm
+    400150: Female002Skin_001
+    400152: Female002Spine0
+    400154: Female002Spine1
+    400156: Female002Spine2
+    400158: Female002Spine3
+    400160: Female002Spine4
+    400162: Female003COM1
+    400164: Female003COM2
+    400166: Female003Head
+    400168: Female003LCalf
+    400170: Female003LClavicle
+    400172: Female003LFoot
+    400174: Female003LForeArm
+    400176: Female003LHand
+    400178: Female003LThigh
+    400180: Female003LToe
+    400182: Female003LUpperArm
+    400184: Female003Neck
+    400186: Female003Pelvis
+    400188: Female003RCalf
+    400190: Female003RClavicle
+    400192: Female003RFoot
+    400194: Female003RForeArm
+    400196: Female003RHand
+    400198: Female003RThigh
+    400200: Female003RToe
+    400202: Female003RUpperArm
+    400204: Female003Skin_001
+    400206: Female003Spine0
+    400208: Female003Spine1
+    400210: Female003Spine2
+    400212: Female003Spine3
+    400214: Female003Spine4
+    400216: Female004COM1
+    400218: Female004COM2
+    400220: Female004Head
+    400222: Female004LCalf
+    400224: Female004LClavicle
+    400226: Female004LFoot
+    400228: Female004LForeArm
+    400230: Female004LHand
+    400232: Female004LThigh
+    400234: Female004LToe
+    400236: Female004LUpperArm
+    400238: Female004Neck
+    400240: Female004Pelvis
+    400242: Female004RCalf
+    400244: Female004RClavicle
+    400246: Female004RFoot
+    400248: Female004RForeArm
+    400250: Female004RHand
+    400252: Female004RThigh
+    400254: Female004RToe
+    400256: Female004RUpperArm
+    400258: Female004Skin_001
+    400260: Female004Spine0
+    400262: Female004Spine1
+    400264: Female004Spine2
+    400266: Female004Spine3
+    400268: Female004Spine4
+    400270: Female005COM1
+    400272: Female005COM2
+    400274: Female005Head
+    400276: Female005LCalf
+    400278: Female005LClavicle
+    400280: Female005LFoot
+    400282: Female005LForeArm
+    400284: Female005LHand
+    400286: Female005LThigh
+    400288: Female005LToe
+    400290: Female005LUpperArm
+    400292: Female005Neck
+    400294: Female005Pelvis
+    400296: Female005RCalf
+    400298: Female005RClavicle
+    400300: Female005RFoot
+    400302: Female005RForeArm
+    400304: Female005RHand
+    400306: Female005RThigh
+    400308: Female005RToe
+    400310: Female005RUpperArm
+    400312: Female005Skin_001
+    400314: Female005Spine0
+    400316: Female005Spine1
+    400318: Female005Spine2
+    400320: Female005Spine3
+    400322: Female005Spine4
+    400324: Male000COM1
+    400326: Male000COM2
+    400328: Male000Head
+    400330: Male000LCalf
+    400332: Male000LClavicle
+    400334: Male000LFoot
+    400336: Male000LForeArm
+    400338: Male000LHand
+    400340: Male000LThigh
+    400342: Male000LToe
+    400344: Male000LUpperArm
+    400346: Male000Neck
+    400348: Male000Pelvis
+    400350: Male000RCalf
+    400352: Male000RClavicle
+    400354: Male000RFoot
+    400356: Male000RForeArm
+    400358: Male000RHand
+    400360: Male000RThigh
+    400362: Male000RToe
+    400364: Male000RUpperArm
+    400366: Male000Skin_001
+    400368: Male000Spine0
+    400370: Male000Spine1
+    400372: Male000Spine2
+    400374: Male000Spine3
+    400376: Male000Spine4
+    400378: Male001COM1
+    400380: Male001COM2
+    400382: Male001Head
+    400384: Male001LCalf
+    400386: Male001LClavicle
+    400388: Male001LFoot
+    400390: Male001LForeArm
+    400392: Male001LHand
+    400394: Male001LThigh
+    400396: Male001LToe
+    400398: Male001LUpperArm
+    400400: Male001Neck
+    400402: Male001Pelvis
+    400404: Male001RCalf
+    400406: Male001RClavicle
+    400408: Male001RFoot
+    400410: Male001RForeArm
+    400412: Male001RHand
+    400414: Male001RThigh
+    400416: Male001RToe
+    400418: Male001RUpperArm
+    400420: Male001Skin_001
+    400422: Male001Spine0
+    400424: Male001Spine1
+    400426: Male001Spine2
+    400428: Male001Spine3
+    400430: Male001Spine4
+    400432: Male002COM1
+    400434: Male002COM2
+    400436: Male002Head
+    400438: Male002LCalf
+    400440: Male002LClavicle
+    400442: Male002LFoot
+    400444: Male002LForeArm
+    400446: Male002LHand
+    400448: Male002LThigh
+    400450: Male002LToe
+    400452: Male002LUpperArm
+    400454: Male002Neck
+    400456: Male002Pelvis
+    400458: Male002RCalf
+    400460: Male002RClavicle
+    400462: Male002RFoot
+    400464: Male002RForeArm
+    400466: Male002RHand
+    400468: Male002RThigh
+    400470: Male002RToe
+    400472: Male002RUpperArm
+    400474: Male002Skin_001
+    400476: Male002Spine0
+    400478: Male002Spine1
+    400480: Male002Spine2
+    400482: Male002Spine3
+    400484: Male002Spine4
+    400486: Male003COM1
+    400488: Male003COM2
+    400490: Male003Head
+    400492: Male003LCalf
+    400494: Male003LClavicle
+    400496: Male003LFoot
+    400498: Male003LForeArm
+    400500: Male003LHand
+    400502: Male003LThigh
+    400504: Male003LToe
+    400506: Male003LUpperArm
+    400508: Male003Neck
+    400510: Male003Pelvis
+    400512: Male003RCalf
+    400514: Male003RClavicle
+    400516: Male003RFoot
+    400518: Male003RForeArm
+    400520: Male003RHand
+    400522: Male003RThigh
+    400524: Male003RToe
+    400526: Male003RUpperArm
+    400528: Male003Skin_001
+    400530: Male003Spine0
+    400532: Male003Spine1
+    400534: Male003Spine2
+    400536: Male003Spine3
+    400538: Male003Spine4
+    400540: Male004COM1
+    400542: Male004COM2
+    400544: Male004Head
+    400546: Male004LCalf
+    400548: Male004LClavicle
+    400550: Male004LFoot
+    400552: Male004LForeArm
+    400554: Male004LHand
+    400556: Male004LThigh
+    400558: Male004LToe
+    400560: Male004LUpperArm
+    400562: Male004Neck
+    400564: Male004Pelvis
+    400566: Male004RCalf
+    400568: Male004RClavicle
+    400570: Male004RFoot
+    400572: Male004RForeArm
+    400574: Male004RHand
+    400576: Male004RThigh
+    400578: Male004RToe
+    400580: Male004RUpperArm
+    400582: Male004Skin_001
+    400584: Male004Spine0
+    400586: Male004Spine1
+    400588: Male004Spine2
+    400590: Male004Spine3
+    400592: Male004Spine4
+    400594: Male005COM1
+    400596: Male005COM2
+    400598: Male005Head
+    400600: Male005LCalf
+    400602: Male005LClavicle
+    400604: Male005LFoot
+    400606: Male005LForeArm
+    400608: Male005LHand
+    400610: Male005LThigh
+    400612: Male005LToe
+    400614: Male005LUpperArm
+    400616: Male005Neck
+    400618: Male005Pelvis
+    400620: Male005RCalf
+    400622: Male005RClavicle
+    400624: Male005RFoot
+    400626: Male005RForeArm
+    400628: Male005RHand
+    400630: Male005RThigh
+    400632: Male005RToe
+    400634: Male005RUpperArm
+    400636: Male005Skin_001
+    400638: Male005Spine0
+    400640: Male005Spine1
+    400642: Male005Spine2
+    400644: Male005Spine3
+    400646: Male005Spine4
+    400648: Male006COM1
+    400650: Male006COM2
+    400652: Male006Head
+    400654: Male006LCalf
+    400656: Male006LClavicle
+    400658: Male006LFoot
+    400660: Male006LForeArm
+    400662: Male006LHand
+    400664: Male006LThigh
+    400666: Male006LToe
+    400668: Male006LUpperArm
+    400670: Male006Neck
+    400672: Male006Pelvis
+    400674: Male006RCalf
+    400676: Male006RClavicle
+    400678: Male006RFoot
+    400680: Male006RForeArm
+    400682: Male006RHand
+    400684: Male006RThigh
+    400686: Male006RToe
+    400688: Male006RUpperArm
+    400690: Male006Skin_001
+    400692: Male006Spine0
+    400694: Male006Spine1
+    400696: Male006Spine2
+    400698: Male006Spine3
+    400700: Male006Spine4
+    400702: Male007COM1
+    400704: Male007COM2
+    400706: Male007Head
+    400708: Male007LCalf
+    400710: Male007LClavicle
+    400712: Male007LFoot
+    400714: Male007LForeArm
+    400716: Male007LHand
+    400718: Male007LThigh
+    400720: Male007LToe
+    400722: Male007LUpperArm
+    400724: Male007Neck
+    400726: Male007Pelvis
+    400728: Male007RCalf
+    400730: Male007RClavicle
+    400732: Male007RFoot
+    400734: Male007RForeArm
+    400736: Male007RHand
+    400738: Male007RThigh
+    400740: Male007RToe
+    400742: Male007RUpperArm
+    400744: Male007Skin_001
+    400746: Male007Spine0
+    400748: Male007Spine1
+    400750: Male007Spine2
+    400752: Male007Spine3
+    400754: Male007Spine4
+    400756: Male008COM1
+    400758: Male008COM2
+    400760: Male008Head
+    400762: Male008LCalf
+    400764: Male008LClavicle
+    400766: Male008LFoot
+    400768: Male008LForeArm
+    400770: Male008LHand
+    400772: Male008LThigh
+    400774: Male008LToe
+    400776: Male008LUpperArm
+    400778: Male008Neck
+    400780: Male008Pelvis
+    400782: Male008RCalf
+    400784: Male008RClavicle
+    400786: Male008RFoot
+    400788: Male008RForeArm
+    400790: Male008RHand
+    400792: Male008RThigh
+    400794: Male008RToe
+    400796: Male008RUpperArm
+    400798: Male008Skin_001
+    400800: Male008Spine0
+    400802: Male008Spine1
+    400804: Male008Spine2
+    400806: Male008Spine3
+    400808: Male008Spine4
+    400810: Male009COM1
+    400812: Male009COM2
+    400814: Male009Head
+    400816: Male009LCalf
+    400818: Male009LClavicle
+    400820: Male009LFoot
+    400822: Male009LForeArm
+    400824: Male009LHand
+    400826: Male009LThigh
+    400828: Male009LToe
+    400830: Male009LUpperArm
+    400832: Male009Neck
+    400834: Male009Pelvis
+    400836: Male009RCalf
+    400838: Male009RClavicle
+    400840: Male009RFoot
+    400842: Male009RForeArm
+    400844: Male009RHand
+    400846: Male009RThigh
+    400848: Male009RToe
+    400850: Male009RUpperArm
+    400852: Male009Skin_001
+    400854: Male009Spine0
+    400856: Male009Spine1
+    400858: Male009Spine2
+    400860: Male009Spine3
+    400862: Male009Spine4
+    400864: Male010COM1
+    400866: Male010COM2
+    400868: Male010Head
+    400870: Male010LCalf
+    400872: Male010LClavicle
+    400874: Male010LFoot
+    400876: Male010LForeArm
+    400878: Male010LHand
+    400880: Male010LThigh
+    400882: Male010LToe
+    400884: Male010LUpperArm
+    400886: Male010Neck
+    400888: Male010Pelvis
+    400890: Male010RCalf
+    400892: Male010RClavicle
+    400894: Male010RFoot
+    400896: Male010RForeArm
+    400898: Male010RHand
+    400900: Male010RThigh
+    400902: Male010RToe
+    400904: Male010RUpperArm
+    400906: Male010Skin_001
+    400908: Male010Spine0
+    400910: Male010Spine1
+    400912: Male010Spine2
+    400914: Male010Spine3
+    400916: Male010Spine4
+    400918: //RootNode
+    4300000: Female000Skin_001
+    4300002: Male000Skin_001
+    4300004: Female001Skin_001
+    4300006: Female002Skin_001
+    4300008: Male001Skin_001
+    4300010: Female003Skin_001
+    4300012: Male002Skin_001
+    4300014: Male003Skin_001
+    4300016: Male004Skin_001
+    4300018: Female004Skin_001
+    4300020: Female005Skin_001
+    4300022: Male005Skin_001
+    4300024: Male006Skin_001
+    4300026: Male007Skin_001
+    4300028: Male008Skin_001
+    4300030: Male009Skin_001
+    4300032: Male010Skin_001
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: Female000Skin_001
+    13700002: Female001Skin_001
+    13700004: Female002Skin_001
+    13700006: Female003Skin_001
+    13700008: Female004Skin_001
+    13700010: Female005Skin_001
+    13700012: Male000Skin_001
+    13700014: Male001Skin_001
+    13700016: Male002Skin_001
+    13700018: Male003Skin_001
+    13700020: Male004Skin_001
+    13700022: Male005Skin_001
+    13700024: Male006Skin_001
+    13700026: Male007Skin_001
+    13700028: Male008Skin_001
+    13700030: Male009Skin_001
+    13700032: Male010Skin_001
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 799
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Female000COM1
+        weight: 1
+      - path: Female000COM1/Female000COM2
+        weight: 1
+      - path: Female000COM1/Female000COM2/Female000Pelvis
+        weight: 1
+      - path: Female000COM1/Female000COM2/Female000Pelvis/Female000LThigh
+        weight: 1
+      - path: Female000COM1/Female000COM2/Female000Pelvis/Female000LThigh/Female000LCalf
+        weight: 1
+      - path: Female000COM1/Female000COM2/Female000Pelvis/Female000LThigh/Female000LCalf/Female000LFoot
+        weight: 1
+      - path: Female000COM1/Female000COM2/Female000Pelvis/Female000LThigh/Female000LCalf/Female000LFoot/Female000LToe
+        weight: 1
+      - path: Female000COM1/Female000COM2/Female000Pelvis/Female000RThigh
+        weight: 1
+      - path: Female000COM1/Female000COM2/Female000Pelvis/Female000RThigh/Female000RCalf
+        weight: 1
+      - path: Female000COM1/Female000COM2/Female000Pelvis/Female000RThigh/Female000RCalf/Female000RFoot
+        weight: 1
+      - path: Female000COM1/Female000COM2/Female000Pelvis/Female000RThigh/Female000RCalf/Female000RFoot/Female000RToe
+        weight: 1
+      - path: Female000COM1/Female000COM2/Female000Pelvis/Female000Spine0
+        weight: 1
+      - path: Female000COM1/Female000COM2/Female000Pelvis/Female000Spine0/Female000Spine1
+        weight: 1
+      - path: Female000COM1/Female000COM2/Female000Pelvis/Female000Spine0/Female000Spine1/Female000Spine2
+        weight: 1
+      - path: Female000COM1/Female000COM2/Female000Pelvis/Female000Spine0/Female000Spine1/Female000Spine2/Female000Spine3
+        weight: 1
+      - path: Female000COM1/Female000COM2/Female000Pelvis/Female000Spine0/Female000Spine1/Female000Spine2/Female000Spine3/Female000Spine4
+        weight: 1
+      - path: Female000COM1/Female000COM2/Female000Pelvis/Female000Spine0/Female000Spine1/Female000Spine2/Female000Spine3/Female000Spine4/Female000LClavicle
+        weight: 1
+      - path: Female000COM1/Female000COM2/Female000Pelvis/Female000Spine0/Female000Spine1/Female000Spine2/Female000Spine3/Female000Spine4/Female000LClavicle/Female000LUpperArm
+        weight: 1
+      - path: Female000COM1/Female000COM2/Female000Pelvis/Female000Spine0/Female000Spine1/Female000Spine2/Female000Spine3/Female000Spine4/Female000LClavicle/Female000LUpperArm/Female000LForeArm
+        weight: 1
+      - path: Female000COM1/Female000COM2/Female000Pelvis/Female000Spine0/Female000Spine1/Female000Spine2/Female000Spine3/Female000Spine4/Female000LClavicle/Female000LUpperArm/Female000LForeArm/Female000LHand
+        weight: 1
+      - path: Female000COM1/Female000COM2/Female000Pelvis/Female000Spine0/Female000Spine1/Female000Spine2/Female000Spine3/Female000Spine4/Female000Neck
+        weight: 1
+      - path: Female000COM1/Female000COM2/Female000Pelvis/Female000Spine0/Female000Spine1/Female000Spine2/Female000Spine3/Female000Spine4/Female000Neck/Female000Head
+        weight: 1
+      - path: Female000COM1/Female000COM2/Female000Pelvis/Female000Spine0/Female000Spine1/Female000Spine2/Female000Spine3/Female000Spine4/Female000RClavicle
+        weight: 1
+      - path: Female000COM1/Female000COM2/Female000Pelvis/Female000Spine0/Female000Spine1/Female000Spine2/Female000Spine3/Female000Spine4/Female000RClavicle/Female000RUpperArm
+        weight: 1
+      - path: Female000COM1/Female000COM2/Female000Pelvis/Female000Spine0/Female000Spine1/Female000Spine2/Female000Spine3/Female000Spine4/Female000RClavicle/Female000RUpperArm/Female000RForeArm
+        weight: 1
+      - path: Female000COM1/Female000COM2/Female000Pelvis/Female000Spine0/Female000Spine1/Female000Spine2/Female000Spine3/Female000Spine4/Female000RClavicle/Female000RUpperArm/Female000RForeArm/Female000RHand
+        weight: 1
+      - path: Female000Skin_001
+        weight: 1
+      - path: Female001COM1
+        weight: 1
+      - path: Female001COM1/Female001COM2
+        weight: 1
+      - path: Female001COM1/Female001COM2/Female001Pelvis
+        weight: 1
+      - path: Female001COM1/Female001COM2/Female001Pelvis/Female001LThigh
+        weight: 1
+      - path: Female001COM1/Female001COM2/Female001Pelvis/Female001LThigh/Female001LCalf
+        weight: 1
+      - path: Female001COM1/Female001COM2/Female001Pelvis/Female001LThigh/Female001LCalf/Female001LFoot
+        weight: 1
+      - path: Female001COM1/Female001COM2/Female001Pelvis/Female001LThigh/Female001LCalf/Female001LFoot/Female001LToe
+        weight: 1
+      - path: Female001COM1/Female001COM2/Female001Pelvis/Female001RThigh
+        weight: 1
+      - path: Female001COM1/Female001COM2/Female001Pelvis/Female001RThigh/Female001RCalf
+        weight: 1
+      - path: Female001COM1/Female001COM2/Female001Pelvis/Female001RThigh/Female001RCalf/Female001RFoot
+        weight: 1
+      - path: Female001COM1/Female001COM2/Female001Pelvis/Female001RThigh/Female001RCalf/Female001RFoot/Female001RToe
+        weight: 1
+      - path: Female001COM1/Female001COM2/Female001Pelvis/Female001Spine0
+        weight: 1
+      - path: Female001COM1/Female001COM2/Female001Pelvis/Female001Spine0/Female001Spine1
+        weight: 1
+      - path: Female001COM1/Female001COM2/Female001Pelvis/Female001Spine0/Female001Spine1/Female001Spine2
+        weight: 1
+      - path: Female001COM1/Female001COM2/Female001Pelvis/Female001Spine0/Female001Spine1/Female001Spine2/Female001Spine3
+        weight: 1
+      - path: Female001COM1/Female001COM2/Female001Pelvis/Female001Spine0/Female001Spine1/Female001Spine2/Female001Spine3/Female001Spine4
+        weight: 1
+      - path: Female001COM1/Female001COM2/Female001Pelvis/Female001Spine0/Female001Spine1/Female001Spine2/Female001Spine3/Female001Spine4/Female001LClavicle
+        weight: 1
+      - path: Female001COM1/Female001COM2/Female001Pelvis/Female001Spine0/Female001Spine1/Female001Spine2/Female001Spine3/Female001Spine4/Female001LClavicle/Female001LUpperArm
+        weight: 1
+      - path: Female001COM1/Female001COM2/Female001Pelvis/Female001Spine0/Female001Spine1/Female001Spine2/Female001Spine3/Female001Spine4/Female001LClavicle/Female001LUpperArm/Female001LForeArm
+        weight: 1
+      - path: Female001COM1/Female001COM2/Female001Pelvis/Female001Spine0/Female001Spine1/Female001Spine2/Female001Spine3/Female001Spine4/Female001LClavicle/Female001LUpperArm/Female001LForeArm/Female001LHand
+        weight: 1
+      - path: Female001COM1/Female001COM2/Female001Pelvis/Female001Spine0/Female001Spine1/Female001Spine2/Female001Spine3/Female001Spine4/Female001Neck
+        weight: 1
+      - path: Female001COM1/Female001COM2/Female001Pelvis/Female001Spine0/Female001Spine1/Female001Spine2/Female001Spine3/Female001Spine4/Female001Neck/Female001Head
+        weight: 1
+      - path: Female001COM1/Female001COM2/Female001Pelvis/Female001Spine0/Female001Spine1/Female001Spine2/Female001Spine3/Female001Spine4/Female001RClavicle
+        weight: 1
+      - path: Female001COM1/Female001COM2/Female001Pelvis/Female001Spine0/Female001Spine1/Female001Spine2/Female001Spine3/Female001Spine4/Female001RClavicle/Female001RUpperArm
+        weight: 1
+      - path: Female001COM1/Female001COM2/Female001Pelvis/Female001Spine0/Female001Spine1/Female001Spine2/Female001Spine3/Female001Spine4/Female001RClavicle/Female001RUpperArm/Female001RForeArm
+        weight: 1
+      - path: Female001COM1/Female001COM2/Female001Pelvis/Female001Spine0/Female001Spine1/Female001Spine2/Female001Spine3/Female001Spine4/Female001RClavicle/Female001RUpperArm/Female001RForeArm/Female001RHand
+        weight: 1
+      - path: Female001Skin_001
+        weight: 1
+      - path: Female002COM1
+        weight: 1
+      - path: Female002COM1/Female002COM2
+        weight: 1
+      - path: Female002COM1/Female002COM2/Female002Pelvis
+        weight: 1
+      - path: Female002COM1/Female002COM2/Female002Pelvis/Female002LThigh
+        weight: 1
+      - path: Female002COM1/Female002COM2/Female002Pelvis/Female002LThigh/Female002LCalf
+        weight: 1
+      - path: Female002COM1/Female002COM2/Female002Pelvis/Female002LThigh/Female002LCalf/Female002LFoot
+        weight: 1
+      - path: Female002COM1/Female002COM2/Female002Pelvis/Female002LThigh/Female002LCalf/Female002LFoot/Female002LToe
+        weight: 1
+      - path: Female002COM1/Female002COM2/Female002Pelvis/Female002RThigh
+        weight: 1
+      - path: Female002COM1/Female002COM2/Female002Pelvis/Female002RThigh/Female002RCalf
+        weight: 1
+      - path: Female002COM1/Female002COM2/Female002Pelvis/Female002RThigh/Female002RCalf/Female002RFoot
+        weight: 1
+      - path: Female002COM1/Female002COM2/Female002Pelvis/Female002RThigh/Female002RCalf/Female002RFoot/Female002RToe
+        weight: 1
+      - path: Female002COM1/Female002COM2/Female002Pelvis/Female002Spine0
+        weight: 1
+      - path: Female002COM1/Female002COM2/Female002Pelvis/Female002Spine0/Female002Spine1
+        weight: 1
+      - path: Female002COM1/Female002COM2/Female002Pelvis/Female002Spine0/Female002Spine1/Female002Spine2
+        weight: 1
+      - path: Female002COM1/Female002COM2/Female002Pelvis/Female002Spine0/Female002Spine1/Female002Spine2/Female002Spine3
+        weight: 1
+      - path: Female002COM1/Female002COM2/Female002Pelvis/Female002Spine0/Female002Spine1/Female002Spine2/Female002Spine3/Female002Spine4
+        weight: 1
+      - path: Female002COM1/Female002COM2/Female002Pelvis/Female002Spine0/Female002Spine1/Female002Spine2/Female002Spine3/Female002Spine4/Female002LClavicle
+        weight: 1
+      - path: Female002COM1/Female002COM2/Female002Pelvis/Female002Spine0/Female002Spine1/Female002Spine2/Female002Spine3/Female002Spine4/Female002LClavicle/Female002LUpperArm
+        weight: 1
+      - path: Female002COM1/Female002COM2/Female002Pelvis/Female002Spine0/Female002Spine1/Female002Spine2/Female002Spine3/Female002Spine4/Female002LClavicle/Female002LUpperArm/Female002LForeArm
+        weight: 1
+      - path: Female002COM1/Female002COM2/Female002Pelvis/Female002Spine0/Female002Spine1/Female002Spine2/Female002Spine3/Female002Spine4/Female002LClavicle/Female002LUpperArm/Female002LForeArm/Female002LHand
+        weight: 1
+      - path: Female002COM1/Female002COM2/Female002Pelvis/Female002Spine0/Female002Spine1/Female002Spine2/Female002Spine3/Female002Spine4/Female002Neck
+        weight: 1
+      - path: Female002COM1/Female002COM2/Female002Pelvis/Female002Spine0/Female002Spine1/Female002Spine2/Female002Spine3/Female002Spine4/Female002Neck/Female002Head
+        weight: 1
+      - path: Female002COM1/Female002COM2/Female002Pelvis/Female002Spine0/Female002Spine1/Female002Spine2/Female002Spine3/Female002Spine4/Female002RClavicle
+        weight: 1
+      - path: Female002COM1/Female002COM2/Female002Pelvis/Female002Spine0/Female002Spine1/Female002Spine2/Female002Spine3/Female002Spine4/Female002RClavicle/Female002RUpperArm
+        weight: 1
+      - path: Female002COM1/Female002COM2/Female002Pelvis/Female002Spine0/Female002Spine1/Female002Spine2/Female002Spine3/Female002Spine4/Female002RClavicle/Female002RUpperArm/Female002RForeArm
+        weight: 1
+      - path: Female002COM1/Female002COM2/Female002Pelvis/Female002Spine0/Female002Spine1/Female002Spine2/Female002Spine3/Female002Spine4/Female002RClavicle/Female002RUpperArm/Female002RForeArm/Female002RHand
+        weight: 1
+      - path: Female002Skin_001
+        weight: 1
+      - path: Female003COM1
+        weight: 1
+      - path: Female003COM1/Female003COM2
+        weight: 1
+      - path: Female003COM1/Female003COM2/Female003Pelvis
+        weight: 1
+      - path: Female003COM1/Female003COM2/Female003Pelvis/Female003LThigh
+        weight: 1
+      - path: Female003COM1/Female003COM2/Female003Pelvis/Female003LThigh/Female003LCalf
+        weight: 1
+      - path: Female003COM1/Female003COM2/Female003Pelvis/Female003LThigh/Female003LCalf/Female003LFoot
+        weight: 1
+      - path: Female003COM1/Female003COM2/Female003Pelvis/Female003LThigh/Female003LCalf/Female003LFoot/Female003LToe
+        weight: 1
+      - path: Female003COM1/Female003COM2/Female003Pelvis/Female003RThigh
+        weight: 1
+      - path: Female003COM1/Female003COM2/Female003Pelvis/Female003RThigh/Female003RCalf
+        weight: 1
+      - path: Female003COM1/Female003COM2/Female003Pelvis/Female003RThigh/Female003RCalf/Female003RFoot
+        weight: 1
+      - path: Female003COM1/Female003COM2/Female003Pelvis/Female003RThigh/Female003RCalf/Female003RFoot/Female003RToe
+        weight: 1
+      - path: Female003COM1/Female003COM2/Female003Pelvis/Female003Spine0
+        weight: 1
+      - path: Female003COM1/Female003COM2/Female003Pelvis/Female003Spine0/Female003Spine1
+        weight: 1
+      - path: Female003COM1/Female003COM2/Female003Pelvis/Female003Spine0/Female003Spine1/Female003Spine2
+        weight: 1
+      - path: Female003COM1/Female003COM2/Female003Pelvis/Female003Spine0/Female003Spine1/Female003Spine2/Female003Spine3
+        weight: 1
+      - path: Female003COM1/Female003COM2/Female003Pelvis/Female003Spine0/Female003Spine1/Female003Spine2/Female003Spine3/Female003Spine4
+        weight: 1
+      - path: Female003COM1/Female003COM2/Female003Pelvis/Female003Spine0/Female003Spine1/Female003Spine2/Female003Spine3/Female003Spine4/Female003LClavicle
+        weight: 1
+      - path: Female003COM1/Female003COM2/Female003Pelvis/Female003Spine0/Female003Spine1/Female003Spine2/Female003Spine3/Female003Spine4/Female003LClavicle/Female003LUpperArm
+        weight: 1
+      - path: Female003COM1/Female003COM2/Female003Pelvis/Female003Spine0/Female003Spine1/Female003Spine2/Female003Spine3/Female003Spine4/Female003LClavicle/Female003LUpperArm/Female003LForeArm
+        weight: 1
+      - path: Female003COM1/Female003COM2/Female003Pelvis/Female003Spine0/Female003Spine1/Female003Spine2/Female003Spine3/Female003Spine4/Female003LClavicle/Female003LUpperArm/Female003LForeArm/Female003LHand
+        weight: 1
+      - path: Female003COM1/Female003COM2/Female003Pelvis/Female003Spine0/Female003Spine1/Female003Spine2/Female003Spine3/Female003Spine4/Female003Neck
+        weight: 1
+      - path: Female003COM1/Female003COM2/Female003Pelvis/Female003Spine0/Female003Spine1/Female003Spine2/Female003Spine3/Female003Spine4/Female003Neck/Female003Head
+        weight: 1
+      - path: Female003COM1/Female003COM2/Female003Pelvis/Female003Spine0/Female003Spine1/Female003Spine2/Female003Spine3/Female003Spine4/Female003RClavicle
+        weight: 1
+      - path: Female003COM1/Female003COM2/Female003Pelvis/Female003Spine0/Female003Spine1/Female003Spine2/Female003Spine3/Female003Spine4/Female003RClavicle/Female003RUpperArm
+        weight: 1
+      - path: Female003COM1/Female003COM2/Female003Pelvis/Female003Spine0/Female003Spine1/Female003Spine2/Female003Spine3/Female003Spine4/Female003RClavicle/Female003RUpperArm/Female003RForeArm
+        weight: 1
+      - path: Female003COM1/Female003COM2/Female003Pelvis/Female003Spine0/Female003Spine1/Female003Spine2/Female003Spine3/Female003Spine4/Female003RClavicle/Female003RUpperArm/Female003RForeArm/Female003RHand
+        weight: 1
+      - path: Female003Skin_001
+        weight: 1
+      - path: Female004COM1
+        weight: 1
+      - path: Female004COM1/Female004COM2
+        weight: 1
+      - path: Female004COM1/Female004COM2/Female004Pelvis
+        weight: 1
+      - path: Female004COM1/Female004COM2/Female004Pelvis/Female004LThigh
+        weight: 1
+      - path: Female004COM1/Female004COM2/Female004Pelvis/Female004LThigh/Female004LCalf
+        weight: 1
+      - path: Female004COM1/Female004COM2/Female004Pelvis/Female004LThigh/Female004LCalf/Female004LFoot
+        weight: 1
+      - path: Female004COM1/Female004COM2/Female004Pelvis/Female004LThigh/Female004LCalf/Female004LFoot/Female004LToe
+        weight: 1
+      - path: Female004COM1/Female004COM2/Female004Pelvis/Female004RThigh
+        weight: 1
+      - path: Female004COM1/Female004COM2/Female004Pelvis/Female004RThigh/Female004RCalf
+        weight: 1
+      - path: Female004COM1/Female004COM2/Female004Pelvis/Female004RThigh/Female004RCalf/Female004RFoot
+        weight: 1
+      - path: Female004COM1/Female004COM2/Female004Pelvis/Female004RThigh/Female004RCalf/Female004RFoot/Female004RToe
+        weight: 1
+      - path: Female004COM1/Female004COM2/Female004Pelvis/Female004Spine0
+        weight: 1
+      - path: Female004COM1/Female004COM2/Female004Pelvis/Female004Spine0/Female004Spine1
+        weight: 1
+      - path: Female004COM1/Female004COM2/Female004Pelvis/Female004Spine0/Female004Spine1/Female004Spine2
+        weight: 1
+      - path: Female004COM1/Female004COM2/Female004Pelvis/Female004Spine0/Female004Spine1/Female004Spine2/Female004Spine3
+        weight: 1
+      - path: Female004COM1/Female004COM2/Female004Pelvis/Female004Spine0/Female004Spine1/Female004Spine2/Female004Spine3/Female004Spine4
+        weight: 1
+      - path: Female004COM1/Female004COM2/Female004Pelvis/Female004Spine0/Female004Spine1/Female004Spine2/Female004Spine3/Female004Spine4/Female004LClavicle
+        weight: 1
+      - path: Female004COM1/Female004COM2/Female004Pelvis/Female004Spine0/Female004Spine1/Female004Spine2/Female004Spine3/Female004Spine4/Female004LClavicle/Female004LUpperArm
+        weight: 1
+      - path: Female004COM1/Female004COM2/Female004Pelvis/Female004Spine0/Female004Spine1/Female004Spine2/Female004Spine3/Female004Spine4/Female004LClavicle/Female004LUpperArm/Female004LForeArm
+        weight: 1
+      - path: Female004COM1/Female004COM2/Female004Pelvis/Female004Spine0/Female004Spine1/Female004Spine2/Female004Spine3/Female004Spine4/Female004LClavicle/Female004LUpperArm/Female004LForeArm/Female004LHand
+        weight: 1
+      - path: Female004COM1/Female004COM2/Female004Pelvis/Female004Spine0/Female004Spine1/Female004Spine2/Female004Spine3/Female004Spine4/Female004Neck
+        weight: 1
+      - path: Female004COM1/Female004COM2/Female004Pelvis/Female004Spine0/Female004Spine1/Female004Spine2/Female004Spine3/Female004Spine4/Female004Neck/Female004Head
+        weight: 1
+      - path: Female004COM1/Female004COM2/Female004Pelvis/Female004Spine0/Female004Spine1/Female004Spine2/Female004Spine3/Female004Spine4/Female004RClavicle
+        weight: 1
+      - path: Female004COM1/Female004COM2/Female004Pelvis/Female004Spine0/Female004Spine1/Female004Spine2/Female004Spine3/Female004Spine4/Female004RClavicle/Female004RUpperArm
+        weight: 1
+      - path: Female004COM1/Female004COM2/Female004Pelvis/Female004Spine0/Female004Spine1/Female004Spine2/Female004Spine3/Female004Spine4/Female004RClavicle/Female004RUpperArm/Female004RForeArm
+        weight: 1
+      - path: Female004COM1/Female004COM2/Female004Pelvis/Female004Spine0/Female004Spine1/Female004Spine2/Female004Spine3/Female004Spine4/Female004RClavicle/Female004RUpperArm/Female004RForeArm/Female004RHand
+        weight: 1
+      - path: Female004Skin_001
+        weight: 1
+      - path: Female005COM1
+        weight: 1
+      - path: Female005COM1/Female005COM2
+        weight: 1
+      - path: Female005COM1/Female005COM2/Female005Pelvis
+        weight: 1
+      - path: Female005COM1/Female005COM2/Female005Pelvis/Female005LThigh
+        weight: 1
+      - path: Female005COM1/Female005COM2/Female005Pelvis/Female005LThigh/Female005LCalf
+        weight: 1
+      - path: Female005COM1/Female005COM2/Female005Pelvis/Female005LThigh/Female005LCalf/Female005LFoot
+        weight: 1
+      - path: Female005COM1/Female005COM2/Female005Pelvis/Female005LThigh/Female005LCalf/Female005LFoot/Female005LToe
+        weight: 1
+      - path: Female005COM1/Female005COM2/Female005Pelvis/Female005RThigh
+        weight: 1
+      - path: Female005COM1/Female005COM2/Female005Pelvis/Female005RThigh/Female005RCalf
+        weight: 1
+      - path: Female005COM1/Female005COM2/Female005Pelvis/Female005RThigh/Female005RCalf/Female005RFoot
+        weight: 1
+      - path: Female005COM1/Female005COM2/Female005Pelvis/Female005RThigh/Female005RCalf/Female005RFoot/Female005RToe
+        weight: 1
+      - path: Female005COM1/Female005COM2/Female005Pelvis/Female005Spine0
+        weight: 1
+      - path: Female005COM1/Female005COM2/Female005Pelvis/Female005Spine0/Female005Spine1
+        weight: 1
+      - path: Female005COM1/Female005COM2/Female005Pelvis/Female005Spine0/Female005Spine1/Female005Spine2
+        weight: 1
+      - path: Female005COM1/Female005COM2/Female005Pelvis/Female005Spine0/Female005Spine1/Female005Spine2/Female005Spine3
+        weight: 1
+      - path: Female005COM1/Female005COM2/Female005Pelvis/Female005Spine0/Female005Spine1/Female005Spine2/Female005Spine3/Female005Spine4
+        weight: 1
+      - path: Female005COM1/Female005COM2/Female005Pelvis/Female005Spine0/Female005Spine1/Female005Spine2/Female005Spine3/Female005Spine4/Female005LClavicle
+        weight: 1
+      - path: Female005COM1/Female005COM2/Female005Pelvis/Female005Spine0/Female005Spine1/Female005Spine2/Female005Spine3/Female005Spine4/Female005LClavicle/Female005LUpperArm
+        weight: 1
+      - path: Female005COM1/Female005COM2/Female005Pelvis/Female005Spine0/Female005Spine1/Female005Spine2/Female005Spine3/Female005Spine4/Female005LClavicle/Female005LUpperArm/Female005LForeArm
+        weight: 1
+      - path: Female005COM1/Female005COM2/Female005Pelvis/Female005Spine0/Female005Spine1/Female005Spine2/Female005Spine3/Female005Spine4/Female005LClavicle/Female005LUpperArm/Female005LForeArm/Female005LHand
+        weight: 1
+      - path: Female005COM1/Female005COM2/Female005Pelvis/Female005Spine0/Female005Spine1/Female005Spine2/Female005Spine3/Female005Spine4/Female005Neck
+        weight: 1
+      - path: Female005COM1/Female005COM2/Female005Pelvis/Female005Spine0/Female005Spine1/Female005Spine2/Female005Spine3/Female005Spine4/Female005Neck/Female005Head
+        weight: 1
+      - path: Female005COM1/Female005COM2/Female005Pelvis/Female005Spine0/Female005Spine1/Female005Spine2/Female005Spine3/Female005Spine4/Female005RClavicle
+        weight: 1
+      - path: Female005COM1/Female005COM2/Female005Pelvis/Female005Spine0/Female005Spine1/Female005Spine2/Female005Spine3/Female005Spine4/Female005RClavicle/Female005RUpperArm
+        weight: 1
+      - path: Female005COM1/Female005COM2/Female005Pelvis/Female005Spine0/Female005Spine1/Female005Spine2/Female005Spine3/Female005Spine4/Female005RClavicle/Female005RUpperArm/Female005RForeArm
+        weight: 1
+      - path: Female005COM1/Female005COM2/Female005Pelvis/Female005Spine0/Female005Spine1/Female005Spine2/Female005Spine3/Female005Spine4/Female005RClavicle/Female005RUpperArm/Female005RForeArm/Female005RHand
+        weight: 1
+      - path: Female005Skin_001
+        weight: 1
+      - path: Male000COM1
+        weight: 1
+      - path: Male000COM1/Male000COM2
+        weight: 1
+      - path: Male000COM1/Male000COM2/Male000Pelvis
+        weight: 1
+      - path: Male000COM1/Male000COM2/Male000Pelvis/Male000LThigh
+        weight: 1
+      - path: Male000COM1/Male000COM2/Male000Pelvis/Male000LThigh/Male000LCalf
+        weight: 1
+      - path: Male000COM1/Male000COM2/Male000Pelvis/Male000LThigh/Male000LCalf/Male000LFoot
+        weight: 1
+      - path: Male000COM1/Male000COM2/Male000Pelvis/Male000LThigh/Male000LCalf/Male000LFoot/Male000LToe
+        weight: 1
+      - path: Male000COM1/Male000COM2/Male000Pelvis/Male000RThigh
+        weight: 1
+      - path: Male000COM1/Male000COM2/Male000Pelvis/Male000RThigh/Male000RCalf
+        weight: 1
+      - path: Male000COM1/Male000COM2/Male000Pelvis/Male000RThigh/Male000RCalf/Male000RFoot
+        weight: 1
+      - path: Male000COM1/Male000COM2/Male000Pelvis/Male000RThigh/Male000RCalf/Male000RFoot/Male000RToe
+        weight: 1
+      - path: Male000COM1/Male000COM2/Male000Pelvis/Male000Spine0
+        weight: 1
+      - path: Male000COM1/Male000COM2/Male000Pelvis/Male000Spine0/Male000Spine1
+        weight: 1
+      - path: Male000COM1/Male000COM2/Male000Pelvis/Male000Spine0/Male000Spine1/Male000Spine2
+        weight: 1
+      - path: Male000COM1/Male000COM2/Male000Pelvis/Male000Spine0/Male000Spine1/Male000Spine2/Male000Spine3
+        weight: 1
+      - path: Male000COM1/Male000COM2/Male000Pelvis/Male000Spine0/Male000Spine1/Male000Spine2/Male000Spine3/Male000Spine4
+        weight: 1
+      - path: Male000COM1/Male000COM2/Male000Pelvis/Male000Spine0/Male000Spine1/Male000Spine2/Male000Spine3/Male000Spine4/Male000LClavicle
+        weight: 1
+      - path: Male000COM1/Male000COM2/Male000Pelvis/Male000Spine0/Male000Spine1/Male000Spine2/Male000Spine3/Male000Spine4/Male000LClavicle/Male000LUpperArm
+        weight: 1
+      - path: Male000COM1/Male000COM2/Male000Pelvis/Male000Spine0/Male000Spine1/Male000Spine2/Male000Spine3/Male000Spine4/Male000LClavicle/Male000LUpperArm/Male000LForeArm
+        weight: 1
+      - path: Male000COM1/Male000COM2/Male000Pelvis/Male000Spine0/Male000Spine1/Male000Spine2/Male000Spine3/Male000Spine4/Male000LClavicle/Male000LUpperArm/Male000LForeArm/Male000LHand
+        weight: 1
+      - path: Male000COM1/Male000COM2/Male000Pelvis/Male000Spine0/Male000Spine1/Male000Spine2/Male000Spine3/Male000Spine4/Male000Neck
+        weight: 1
+      - path: Male000COM1/Male000COM2/Male000Pelvis/Male000Spine0/Male000Spine1/Male000Spine2/Male000Spine3/Male000Spine4/Male000Neck/Male000Head
+        weight: 1
+      - path: Male000COM1/Male000COM2/Male000Pelvis/Male000Spine0/Male000Spine1/Male000Spine2/Male000Spine3/Male000Spine4/Male000RClavicle
+        weight: 1
+      - path: Male000COM1/Male000COM2/Male000Pelvis/Male000Spine0/Male000Spine1/Male000Spine2/Male000Spine3/Male000Spine4/Male000RClavicle/Male000RUpperArm
+        weight: 1
+      - path: Male000COM1/Male000COM2/Male000Pelvis/Male000Spine0/Male000Spine1/Male000Spine2/Male000Spine3/Male000Spine4/Male000RClavicle/Male000RUpperArm/Male000RForeArm
+        weight: 1
+      - path: Male000COM1/Male000COM2/Male000Pelvis/Male000Spine0/Male000Spine1/Male000Spine2/Male000Spine3/Male000Spine4/Male000RClavicle/Male000RUpperArm/Male000RForeArm/Male000RHand
+        weight: 1
+      - path: Male000Skin_001
+        weight: 1
+      - path: Male001COM1
+        weight: 1
+      - path: Male001COM1/Male001COM2
+        weight: 1
+      - path: Male001COM1/Male001COM2/Male001Pelvis
+        weight: 1
+      - path: Male001COM1/Male001COM2/Male001Pelvis/Male001LThigh
+        weight: 1
+      - path: Male001COM1/Male001COM2/Male001Pelvis/Male001LThigh/Male001LCalf
+        weight: 1
+      - path: Male001COM1/Male001COM2/Male001Pelvis/Male001LThigh/Male001LCalf/Male001LFoot
+        weight: 1
+      - path: Male001COM1/Male001COM2/Male001Pelvis/Male001LThigh/Male001LCalf/Male001LFoot/Male001LToe
+        weight: 1
+      - path: Male001COM1/Male001COM2/Male001Pelvis/Male001RThigh
+        weight: 1
+      - path: Male001COM1/Male001COM2/Male001Pelvis/Male001RThigh/Male001RCalf
+        weight: 1
+      - path: Male001COM1/Male001COM2/Male001Pelvis/Male001RThigh/Male001RCalf/Male001RFoot
+        weight: 1
+      - path: Male001COM1/Male001COM2/Male001Pelvis/Male001RThigh/Male001RCalf/Male001RFoot/Male001RToe
+        weight: 1
+      - path: Male001COM1/Male001COM2/Male001Pelvis/Male001Spine0
+        weight: 1
+      - path: Male001COM1/Male001COM2/Male001Pelvis/Male001Spine0/Male001Spine1
+        weight: 1
+      - path: Male001COM1/Male001COM2/Male001Pelvis/Male001Spine0/Male001Spine1/Male001Spine2
+        weight: 1
+      - path: Male001COM1/Male001COM2/Male001Pelvis/Male001Spine0/Male001Spine1/Male001Spine2/Male001Spine3
+        weight: 1
+      - path: Male001COM1/Male001COM2/Male001Pelvis/Male001Spine0/Male001Spine1/Male001Spine2/Male001Spine3/Male001Spine4
+        weight: 1
+      - path: Male001COM1/Male001COM2/Male001Pelvis/Male001Spine0/Male001Spine1/Male001Spine2/Male001Spine3/Male001Spine4/Male001LClavicle
+        weight: 1
+      - path: Male001COM1/Male001COM2/Male001Pelvis/Male001Spine0/Male001Spine1/Male001Spine2/Male001Spine3/Male001Spine4/Male001LClavicle/Male001LUpperArm
+        weight: 1
+      - path: Male001COM1/Male001COM2/Male001Pelvis/Male001Spine0/Male001Spine1/Male001Spine2/Male001Spine3/Male001Spine4/Male001LClavicle/Male001LUpperArm/Male001LForeArm
+        weight: 1
+      - path: Male001COM1/Male001COM2/Male001Pelvis/Male001Spine0/Male001Spine1/Male001Spine2/Male001Spine3/Male001Spine4/Male001LClavicle/Male001LUpperArm/Male001LForeArm/Male001LHand
+        weight: 1
+      - path: Male001COM1/Male001COM2/Male001Pelvis/Male001Spine0/Male001Spine1/Male001Spine2/Male001Spine3/Male001Spine4/Male001Neck
+        weight: 1
+      - path: Male001COM1/Male001COM2/Male001Pelvis/Male001Spine0/Male001Spine1/Male001Spine2/Male001Spine3/Male001Spine4/Male001Neck/Male001Head
+        weight: 1
+      - path: Male001COM1/Male001COM2/Male001Pelvis/Male001Spine0/Male001Spine1/Male001Spine2/Male001Spine3/Male001Spine4/Male001RClavicle
+        weight: 1
+      - path: Male001COM1/Male001COM2/Male001Pelvis/Male001Spine0/Male001Spine1/Male001Spine2/Male001Spine3/Male001Spine4/Male001RClavicle/Male001RUpperArm
+        weight: 1
+      - path: Male001COM1/Male001COM2/Male001Pelvis/Male001Spine0/Male001Spine1/Male001Spine2/Male001Spine3/Male001Spine4/Male001RClavicle/Male001RUpperArm/Male001RForeArm
+        weight: 1
+      - path: Male001COM1/Male001COM2/Male001Pelvis/Male001Spine0/Male001Spine1/Male001Spine2/Male001Spine3/Male001Spine4/Male001RClavicle/Male001RUpperArm/Male001RForeArm/Male001RHand
+        weight: 1
+      - path: Male001Skin_001
+        weight: 1
+      - path: Male002COM1
+        weight: 1
+      - path: Male002COM1/Male002COM2
+        weight: 1
+      - path: Male002COM1/Male002COM2/Male002Pelvis
+        weight: 1
+      - path: Male002COM1/Male002COM2/Male002Pelvis/Male002LThigh
+        weight: 1
+      - path: Male002COM1/Male002COM2/Male002Pelvis/Male002LThigh/Male002LCalf
+        weight: 1
+      - path: Male002COM1/Male002COM2/Male002Pelvis/Male002LThigh/Male002LCalf/Male002LFoot
+        weight: 1
+      - path: Male002COM1/Male002COM2/Male002Pelvis/Male002LThigh/Male002LCalf/Male002LFoot/Male002LToe
+        weight: 1
+      - path: Male002COM1/Male002COM2/Male002Pelvis/Male002RThigh
+        weight: 1
+      - path: Male002COM1/Male002COM2/Male002Pelvis/Male002RThigh/Male002RCalf
+        weight: 1
+      - path: Male002COM1/Male002COM2/Male002Pelvis/Male002RThigh/Male002RCalf/Male002RFoot
+        weight: 1
+      - path: Male002COM1/Male002COM2/Male002Pelvis/Male002RThigh/Male002RCalf/Male002RFoot/Male002RToe
+        weight: 1
+      - path: Male002COM1/Male002COM2/Male002Pelvis/Male002Spine0
+        weight: 1
+      - path: Male002COM1/Male002COM2/Male002Pelvis/Male002Spine0/Male002Spine1
+        weight: 1
+      - path: Male002COM1/Male002COM2/Male002Pelvis/Male002Spine0/Male002Spine1/Male002Spine2
+        weight: 1
+      - path: Male002COM1/Male002COM2/Male002Pelvis/Male002Spine0/Male002Spine1/Male002Spine2/Male002Spine3
+        weight: 1
+      - path: Male002COM1/Male002COM2/Male002Pelvis/Male002Spine0/Male002Spine1/Male002Spine2/Male002Spine3/Male002Spine4
+        weight: 1
+      - path: Male002COM1/Male002COM2/Male002Pelvis/Male002Spine0/Male002Spine1/Male002Spine2/Male002Spine3/Male002Spine4/Male002LClavicle
+        weight: 1
+      - path: Male002COM1/Male002COM2/Male002Pelvis/Male002Spine0/Male002Spine1/Male002Spine2/Male002Spine3/Male002Spine4/Male002LClavicle/Male002LUpperArm
+        weight: 1
+      - path: Male002COM1/Male002COM2/Male002Pelvis/Male002Spine0/Male002Spine1/Male002Spine2/Male002Spine3/Male002Spine4/Male002LClavicle/Male002LUpperArm/Male002LForeArm
+        weight: 1
+      - path: Male002COM1/Male002COM2/Male002Pelvis/Male002Spine0/Male002Spine1/Male002Spine2/Male002Spine3/Male002Spine4/Male002LClavicle/Male002LUpperArm/Male002LForeArm/Male002LHand
+        weight: 1
+      - path: Male002COM1/Male002COM2/Male002Pelvis/Male002Spine0/Male002Spine1/Male002Spine2/Male002Spine3/Male002Spine4/Male002Neck
+        weight: 1
+      - path: Male002COM1/Male002COM2/Male002Pelvis/Male002Spine0/Male002Spine1/Male002Spine2/Male002Spine3/Male002Spine4/Male002Neck/Male002Head
+        weight: 1
+      - path: Male002COM1/Male002COM2/Male002Pelvis/Male002Spine0/Male002Spine1/Male002Spine2/Male002Spine3/Male002Spine4/Male002RClavicle
+        weight: 1
+      - path: Male002COM1/Male002COM2/Male002Pelvis/Male002Spine0/Male002Spine1/Male002Spine2/Male002Spine3/Male002Spine4/Male002RClavicle/Male002RUpperArm
+        weight: 1
+      - path: Male002COM1/Male002COM2/Male002Pelvis/Male002Spine0/Male002Spine1/Male002Spine2/Male002Spine3/Male002Spine4/Male002RClavicle/Male002RUpperArm/Male002RForeArm
+        weight: 1
+      - path: Male002COM1/Male002COM2/Male002Pelvis/Male002Spine0/Male002Spine1/Male002Spine2/Male002Spine3/Male002Spine4/Male002RClavicle/Male002RUpperArm/Male002RForeArm/Male002RHand
+        weight: 1
+      - path: Male002Skin_001
+        weight: 1
+      - path: Male003COM1
+        weight: 1
+      - path: Male003COM1/Male003COM2
+        weight: 1
+      - path: Male003COM1/Male003COM2/Male003Pelvis
+        weight: 1
+      - path: Male003COM1/Male003COM2/Male003Pelvis/Male003LThigh
+        weight: 1
+      - path: Male003COM1/Male003COM2/Male003Pelvis/Male003LThigh/Male003LCalf
+        weight: 1
+      - path: Male003COM1/Male003COM2/Male003Pelvis/Male003LThigh/Male003LCalf/Male003LFoot
+        weight: 1
+      - path: Male003COM1/Male003COM2/Male003Pelvis/Male003LThigh/Male003LCalf/Male003LFoot/Male003LToe
+        weight: 1
+      - path: Male003COM1/Male003COM2/Male003Pelvis/Male003RThigh
+        weight: 1
+      - path: Male003COM1/Male003COM2/Male003Pelvis/Male003RThigh/Male003RCalf
+        weight: 1
+      - path: Male003COM1/Male003COM2/Male003Pelvis/Male003RThigh/Male003RCalf/Male003RFoot
+        weight: 1
+      - path: Male003COM1/Male003COM2/Male003Pelvis/Male003RThigh/Male003RCalf/Male003RFoot/Male003RToe
+        weight: 1
+      - path: Male003COM1/Male003COM2/Male003Pelvis/Male003Spine0
+        weight: 1
+      - path: Male003COM1/Male003COM2/Male003Pelvis/Male003Spine0/Male003Spine1
+        weight: 1
+      - path: Male003COM1/Male003COM2/Male003Pelvis/Male003Spine0/Male003Spine1/Male003Spine2
+        weight: 1
+      - path: Male003COM1/Male003COM2/Male003Pelvis/Male003Spine0/Male003Spine1/Male003Spine2/Male003Spine3
+        weight: 1
+      - path: Male003COM1/Male003COM2/Male003Pelvis/Male003Spine0/Male003Spine1/Male003Spine2/Male003Spine3/Male003Spine4
+        weight: 1
+      - path: Male003COM1/Male003COM2/Male003Pelvis/Male003Spine0/Male003Spine1/Male003Spine2/Male003Spine3/Male003Spine4/Male003LClavicle
+        weight: 1
+      - path: Male003COM1/Male003COM2/Male003Pelvis/Male003Spine0/Male003Spine1/Male003Spine2/Male003Spine3/Male003Spine4/Male003LClavicle/Male003LUpperArm
+        weight: 1
+      - path: Male003COM1/Male003COM2/Male003Pelvis/Male003Spine0/Male003Spine1/Male003Spine2/Male003Spine3/Male003Spine4/Male003LClavicle/Male003LUpperArm/Male003LForeArm
+        weight: 1
+      - path: Male003COM1/Male003COM2/Male003Pelvis/Male003Spine0/Male003Spine1/Male003Spine2/Male003Spine3/Male003Spine4/Male003LClavicle/Male003LUpperArm/Male003LForeArm/Male003LHand
+        weight: 1
+      - path: Male003COM1/Male003COM2/Male003Pelvis/Male003Spine0/Male003Spine1/Male003Spine2/Male003Spine3/Male003Spine4/Male003Neck
+        weight: 1
+      - path: Male003COM1/Male003COM2/Male003Pelvis/Male003Spine0/Male003Spine1/Male003Spine2/Male003Spine3/Male003Spine4/Male003Neck/Male003Head
+        weight: 1
+      - path: Male003COM1/Male003COM2/Male003Pelvis/Male003Spine0/Male003Spine1/Male003Spine2/Male003Spine3/Male003Spine4/Male003RClavicle
+        weight: 1
+      - path: Male003COM1/Male003COM2/Male003Pelvis/Male003Spine0/Male003Spine1/Male003Spine2/Male003Spine3/Male003Spine4/Male003RClavicle/Male003RUpperArm
+        weight: 1
+      - path: Male003COM1/Male003COM2/Male003Pelvis/Male003Spine0/Male003Spine1/Male003Spine2/Male003Spine3/Male003Spine4/Male003RClavicle/Male003RUpperArm/Male003RForeArm
+        weight: 1
+      - path: Male003COM1/Male003COM2/Male003Pelvis/Male003Spine0/Male003Spine1/Male003Spine2/Male003Spine3/Male003Spine4/Male003RClavicle/Male003RUpperArm/Male003RForeArm/Male003RHand
+        weight: 1
+      - path: Male003Skin_001
+        weight: 1
+      - path: Male004COM1
+        weight: 1
+      - path: Male004COM1/Male004COM2
+        weight: 1
+      - path: Male004COM1/Male004COM2/Male004Pelvis
+        weight: 1
+      - path: Male004COM1/Male004COM2/Male004Pelvis/Male004LThigh
+        weight: 1
+      - path: Male004COM1/Male004COM2/Male004Pelvis/Male004LThigh/Male004LCalf
+        weight: 1
+      - path: Male004COM1/Male004COM2/Male004Pelvis/Male004LThigh/Male004LCalf/Male004LFoot
+        weight: 1
+      - path: Male004COM1/Male004COM2/Male004Pelvis/Male004LThigh/Male004LCalf/Male004LFoot/Male004LToe
+        weight: 1
+      - path: Male004COM1/Male004COM2/Male004Pelvis/Male004RThigh
+        weight: 1
+      - path: Male004COM1/Male004COM2/Male004Pelvis/Male004RThigh/Male004RCalf
+        weight: 1
+      - path: Male004COM1/Male004COM2/Male004Pelvis/Male004RThigh/Male004RCalf/Male004RFoot
+        weight: 1
+      - path: Male004COM1/Male004COM2/Male004Pelvis/Male004RThigh/Male004RCalf/Male004RFoot/Male004RToe
+        weight: 1
+      - path: Male004COM1/Male004COM2/Male004Pelvis/Male004Spine0
+        weight: 1
+      - path: Male004COM1/Male004COM2/Male004Pelvis/Male004Spine0/Male004Spine1
+        weight: 1
+      - path: Male004COM1/Male004COM2/Male004Pelvis/Male004Spine0/Male004Spine1/Male004Spine2
+        weight: 1
+      - path: Male004COM1/Male004COM2/Male004Pelvis/Male004Spine0/Male004Spine1/Male004Spine2/Male004Spine3
+        weight: 1
+      - path: Male004COM1/Male004COM2/Male004Pelvis/Male004Spine0/Male004Spine1/Male004Spine2/Male004Spine3/Male004Spine4
+        weight: 1
+      - path: Male004COM1/Male004COM2/Male004Pelvis/Male004Spine0/Male004Spine1/Male004Spine2/Male004Spine3/Male004Spine4/Male004LClavicle
+        weight: 1
+      - path: Male004COM1/Male004COM2/Male004Pelvis/Male004Spine0/Male004Spine1/Male004Spine2/Male004Spine3/Male004Spine4/Male004LClavicle/Male004LUpperArm
+        weight: 1
+      - path: Male004COM1/Male004COM2/Male004Pelvis/Male004Spine0/Male004Spine1/Male004Spine2/Male004Spine3/Male004Spine4/Male004LClavicle/Male004LUpperArm/Male004LForeArm
+        weight: 1
+      - path: Male004COM1/Male004COM2/Male004Pelvis/Male004Spine0/Male004Spine1/Male004Spine2/Male004Spine3/Male004Spine4/Male004LClavicle/Male004LUpperArm/Male004LForeArm/Male004LHand
+        weight: 1
+      - path: Male004COM1/Male004COM2/Male004Pelvis/Male004Spine0/Male004Spine1/Male004Spine2/Male004Spine3/Male004Spine4/Male004Neck
+        weight: 1
+      - path: Male004COM1/Male004COM2/Male004Pelvis/Male004Spine0/Male004Spine1/Male004Spine2/Male004Spine3/Male004Spine4/Male004Neck/Male004Head
+        weight: 1
+      - path: Male004COM1/Male004COM2/Male004Pelvis/Male004Spine0/Male004Spine1/Male004Spine2/Male004Spine3/Male004Spine4/Male004RClavicle
+        weight: 1
+      - path: Male004COM1/Male004COM2/Male004Pelvis/Male004Spine0/Male004Spine1/Male004Spine2/Male004Spine3/Male004Spine4/Male004RClavicle/Male004RUpperArm
+        weight: 1
+      - path: Male004COM1/Male004COM2/Male004Pelvis/Male004Spine0/Male004Spine1/Male004Spine2/Male004Spine3/Male004Spine4/Male004RClavicle/Male004RUpperArm/Male004RForeArm
+        weight: 1
+      - path: Male004COM1/Male004COM2/Male004Pelvis/Male004Spine0/Male004Spine1/Male004Spine2/Male004Spine3/Male004Spine4/Male004RClavicle/Male004RUpperArm/Male004RForeArm/Male004RHand
+        weight: 1
+      - path: Male004Skin_001
+        weight: 1
+      - path: Male005COM1
+        weight: 1
+      - path: Male005COM1/Male005COM2
+        weight: 1
+      - path: Male005COM1/Male005COM2/Male005Pelvis
+        weight: 1
+      - path: Male005COM1/Male005COM2/Male005Pelvis/Male005LThigh
+        weight: 1
+      - path: Male005COM1/Male005COM2/Male005Pelvis/Male005LThigh/Male005LCalf
+        weight: 1
+      - path: Male005COM1/Male005COM2/Male005Pelvis/Male005LThigh/Male005LCalf/Male005LFoot
+        weight: 1
+      - path: Male005COM1/Male005COM2/Male005Pelvis/Male005LThigh/Male005LCalf/Male005LFoot/Male005LToe
+        weight: 1
+      - path: Male005COM1/Male005COM2/Male005Pelvis/Male005RThigh
+        weight: 1
+      - path: Male005COM1/Male005COM2/Male005Pelvis/Male005RThigh/Male005RCalf
+        weight: 1
+      - path: Male005COM1/Male005COM2/Male005Pelvis/Male005RThigh/Male005RCalf/Male005RFoot
+        weight: 1
+      - path: Male005COM1/Male005COM2/Male005Pelvis/Male005RThigh/Male005RCalf/Male005RFoot/Male005RToe
+        weight: 1
+      - path: Male005COM1/Male005COM2/Male005Pelvis/Male005Spine0
+        weight: 1
+      - path: Male005COM1/Male005COM2/Male005Pelvis/Male005Spine0/Male005Spine1
+        weight: 1
+      - path: Male005COM1/Male005COM2/Male005Pelvis/Male005Spine0/Male005Spine1/Male005Spine2
+        weight: 1
+      - path: Male005COM1/Male005COM2/Male005Pelvis/Male005Spine0/Male005Spine1/Male005Spine2/Male005Spine3
+        weight: 1
+      - path: Male005COM1/Male005COM2/Male005Pelvis/Male005Spine0/Male005Spine1/Male005Spine2/Male005Spine3/Male005Spine4
+        weight: 1
+      - path: Male005COM1/Male005COM2/Male005Pelvis/Male005Spine0/Male005Spine1/Male005Spine2/Male005Spine3/Male005Spine4/Male005LClavicle
+        weight: 1
+      - path: Male005COM1/Male005COM2/Male005Pelvis/Male005Spine0/Male005Spine1/Male005Spine2/Male005Spine3/Male005Spine4/Male005LClavicle/Male005LUpperArm
+        weight: 1
+      - path: Male005COM1/Male005COM2/Male005Pelvis/Male005Spine0/Male005Spine1/Male005Spine2/Male005Spine3/Male005Spine4/Male005LClavicle/Male005LUpperArm/Male005LForeArm
+        weight: 1
+      - path: Male005COM1/Male005COM2/Male005Pelvis/Male005Spine0/Male005Spine1/Male005Spine2/Male005Spine3/Male005Spine4/Male005LClavicle/Male005LUpperArm/Male005LForeArm/Male005LHand
+        weight: 1
+      - path: Male005COM1/Male005COM2/Male005Pelvis/Male005Spine0/Male005Spine1/Male005Spine2/Male005Spine3/Male005Spine4/Male005Neck
+        weight: 1
+      - path: Male005COM1/Male005COM2/Male005Pelvis/Male005Spine0/Male005Spine1/Male005Spine2/Male005Spine3/Male005Spine4/Male005Neck/Male005Head
+        weight: 1
+      - path: Male005COM1/Male005COM2/Male005Pelvis/Male005Spine0/Male005Spine1/Male005Spine2/Male005Spine3/Male005Spine4/Male005RClavicle
+        weight: 1
+      - path: Male005COM1/Male005COM2/Male005Pelvis/Male005Spine0/Male005Spine1/Male005Spine2/Male005Spine3/Male005Spine4/Male005RClavicle/Male005RUpperArm
+        weight: 1
+      - path: Male005COM1/Male005COM2/Male005Pelvis/Male005Spine0/Male005Spine1/Male005Spine2/Male005Spine3/Male005Spine4/Male005RClavicle/Male005RUpperArm/Male005RForeArm
+        weight: 1
+      - path: Male005COM1/Male005COM2/Male005Pelvis/Male005Spine0/Male005Spine1/Male005Spine2/Male005Spine3/Male005Spine4/Male005RClavicle/Male005RUpperArm/Male005RForeArm/Male005RHand
+        weight: 1
+      - path: Male005Skin_001
+        weight: 1
+      - path: Male006COM1
+        weight: 1
+      - path: Male006COM1/Male006COM2
+        weight: 1
+      - path: Male006COM1/Male006COM2/Male006Pelvis
+        weight: 1
+      - path: Male006COM1/Male006COM2/Male006Pelvis/Male006LThigh
+        weight: 1
+      - path: Male006COM1/Male006COM2/Male006Pelvis/Male006LThigh/Male006LCalf
+        weight: 1
+      - path: Male006COM1/Male006COM2/Male006Pelvis/Male006LThigh/Male006LCalf/Male006LFoot
+        weight: 1
+      - path: Male006COM1/Male006COM2/Male006Pelvis/Male006LThigh/Male006LCalf/Male006LFoot/Male006LToe
+        weight: 1
+      - path: Male006COM1/Male006COM2/Male006Pelvis/Male006RThigh
+        weight: 1
+      - path: Male006COM1/Male006COM2/Male006Pelvis/Male006RThigh/Male006RCalf
+        weight: 1
+      - path: Male006COM1/Male006COM2/Male006Pelvis/Male006RThigh/Male006RCalf/Male006RFoot
+        weight: 1
+      - path: Male006COM1/Male006COM2/Male006Pelvis/Male006RThigh/Male006RCalf/Male006RFoot/Male006RToe
+        weight: 1
+      - path: Male006COM1/Male006COM2/Male006Pelvis/Male006Spine0
+        weight: 1
+      - path: Male006COM1/Male006COM2/Male006Pelvis/Male006Spine0/Male006Spine1
+        weight: 1
+      - path: Male006COM1/Male006COM2/Male006Pelvis/Male006Spine0/Male006Spine1/Male006Spine2
+        weight: 1
+      - path: Male006COM1/Male006COM2/Male006Pelvis/Male006Spine0/Male006Spine1/Male006Spine2/Male006Spine3
+        weight: 1
+      - path: Male006COM1/Male006COM2/Male006Pelvis/Male006Spine0/Male006Spine1/Male006Spine2/Male006Spine3/Male006Spine4
+        weight: 1
+      - path: Male006COM1/Male006COM2/Male006Pelvis/Male006Spine0/Male006Spine1/Male006Spine2/Male006Spine3/Male006Spine4/Male006LClavicle
+        weight: 1
+      - path: Male006COM1/Male006COM2/Male006Pelvis/Male006Spine0/Male006Spine1/Male006Spine2/Male006Spine3/Male006Spine4/Male006LClavicle/Male006LUpperArm
+        weight: 1
+      - path: Male006COM1/Male006COM2/Male006Pelvis/Male006Spine0/Male006Spine1/Male006Spine2/Male006Spine3/Male006Spine4/Male006LClavicle/Male006LUpperArm/Male006LForeArm
+        weight: 1
+      - path: Male006COM1/Male006COM2/Male006Pelvis/Male006Spine0/Male006Spine1/Male006Spine2/Male006Spine3/Male006Spine4/Male006LClavicle/Male006LUpperArm/Male006LForeArm/Male006LHand
+        weight: 1
+      - path: Male006COM1/Male006COM2/Male006Pelvis/Male006Spine0/Male006Spine1/Male006Spine2/Male006Spine3/Male006Spine4/Male006Neck
+        weight: 1
+      - path: Male006COM1/Male006COM2/Male006Pelvis/Male006Spine0/Male006Spine1/Male006Spine2/Male006Spine3/Male006Spine4/Male006Neck/Male006Head
+        weight: 1
+      - path: Male006COM1/Male006COM2/Male006Pelvis/Male006Spine0/Male006Spine1/Male006Spine2/Male006Spine3/Male006Spine4/Male006RClavicle
+        weight: 1
+      - path: Male006COM1/Male006COM2/Male006Pelvis/Male006Spine0/Male006Spine1/Male006Spine2/Male006Spine3/Male006Spine4/Male006RClavicle/Male006RUpperArm
+        weight: 1
+      - path: Male006COM1/Male006COM2/Male006Pelvis/Male006Spine0/Male006Spine1/Male006Spine2/Male006Spine3/Male006Spine4/Male006RClavicle/Male006RUpperArm/Male006RForeArm
+        weight: 1
+      - path: Male006COM1/Male006COM2/Male006Pelvis/Male006Spine0/Male006Spine1/Male006Spine2/Male006Spine3/Male006Spine4/Male006RClavicle/Male006RUpperArm/Male006RForeArm/Male006RHand
+        weight: 1
+      - path: Male006Skin_001
+        weight: 1
+      - path: Male007COM1
+        weight: 1
+      - path: Male007COM1/Male007COM2
+        weight: 1
+      - path: Male007COM1/Male007COM2/Male007Pelvis
+        weight: 1
+      - path: Male007COM1/Male007COM2/Male007Pelvis/Male007LThigh
+        weight: 1
+      - path: Male007COM1/Male007COM2/Male007Pelvis/Male007LThigh/Male007LCalf
+        weight: 1
+      - path: Male007COM1/Male007COM2/Male007Pelvis/Male007LThigh/Male007LCalf/Male007LFoot
+        weight: 1
+      - path: Male007COM1/Male007COM2/Male007Pelvis/Male007LThigh/Male007LCalf/Male007LFoot/Male007LToe
+        weight: 1
+      - path: Male007COM1/Male007COM2/Male007Pelvis/Male007RThigh
+        weight: 1
+      - path: Male007COM1/Male007COM2/Male007Pelvis/Male007RThigh/Male007RCalf
+        weight: 1
+      - path: Male007COM1/Male007COM2/Male007Pelvis/Male007RThigh/Male007RCalf/Male007RFoot
+        weight: 1
+      - path: Male007COM1/Male007COM2/Male007Pelvis/Male007RThigh/Male007RCalf/Male007RFoot/Male007RToe
+        weight: 1
+      - path: Male007COM1/Male007COM2/Male007Pelvis/Male007Spine0
+        weight: 1
+      - path: Male007COM1/Male007COM2/Male007Pelvis/Male007Spine0/Male007Spine1
+        weight: 1
+      - path: Male007COM1/Male007COM2/Male007Pelvis/Male007Spine0/Male007Spine1/Male007Spine2
+        weight: 1
+      - path: Male007COM1/Male007COM2/Male007Pelvis/Male007Spine0/Male007Spine1/Male007Spine2/Male007Spine3
+        weight: 1
+      - path: Male007COM1/Male007COM2/Male007Pelvis/Male007Spine0/Male007Spine1/Male007Spine2/Male007Spine3/Male007Spine4
+        weight: 1
+      - path: Male007COM1/Male007COM2/Male007Pelvis/Male007Spine0/Male007Spine1/Male007Spine2/Male007Spine3/Male007Spine4/Male007LClavicle
+        weight: 1
+      - path: Male007COM1/Male007COM2/Male007Pelvis/Male007Spine0/Male007Spine1/Male007Spine2/Male007Spine3/Male007Spine4/Male007LClavicle/Male007LUpperArm
+        weight: 1
+      - path: Male007COM1/Male007COM2/Male007Pelvis/Male007Spine0/Male007Spine1/Male007Spine2/Male007Spine3/Male007Spine4/Male007LClavicle/Male007LUpperArm/Male007LForeArm
+        weight: 1
+      - path: Male007COM1/Male007COM2/Male007Pelvis/Male007Spine0/Male007Spine1/Male007Spine2/Male007Spine3/Male007Spine4/Male007LClavicle/Male007LUpperArm/Male007LForeArm/Male007LHand
+        weight: 1
+      - path: Male007COM1/Male007COM2/Male007Pelvis/Male007Spine0/Male007Spine1/Male007Spine2/Male007Spine3/Male007Spine4/Male007Neck
+        weight: 1
+      - path: Male007COM1/Male007COM2/Male007Pelvis/Male007Spine0/Male007Spine1/Male007Spine2/Male007Spine3/Male007Spine4/Male007Neck/Male007Head
+        weight: 1
+      - path: Male007COM1/Male007COM2/Male007Pelvis/Male007Spine0/Male007Spine1/Male007Spine2/Male007Spine3/Male007Spine4/Male007RClavicle
+        weight: 1
+      - path: Male007COM1/Male007COM2/Male007Pelvis/Male007Spine0/Male007Spine1/Male007Spine2/Male007Spine3/Male007Spine4/Male007RClavicle/Male007RUpperArm
+        weight: 1
+      - path: Male007COM1/Male007COM2/Male007Pelvis/Male007Spine0/Male007Spine1/Male007Spine2/Male007Spine3/Male007Spine4/Male007RClavicle/Male007RUpperArm/Male007RForeArm
+        weight: 1
+      - path: Male007COM1/Male007COM2/Male007Pelvis/Male007Spine0/Male007Spine1/Male007Spine2/Male007Spine3/Male007Spine4/Male007RClavicle/Male007RUpperArm/Male007RForeArm/Male007RHand
+        weight: 1
+      - path: Male007Skin_001
+        weight: 1
+      - path: Male008COM1
+        weight: 1
+      - path: Male008COM1/Male008COM2
+        weight: 1
+      - path: Male008COM1/Male008COM2/Male008Pelvis
+        weight: 1
+      - path: Male008COM1/Male008COM2/Male008Pelvis/Male008LThigh
+        weight: 1
+      - path: Male008COM1/Male008COM2/Male008Pelvis/Male008LThigh/Male008LCalf
+        weight: 1
+      - path: Male008COM1/Male008COM2/Male008Pelvis/Male008LThigh/Male008LCalf/Male008LFoot
+        weight: 1
+      - path: Male008COM1/Male008COM2/Male008Pelvis/Male008LThigh/Male008LCalf/Male008LFoot/Male008LToe
+        weight: 1
+      - path: Male008COM1/Male008COM2/Male008Pelvis/Male008RThigh
+        weight: 1
+      - path: Male008COM1/Male008COM2/Male008Pelvis/Male008RThigh/Male008RCalf
+        weight: 1
+      - path: Male008COM1/Male008COM2/Male008Pelvis/Male008RThigh/Male008RCalf/Male008RFoot
+        weight: 1
+      - path: Male008COM1/Male008COM2/Male008Pelvis/Male008RThigh/Male008RCalf/Male008RFoot/Male008RToe
+        weight: 1
+      - path: Male008COM1/Male008COM2/Male008Pelvis/Male008Spine0
+        weight: 1
+      - path: Male008COM1/Male008COM2/Male008Pelvis/Male008Spine0/Male008Spine1
+        weight: 1
+      - path: Male008COM1/Male008COM2/Male008Pelvis/Male008Spine0/Male008Spine1/Male008Spine2
+        weight: 1
+      - path: Male008COM1/Male008COM2/Male008Pelvis/Male008Spine0/Male008Spine1/Male008Spine2/Male008Spine3
+        weight: 1
+      - path: Male008COM1/Male008COM2/Male008Pelvis/Male008Spine0/Male008Spine1/Male008Spine2/Male008Spine3/Male008Spine4
+        weight: 1
+      - path: Male008COM1/Male008COM2/Male008Pelvis/Male008Spine0/Male008Spine1/Male008Spine2/Male008Spine3/Male008Spine4/Male008LClavicle
+        weight: 1
+      - path: Male008COM1/Male008COM2/Male008Pelvis/Male008Spine0/Male008Spine1/Male008Spine2/Male008Spine3/Male008Spine4/Male008LClavicle/Male008LUpperArm
+        weight: 1
+      - path: Male008COM1/Male008COM2/Male008Pelvis/Male008Spine0/Male008Spine1/Male008Spine2/Male008Spine3/Male008Spine4/Male008LClavicle/Male008LUpperArm/Male008LForeArm
+        weight: 1
+      - path: Male008COM1/Male008COM2/Male008Pelvis/Male008Spine0/Male008Spine1/Male008Spine2/Male008Spine3/Male008Spine4/Male008LClavicle/Male008LUpperArm/Male008LForeArm/Male008LHand
+        weight: 1
+      - path: Male008COM1/Male008COM2/Male008Pelvis/Male008Spine0/Male008Spine1/Male008Spine2/Male008Spine3/Male008Spine4/Male008Neck
+        weight: 1
+      - path: Male008COM1/Male008COM2/Male008Pelvis/Male008Spine0/Male008Spine1/Male008Spine2/Male008Spine3/Male008Spine4/Male008Neck/Male008Head
+        weight: 1
+      - path: Male008COM1/Male008COM2/Male008Pelvis/Male008Spine0/Male008Spine1/Male008Spine2/Male008Spine3/Male008Spine4/Male008RClavicle
+        weight: 1
+      - path: Male008COM1/Male008COM2/Male008Pelvis/Male008Spine0/Male008Spine1/Male008Spine2/Male008Spine3/Male008Spine4/Male008RClavicle/Male008RUpperArm
+        weight: 1
+      - path: Male008COM1/Male008COM2/Male008Pelvis/Male008Spine0/Male008Spine1/Male008Spine2/Male008Spine3/Male008Spine4/Male008RClavicle/Male008RUpperArm/Male008RForeArm
+        weight: 1
+      - path: Male008COM1/Male008COM2/Male008Pelvis/Male008Spine0/Male008Spine1/Male008Spine2/Male008Spine3/Male008Spine4/Male008RClavicle/Male008RUpperArm/Male008RForeArm/Male008RHand
+        weight: 1
+      - path: Male008Skin_001
+        weight: 1
+      - path: Male009COM1
+        weight: 1
+      - path: Male009COM1/Male009COM2
+        weight: 1
+      - path: Male009COM1/Male009COM2/Male009Pelvis
+        weight: 1
+      - path: Male009COM1/Male009COM2/Male009Pelvis/Male009LThigh
+        weight: 1
+      - path: Male009COM1/Male009COM2/Male009Pelvis/Male009LThigh/Male009LCalf
+        weight: 1
+      - path: Male009COM1/Male009COM2/Male009Pelvis/Male009LThigh/Male009LCalf/Male009LFoot
+        weight: 1
+      - path: Male009COM1/Male009COM2/Male009Pelvis/Male009LThigh/Male009LCalf/Male009LFoot/Male009LToe
+        weight: 1
+      - path: Male009COM1/Male009COM2/Male009Pelvis/Male009RThigh
+        weight: 1
+      - path: Male009COM1/Male009COM2/Male009Pelvis/Male009RThigh/Male009RCalf
+        weight: 1
+      - path: Male009COM1/Male009COM2/Male009Pelvis/Male009RThigh/Male009RCalf/Male009RFoot
+        weight: 1
+      - path: Male009COM1/Male009COM2/Male009Pelvis/Male009RThigh/Male009RCalf/Male009RFoot/Male009RToe
+        weight: 1
+      - path: Male009COM1/Male009COM2/Male009Pelvis/Male009Spine0
+        weight: 1
+      - path: Male009COM1/Male009COM2/Male009Pelvis/Male009Spine0/Male009Spine1
+        weight: 1
+      - path: Male009COM1/Male009COM2/Male009Pelvis/Male009Spine0/Male009Spine1/Male009Spine2
+        weight: 1
+      - path: Male009COM1/Male009COM2/Male009Pelvis/Male009Spine0/Male009Spine1/Male009Spine2/Male009Spine3
+        weight: 1
+      - path: Male009COM1/Male009COM2/Male009Pelvis/Male009Spine0/Male009Spine1/Male009Spine2/Male009Spine3/Male009Spine4
+        weight: 1
+      - path: Male009COM1/Male009COM2/Male009Pelvis/Male009Spine0/Male009Spine1/Male009Spine2/Male009Spine3/Male009Spine4/Male009LClavicle
+        weight: 1
+      - path: Male009COM1/Male009COM2/Male009Pelvis/Male009Spine0/Male009Spine1/Male009Spine2/Male009Spine3/Male009Spine4/Male009LClavicle/Male009LUpperArm
+        weight: 1
+      - path: Male009COM1/Male009COM2/Male009Pelvis/Male009Spine0/Male009Spine1/Male009Spine2/Male009Spine3/Male009Spine4/Male009LClavicle/Male009LUpperArm/Male009LForeArm
+        weight: 1
+      - path: Male009COM1/Male009COM2/Male009Pelvis/Male009Spine0/Male009Spine1/Male009Spine2/Male009Spine3/Male009Spine4/Male009LClavicle/Male009LUpperArm/Male009LForeArm/Male009LHand
+        weight: 1
+      - path: Male009COM1/Male009COM2/Male009Pelvis/Male009Spine0/Male009Spine1/Male009Spine2/Male009Spine3/Male009Spine4/Male009Neck
+        weight: 1
+      - path: Male009COM1/Male009COM2/Male009Pelvis/Male009Spine0/Male009Spine1/Male009Spine2/Male009Spine3/Male009Spine4/Male009Neck/Male009Head
+        weight: 1
+      - path: Male009COM1/Male009COM2/Male009Pelvis/Male009Spine0/Male009Spine1/Male009Spine2/Male009Spine3/Male009Spine4/Male009RClavicle
+        weight: 1
+      - path: Male009COM1/Male009COM2/Male009Pelvis/Male009Spine0/Male009Spine1/Male009Spine2/Male009Spine3/Male009Spine4/Male009RClavicle/Male009RUpperArm
+        weight: 1
+      - path: Male009COM1/Male009COM2/Male009Pelvis/Male009Spine0/Male009Spine1/Male009Spine2/Male009Spine3/Male009Spine4/Male009RClavicle/Male009RUpperArm/Male009RForeArm
+        weight: 1
+      - path: Male009COM1/Male009COM2/Male009Pelvis/Male009Spine0/Male009Spine1/Male009Spine2/Male009Spine3/Male009Spine4/Male009RClavicle/Male009RUpperArm/Male009RForeArm/Male009RHand
+        weight: 1
+      - path: Male009Skin_001
+        weight: 1
+      - path: Male010COM1
+        weight: 1
+      - path: Male010COM1/Male010COM2
+        weight: 1
+      - path: Male010COM1/Male010COM2/Male010Pelvis
+        weight: 1
+      - path: Male010COM1/Male010COM2/Male010Pelvis/Male010LThigh
+        weight: 1
+      - path: Male010COM1/Male010COM2/Male010Pelvis/Male010LThigh/Male010LCalf
+        weight: 1
+      - path: Male010COM1/Male010COM2/Male010Pelvis/Male010LThigh/Male010LCalf/Male010LFoot
+        weight: 1
+      - path: Male010COM1/Male010COM2/Male010Pelvis/Male010LThigh/Male010LCalf/Male010LFoot/Male010LToe
+        weight: 1
+      - path: Male010COM1/Male010COM2/Male010Pelvis/Male010RThigh
+        weight: 1
+      - path: Male010COM1/Male010COM2/Male010Pelvis/Male010RThigh/Male010RCalf
+        weight: 1
+      - path: Male010COM1/Male010COM2/Male010Pelvis/Male010RThigh/Male010RCalf/Male010RFoot
+        weight: 1
+      - path: Male010COM1/Male010COM2/Male010Pelvis/Male010RThigh/Male010RCalf/Male010RFoot/Male010RToe
+        weight: 1
+      - path: Male010COM1/Male010COM2/Male010Pelvis/Male010Spine0
+        weight: 1
+      - path: Male010COM1/Male010COM2/Male010Pelvis/Male010Spine0/Male010Spine1
+        weight: 1
+      - path: Male010COM1/Male010COM2/Male010Pelvis/Male010Spine0/Male010Spine1/Male010Spine2
+        weight: 1
+      - path: Male010COM1/Male010COM2/Male010Pelvis/Male010Spine0/Male010Spine1/Male010Spine2/Male010Spine3
+        weight: 1
+      - path: Male010COM1/Male010COM2/Male010Pelvis/Male010Spine0/Male010Spine1/Male010Spine2/Male010Spine3/Male010Spine4
+        weight: 1
+      - path: Male010COM1/Male010COM2/Male010Pelvis/Male010Spine0/Male010Spine1/Male010Spine2/Male010Spine3/Male010Spine4/Male010LClavicle
+        weight: 1
+      - path: Male010COM1/Male010COM2/Male010Pelvis/Male010Spine0/Male010Spine1/Male010Spine2/Male010Spine3/Male010Spine4/Male010LClavicle/Male010LUpperArm
+        weight: 1
+      - path: Male010COM1/Male010COM2/Male010Pelvis/Male010Spine0/Male010Spine1/Male010Spine2/Male010Spine3/Male010Spine4/Male010LClavicle/Male010LUpperArm/Male010LForeArm
+        weight: 1
+      - path: Male010COM1/Male010COM2/Male010Pelvis/Male010Spine0/Male010Spine1/Male010Spine2/Male010Spine3/Male010Spine4/Male010LClavicle/Male010LUpperArm/Male010LForeArm/Male010LHand
+        weight: 1
+      - path: Male010COM1/Male010COM2/Male010Pelvis/Male010Spine0/Male010Spine1/Male010Spine2/Male010Spine3/Male010Spine4/Male010Neck
+        weight: 1
+      - path: Male010COM1/Male010COM2/Male010Pelvis/Male010Spine0/Male010Spine1/Male010Spine2/Male010Spine3/Male010Spine4/Male010Neck/Male010Head
+        weight: 1
+      - path: Male010COM1/Male010COM2/Male010Pelvis/Male010Spine0/Male010Spine1/Male010Spine2/Male010Spine3/Male010Spine4/Male010RClavicle
+        weight: 1
+      - path: Male010COM1/Male010COM2/Male010Pelvis/Male010Spine0/Male010Spine1/Male010Spine2/Male010Spine3/Male010Spine4/Male010RClavicle/Male010RUpperArm
+        weight: 1
+      - path: Male010COM1/Male010COM2/Male010Pelvis/Male010Spine0/Male010Spine1/Male010Spine2/Male010Spine3/Male010Spine4/Male010RClavicle/Male010RUpperArm/Male010RForeArm
+        weight: 1
+      - path: Male010COM1/Male010COM2/Male010Pelvis/Male010Spine0/Male010Spine1/Male010Spine2/Male010Spine3/Male010Spine4/Male010RClavicle/Male010RUpperArm/Male010RForeArm/Male010RHand
+        weight: 1
+      - path: Male010Skin_001
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
