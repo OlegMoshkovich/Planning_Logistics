@@ -1,9 +1,8 @@
-# SafeScan
-Project to Include all common SafeScan Assets
+# SafeSite
+SafeSite is a Human Condition Safety Proprietary software. Used to track workers
 
 # Overview
-
-# How to Get Started
-
-# List Of Components
- Bobcat
+This Repo contains the following Assets:
+ - [ Safe Site Base: Unity Project that serves as template for Safesite](SafeSiteBaseProject/)
+ - [ Bobcat: Animated Bobcat] (Bobcat/)
+ - [ Civilians: Animated Civilians] (Civilians/)
