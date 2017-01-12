@@ -75,6 +75,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1000011870863422
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000010952062872}
+  m_Layer: 0
+  m_Name: EmailManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1000011953423360
 GameObject:
   m_ObjectHideFlags: 0
@@ -143,6 +158,7 @@ Transform:
   - {fileID: 4000014163802466}
   - {fileID: 4000010590422960}
   - {fileID: 4000014178681506}
+  - {fileID: 4000010952062872}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &4000010590422960
@@ -171,6 +187,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4000010209753160}
   m_RootOrder: 0
+--- !u!4 &4000010952062872
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011870863422}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 4000010209753160}
+  m_RootOrder: 6
 --- !u!4 &4000012922232160
 Transform:
   m_ObjectHideFlags: 1
@@ -315,7 +344,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 718a0680c7e943c4eb357aecc492df50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HazardMarkerPrefab: {fileID: 1000012671666276, guid: dec22de74ea89284b9dfe19097c2d26d,
+  HazardMarkerPrefab: {fileID: 1000012684156560, guid: 187f386fd3c87c6469da4c454029f435,
     type: 2}
   listOfHazards: []
   Hazards: {fileID: 0}

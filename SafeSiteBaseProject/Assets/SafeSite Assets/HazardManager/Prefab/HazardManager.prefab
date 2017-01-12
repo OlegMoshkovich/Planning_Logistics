@@ -37,10 +37,10 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &114000010233191344
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -63,6 +63,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 718a0680c7e943c4eb357aecc492df50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HazardMarkerPrefab: {fileID: 1000012671666276, guid: dec22de74ea89284b9dfe19097c2d26d,
+  HazardMarkerPrefab: {fileID: 1000012684156560, guid: 187f386fd3c87c6469da4c454029f435,
     type: 2}
   listOfHazards: []
+  Hazards: {fileID: 0}
