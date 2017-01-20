@@ -14,15 +14,19 @@ public class mqttManager : MonoBehaviour {
 	private MqttClient client;
     private MqttClient client2;
     private MqttClient clientBlueMix;
-    public List<Tag> listOfQTrackTags = new List<Tag>();
-    public List<HCSTag> listOfHCSTags = new List<HCSTag>();
+    public Dictionary<String, Tag> listOfQTrackTags = new Dictionary<String, Tag>();
+    public Dictionary<String, HCSTag> listOfHCSTags = new Dictionary<String, HCSTag>();
     public List<string> incomingLog = new List<string>();
     public List<string> outgoingLog = new List<string>();
 
     public static mqttManager main;
-	// Use this for initialization
-	void Start () {
+    private void Awake()
+    {
         main = this;
+    }
+    // Use this for initialization
+    void Start () {
+        
         Debug.Log("start");
 		
         // create client instance 
@@ -66,7 +70,8 @@ public class mqttManager : MonoBehaviour {
 
 
         client.Subscribe(new string[] { "qtrack/+" }, new byte[] { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE });
-        clientBlueMix.Subscribe(new string[] { "iot-2/type/HCSTag/id/+/evt/+/fmt/json" }, new byte[] { MqttMsgBase.QOS_LEVEL_AT_MOST_ONCE });
+        //clientBlueMix.Subscribe(new string[] { "iot-2/type/HCSTag/id/+/evt/+/fmt/json" }, new byte[] { MqttMsgBase.QOS_LEVEL_AT_MOST_ONCE });
+        clientBlueMix.Subscribe(new string[] { "iot-2/type/HCS_BLE_Tag/id/+/evt/+/fmt/json" }, new byte[] { MqttMsgBase.QOS_LEVEL_AT_MOST_ONCE });
 
 
     }
@@ -84,24 +89,15 @@ public class mqttManager : MonoBehaviour {
             Debug.Log(incomingTag);
             Debug.Log("X: " + incomingTag.X + "Y: " + incomingTag.Y + " Frequency: " + frequency.ToString());
             bool createNewTag = true;
-            foreach (Tag tag in listOfQTrackTags){
-                if (tag.Frequency == frequency)
-                {
-                    tag.Frequency = frequency;               
-                    tag.X = incomingTag.X;
-                    tag.Y = incomingTag.Y;
-                    if (convertUnitsToMeters) {
-                        tag.X = tag.X * 10 / 36;
-                        tag.Y = tag.Y * 10 / 36;
-                    }
-                    createNewTag = false;
-                }
-            }
-            if(createNewTag == true)
+            if (listOfQTrackTags.ContainsKey(incomingTag.Frequency.ToString()))
             {
-                Tag newTag = incomingTag;
-                listOfQTrackTags.Add(newTag);
+                listOfQTrackTags.Add(incomingTag.Frequency.ToString(), incomingTag);
             }
+            else
+            {
+                listOfQTrackTags[incomingTag.Frequency.ToString()] = incomingTag;
+            }
+
         }
         catch (Exception error)
         {
@@ -119,51 +115,50 @@ public class mqttManager : MonoBehaviour {
             HCSTag incomingTag = new HCSTag();
             incomingTag = JsonUtility.FromJson<HCSTag>(message);
             incomingTag.macAddress = macAddress;
-            bool createNewTag = true;
-            for(int i =0; i <listOfHCSTags.Count; i++)
-            {
-                if(listOfHCSTags[i].macAddress == macAddress)
+
+            //IF tag exists, update it:
+            if(listOfHCSTags.ContainsKey(macAddress))
                 {
-                    createNewTag = false;
                     switch (evt)
                     {
                         case "orin":
-                            listOfHCSTags[i].ori = incomingTag.ori;
-                            listOfHCSTags[i].acc = incomingTag.acc;
-                            listOfHCSTags[i].gyr = incomingTag.gyr;
+                            listOfHCSTags[macAddress].ori = incomingTag.ori;
+                            listOfHCSTags[macAddress].acc = incomingTag.acc;
+                            listOfHCSTags[macAddress].gyr = incomingTag.gyr;
                             break;
                         case "envi":
-                            listOfHCSTags[i].lit = incomingTag.lit;
-                            listOfHCSTags[i].snd = incomingTag.snd;
-                            listOfHCSTags[i].hum = incomingTag.hum;
-                            listOfHCSTags[i].bmp = incomingTag.bmp;
-                            listOfHCSTags[i].uvi = incomingTag.uvi;
-                            listOfHCSTags[i].tmp = incomingTag.tmp;
-                            listOfHCSTags[i].alt = incomingTag.alt;
+                            listOfHCSTags[macAddress].lit = incomingTag.lit;
+                            listOfHCSTags[macAddress].snd = incomingTag.snd;
+                            listOfHCSTags[macAddress].hum = incomingTag.hum;
+                            listOfHCSTags[macAddress].bmp = incomingTag.bmp;
+                            listOfHCSTags[macAddress].uvi = incomingTag.uvi;
+                            listOfHCSTags[macAddress].tmp = incomingTag.tmp;
+                            listOfHCSTags[macAddress].alt = incomingTag.alt;
                             break;
                         case "meta":
-                            listOfHCSTags[i].bat = incomingTag.bat;
-                            listOfHCSTags[i].tim = incomingTag.tim;
+                            listOfHCSTags[macAddress].bat = incomingTag.bat;
+                            listOfHCSTags[macAddress].tim = incomingTag.tim;
                             break;
 
                     }
                 }
-            }
-            if (createNewTag == true)
+            // If tag doesn't exist, create it:
+           else
             {
                 HCSTag newTag = incomingTag;
-                listOfHCSTags.Add(newTag);
+                listOfHCSTags.Add(incomingTag.macAddress, newTag);
             }
+                
         }
         catch (Exception error)
         {
-            Debug.LogError("error" + error);
+            Debug.Log("error" + error);
         }
     }
 
     void logOutgoingData(object sender, MqttMsgPublishedEventArgs e)
     {
-        if (outgoingLog.Count > 1000) outgoingLog = new List<string>();
+        if (outgoingLog.Count > 100) outgoingLog = new List<string>();
         string message = "Sender: " + sender.ToString() + " Message: " + e.ToString();
         outgoingLog.Add(message);
         Debug.Log(e.ToString());
@@ -171,7 +166,7 @@ public class mqttManager : MonoBehaviour {
 
     void logIncomingData(object sender, MqttMsgPublishEventArgs e)
     {
-        if (incomingLog.Count > 1000) incomingLog = new List<string>();
+        if (incomingLog.Count > 100) incomingLog = new List<string>();
         string message = "Time :"+ DateTime.Now + "Topic: " + e.Topic;
         message += " Message: "+ System.Text.Encoding.UTF8.GetString(e.Message);
         incomingLog.Add(message);
@@ -180,12 +175,12 @@ public class mqttManager : MonoBehaviour {
     public void ActivateAlarm(string macAddress)
     {
         string topic = "iot-2/type/HCSTag/id/" + macAddress + "/cmd/alert/fmt/json";
-        clientBlueMix.Publish(topic, System.Text.Encoding.UTF8.GetBytes("{alarm:1}"), MqttMsgBase.QOS_LEVEL_AT_MOST_ONCE, true);
+        clientBlueMix.Publish(topic, System.Text.Encoding.UTF8.GetBytes("{\"alarm\":1}"), MqttMsgBase.QOS_LEVEL_AT_MOST_ONCE, true);
     }
     public void ActivateBadBend(string macAddress)
     {
         string topic = "iot-2/type/HCSTag/id/" + macAddress + "/cmd/alert/fmt/json";
-        clientBlueMix.Publish(topic, System.Text.Encoding.UTF8.GetBytes("{bndbz:1}"), MqttMsgBase.QOS_LEVEL_AT_MOST_ONCE, true);
+        clientBlueMix.Publish(topic, System.Text.Encoding.UTF8.GetBytes("{\"bndbz\":1}"), MqttMsgBase.QOS_LEVEL_AT_MOST_ONCE, true);
     }
     public void DeactivateBadBend(string macAddress)
     {
@@ -201,10 +196,9 @@ public class mqttManager : MonoBehaviour {
 
     public void ActivateAllAlarms()
     {
-        foreach(HCSTag tag in listOfHCSTags)
+        foreach(KeyValuePair<string, HCSTag> item in listOfHCSTags)
         {
-            string topic = "iot-2/type/HCSTag/id/" + tag.macAddress + "/cmd/alert/fmt/json";
-            clientBlueMix.Publish(topic, System.Text.Encoding.UTF8.GetBytes("{alarm:1}"), MqttMsgBase.QOS_LEVEL_AT_MOST_ONCE, true);
+            ActivateAlarm(item.Value.macAddress.ToString());
         }
     }
 

@@ -3,16 +3,22 @@ using System.Collections;
 
     public class ExclusionZone : MonoBehaviour
     {
+        public Vector3[] points;
         public delegate void ExclusionZoneAction (Collision collision);
         public static event ExclusionZoneAction OnExclusionZoneEnter;
         public static event ExclusionZoneAction OnExclusionZoneExit;
-
+        
         public float percentOfDanger = 0.8f;
         public string shape; // "Circle", "rectangle", "Mesh "
+        public void ExportExclusionZone()
+    {
+        Debug.Log(JsonUtility.ToJson(this.gameObject.AddComponent<SyncedHazard>()));
+        
+    }
         // Use this for initialization
         void Start()
         {
-
+        Invoke("ExportExclusionZone", 2);
         }
 
         // Update is called once per frame

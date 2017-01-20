@@ -14,6 +14,14 @@ public class ExclusionZoneManager : MonoBehaviour
     {
         main = this;
     }
+    public void LoadExclusionZone(string input)
+    {
+        /*
+        GameObject newGO = new GameObject();
+        ExclusionZone ez = newGO.AddComponent<ExclusionZone>();
+        JsonUtility.FromJsonOverwrite(input,ez);
+        */
+    }
     void Start()
     {
         exclusionZones = new GameObject();
@@ -54,8 +62,8 @@ public class ExclusionZoneManager : MonoBehaviour
         Debug.Log(collision.collider.name + " + GameObject: " + collision.gameObject.name);
         collision.gameObject.GetComponentInChildren<SkinnedMeshRenderer>().material = exclusionZoneDangerMaterial;
         //Activate worker telemetry alarm
-        if (collision.gameObject.GetComponent<WorkerTelemetry>() !=null) {
-            mqttManager.main.ActivateAlarm(collision.gameObject.GetComponent<WorkerTelemetry>().macAddress);
+        if (collision.gameObject.GetComponent<HCSTelemetry>() !=null) {
+            mqttManager.main.ActivateAlarm(collision.gameObject.GetComponent<HCSTelemetry>().macAddress);
         }
         else
         {
@@ -64,17 +72,17 @@ public class ExclusionZoneManager : MonoBehaviour
     }
     public void OnExclusionZoneStay_Handler(Collision collision)
     {
-        if (collision.gameObject.GetComponent<WorkerTelemetry>() != null)
+        if (collision.gameObject.GetComponent<HCSTelemetry>() != null)
         {
-            mqttManager.main.ActivateAlarm(collision.gameObject.GetComponent<WorkerTelemetry>().macAddress);
+            mqttManager.main.ActivateAlarm(collision.gameObject.GetComponent<HCSTelemetry>().macAddress);
         }
     }
     public void OnExclusionZoneExit_Handler(Collision collision)
     {
         Debug.Log("ExclusionExit");
-        if (collision.gameObject.GetComponent<WorkerTelemetry>() != null)
+        if (collision.gameObject.GetComponent<HCSTelemetry>() != null)
         {
-            mqttManager.main.DeactivateAlarm(collision.gameObject.GetComponent<WorkerTelemetry>().macAddress);
+            mqttManager.main.DeactivateAlarm(collision.gameObject.GetComponent<HCSTelemetry>().macAddress);
         }
     }
     public void OnWorkerHitExclusionZone ( Collider collider)

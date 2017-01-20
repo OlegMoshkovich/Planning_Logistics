@@ -16,10 +16,7 @@ public class TreeButtonsManager : MonoBehaviour
 	void Update () {
 	   
 	}
-    public void CreateWorker()
-    {
-        WorkerManager.main.CreateWorker();
-    }
+
     public void CreateFolder()
     {
         GameObject newFolder = new GameObject();

@@ -7,11 +7,6 @@ public class WorkerInfoCanvas : MonoBehaviour {
     public Text nameText;
     public Text tradeText;
 
-    public void OnClick_Handler()
-    {
-        WorkerTelemetryCanvas.main.activatePanel(worker);
-        
-    }
     private void OnEnable()
     {
         nameText.text = worker.name;

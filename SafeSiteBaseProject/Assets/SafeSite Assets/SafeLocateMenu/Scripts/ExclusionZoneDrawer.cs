@@ -115,7 +115,8 @@ using System.Collections.Generic;
             newExclusionZone.transform.Translate(new Vector3(0, 0.1f, 0));
             foreach(GameObject cube in cubePoints)
             {
-            cube.transform.parent = newExclusionZone.transform;
+                
+                cube.transform.parent = newExclusionZone.transform;
             }
             MeshFilter filter = newExclusionZone.AddComponent<MeshFilter>();
             filter.mesh = msh;
@@ -124,6 +125,7 @@ using System.Collections.Generic;
 
         //Add to list of Exclusion Zones
             newExclusionZone.AddComponent<ExclusionZone>();
+            newExclusionZone.GetComponent<ExclusionZone>().points = linePoints.ToArray();
             ExclusionZoneManager.main.listOfExclusionZones.Add(newExclusionZone);
         //Update Tree
             TreeViewManager.main.TreeView.AddChild(ExclusionZoneManager.main.exclusionZones, newExclusionZone);
