@@ -48,11 +48,11 @@ MonoBehaviour:
   iD_iOS: 1166227384
   bundleIdAndroid: com.appadvisory.insidethetube
   amazonID: B01DPBSF2A
-  m_Width: 512
-  m_FramePerSecond: 10
+  m_Width: 128
+  m_FramePerSecond: 15
   m_Repeat: 0
   m_Quality: 70
-  m_BufferSize: 7
+  m_BufferSize: 3
   WorkerPriority: 4
 --- !u!1001 &100100000
 Prefab:

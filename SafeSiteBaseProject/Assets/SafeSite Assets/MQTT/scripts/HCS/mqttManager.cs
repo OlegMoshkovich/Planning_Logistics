@@ -115,7 +115,7 @@ public class mqttManager : MonoBehaviour {
             HCSTag incomingTag = new HCSTag();
             incomingTag = JsonUtility.FromJson<HCSTag>(message);
             incomingTag.macAddress = macAddress;
-
+            
             //IF tag exists, update it:
             if(listOfHCSTags.ContainsKey(macAddress))
                 {

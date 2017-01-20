@@ -16,13 +16,10 @@ public class HazardManager : MonoBehaviour {
         main = this;
         Hazards = new GameObject();
         Hazards.name = "Hazards";
-        Hazards.AddComponent<Folder>();
         TreeViewManager.main.TreeView.Add(Hazards);
 
-        //
         Collisions = new GameObject();
         Collisions.name = "Collisions";
-        Collisions.AddComponent<Folder>();
         TreeViewManager.main.TreeView.Add(Collisions);
     }
     public void AddCollision(Collider collider)

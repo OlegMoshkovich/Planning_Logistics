@@ -26,7 +26,6 @@ public class ExclusionZoneManager : MonoBehaviour
     {
         exclusionZones = new GameObject();
         exclusionZones.name = "Exclusion Zones";
-        exclusionZones.AddComponent<Folder>();
         TreeViewManager.main.TreeView.Add(exclusionZones);
     }
 

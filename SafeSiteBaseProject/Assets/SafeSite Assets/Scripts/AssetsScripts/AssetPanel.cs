@@ -20,6 +20,9 @@ public class AssetPanel : MonoBehaviour
     public GameObject rtlsPanel;
     public GameObject addRTLSPanel;
 
+    //Zones Panel
+    public GameObject zonesPanel;
+
     private void Awake()
     {
         main = this;
@@ -68,6 +71,9 @@ public class AssetPanel : MonoBehaviour
 
                 //Check if RTLS
                 DisplayRTLS();
+
+                //Check if Zones
+                DisplayZoneInfo();
             }
             //No asset selected
             else
@@ -127,5 +133,21 @@ public class AssetPanel : MonoBehaviour
             telemetryPanel.active = false;
             addTelemetryPanel.active = true;
         }
+    }
+
+    private void DisplayZoneInfo()
+    {
+        if(selectedAsset.GetComponent<ExclusionZone>() != null)
+        {
+            zonesPanel.active = true;
+        }
+        else
+        {
+            zonesPanel.active = false;
+        }
+    }
+    private void stackPanels()
+    {
+        
     }
 }

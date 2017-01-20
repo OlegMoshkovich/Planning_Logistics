@@ -24,5 +24,5 @@ public class SyncedAsset : MonoBehaviour {
 	}
 }
 public enum MovementType {
-    Random, SetMovement, RTLS, Static
+    Static, SetMovement, RTLS, Random
 }

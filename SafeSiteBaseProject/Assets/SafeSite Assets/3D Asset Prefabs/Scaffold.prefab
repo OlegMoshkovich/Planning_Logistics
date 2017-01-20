@@ -126,7 +126,7 @@ MonoBehaviour:
   type: 
   position: []
   rotation: []
-  movement: 0
+  movement: 3
 --- !u!114 &114000011149431676
 MonoBehaviour:
   m_ObjectHideFlags: 1

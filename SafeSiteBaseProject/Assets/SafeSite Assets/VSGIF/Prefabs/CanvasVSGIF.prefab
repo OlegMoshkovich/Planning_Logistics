@@ -7,12 +7,12 @@ GameObject:
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - component: {fileID: 22426368}
-  - component: {fileID: 22206446}
-  - component: {fileID: 11479384}
-  - component: {fileID: 11494712}
-  - component: {fileID: 114000013439436728}
-  - component: {fileID: 114000013098190594}
+  - 224: {fileID: 22426368}
+  - 222: {fileID: 22206446}
+  - 114: {fileID: 11479384}
+  - 114: {fileID: 11494712}
+  - 114: {fileID: 114000013439436728}
+  - 114: {fileID: 114000013098190594}
   m_Layer: 5
   m_Name: Whatsapp
   m_TagString: Untagged
@@ -27,10 +27,10 @@ GameObject:
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - component: {fileID: 22479898}
-  - component: {fileID: 22208196}
-  - component: {fileID: 11482128}
-  - component: {fileID: 11434754}
+  - 224: {fileID: 22479898}
+  - 222: {fileID: 22208196}
+  - 114: {fileID: 11482128}
+  - 114: {fileID: 11434754}
   m_Layer: 5
   m_Name: Parent
   m_TagString: Untagged
@@ -45,10 +45,10 @@ GameObject:
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - component: {fileID: 22483848}
-  - component: {fileID: 22371158}
-  - component: {fileID: 11468048}
-  - component: {fileID: 11445734}
+  - 224: {fileID: 22483848}
+  - 223: {fileID: 22371158}
+  - 114: {fileID: 11468048}
+  - 114: {fileID: 11445734}
   m_Layer: 5
   m_Name: CanvasVSGIF
   m_TagString: Untagged
@@ -215,10 +215,10 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 22479898}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: 59.2, y: -18}
@@ -233,6 +233,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0.11788405, w: 0.9930274}
   m_LocalPosition: {x: 0, y: 0, z: 90}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 13.54}
   m_Children:
   - {fileID: 224000012720884722}
   - {fileID: 224000012207855124}
@@ -240,7 +241,6 @@ RectTransform:
   - {fileID: 22426368}
   m_Father: {fileID: 22483848}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 13.54}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -103.2, y: 98.9}
@@ -255,11 +255,11 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 22479898}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -283,12 +283,12 @@ GameObject:
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - component: {fileID: 224000012720884722}
-  - component: {fileID: 222000013644138042}
-  - component: {fileID: 114000011187418372}
-  - component: {fileID: 114000013788936284}
-  - component: {fileID: 114000010183610158}
-  - component: {fileID: 114000011271897658}
+  - 224: {fileID: 224000012720884722}
+  - 222: {fileID: 222000013644138042}
+  - 114: {fileID: 114000011187418372}
+  - 114: {fileID: 114000013788936284}
+  - 114: {fileID: 114000010183610158}
+  - 114: {fileID: 114000011271897658}
   m_Layer: 5
   m_Name: Natif
   m_TagString: Untagged
@@ -303,12 +303,12 @@ GameObject:
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - component: {fileID: 224000012207855124}
-  - component: {fileID: 222000011116663776}
-  - component: {fileID: 114000010361289854}
-  - component: {fileID: 114000010006498936}
-  - component: {fileID: 114000013181923804}
-  - component: {fileID: 114000012984293876}
+  - 224: {fileID: 224000012207855124}
+  - 222: {fileID: 222000011116663776}
+  - 114: {fileID: 114000010361289854}
+  - 114: {fileID: 114000010006498936}
+  - 114: {fileID: 114000013181923804}
+  - 114: {fileID: 114000012984293876}
   m_Layer: 5
   m_Name: Fbk
   m_TagString: Untagged
@@ -323,12 +323,12 @@ GameObject:
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - component: {fileID: 224218098910408214}
-  - component: {fileID: 222031908152140982}
-  - component: {fileID: 114692032370422218}
-  - component: {fileID: 114219047001337474}
-  - component: {fileID: 114203035757275938}
-  - component: {fileID: 114446146276080202}
+  - 224: {fileID: 224218098910408214}
+  - 222: {fileID: 222031908152140982}
+  - 114: {fileID: 114692032370422218}
+  - 114: {fileID: 114219047001337474}
+  - 114: {fileID: 114203035757275938}
+  - 114: {fileID: 114446146276080202}
   m_Layer: 5
   m_Name: Twitter
   m_TagString: Untagged
@@ -742,10 +742,10 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.7, y: 0.7, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 22479898}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: -19.1, y: -18.1}
@@ -760,10 +760,10 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: 0.7, y: 0.7, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 22479898}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: -58.7, y: -18.3}
@@ -778,10 +778,10 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.7, y: 0.7, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 22479898}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: 20.7, y: -16.8}

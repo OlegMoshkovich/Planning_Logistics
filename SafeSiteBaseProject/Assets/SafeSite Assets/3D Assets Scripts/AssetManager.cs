@@ -59,6 +59,7 @@ public class AssetManager : MonoBehaviour {
 			{
 				//Debug.Log ("something is hit");	
 				GameObject go = (GameObject) Instantiate(assetPrefab,new Vector3(hit.point.x,hit.point.y,hit.point.z), Quaternion.Euler (-90, 0, 0));
+                go.name = assetPrefab.name;
                 //Add to TreeView
                 
                 Debug.Log ("x:" + hit.point.x);

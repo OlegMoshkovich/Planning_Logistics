@@ -120,6 +120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1f73f0b07dcc47f29bafca5bd5872c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shareType: 0
 --- !u!114 &11426808
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -197,7 +198,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b7eba6f6dc514c96aeca57c2878cc96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GIF_CANVAS: {fileID: 0}
   imageGIF: {fileID: 11450194}
+  isAmazon: 0
+  shareTextBeforeUrl: 'Get it here for free: '
+  shareTextAfterUrl: ' #appadvisory'
+  iD_iOS: 1166227384
+  bundleIdAndroid: com.appadvisory.insidethetube
+  amazonID: B01DPBSF2A
+  m_Width: 256
+  m_FramePerSecond: 15
+  m_Repeat: 0
+  m_Quality: 70
+  m_BufferSize: 3
+  WorkerPriority: 4
 --- !u!114 &11438918
 MonoBehaviour:
   m_ObjectHideFlags: 1

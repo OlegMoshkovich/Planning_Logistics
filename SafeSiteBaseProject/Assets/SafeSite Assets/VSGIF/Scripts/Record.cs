@@ -79,15 +79,9 @@ namespace AppAdvisory.VSGIF
 
 		public static void DOSaveGIFEvent(SaveState saveState)
 		{
-            Debug.Log("DOSAVE" + saveState.ToString());
 			if(OnSavedGIFEvent != null)
-            {
-                OnSavedGIFEvent(saveState);
-                print("Saved GIF Event");
-            }
-				
+				OnSavedGIFEvent(saveState);
 		}
-
 
 		public delegate void ResetCurrentRecordEvent();
 		public static event ResetCurrentRecordEvent OnResetCurrentRecord;
@@ -133,7 +127,6 @@ namespace AppAdvisory.VSGIF
 
 		public static void DORec()
 		{
-            Debug.Log("DoRec");
 			DORec(null);
 		}
 
@@ -157,8 +150,7 @@ namespace AppAdvisory.VSGIF
 					text.text = "REC";
 
 				var State = self.gifElement.Pause();
-                // Save on Pause
-                DOSave();
+
 				DispatchCallbackRecord(State);
 
 				return;
@@ -191,7 +183,6 @@ namespace AppAdvisory.VSGIF
 
 		public static void DOSave()
 		{
-            Debug.Log("DoSave");
 			self.gifElement.Save();
 			self.m_Progress = 0f;
 
@@ -220,7 +211,7 @@ namespace AppAdvisory.VSGIF
 		float m_Progress = 0f;
 		string m_LastFile = "";
 		bool m_IsSaving = false;
-        
+
 		public string recorderState
 		{
 			get
@@ -261,11 +252,8 @@ namespace AppAdvisory.VSGIF
 		#region methods
 		void Start()
 		{
-            //Subscribe to event
-            Record.OnSavedGIFEvent += OnSavedGIFEventHandler;
-            OnSavedGIFEvent += OnSavedGIFEventHandler;
-            // Get our Recorder instance (there can be only one per camera).
-            m_Recorder = GetComponent<Recorder>();
+			// Get our Recorder instance (there can be only one per camera).
+			m_Recorder = GetComponent<Recorder>();
 
 			// If you want to change Recorder settings at runtime, use :
 			//m_Recorder.Setup(autoAspect, width, height, fps, bufferSize, repeat, quality);
@@ -275,20 +263,6 @@ namespace AppAdvisory.VSGIF
 			gifElement.OnFileSaved = OnFileSaved;
 		}
 
-        public EmailManager emailManager;
-
-        public void OnSavedGIFEventHandler(SaveState savestate)
-        {
-            Debug.Log("saved Event handler");
-            if (savestate == SaveState.Done)
-            {
-                if(emailManager != null) emailManager.filePath = m_LastFile;
-            }
-        }
-        public void toggleRec()
-        {
-            DORec();
-        }
 		RecorderState DORecord()
 		{
 			// The Recorder starts paused for performance reasons, call Record() to start

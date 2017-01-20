@@ -9,6 +9,7 @@ using System.Collections;
         public static event ExclusionZoneAction OnExclusionZoneExit;
         
         public float percentOfDanger = 0.8f;
+        public bool alert = true;
         public string shape; // "Circle", "rectangle", "Mesh "
         public void ExportExclusionZone()
     {
@@ -18,7 +19,7 @@ using System.Collections;
         // Use this for initialization
         void Start()
         {
-        Invoke("ExportExclusionZone", 2);
+        //Invoke("ExportExclusionZone", 2);
         }
 
         // Update is called once per frame
@@ -28,10 +29,14 @@ using System.Collections;
         }
     public void OnCollisionEnter(Collision collision)
     {
-        //Trigger Event if it has subscribers
-        if (OnExclusionZoneEnter != null) OnExclusionZoneEnter(collision);
-        //Call ExclusionZoneManagerHandler
-        ExclusionZoneManager.main.OnExclusionZoneEnter_Handler(collision);
+        if (alert)
+        {
+            //Trigger Event if it has subscribers
+            if (OnExclusionZoneEnter != null) OnExclusionZoneEnter(collision);
+            //Call ExclusionZoneManagerHandler
+            ExclusionZoneManager.main.OnExclusionZoneEnter_Handler(collision);
+        }
+        
     }
     public void OnCollisionStay(Collision collision)
     {
