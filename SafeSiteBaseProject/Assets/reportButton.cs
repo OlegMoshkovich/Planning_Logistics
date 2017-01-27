@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 using AppAdvisory.VSGIF;
 
 public class reportButton : MonoBehaviour {
@@ -14,8 +15,9 @@ public class reportButton : MonoBehaviour {
     {
         if(savestate == SaveState.Done)
         {
-            Record.DOReset();
+  
         }
+
     }
 
 
@@ -24,8 +26,9 @@ public class reportButton : MonoBehaviour {
         Record.DORec();
         if (clicked)
         {
-            Record.DOSave();
-        }
+            Record.DOSave();        
+        } 
         clicked = !clicked;
     }
+
 }

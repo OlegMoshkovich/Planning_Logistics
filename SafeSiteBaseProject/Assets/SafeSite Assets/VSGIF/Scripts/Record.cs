@@ -39,6 +39,7 @@ namespace AppAdvisory.VSGIF
 	[RequireComponent(typeof(Recorder)), AddComponentMenu("")]
 	public class Record : MonoBehaviour
 	{
+        public EmailManager emailManager;
 
 		void Awake()
 		{
@@ -181,6 +182,7 @@ namespace AppAdvisory.VSGIF
 			}
 		}
 
+
 		public static void DOSave()
 		{
 			self.gifElement.Save();
@@ -209,7 +211,7 @@ namespace AppAdvisory.VSGIF
 		public  bool DEBUG = false;
 		Recorder m_Recorder;
 		float m_Progress = 0f;
-		string m_LastFile = "";
+		public string m_LastFile = "";
 		bool m_IsSaving = false;
 
 		public string recorderState
@@ -302,6 +304,8 @@ namespace AppAdvisory.VSGIF
 			gifElement.workerIsDone = true;
 
 			print("OnFileSaved - id = " + id + " - filepath = " + filepath);
+
+            emailManager.filePath = filepath;
 
 			OnDestroy();
 		}

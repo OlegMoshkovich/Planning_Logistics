@@ -1,23 +1,25 @@
 ﻿using UnityEngine;
 using System.Collections;
+
+using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
 
-public class HazardManager : MonoBehaviour {
+public class HazardManager : MonoBehaviour
+{
     public GameObject HazardMarkerPrefab;
     public List<GameObject> listOfHazards = new List<GameObject>();
     public List<GameObject> listOfCollisions = new List<GameObject>();
     public GameObject Hazards;
     public GameObject Collisions;
+    public GameObject Edges;
 
 
     public static HazardManager main;
-	// Use this for initialization
-    void Awake()
+    // Use this for initialization
+    void Start()
     {
         main = this;
-    }
-	void Start () {
-        
         Hazards = new GameObject();
         Hazards.name = "Hazards";
         TreeViewManager.main.TreeView.Add(Hazards);
@@ -25,6 +27,11 @@ public class HazardManager : MonoBehaviour {
         Collisions = new GameObject();
         Collisions.name = "Collisions";
         TreeViewManager.main.TreeView.Add(Collisions);
+        Edges = new GameObject();
+        Edges.name = "Fall Risks";
+        TreeViewManager.main.TreeView.Add(Edges);
+
+
     }
     public void AddCollision(Collider collider)
     {
@@ -39,6 +46,14 @@ public class HazardManager : MonoBehaviour {
         TreeViewManager.main.TreeView.AddChild(Collisions, go);
         */
     }
+    public void AddEdge(Vector3 position)
+    {
+        GameObject go = Instantiate(HazardMarkerPrefab, position, Camera.main.transform.rotation) as GameObject;
+        go.name = "Fall Indicator";
+        go.transform.parent = Edges.transform;
+        TreeViewManager.main.TreeView.AddChild(Edges, go);
+    }
 
 
 }
+

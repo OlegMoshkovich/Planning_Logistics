@@ -153,7 +153,7 @@ namespace AppAdvisory.VSGIF
 		{
 			get
 			{
-				return "https://itunes.apple.com/us/app/" + iD_iOS; //1134939249
+				return "https://itunes.apple.com/us/app/id" + iD_iOS; //1134939249
 			}
 		}
 		/// <summary>
