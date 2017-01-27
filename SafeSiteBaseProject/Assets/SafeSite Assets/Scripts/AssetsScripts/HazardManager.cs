@@ -21,14 +21,14 @@ public class HazardManager : MonoBehaviour
     {
         main = this;
         Hazards = new GameObject();
-        Hazards.name = "Hazards";
+        Hazards.name = "Hazards 10";
         TreeViewManager.main.TreeView.Add(Hazards);
 
         Collisions = new GameObject();
-        Collisions.name = "Collisions";
+        Collisions.name = "Collisions 0 ";
         TreeViewManager.main.TreeView.Add(Collisions);
         Edges = new GameObject();
-        Edges.name = "Fall Risks";
+        Edges.name = "Fall Risks 0";
         TreeViewManager.main.TreeView.Add(Edges);
 
 

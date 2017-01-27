@@ -27,20 +27,20 @@ public class AssetManager : MonoBehaviour {
 
         //Set up Tree
         indicatorsParent = new GameObject();
-        indicatorsParent.name = "Safescan indicators";
+        indicatorsParent.name = "Safescan indicators 6";
         workers = new GameObject();
-        workers.name = "Workers";
+        workers.name = "Workers 32/100";
 
         assets = new GameObject();
-        assets.name = "Assets";
+        assets.name = "Assets 24";
         forklifts = new GameObject();
-        forklifts.name = "Forklits";
+        forklifts.name = "Forklits " + forklifts.transform.childCount;
         forklifts.transform.parent = assets.transform;
         ladders = new GameObject();
-        ladders.name = "Ladders";
+        ladders.name = "Ladders " + forklifts.transform.childCount;
         ladders.transform.parent = assets.transform;
         otherAssets = new GameObject();
-        otherAssets.name = "Others";
+        otherAssets.name = "Others " + otherAssets.transform.childCount;
         otherAssets.transform.parent = assets.transform;
         
     }

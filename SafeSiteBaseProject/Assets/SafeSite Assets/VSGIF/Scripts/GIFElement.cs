@@ -292,7 +292,7 @@ namespace AppAdvisory.VSGIF
 
 			while(true)
 			{
-				foreach(var s in m_sprite)
+				/*foreach(var s in m_sprite)
 				{
 					this.imageGIF.sprite = s;
 //					this.imageGIF.SetNativeSize();
@@ -300,7 +300,17 @@ namespace AppAdvisory.VSGIF
 					float waitTime = 1f/((float)m_FramePerSecond);
 
 					yield return new WaitForSeconds(waitTime);
-				}
+				}*/
+                for ( int i =0; i<m_sprite.Count; i++)
+                {
+                    this.imageGIF.sprite = m_sprite[i];
+                    this.imageGIF.SetNativeSize();
+
+                    float waitTime = 1f / ((float)m_FramePerSecond);
+
+                    yield return new WaitForSeconds(waitTime);
+
+                }
 
 				yield return null;
 			}
