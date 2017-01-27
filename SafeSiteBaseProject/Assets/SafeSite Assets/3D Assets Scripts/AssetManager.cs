@@ -17,21 +17,43 @@ public class AssetManager : MonoBehaviour {
     //Create Folders in TRee
     GameObject workers;
     GameObject indicatorsParent;
+    GameObject assets;
+    GameObject forklifts;
+    GameObject ladders;
+    GameObject otherAssets;
 
-	public void Awake(){
+    public void Awake(){
 		main = this;
 
+        //Set up Tree
         indicatorsParent = new GameObject();
         indicatorsParent.name = "Safescan indicators";
         workers = new GameObject();
         workers.name = "Workers";
+
+        assets = new GameObject();
+        assets.name = "Assets";
+        forklifts = new GameObject();
+        forklifts.name = "Forklits";
+        forklifts.transform.parent = assets.transform;
+        ladders = new GameObject();
+        ladders.name = "Ladders";
+        ladders.transform.parent = assets.transform;
+        otherAssets = new GameObject();
+        otherAssets.name = "Others";
+        otherAssets.transform.parent = assets.transform;
         
     }
 
     private void Start()
     {
+        //Set up Tree
         TreeViewManager.main.TreeView.Add(workers);
         TreeViewManager.main.TreeView.Add(indicatorsParent);
+        TreeViewManager.main.TreeView.Add(assets);
+        TreeViewManager.main.TreeView.AddChild(assets, forklifts);
+        TreeViewManager.main.TreeView.AddChild(assets, ladders);
+        TreeViewManager.main.TreeView.AddChild(assets, otherAssets);
     }
 
 	//Code to Draw Assets
@@ -53,7 +75,7 @@ public class AssetManager : MonoBehaviour {
 		RaycastHit hit;
 		Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-		if (Input.GetKeyDown ("p")) {
+		if (Input.GetKeyDown ("p") & assetPrefab != null) {
 			Debug.Log ("p is pressed");
 			if (Physics.Raycast(ray, out hit, 100.0f))
 			{
@@ -74,20 +96,29 @@ public class AssetManager : MonoBehaviour {
 				case "worker":
 					listOfWorkers.Add (go);
                     go.transform.parent = workers.transform;
-                        TreeViewManager.main.TreeView.AddChild(workers, go);
+                    TreeViewManager.main.TreeView.AddChild(workers, go);
+                    //workers.name = "Workers (" + workers.transform.childCount + ")";
                         break;
 				case "safetyNet":
 					listOfSafetyNets.Add (go);
+                    go.transform.parent = otherAssets.transform;
+                    TreeViewManager.main.TreeView.AddChild(otherAssets, go);
 					break;
 				case "ladder":
 					listOfLadders.Add (go);
-					break;
+                        go.transform.parent = ladders.transform;
+                        TreeViewManager.main.TreeView.AddChild(ladders, go);
+                        break;
 				case "forklift":
 					listOfForklifts.Add (go);
-					break;
+                    go.transform.parent = forklifts.transform;
+                    TreeViewManager.main.TreeView.AddChild(forklifts, go);
+                        break;
 				case "other":
 					listOfOthers.Add (go);
-					break;
+                    go.transform.parent = otherAssets.transform;
+                    TreeViewManager.main.TreeView.AddChild(otherAssets, go);
+                        break;
 				}
 
 			}

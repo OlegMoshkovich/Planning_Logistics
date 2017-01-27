@@ -56,13 +56,13 @@ public class ExclusionZoneManager : MonoBehaviour
     {
         //ExclusionZoneDrawer newExclusionZoneDrawwer = new ExclusionZoneDrawer();
     }
-    public void OnExclusionZoneEnter_Handler(Collision collision)
+    public void OnExclusionZoneEnter_Handler(Collider collider)
     {
-        Debug.Log(collision.collider.name + " + GameObject: " + collision.gameObject.name);
-        collision.gameObject.GetComponentInChildren<SkinnedMeshRenderer>().material = exclusionZoneDangerMaterial;
+        Debug.Log(collider.name + " + GameObject: " + collider.gameObject.name);
+        collider.gameObject.GetComponentInChildren<SkinnedMeshRenderer>().material = exclusionZoneDangerMaterial;
         //Activate worker telemetry alarm
-        if (collision.gameObject.GetComponent<HCSTelemetry>() !=null) {
-            mqttManager.main.ActivateAlarm(collision.gameObject.GetComponent<HCSTelemetry>().macAddress);
+        if (collider.gameObject.GetComponent<HCSTelemetry>() !=null) {
+            mqttManager.main.ActivateAlarm(collider.gameObject.GetComponent<HCSTelemetry>().macAddress);
         }
         else
         {
@@ -76,16 +76,13 @@ public class ExclusionZoneManager : MonoBehaviour
             mqttManager.main.ActivateAlarm(collision.gameObject.GetComponent<HCSTelemetry>().macAddress);
         }
     }
-    public void OnExclusionZoneExit_Handler(Collision collision)
+    public void OnExclusionZoneExit_Handler(Collider collider)
     {
         Debug.Log("ExclusionExit");
-        if (collision.gameObject.GetComponent<HCSTelemetry>() != null)
+        if (collider.gameObject.GetComponent<HCSTelemetry>() != null)
         {
-            mqttManager.main.DeactivateAlarm(collision.gameObject.GetComponent<HCSTelemetry>().macAddress);
+            mqttManager.main.DeactivateAlarm(collider.gameObject.GetComponent<HCSTelemetry>().macAddress);
+            collider.gameObject.GetComponentInChildren<SkinnedMeshRenderer>().material = Resources.Load<Material>("WorkerMaterial");
         }
-    }
-    public void OnWorkerHitExclusionZone ( Collider collider)
-    {
-        Debug.Log(collider.name);
     }
 }

@@ -27,16 +27,27 @@ using System.Collections;
         {
 
         }
-    public void OnCollisionEnter(Collision collision)
+    public void OnTriggerEnter(Collider collider)
     {
         if (alert)
         {
             //Trigger Event if it has subscribers
-            if (OnExclusionZoneEnter != null) OnExclusionZoneEnter(collision);
+            //if (OnExclusionZoneEnter != null) OnExclusionZoneEnter(collider);
             //Call ExclusionZoneManagerHandler
-            ExclusionZoneManager.main.OnExclusionZoneEnter_Handler(collision);
+            ExclusionZoneManager.main.OnExclusionZoneEnter_Handler(collider);
         }
         
+    }
+    public void OnTriggerExit(Collider collider)
+    {
+        if (alert)
+        {
+            //Trigger Event if it has subscribers
+            //if (OnExclusionZoneEnter != null) OnExclusionZoneEnter(collider);
+            //Call ExclusionZoneManagerHandler
+            ExclusionZoneManager.main.OnExclusionZoneExit_Handler(collider);
+        }
+
     }
     public void OnCollisionStay(Collision collision)
     {
@@ -45,9 +56,9 @@ using System.Collections;
     public void OnCollisionExit(Collision collision)
     {
         //Trigger Event if it has subscribers
-        if (OnExclusionZoneEnter != null) OnExclusionZoneExit(collision);
+        //if (OnExclusionZoneEnter != null) OnExclusionZoneExit(collision);
         //Call ExclusionZoneManagerHandler
-        ExclusionZoneManager.main.OnExclusionZoneExit_Handler(collision);
+        //ExclusionZoneManager.main.OnExclusionZoneExit_Handler(collision);
     }
     
 }

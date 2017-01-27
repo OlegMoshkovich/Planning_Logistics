@@ -471,7 +471,6 @@ GameObject:
   - 224: {fileID: 224000010481521202}
   - 222: {fileID: 222000011929589206}
   - 114: {fileID: 114000010484550442}
-  - 114: {fileID: 114000012368355730}
   - 114: {fileID: 114000011870437008}
   m_Layer: 5
   m_Name: AddRTLSPanel
@@ -7016,7 +7015,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 114000011446799276}
   m_HandleRect: {fileID: 224000013429544838}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -7634,7 +7633,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5164870e6c3a343af9f9a1e58aafc9ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DEBUG: 1
+  DEBUG: 0
 --- !u!114 &114000011641943920
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9422,21 +9421,6 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Dropdown+DropdownEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &114000012368355730
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000010491087046}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30c430866f718a242af1fc77d10322aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  addTelemetryButton: {fileID: 114000011399943412}
-  tagIDText: {fileID: 114000010500578292}
-  hcsTagDropdown: {fileID: 114000014250853386}
-  TelemetryPanel: {fileID: 1000010902181444}
 --- !u!114 &114000012434703546
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -18215,7 +18199,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.000011920929}
+  m_AnchoredPosition: {x: 0, y: 0.000039577484}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!224 &224000013404714540

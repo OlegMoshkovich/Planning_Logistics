@@ -8,8 +8,6 @@ public class RTLSMovement : MonoBehaviour {
     public string frequency;
     public int rtlsPrecision = 5;
  
-    public GameObject target;
-
     private GameObject uncertaintyArea;
 
 
@@ -34,7 +32,14 @@ public class RTLSMovement : MonoBehaviour {
     {
         Destroy(uncertaintyArea);
     }
-
+    private void OnEnable()
+    {
+        if (GetComponent<NavMeshAgent>() != null) GetComponent<NavMeshAgent>().speed = 5;
+    }
+    void OnDisable()
+    {
+        if (GetComponent<NavMeshAgent>() != null) GetComponent<NavMeshAgent>().speed = 3;
+    }
     // Update is called once per frame
     void Update () {
         //Update Animator speed
@@ -45,8 +50,10 @@ public class RTLSMovement : MonoBehaviour {
 
         try
         {
-            Tag tag = mqttManager.main.listOfQTrackTags[frequency.ToString()];
+            Tag tag = mqttManager.main.listOfQTrackTags[frequency];
             GetComponent<NavMeshAgent>().destination = new Vector3(tag.X, 0.1f, tag.Y);
+            GetComponent<NavMeshAgent>().speed = 10;
+            //transform.Translate(tag.X, 0, tag.Y, Space.World);
         }
         catch (Exception e)
         {

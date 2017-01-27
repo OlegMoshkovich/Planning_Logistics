@@ -12,8 +12,12 @@ public class HazardManager : MonoBehaviour {
 
     public static HazardManager main;
 	// Use this for initialization
-	void Start () {
+    void Awake()
+    {
         main = this;
+    }
+	void Start () {
+        
         Hazards = new GameObject();
         Hazards.name = "Hazards";
         TreeViewManager.main.TreeView.Add(Hazards);

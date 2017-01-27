@@ -60,12 +60,7 @@ using UnityEngine.EventSystems;
     }
         public void updateTree()
         {
-            if (WorkerManager.main != null)
-            {
-                IEnumerable<GameObject> dataItems = GameObject.FindObjectsOfType<Folder>().Select(c => c.gameObject) ;
-                TreeView.Items = dataItems.OrderBy(t => t.transform.GetSiblingIndex());
-            }
-            else Debug.Log("Worker Manager not found.");
+            
         }
 
         private void OnDestroy()
@@ -158,10 +153,10 @@ using UnityEngine.EventSystems;
                 //icon.sprite = Resources.Load<Sprite>("cube");
 
                 //And specify whether data item has children (to display expander arrow if needed)
-                if(dataItem.name != "TreeView" && dataItem.GetComponent<WorkerMovement>()==null)
+                /*if(dataItem.name != "TreeView" && dataItem.GetComponent<SyncedAsset>()==null)
                 {
                     e.HasChildren = dataItem.transform.childCount > 0;
-                }
+                }*/
 
                 
             }

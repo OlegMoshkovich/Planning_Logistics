@@ -14,7 +14,7 @@ public class FindCollisions : MonoBehaviour {
 
     private void OnTriggerEnter(Collider collider)
     {
-        HazardManager.main.AddCollision(collider);
+        //HazardManager.main.AddCollision(collider);
     }
 
 }

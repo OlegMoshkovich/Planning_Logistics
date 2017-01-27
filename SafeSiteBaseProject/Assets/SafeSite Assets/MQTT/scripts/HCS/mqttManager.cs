@@ -11,8 +11,7 @@ using System;
 
 public class mqttManager : MonoBehaviour {
     public bool convertUnitsToMeters = true;
-	private MqttClient client;
-    private MqttClient client2;
+    private MqttClient clientQTrack;
     private MqttClient clientBlueMix;
     public Dictionary<String, Tag> listOfQTrackTags = new Dictionary<String, Tag>();
     public Dictionary<String, HCSTag> listOfHCSTags = new Dictionary<String, HCSTag>();
@@ -30,24 +29,24 @@ public class mqttManager : MonoBehaviour {
         Debug.Log("start");
 		
         // create client instance 
-		client = new MqttClient(IPAddress.Parse("137.135.91.79"),1883 , false , null );
+		//client = new MqttClient(IPAddress.Parse("137.135.91.79"),1883 , false , null );
         clientBlueMix = new MqttClient("tmsmv4.messaging.internetofthings.ibmcloud.com", 1883, false, null);
-        
+        clientQTrack = new MqttClient("tmsmv4.messaging.internetofthings.ibmcloud.com", 1883, false, null);
+
         // register to message received 
-        client.MqttMsgPublishReceived += client_MqttMsgPublishReceived;
+        clientQTrack.MqttMsgPublishReceived += clientQTrack_MqttMsgPublishReceived;
         clientBlueMix.MqttMsgPublishReceived += clientBlueMix_MqttMsgPusblishReceived;
 
         //Register Messages To IncomingLog
-        client.MqttMsgPublishReceived += logIncomingData;
+        clientQTrack.MqttMsgPublishReceived += logIncomingData;
         clientBlueMix.MqttMsgPublishReceived += logIncomingData;
 
         //Register Messages to OutgoingLog
-        client.MqttMsgPublished += logOutgoingData;
+        clientQTrack.MqttMsgPublished += logOutgoingData;
         clientBlueMix.MqttMsgPublished += logOutgoingData;
 
         try{
-            string clientId = Guid.NewGuid().ToString();
-            var QtrackStatus = client.Connect(clientId);
+            var QtrackStatus = clientQTrack.Connect("a:tmsmv4:pabloUnityQTrack", "a-tmsmv4-m48l9nbvca", "ZP)G2!vMShPtSup6xH");
             Debug.Log("QTrack MQTT Client status: " + QtrackStatus.ToString());
         }
                 catch (MqttCommunicationException e)
@@ -55,11 +54,11 @@ public class mqttManager : MonoBehaviour {
             Debug.LogError(e.ToString());
         }
 
-		
-        //clientBlueMix.Connect( clientID, username, password)
+        //Connect HCSTAG bluemix
         try
         {
-            var blueMixStatus = clientBlueMix.Connect("a:tmsmv4:pablo", "a-tmsmv4-r2pl0u7lrz", "@BAr8DooQs(Eih0Ocb");
+
+            var blueMixStatus = clientBlueMix.Connect("a:tmsmv4:pabloUnityBLE", "a-tmsmv4-r2pl0u7lrz", "@BAr8DooQs(Eih0Ocb");
             Debug.Log("Bluemix connected + status: " + blueMixStatus.ToString());
 
         }
@@ -69,33 +68,35 @@ public class mqttManager : MonoBehaviour {
         }
 
 
-        client.Subscribe(new string[] { "qtrack/+" }, new byte[] { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE });
+        
         //clientBlueMix.Subscribe(new string[] { "iot-2/type/HCSTag/id/+/evt/+/fmt/json" }, new byte[] { MqttMsgBase.QOS_LEVEL_AT_MOST_ONCE });
         clientBlueMix.Subscribe(new string[] { "iot-2/type/HCS_BLE_Tag/id/+/evt/+/fmt/json" }, new byte[] { MqttMsgBase.QOS_LEVEL_AT_MOST_ONCE });
-
+        clientQTrack.Subscribe(new string[] { "iot-2/type/QTrack/id/+/evt/+/fmt/json" }, new byte[] { MqttMsgBase.QOS_LEVEL_AT_MOST_ONCE });
 
     }
-	void client_MqttMsgPublishReceived(object sender, MqttMsgPublishEventArgs e) 
+	void clientQTrack_MqttMsgPublishReceived(object sender, MqttMsgPublishEventArgs e) 
 	{
-
         string message = System.Text.Encoding.UTF8.GetString(e.Message);
-        Debug.Log("Received: " + message);
-        int frequency = int.Parse(e.Topic.ToString().Split('/')[1]);
+        //Debug.Log("Received message: " + message + "Topic: " + e.Topic.ToString());
+        string frequency = e.Topic.ToString().Split('/')[4];
         try
         {
             Tag incomingTag = new Tag();
             incomingTag = JsonUtility.FromJson<Tag>(message);
             incomingTag.Frequency = frequency;
-            Debug.Log(incomingTag);
-            Debug.Log("X: " + incomingTag.X + "Y: " + incomingTag.Y + " Frequency: " + frequency.ToString());
-            bool createNewTag = true;
-            if (listOfQTrackTags.ContainsKey(incomingTag.Frequency.ToString()))
+            if (convertUnitsToMeters)
             {
-                listOfQTrackTags.Add(incomingTag.Frequency.ToString(), incomingTag);
+                incomingTag.X *= 0.3048f;
+                incomingTag.Y *= 0.3048f;
+            }
+            //Debug.Log("X: " + incomingTag.X + "Y: " + incomingTag.Y + " Frequency: " + frequency);
+            if (listOfQTrackTags.ContainsKey(incomingTag.Frequency))
+            {
+                listOfQTrackTags[incomingTag.Frequency] = incomingTag;
             }
             else
             {
-                listOfQTrackTags[incomingTag.Frequency.ToString()] = incomingTag;
+                listOfQTrackTags.Add(incomingTag.Frequency, incomingTag);
             }
 
         }
@@ -107,6 +108,7 @@ public class mqttManager : MonoBehaviour {
     
     void clientBlueMix_MqttMsgPusblishReceived(object sender, MqttMsgPublishEventArgs e)
     {
+        //Debug.Log("HCS_BLE_Tag received");
         string message = System.Text.Encoding.UTF8.GetString(e.Message);
         string evt = e.Topic.ToString().Split('/')[6];
         string macAddress = e.Topic.ToString().Split('/')[4];
@@ -152,7 +154,7 @@ public class mqttManager : MonoBehaviour {
         }
         catch (Exception error)
         {
-            Debug.Log("error" + error);
+            //Debug.Log("error" + error);
         }
     }
 
@@ -174,23 +176,23 @@ public class mqttManager : MonoBehaviour {
 
     public void ActivateAlarm(string macAddress)
     {
-        string topic = "iot-2/type/HCSTag/id/" + macAddress + "/cmd/alert/fmt/json";
+        string topic = "iot-2/type/HCS_BLE_Tag/id/" + macAddress + "/cmd/alert/fmt/json";
         clientBlueMix.Publish(topic, System.Text.Encoding.UTF8.GetBytes("{\"alarm\":1}"), MqttMsgBase.QOS_LEVEL_AT_MOST_ONCE, true);
     }
     public void ActivateBadBend(string macAddress)
     {
-        string topic = "iot-2/type/HCSTag/id/" + macAddress + "/cmd/alert/fmt/json";
+        string topic = "iot-2/type/HCS_BLE_Tag/id/" + macAddress + "/cmd/alert/fmt/json";
         clientBlueMix.Publish(topic, System.Text.Encoding.UTF8.GetBytes("{\"bndbz\":1}"), MqttMsgBase.QOS_LEVEL_AT_MOST_ONCE, true);
     }
     public void DeactivateBadBend(string macAddress)
     {
-        string topic = "iot-2/type/HCSTag/id/" + macAddress + "/cmd/alert/fmt/json";
+        string topic = "iot-2/type/HCS_BLE_Tag/id/" + macAddress + "/cmd/alert/fmt/json";
         clientBlueMix.Publish(topic, System.Text.Encoding.UTF8.GetBytes("{bndbz:0}"), MqttMsgBase.QOS_LEVEL_AT_MOST_ONCE, true);
     }
 
     public void DeactivateAlarm(string macAddress)
     {
-        string topic = "iot-2/type/HCSTag/id/" + macAddress + "/cmd/alert/fmt/json";
+        string topic = "iot-2/type/HCS_BLE_Tag/id/" + macAddress + "/cmd/alert/fmt/json";
         clientBlueMix.Publish(topic, System.Text.Encoding.UTF8.GetBytes("{alarm:0}"), MqttMsgBase.QOS_LEVEL_AT_MOST_ONCE, true);
     }
 

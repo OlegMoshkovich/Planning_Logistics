@@ -40,9 +40,9 @@ public class AssetPanel : MonoBehaviour
                 {
                     gameObject.active = false;
                     gameObject.active = true;
-                    selectedAsset = hit.transform.gameObject;
+                    //selectedAsset = hit.transform.gameObject;
                 }
-                
+                selectedAsset = hit.transform.gameObject;
                 //Activate Panel
                 this.GetComponentInParent<Canvas>().enabled = true;
                 
@@ -57,8 +57,9 @@ public class AssetPanel : MonoBehaviour
                 if (selectedAsset.GetComponent<SyncedAsset>() != null)
                 {
                     movementTypeDropdown.gameObject.active = true;
-                    movementTypeDropdown.value = (int)selectedAsset.GetComponent<SyncedAsset>().movement;
                     movementTypeDropdown.GetComponent<ChangeMovement>().target = selectedAsset;
+                    movementTypeDropdown.value = (int)selectedAsset.GetComponent<SyncedAsset>().movement;
+                    
                 }
                 else
                 {

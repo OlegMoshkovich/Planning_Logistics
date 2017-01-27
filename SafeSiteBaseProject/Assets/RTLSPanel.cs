@@ -12,11 +12,13 @@ public class RTLSPanel : MonoBehaviour {
 
     private void Update()
     {
+        //Debug.Log(rtls.frequency);
+        //Debug.Log(mqttManager.main.listOfQTrackTags[rtls.frequency]);
         Tag tag = mqttManager.main.listOfQTrackTags[rtls.frequency];
-        rtlsId.text = rtls.frequency;
-        x_Value.text = tag.X.ToString();
-        y_Value.text = tag.Y.ToString();
-        z_Value.text = "deactivated";
+        rtlsId.text = "TagID : " + rtls.frequency;
+        x_Value.text = "X : " + tag.X.ToString();
+        y_Value.text = "Z" + tag.Y.ToString();
+        z_Value.text = "altitude deactivated";
     }
 
 }
