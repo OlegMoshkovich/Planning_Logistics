@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 [RequireComponent(typeof(NavMeshAgent))]
+[Serializable]
 public class RTLSMovement : MonoBehaviour {
     public string frequency;
     public int rtlsPrecision = 5;
@@ -27,6 +28,7 @@ public class RTLSMovement : MonoBehaviour {
     void Start()
     {
         createUncertaintyCircle();
+        Debug.Log(JsonUtility.ToJson(this));
     }
     private void OnDestroy()
     {

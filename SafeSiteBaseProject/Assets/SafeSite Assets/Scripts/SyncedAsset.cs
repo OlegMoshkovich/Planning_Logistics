@@ -10,7 +10,10 @@ public class SyncedAsset : MonoBehaviour {
 
     public float[] position;
     public float[] rotation;
+
+    public bool alwaysStatic;
     public MovementType movement;
+
     
 
     // Use this for initialization

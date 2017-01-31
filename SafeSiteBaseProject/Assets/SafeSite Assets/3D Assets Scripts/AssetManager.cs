@@ -130,5 +130,10 @@ public class AssetManager : MonoBehaviour {
 			placeAsset (assetToDraw);
 		}   
     }
+    //create asset from CludantDB doc
+    public void CreateAssetFromDoc(string doc)
+    {
+
+    }
     
 }

@@ -31,7 +31,7 @@ using System.Collections;
     {
         if (alert)
         {
-            //Trigger Event if it has subscribers
+            //Trigger Event if it has subscriberssy
             //if (OnExclusionZoneEnter != null) OnExclusionZoneEnter(collider);
             //Call ExclusionZoneManagerHandler
             ExclusionZoneManager.main.OnExclusionZoneEnter_Handler(collider);
