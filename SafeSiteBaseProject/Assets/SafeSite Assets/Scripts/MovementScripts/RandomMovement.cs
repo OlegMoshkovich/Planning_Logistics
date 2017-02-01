@@ -7,9 +7,10 @@ public class RandomMovement : MonoBehaviour {
     public int radius = 10;
     private NavMeshAgent agent;
 
-    private void Start()
+    protected void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        SetRandomGoal();
     }
 
     void Update () {
@@ -18,10 +19,9 @@ public class RandomMovement : MonoBehaviour {
         {
             GetComponent<Animator>().SetFloat("Speed", agent.speed);
         }
-
         //IF Agent reaches destination or has an invalid path, reset random goal
-        if (agent.remainingDistance == 0) SetRandomGoal();
-        if(agent.pathStatus == NavMeshPathStatus.PathInvalid || agent.pathStatus == NavMeshPathStatus.PathPartial) SetRandomGoal();
+        if (agent.remainingDistance == 0 || agent.pathStatus == NavMeshPathStatus.PathInvalid || agent.pathStatus == NavMeshPathStatus.PathPartial) SetRandomGoal();
+
     }
 
     void SetRandomGoal()
@@ -31,6 +31,6 @@ public class RandomMovement : MonoBehaviour {
         NavMeshHit hit;
         NavMesh.SamplePosition(randomDirection, out hit, radius, 1);
         Vector3 finalPosition = hit.position;
-        agent.destination = finalPosition;
+        agent.destination = finalPosition; 
     }
 }

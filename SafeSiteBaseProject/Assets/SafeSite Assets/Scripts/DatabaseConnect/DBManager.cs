@@ -9,39 +9,94 @@ public class DBManager : MonoBehaviour {
 
     public WebRequest req;
 
-	void Start () {
+    void Start () {
         req = this.gameObject.AddComponent<WebRequest>();
-        GetAllAssetsTrigger();
     }
 
     public void GetAllAssetsTrigger()
     {
         string url = databaseURL + projectName + "_all_docs?include_docs=true";
-        req.HTTPRequest(url, getAllAssetsHandler);
+        req.HTTPGETRequest(url, getAllAssetsHandler);
+        DestroyAllSynchedAssets();
     }
 
     public void getAllAssetsHandler()
     {
-        var n = JSON.Parse(req.download.text);
+        Debug.Log(req.download.text);
+        var n = JSON.Parse(req.download.text);    
         for(int i =0; i<n["rows"].Count; i++)
         {
-            Debug.Log(n["rows"][i]["doc"]["asset"].ToString());
-            Debug.Log(n["rows"][i]["doc"]["rtls"].ToString());
-        }
-        
+            AssetManager.main.createAssetFromJSON(n["rows"][i]["doc"]);
+        } 
     }
 
-    private void updateAssetsTrigger()
+    private SyncedAsset[] saArray;
+
+    public void DestroyAllSynchedAssets()
     {
-        string url = databaseURL + projectName + "5b0b6c8e032c56be3d5eefbe87512745";
+        saArray = Component.FindObjectsOfType<SyncedAsset>();
+        Debug.Log("Destroy all assets:" + saArray.Length.ToString());
+        foreach (SyncedAsset sa in saArray)
+        {
+            Debug.Log(sa.gameObject.name);
+            Destroy(sa.gameObject);
+        }
+    }
+
+    public void updateAssetsTrigger()
+    {
+        string url = databaseURL + projectName + "_bulk_docs";
         var headers = new Dictionary<string, string>();
-        headers.Add("X-HTTP-Method-Override", "PUT");
-        headers.Add("Content-Type", "application /json");
-        req.HTTPRequest(url, updateAssetsHandler, System.Text.Encoding.ASCII.GetBytes(""), headers);
+        headers.Add("X-HTTP-Method-Override", "POST");
+        headers.Add("Content-Type", "application/json");
+        string postData = "{\"docs\":[";
+        saArray = FindObjectsOfType<SyncedAsset>();
+        for(int i=0; i < saArray.Length; i++)
+        {
+            JSONNode n = JSON.Parse(JsonUtility.ToJson(saArray[i]));
+            if (n["_id"] == null || n["_rev"] == null) {
+                n.Remove("_id");
+                n.Remove("_rev");
+                    }
+            postData += n.ToString();
+            if (i != saArray.Length - 1) postData += ",";
+        }
+        postData += "]}";
+        Debug.Log("Posting Data: " + postData);
+        req.HTTPRequest(url, updateAssetsHandler, System.Text.Encoding.UTF8.GetBytes(postData), headers);
     }
 
     private void updateAssetsHandler()
     {
+#if UNITY_EDITOR
         Debug.Log("updateAssetsHandler : " + req.download.text);
+#endif
+        var n = JSON.Parse(req.download.text);
+        for (int i = 0; i < n["rows"].Count; i++)
+        {
+            Debug.Log(n["rows"][i]["doc"].ToString());
+            saArray[i]._id = n[i]["id"];
+            saArray[i]._rev = n[i]["rev"];
+        }
     }
+    public void deleteAsset(string _id, string _rev)
+    {
+        string url = databaseURL + projectName + "_bulk_docs";
+        string postData = "{\"docs\":[{\"_id\":\""+_id+ "\",\"_rev\":\"" + _rev + "\",\"_deleted\": true}]}";
+        var headers = new Dictionary<string, string>();
+        headers.Add("X-HTTP-Method-Override", "POST");
+        headers.Add("Content-Type", "application/json");
+        Debug.Log(postData);
+        req.HTTPRequest(url, deleteAssetHandler, System.Text.Encoding.UTF8.GetBytes(postData), headers);
+    }
+    public void deleteAssetHandler()
+    {
+#if UNITY_EDITOR
+        Debug.Log(req.download.text);
+#endif
+    }
+
+    
+
+    
 }

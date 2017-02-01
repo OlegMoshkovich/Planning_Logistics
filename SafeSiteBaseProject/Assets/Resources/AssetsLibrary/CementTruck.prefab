@@ -41741,11 +41741,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 884cc7f7174c26f45a96f98cc9cd7780, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 0
+  _id: 
+  _rev: 
   name: 
   type: 
-  position: []
-  rotation: []
+  position: {x: 0, y: 0, z: 0}
+  rotation: {x: 0, y: 0, z: 0, w: 0}
+  alwaysStatic: 0
   movement: 3
 --- !u!114 &114000012298618578
 MonoBehaviour:

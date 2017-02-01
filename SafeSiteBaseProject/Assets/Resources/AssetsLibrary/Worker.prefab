@@ -2811,8 +2811,10 @@ GameObject:
   - 136: {fileID: 136000013419673354}
   - 96: {fileID: 96000011207475852}
   - 195: {fileID: 195000011212683552}
-  - 114: {fileID: 114000011692874190}
   - 114: {fileID: 114000010042200088}
+  - 114: {fileID: 114000011532187310}
+  - 114: {fileID: 114000013726140844}
+  - 114: {fileID: 114000012728743264}
   m_Layer: 13
   m_Name: Worker
   m_TagString: Worker
@@ -3099,7 +3101,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5231588932f470488109ed18c3e45a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114000011692874190
+--- !u!114 &114000011532187310
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012379482536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfe66a78c3943334eb766958f1109a86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114000012728743264
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012379482536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba56b1ecf2dc249319d9a5d803dd0284, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114000013726140844
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -3110,17 +3134,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 884cc7f7174c26f45a96f98cc9cd7780, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 0
-  name: Worker
-  type: Worker
-  position:
-  - 0
-  - 0
-  - 0
-  rotation:
-  - 0
-  - 0
-  - 0
+  _id: 
+  _rev: 
+  name: 
+  type: 
+  position: {x: 0, y: 0, z: 0}
+  rotation: {x: 0, y: 0, z: 0, w: 0}
+  alwaysStatic: 0
   movement: 0
 --- !u!136 &136000013419673354
 CapsuleCollider:

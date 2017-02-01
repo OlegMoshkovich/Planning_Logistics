@@ -30,7 +30,7 @@ public class ChangeMovement : MonoBehaviour {
                 target.AddComponent<RTLSMovement>();
                 break;
             case MovementType.Static:
-                target.GetComponent<NavMeshAgent>().destination = target.transform.position;
+                if(target.GetComponent<NavMeshAgent>()!= null) target.GetComponent<NavMeshAgent>().destination = target.transform.position;
                 if(target.GetComponent<Animator>() != null) target.GetComponent<Animator>().SetFloat("Speed", 0);
                 break;
 

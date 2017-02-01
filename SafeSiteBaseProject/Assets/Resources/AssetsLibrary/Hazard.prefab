@@ -27,7 +27,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1000010311552696
 GameObject:
   m_ObjectHideFlags: 1
@@ -416,6 +416,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000013230189182}
+  - 114: {fileID: 114000010970807638}
   m_Layer: 0
   m_Name: Hazard
   m_TagString: Untagged
@@ -1375,6 +1376,25 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114000010970807638
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012684156560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 884cc7f7174c26f45a96f98cc9cd7780, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: 
+  _rev: 
+  name: 
+  type: 
+  position: {x: 0, y: 0, z: 0}
+  rotation: {x: 0, y: 0, z: 0, w: 0}
+  alwaysStatic: 1
+  movement: 0
 --- !u!114 &114000010978893390
 MonoBehaviour:
   m_ObjectHideFlags: 1

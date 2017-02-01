@@ -23,9 +23,9 @@ public class HazardMarkerDrawer : MonoBehaviour {
             {
                 Vector3 worldPoint = new Vector3(hit.point.x, hit.point.y, hit.point.z);
                 worldPoint -= ray.direction*0.1f;
-                GameObject newHazardMarker = (GameObject)Instantiate(HazardManager.main.HazardMarkerPrefab, HazardManager.main.Hazards.transform);
+                GameObject newHazardMarker = (GameObject)Instantiate(Resources.Load<GameObject>("AssetsLibrary/Hazard"), HazardManager.main.Hazards.transform);
                 newHazardMarker.name = "Hazard";
-                
+                newHazardMarker.GetComponent<SyncedAsset>().type = "Hazard";
 				newHazardMarker.transform.position = worldPoint;
                 newHazardMarker.transform.rotation.SetEulerAngles(Camera.main.transform.eulerAngles.x, Camera.main.transform.eulerAngles.y, Camera.main.transform.eulerAngles.z);
                 

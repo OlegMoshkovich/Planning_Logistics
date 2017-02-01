@@ -51,7 +51,7 @@ public class WebRequest : MonoBehaviour {
 
     
    
-    public void HTTPRequest(string url, WebRequestEvent callbackFunction)
+    public void HTTPGETRequest(string url, WebRequestEvent callbackFunction)
     {
         if (processing)
         {
@@ -61,7 +61,9 @@ public class WebRequest : MonoBehaviour {
         else
         {
             onProcessingFinished = callbackFunction;
-            Debug.Log("Start : " + url);
+#if UNITY_EDITOR
+            Debug.Log("Sending GET Request to:  " + url);
+#endif
             StartCoroutine(GETRequest(url));
         }     
     }
@@ -70,17 +72,57 @@ public class WebRequest : MonoBehaviour {
     {
         if (processing)
         {
+            Debug.Log("Already processing request");
+            return;
+        }
+        else
+        {
+            onProcessingFinished = callbackFunction;
+#if UNITY_EDITOR
+            Debug.Log("Sending HTTP Request with data: " + postData.ToString());
+#endif
+            StartCoroutine(POSTRequest(url, postData, headers));
+        }   
+    }
+    public void HTTPPUTRequest(string url, WebRequestEvent callbackFunction, byte[] postData)
+    {
+        var headers = new Dictionary<string, string>();
+        headers.Add("X-HTTP-Method-Override", "PUT");
+        if (processing)
+        {
             Debug.LogError("Already processing request");
             return;
         }
         else
         {
             onProcessingFinished = callbackFunction;
+#if UNITY_EDITOR
+            Debug.Log("Sending HTTP Request with data: " + postData.ToString());
+#endif
             StartCoroutine(POSTRequest(url, postData, headers));
-        }   
+        }
+    }
+    public void HTTPPOSTRequest(string url, WebRequestEvent callbackFunction, byte[] postData)
+    {
+        var headers = new Dictionary<string, string>();
+        headers.Add("X-HTTP-Method-Override", "POST");
+        if (processing)
+        {
+            Debug.LogError("Already processing request");
+            return;
+        }
+        else
+        {
+            onProcessingFinished = callbackFunction;
+#if UNITY_EDITOR
+            Debug.Log("Sending HTTP Request with data: " + postData.ToString());
+#endif
+            StartCoroutine(POSTRequest(url, postData, headers));
+        }
     }
 
-    
+
+
 
 
 }

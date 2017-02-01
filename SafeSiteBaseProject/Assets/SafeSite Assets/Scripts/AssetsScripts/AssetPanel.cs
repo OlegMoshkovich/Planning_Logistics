@@ -56,32 +56,35 @@ public class AssetPanel : MonoBehaviour
                 //Check if Synced Asset
                 if (selectedAsset.GetComponent<SyncedAsset>() != null)
                 {
-                    movementTypeDropdown.gameObject.active = true;
+                    if(!selectedAsset.GetComponent<SyncedAsset>().alwaysStatic) movementTypeDropdown.gameObject.active = true;
                     movementTypeDropdown.GetComponent<ChangeMovement>().target = selectedAsset;
                     movementTypeDropdown.value = (int)selectedAsset.GetComponent<SyncedAsset>().movement;
-                    
+
+                    //Check if RTLS
+                    DisplayRTLS();
                 }
                 else
                 {
                     movementTypeDropdown.gameObject.active = false;
+                    addRTLSPanel.active = false;
                 }
 
                 //Check if Asset has Telemetry
 
                 DisplayTelemetry();
 
-                //Check if RTLS
-                DisplayRTLS();
-
+                
                 //Check if Zones
                 DisplayZoneInfo();
+
+                //Size Panel
+                updatePanelsLayout();
             }
             //No asset selected
             else
             {
                 this.GetComponentInParent<Canvas>().enabled = false;
-                addTelemetryPanel.active = false;
-                addRTLSPanel.active = false;
+                addTelemetryPanel.active = false; 
             }
         }
         
@@ -147,8 +150,22 @@ public class AssetPanel : MonoBehaviour
             zonesPanel.active = false;
         }
     }
-    private void stackPanels()
+    //Function that sizes panel depending on content
+    public void updatePanelsLayout()
     {
-        
+        float sumOfHeights = 20; //Buffer
+        RectTransform[] rectTransforms = gameObject.transform.GetComponentsInChildren<RectTransform>();
+        foreach(RectTransform rectT in rectTransforms)
+        {
+            if (rectT.gameObject.active & rectT.gameObject.transform.parent == gameObject.transform & (rectT!= this.gameObject.GetComponent<RectTransform>()))
+            {
+                rectT.anchoredPosition = new Vector2(rectT.anchoredPosition.x, -sumOfHeights);
+                sumOfHeights += rectT.sizeDelta.y;
+                sumOfHeights += 20; // Buffer between UI elements           
+                Debug.Log(rectT.gameObject.name);
+                Debug.Log(sumOfHeights);
+            }  
+        }   
+        this.gameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(this.gameObject.GetComponent<RectTransform>().sizeDelta.x, sumOfHeights);
     }
 }

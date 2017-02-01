@@ -1142,6 +1142,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000014194682438}
   - 95: {fileID: 95000012129224256}
+  - 114: {fileID: 114000011146593052}
   m_Layer: 0
   m_Name: Bobcat
   m_TagString: Untagged
@@ -22691,3 +22692,22 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114000011146593052
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010854155328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 884cc7f7174c26f45a96f98cc9cd7780, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: 
+  _rev: 
+  name: 
+  type: 
+  position: {x: 0, y: 0, z: 0}
+  rotation: {x: 0, y: 0, z: 0, w: 0}
+  alwaysStatic: 0
+  movement: 0
