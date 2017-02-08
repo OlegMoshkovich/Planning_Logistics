@@ -129,6 +129,7 @@ using System.Collections.Generic;
             ExclusionZoneManager.main.listOfExclusionZones.Add(newExclusionZone);
         //Update Tree
             TreeViewManager.main.TreeView.AddChild(ExclusionZoneManager.main.exclusionZones, newExclusionZone);
+        TreeViewManager.main.updateTreeText();
             //Clear Drawing
             ClearDrawing();
 

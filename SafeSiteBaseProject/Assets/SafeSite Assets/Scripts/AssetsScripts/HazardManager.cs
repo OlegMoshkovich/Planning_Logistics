@@ -21,15 +21,15 @@ public class HazardManager : MonoBehaviour
     {
         main = this;
         Hazards = new GameObject();
-        Hazards.name = "Hazards 10";
+        Hazards.name = "Hazards";
         TreeViewManager.main.TreeView.Add(Hazards);
 
-        Collisions = new GameObject();
-        Collisions.name = "Collisions 0 ";
+        /*Collisions = new GameObject();
+        Collisions.name = "Collisions";
         TreeViewManager.main.TreeView.Add(Collisions);
         Edges = new GameObject();
-        Edges.name = "Fall Risks 0";
-        TreeViewManager.main.TreeView.Add(Edges);
+        Edges.name = "Fall Risks";
+        TreeViewManager.main.TreeView.Add(Edges);*/
 
 
     }
@@ -50,7 +50,7 @@ public class HazardManager : MonoBehaviour
     {
         GameObject go = Instantiate(HazardMarkerPrefab, position, Camera.main.transform.rotation) as GameObject;
         go.name = "Fall Indicator";
-        go.transform.parent = Edges.transform;
+        go.transform.parent = Hazards.transform;
         TreeViewManager.main.TreeView.AddChild(Edges, go);
     }
 

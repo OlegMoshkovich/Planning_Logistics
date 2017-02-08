@@ -35,6 +35,7 @@ public class HazardMarkerDrawer : MonoBehaviour {
 				CameraSwitch.main.SetTarget(newHazardMarker.transform);
 
                 TreeViewManager.main.TreeView.AddChild(HazardManager.main.Hazards, newHazardMarker);
+                TreeViewManager.main.updateTreeText();
                 this.enabled = false;
             }
         }

@@ -49,19 +49,39 @@ using UnityEngine.EventSystems;
             TreeView.ItemDrop += OnItemDrop;
             TreeView.ItemEndDrag += OnItemEndDrag;
 
-
-            
-            updateTree();
         }
         
         private void Update()
     {
         UnselectIfClickedOutside();
     }
-        public void updateTree()
+        public void updateTreeText(object obj)
         {
-            
+            try
+            {
+            GameObject go = (GameObject)obj;
+            TreeView.GetItemContainer(obj).GetComponentInChildren<Text>().text = go.name;
+            }
+            catch(Exception e)
+            {
+            Debug.Log(e.Message);
+            }
         }
+    public void updateTreeText()
+    {
+        try
+        {
+            for (int i = 0; i < TreeView.ItemsCount; i++)
+            {
+                GameObject go = (GameObject)TreeView.GetItemContainer(i).Item;
+                TreeView.GetItemContainer(i).GetComponentInChildren<Text>().text = go.name + " (" + go.transform.childCount + ")";
+            }
+        }
+        catch (Exception e)
+        {
+            Debug.Log(e.Message);
+        }
+    }
 
         private void OnDestroy()
         {
@@ -83,8 +103,8 @@ using UnityEngine.EventSystems;
 
         private void OnItemExpanding(object sender, ItemExpandingArgs e)
         {
-            //get parent data item (game object in our case)
-            GameObject gameObject = (GameObject)e.Item;
+        //get parent data item (game object in our case)
+           GameObject gameObject = (GameObject)e.Item;
             if(gameObject.transform.childCount > 0)
             {
                 //get children
@@ -93,7 +113,6 @@ using UnityEngine.EventSystems;
                 {
                     children[i] = gameObject.transform.GetChild(i).gameObject;
                 }
-                
                 //Populate children collection
                 e.Children = children;
             }
@@ -107,7 +126,6 @@ using UnityEngine.EventSystems;
 #endif
             //GameObject goItem = (GameObject)UnityEditor.Selection.objects[0];
             //Camera.main.transform.position = new Vector3(goItem.transform.position.x, goItem.transform.position.y + 2, goItem.transform.position.z - 5);
-
         }
 
         private void OnItemsRemoved(object sender, ItemsRemovedArgs e)
@@ -124,7 +142,6 @@ using UnityEngine.EventSystems;
         }
     private void UnselectIfClickedOutside()
     {
-        
         if (Input.GetMouseButton(0) && this.transform.gameObject.activeSelf &&
             !RectTransformUtility.RectangleContainsScreenPoint(
                 this.transform.gameObject.GetComponent<RectTransform>(),
@@ -153,10 +170,10 @@ using UnityEngine.EventSystems;
                 //icon.sprite = Resources.Load<Sprite>("cube");
 
                 //And specify whether data item has children (to display expander arrow if needed)
-                /*if(dataItem.name != "TreeView" && dataItem.GetComponent<SyncedAsset>()==null)
+                if(dataItem.name != "TreeView" && dataItem.GetComponent<SyncedAsset>()==null)
                 {
                     e.HasChildren = dataItem.transform.childCount > 0;
-                }*/
+                }
 
                 
             }

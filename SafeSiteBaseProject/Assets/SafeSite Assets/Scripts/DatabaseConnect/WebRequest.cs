@@ -34,7 +34,20 @@ public class WebRequest : MonoBehaviour {
         processing = false;
         if(onProcessingFinished != null) onProcessingFinished();
     }
-
+    private IEnumerator GETRequestWithHeaders(string url, Dictionary<string, string> headers)
+    {
+        Debug.Log("Requesting: " + url);
+        processing = true;
+        download = new WWW(url, null, headers);
+        var timeOutIndex = 0;
+        while (!download.isDone && (timeOutIndex < WWW_TIMEOUT) && string.IsNullOrEmpty(download.error))
+        {
+            timeOutIndex++;
+            yield return new WaitForSeconds(WWW_WAIT);
+        }
+        processing = false;
+        if (onProcessingFinished != null) onProcessingFinished();
+    }
     private IEnumerator POSTRequest(string url, byte[] postData, Dictionary<string, string> headers )
     {
         processing = true;
@@ -51,7 +64,7 @@ public class WebRequest : MonoBehaviour {
 
     
    
-    public void HTTPGETRequest(string url, WebRequestEvent callbackFunction)
+    public void HTTPGETRequest(string url, WebRequestEvent callbackFunction, Dictionary<string, string> headers = null)
     {
         if (processing)
         {
@@ -64,8 +77,9 @@ public class WebRequest : MonoBehaviour {
 #if UNITY_EDITOR
             Debug.Log("Sending GET Request to:  " + url);
 #endif
-            StartCoroutine(GETRequest(url));
-        }     
+            if(headers == null) StartCoroutine(GETRequest(url));
+            else StartCoroutine(GETRequestWithHeaders(url, headers));
+        }
     }
 
     public void HTTPRequest(string url, WebRequestEvent callbackFunction, byte[] postData, Dictionary<string, string> headers)

@@ -204,14 +204,18 @@ namespace Battlehub.UIControls
             if(m_expandSilently)
             {
                 return;
+                Debug.Log("Items Expanding Silently");
             }
 
             if(ItemExpanding != null)
             {
+                Debug.Log("Items Expanding");
                 ItemExpandingArgs args = new ItemExpandingArgs(item.Item);
+
                 ItemExpanding(this, args);
 
                 IEnumerable children = args.Children;
+
                 int containerIndex = item.transform.GetSiblingIndex();
                 int itemIndex = IndexOf(item.Item);
 
@@ -219,8 +223,10 @@ namespace Battlehub.UIControls
 
                 if (item.CanExpand)
                 {
-                    foreach(object childItem in children)
+                    Debug.Log("Items Can Expand");
+                    foreach (object childItem in children)
                     {
+                        Debug.Log("For loop");
                         containerIndex++;
                         itemIndex++;
 

@@ -15,8 +15,22 @@ public class DBManager : MonoBehaviour {
 
     public void GetAllAssetsTrigger()
     {
+        
+#if UNITY_WEBGL
+        string url = databaseURL + projectName + "_all_docs?include_docs=true";
+        var headers = new Dictionary<string, string>();
+        headers.Add("X-HTTP-Method-Override", "GET");
+        //headers.Add("Authorization", "Basic NzkxM2RjMDctOWI2OS00YTE3LTgzMjktY2I0M2IwMGJiZDE0LWJsdWVtaXg6NWQ1M2JhMjI5NTkxOTMxYWZjNjJlMDAwMTFiMDU2ODdhMTdjZTQwMDEyNjE1YzMyYTgyNmI4MjE5ZjEwNmQyZA==");
+        headers.Add("Content-Type", "application/json");
+        headers.Add("Access-Control-Allow-Credentials", "true");
+        headers.Add("Access-Control-Allow-Headers", "Accept, X-Access-Token, X-Application-Name, X-Request-Sent-Time");
+        headers.Add("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
+        headers.Add("Access-Control-Allow-Origin", "*");
+        req.HTTPGETRequest(url, getAllAssetsHandler, headers);
+#else
         string url = databaseURL + projectName + "_all_docs?include_docs=true";
         req.HTTPGETRequest(url, getAllAssetsHandler);
+#endif
         DestroyAllSynchedAssets();
     }
 

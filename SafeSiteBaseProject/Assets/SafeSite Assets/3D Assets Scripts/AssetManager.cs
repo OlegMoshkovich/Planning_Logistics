@@ -24,21 +24,18 @@ public class AssetManager : MonoBehaviour {
 		main = this;
 
         //Set up Tree
-        indicatorsParent = new GameObject();
-        indicatorsParent.name = "Safescan indicators 6";
         workers = new GameObject();
-        workers.name = "Workers 32/100";
-
+        workers.name = "Workers";
         assets = new GameObject();
-        assets.name = "Assets 24";
+        assets.name = "Assets";
         forklifts = new GameObject();
-        forklifts.name = "Forklits " + forklifts.transform.childCount;
+        forklifts.name = "Forklifts";
         forklifts.transform.parent = assets.transform;
         ladders = new GameObject();
-        ladders.name = "Ladders " + forklifts.transform.childCount;
+        ladders.name = "Ladders";
         ladders.transform.parent = assets.transform;
         otherAssets = new GameObject();
-        otherAssets.name = "Others " + otherAssets.transform.childCount;
+        otherAssets.name = "Others";
         otherAssets.transform.parent = assets.transform;
         
     }
@@ -75,12 +72,14 @@ public class AssetManager : MonoBehaviour {
         try {
             Debug.Log("Create From JSON: " + doc.ToString());
             string type = doc["type"].Value;
-            GameObject go = Instantiate<GameObject>(Resources.Load<GameObject>("AssetsLibrary/" + type));
+            Vector3 position = new Vector3(float.Parse(doc["position"]["x"].Value), float.Parse(doc["position"]["y"].Value), float.Parse(doc["position"]["z"].Value));
+            GameObject go = (GameObject)Instantiate(Resources.Load<GameObject>("AssetsLibrary/" + type), position, transform.rotation);
             if (go.GetComponent<SyncedAsset>() == null) Debug.LogError("Prefab missing Synched Asset");
             else
             {
                 go.GetComponent<SyncedAsset>().UpdateWithJSON(doc.ToString());
             }
+            AddToTree(go, type);
         }
         catch(Exception e)
         {
@@ -117,11 +116,6 @@ public class AssetManager : MonoBehaviour {
             case "Worker":
                 go.transform.parent = workers.transform;
                 TreeViewManager.main.TreeView.AddChild(workers, go);
-                //workers.name = "Workers (" + workers.transform.childCount + ")";
-                break;
-            case "SafetyNet":
-                go.transform.parent = otherAssets.transform;
-                TreeViewManager.main.TreeView.AddChild(otherAssets, go);
                 break;
             case "Ladder":
                 go.transform.parent = ladders.transform;
@@ -131,11 +125,16 @@ public class AssetManager : MonoBehaviour {
                 go.transform.parent = forklifts.transform;
                 TreeViewManager.main.TreeView.AddChild(forklifts, go);
                 break;
-            case "other":
+            case "Hazard":
+                go.transform.parent = HazardManager.main.Hazards.transform;
+                TreeViewManager.main.TreeView.AddChild(HazardManager.main.Hazards, go);
+                break;
+            default:
                 go.transform.parent = otherAssets.transform;
                 TreeViewManager.main.TreeView.AddChild(otherAssets, go);
                 break;
         }
+        TreeViewManager.main.updateTreeText();
     }
     public void DeleteAsset(GameObject asset)
     {
