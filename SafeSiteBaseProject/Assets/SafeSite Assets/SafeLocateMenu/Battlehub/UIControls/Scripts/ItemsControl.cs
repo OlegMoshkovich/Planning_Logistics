@@ -260,10 +260,6 @@ namespace Battlehub.UIControls
         /// </summary>
         [SerializeField]
         private GameObject ItemContainerPrefab;
-        [SerializeField]
-        private GameObject ItemContainerPrefabWorker;
-        [SerializeField]
-        private GameObject ItemContainerPrefabFolder;
 
         /// <summary>
         /// Items Panel
@@ -708,18 +704,9 @@ namespace Battlehub.UIControls
             {
                 itemContainerIndex = m_itemContainers.Count;
             }
+
             m_items.Insert(index, item);
-            try
-            {
-                GameObject go = (GameObject)item;
-                if (go.GetComponent<Folder>() != null) itemContainer = InstantiateItemContainer(itemContainerIndex, "folder");
-                //else if (go.GetComponent<WorkerMovement>() != null) itemContainer = InstantiateItemContainer(itemContainerIndex, "worker");
-                else itemContainer = InstantiateItemContainer(itemContainerIndex, "");
-            }
-            catch
-            {
-                itemContainer = InstantiateItemContainer(itemContainerIndex);
-            }
+            itemContainer = InstantiateItemContainer(itemContainerIndex);
             if (itemContainer != null)
             {
                 itemContainer.Item = item;
@@ -1489,10 +1476,7 @@ namespace Battlehub.UIControls
                 {
                     for (int i = 0; i < deltaItems; ++i)
                     {
-                        GameObject goItem = (GameObject)m_items[m_itemContainers.Count];
-                        if (goItem.GetComponent<Folder>() !=null) InstantiateItemContainer(m_itemContainers.Count, "folder");
-                        //else if(goItem.GetComponent<WorkerMovement>() != null) InstantiateItemContainer(m_itemContainers.Count, "worker");
-                        else InstantiateItemContainer(m_itemContainers.Count, "");
+                        InstantiateItemContainer(m_itemContainers.Count);
                     }
                 }
                 else
@@ -1534,22 +1518,9 @@ namespace Battlehub.UIControls
             }
         }
 
-        protected ItemContainer InstantiateItemContainer(int siblingIndex, string prefab = "")
+        protected ItemContainer InstantiateItemContainer(int siblingIndex)
         {
-            GameObject container = new GameObject();
-            switch (prefab)
-            {
-                case "worker":
-                    container = Instantiate(ItemContainerPrefabWorker);
-                    break;
-                case "folder":
-                    container = Instantiate(ItemContainerPrefabFolder);
-                    break;
-                case "":
-                    container = Instantiate(ItemContainerPrefab);
-                    break;
-            }
-
+            GameObject container = Instantiate(ItemContainerPrefab);
             container.name = "ItemContainer";
             container.transform.SetParent(Panel, false);
             container.transform.SetSiblingIndex(siblingIndex);

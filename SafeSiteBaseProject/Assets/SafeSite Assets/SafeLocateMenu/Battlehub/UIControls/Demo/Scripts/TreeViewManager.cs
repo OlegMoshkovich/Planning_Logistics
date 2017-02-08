@@ -104,7 +104,7 @@ using UnityEngine.EventSystems;
         private void OnItemExpanding(object sender, ItemExpandingArgs e)
         {
         //get parent data item (game object in our case)
-           GameObject gameObject = (GameObject)e.Item;
+          GameObject gameObject = (GameObject)e.Item;
             if(gameObject.transform.childCount > 0)
             {
                 //get children
@@ -116,6 +116,7 @@ using UnityEngine.EventSystems;
                 //Populate children collection
                 e.Children = children;
             }
+        updateTreeText();
         }
 
         private void OnSelectionChanged(object sender, SelectionChangedEventArgs e)
