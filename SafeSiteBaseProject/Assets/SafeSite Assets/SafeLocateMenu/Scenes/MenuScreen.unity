@@ -659,7 +659,7 @@ Prefab:
     - target: {fileID: 224000011193607066, guid: 19c8bbf171788ad46912594c859325a9,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224000013614116514, guid: 19c8bbf171788ad46912594c859325a9,
         type: 2}
@@ -1391,6 +1391,41 @@ Prefab:
     - target: {fileID: 114000010824391548, guid: 19c8bbf171788ad46912594c859325a9,
         type: 2}
       propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 223000013802870410, guid: 19c8bbf171788ad46912594c859325a9,
+        type: 2}
+      propertyPath: m_PixelPerfect
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000012481998892, guid: 19c8bbf171788ad46912594c859325a9,
+        type: 2}
+      propertyPath: m_UiScaleMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224000012418532816, guid: 19c8bbf171788ad46912594c859325a9,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 679.6992
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000014259024086, guid: 19c8bbf171788ad46912594c859325a9,
+        type: 2}
+      propertyPath: m_ScreenMatchMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000014259024086, guid: 19c8bbf171788ad46912594c859325a9,
+        type: 2}
+      propertyPath: m_MatchWidthOrHeight
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224000010645207052, guid: 19c8bbf171788ad46912594c859325a9,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -300.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000014259024086, guid: 19c8bbf171788ad46912594c859325a9,
+        type: 2}
+      propertyPath: m_UiScaleMode
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -7719,7 +7754,8 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: daed4ddf17d8a8d4aa807128a6c3e8c1, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 9500000, guid: 6d00f23b0de11424b988958367c8001f, type: 3}
   m_ParentPrefab: {fileID: 100100000, guid: 6d00f23b0de11424b988958367c8001f, type: 3}
   m_IsPrefabParent: 0
 --- !u!1 &1598773851 stripped

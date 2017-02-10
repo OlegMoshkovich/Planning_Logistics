@@ -138,12 +138,18 @@ public class AssetManager : MonoBehaviour {
     }
     public void DeleteAsset(GameObject asset)
     {
-        if(asset.GetComponent<SyncedAsset>()!= null)
-        {
+        if(asset != null){
             SyncedAsset sa = asset.GetComponent<SyncedAsset>();
-            db.deleteAsset(sa._id, sa._rev);
+            if (sa != null)
+            {
+                db.deleteAsset(sa._id, sa._rev);
+            }
+            Destroy(asset);
         }
-        Destroy(asset);
+        else
+        {
+            Debug.Log("Asset was null");
+        }
     }
 
 	void Update () {

@@ -5,7 +5,6 @@ public class ExclusionZoneManager : MonoBehaviour
 {
     public Material exclusionZoneDangerMaterial;
     public Material exclusionZoneWarningMaterial;
-    public List<GameObject> listOfExclusionZones = new List<GameObject>();
     public GameObject exclusionZones;
 
     public static ExclusionZoneManager main;
@@ -29,11 +28,6 @@ public class ExclusionZoneManager : MonoBehaviour
         TreeViewManager.main.TreeView.Add(exclusionZones);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
     public bool AddExclusionZone(GameObject ez)
     {
         if(ez.GetComponent<ExclusionZone>() == null)
@@ -43,19 +37,10 @@ public class ExclusionZoneManager : MonoBehaviour
         }
         else
         {
-            //Add Event Listeners MUST FIX, bypased for now by calling directly the handler
-            //ez.GetComponent<ExclusionZone>().OnExclusionZoneEnter += OnExclusionZoneEnter_Handler;
-            //ez.GetComponent<ExclusionZone>().OnExclusionZoneExit += OnExclusionZoneExit_Handler;
-            //Add to list of exclusion Zones
-            listOfExclusionZones.Add(ez);
-
             return true;
         }
     }
-    void CreateNewExclusionZone()
-    {
-        //ExclusionZoneDrawer newExclusionZoneDrawwer = new ExclusionZoneDrawer();
-    }
+
     public void OnExclusionZoneEnter_Handler(Collider collider)
     {
         Debug.Log(collider.name + " + GameObject: " + collider.gameObject.name);
@@ -69,6 +54,7 @@ public class ExclusionZoneManager : MonoBehaviour
             Debug.Log("Worker doesn't have WorkerTelemetry class Assigned");
         }
     }
+
     public void OnExclusionZoneStay_Handler(Collision collision)
     {
         if (collision.gameObject.GetComponent<HCSTelemetry>() != null)
@@ -76,6 +62,7 @@ public class ExclusionZoneManager : MonoBehaviour
             mqttManager.main.ActivateAlarm(collision.gameObject.GetComponent<HCSTelemetry>().macAddress);
         }
     }
+
     public void OnExclusionZoneExit_Handler(Collider collider)
     {
         Debug.Log("ExclusionExit");

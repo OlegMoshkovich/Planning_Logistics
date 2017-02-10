@@ -162,8 +162,6 @@ public class AssetPanel : MonoBehaviour
                 rectT.anchoredPosition = new Vector2(rectT.anchoredPosition.x, -sumOfHeights);
                 sumOfHeights += rectT.sizeDelta.y;
                 sumOfHeights += 20; // Buffer between UI elements           
-                Debug.Log(rectT.gameObject.name);
-                Debug.Log(sumOfHeights);
             }  
         }   
         this.gameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(this.gameObject.GetComponent<RectTransform>().sizeDelta.x, sumOfHeights);

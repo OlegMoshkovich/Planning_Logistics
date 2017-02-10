@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class PictureButton : MonoBehaviour {
     public RawImage imagePlaceholder;
     public Button openTakePictureButton;
-    public Canvas takePictureCanvas;
+    public GameObject takePicturePanel;
     public RawImage cameraRawImage;
 
     private WebCamTexture _camTexture;
@@ -15,33 +15,39 @@ public class PictureButton : MonoBehaviour {
     // Use this for initialization
     void Start () {
         Application.RequestUserAuthorization(UserAuthorization.WebCam);
+        Debug.Log(WebCamTexture.devices.Length);
         if (WebCamTexture.devices.Length > 0)
         {
+            Debug.Log("onOpenTake");
             openTakePictureButton.interactable = true;
-            _camTexture = new WebCamTexture(WebCamTexture.devices[0].name);
-            _camTexture.Play();
+            
         }
         else
         {
             openTakePictureButton.interactable = false;
-        }    
+        }
+
     }
     public void onOpenTakePictureHandler()
     {
-        Debug.Log("onOpenTake");
-        takePictureCanvas.enabled = true;
-        takePictureCanvas.GetComponent<RectTransform>().sizeDelta = new Vector2(Screen.width, Screen.height);
-        cameraRawImage.texture = _camTexture;
+        _camTexture = new WebCamTexture(WebCamTexture.devices[0].name);
+        takePicturePanel.SetActive(true);
+        cameraRawImage.gameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(Screen.width, Screen.height);
+        cameraRawImage.material.mainTexture = _camTexture;
+        _camTexture.Play();
     }
 
     public void OnTakePictureHandler()
     {
+        Debug.Log(_camTexture.width.ToString() + " " + _camTexture.height.ToString());
         cameraPicture = new Texture2D(_camTexture.width, _camTexture.height, TextureFormat.RGB24, false);
         cameraPicture.SetPixels(_camTexture.GetPixels());
         cameraPicture.Apply();
-        this.gameObject.GetComponentInChildren<RawImage>().texture = cameraPicture;
+        imagePlaceholder.texture = cameraPicture;
         byte[] bytes = cameraPicture.EncodeToPNG();
-        takePictureCanvas.enabled = false;
+        Debug.Log(JsonUtility.ToJson(bytes).ToString());
+        takePicturePanel.SetActive(false);
+        _camTexture.Stop();
 #if UNITY_EDITOR
         // For testing purposes, also write to a file in the project folder
         //File.WriteAllBytes(Application.dataPath + "SavedScreen.png", bytes);

@@ -126,10 +126,9 @@ using System.Collections.Generic;
         //Add to list of Exclusion Zones
             newExclusionZone.AddComponent<ExclusionZone>();
             newExclusionZone.GetComponent<ExclusionZone>().points = linePoints.ToArray();
-            ExclusionZoneManager.main.listOfExclusionZones.Add(newExclusionZone);
         //Update Tree
             TreeViewManager.main.TreeView.AddChild(ExclusionZoneManager.main.exclusionZones, newExclusionZone);
-        TreeViewManager.main.updateTreeText();
+            TreeViewManager.main.updateTreeText();
             //Clear Drawing
             ClearDrawing();
 
