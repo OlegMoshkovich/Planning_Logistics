@@ -1,16 +1,20 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-[RequireComponent(typeof(MeshCollider))]
 
 public class ObjectMove : MonoBehaviour 
 {
 
 	private Vector3 screenPoint;
 
-	//private Vector3 offset;
+    private void Start()
+    {
+        if ((GetComponent<CapsuleCollider>() == null) & (GetComponent<BoxCollider>() == null) & (GetComponent<MeshCollider>() == null)) this.gameObject.AddComponent<MeshCollider>();
+    }
 
-	void OnMouseDown()
+    //private Vector3 offset;
+
+    void OnMouseDown()
 	{
 		screenPoint = Camera.main.WorldToScreenPoint(gameObject.transform.position);
 

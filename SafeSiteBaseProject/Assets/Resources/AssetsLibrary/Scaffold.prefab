@@ -27,6 +27,7 @@ GameObject:
   - 114: {fileID: 114000014049392450}
   - 114: {fileID: 114000010577086508}
   - 54: {fileID: 54000011682368236}
+  - 208: {fileID: 208000013391464862}
   m_Layer: 0
   m_Name: Scaffold
   m_TagString: Untagged
@@ -40,9 +41,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011500203458}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -10.808704, y: 25.64132, z: -89.894424}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7.31, y: 0, z: 3.117}
+  m_LocalScale: {x: 0.0254, y: 0.0254, z: 0.0254}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
@@ -94,7 +95,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -108,7 +109,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300000, guid: ce8e34bc482644830a57b1634f3cdc2d, type: 3}
 --- !u!114 &114000010577086508
 MonoBehaviour:
@@ -162,3 +163,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba56b1ecf2dc249319d9a5d803dd0284, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!208 &208000013391464862
+NavMeshObstacle:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011500203458}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 43.382004, y: 108.26601, z: 73.677}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0.21800001, y: 108.26601, z: 0.155}
+  m_TimeToStationary: 0.5

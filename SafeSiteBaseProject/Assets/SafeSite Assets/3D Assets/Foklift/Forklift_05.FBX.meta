@@ -58,6 +58,7 @@ ModelImporter:
     2300028: Forklift_Wheel_BR
     2300030: Forklift_Wheel_FL
     2300032: Forklift_Wheel_FR
+    2300034: //RootNode
     3300000: Forklift_Arm-A
     3300002: Forklift_Arm-B
     3300004: Forklift_Arm-C
@@ -75,6 +76,7 @@ ModelImporter:
     3300028: Forklift_Wheel_BR
     3300030: Forklift_Wheel_FL
     3300032: Forklift_Wheel_FR
+    3300034: //RootNode
     4300000: Forklift_Main
     4300002: Forklift_Wheel_FL
     4300004: Forklift_Wheel_FR

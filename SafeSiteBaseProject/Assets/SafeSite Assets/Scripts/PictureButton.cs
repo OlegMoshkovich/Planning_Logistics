@@ -3,29 +3,49 @@ using System.Collections;
 using UnityEngine.UI;
 
 public class PictureButton : MonoBehaviour {
-    private WebCamTexture _camTexture; 
+    public RawImage imagePlaceholder;
+    public Button openTakePictureButton;
+    public Canvas takePictureCanvas;
+    public RawImage cameraRawImage;
+
+    private WebCamTexture _camTexture;
+    private Texture2D unityScreencapture;
+    private Texture2D cameraPicture;
 
     // Use this for initialization
     void Start () {
         Application.RequestUserAuthorization(UserAuthorization.WebCam);
         if (WebCamTexture.devices.Length > 0)
         {
-            this.gameObject.GetComponent<Button>().interactable = true;
-            _camTexture = new WebCamTexture();
+            openTakePictureButton.interactable = true;
+            _camTexture = new WebCamTexture(WebCamTexture.devices[0].name);
             _camTexture.Play();
         }
         else
         {
-            this.gameObject.GetComponent<Button>().interactable = false;
+            openTakePictureButton.interactable = false;
         }    
     }
-	
-    public void OnButtonClickHandler()
+    public void onOpenTakePictureHandler()
     {
-        Texture2D snap = new Texture2D(_camTexture.width, _camTexture.height);
-        snap.SetPixels(_camTexture.GetPixels());
-        snap.Apply();
-        this.gameObject.GetComponentInChildren<RawImage>().texture = snap;
+        Debug.Log("onOpenTake");
+        takePictureCanvas.enabled = true;
+        takePictureCanvas.GetComponent<RectTransform>().sizeDelta = new Vector2(Screen.width, Screen.height);
+        cameraRawImage.texture = _camTexture;
+    }
+
+    public void OnTakePictureHandler()
+    {
+        cameraPicture = new Texture2D(_camTexture.width, _camTexture.height, TextureFormat.RGB24, false);
+        cameraPicture.SetPixels(_camTexture.GetPixels());
+        cameraPicture.Apply();
+        this.gameObject.GetComponentInChildren<RawImage>().texture = cameraPicture;
+        byte[] bytes = cameraPicture.EncodeToPNG();
+        takePictureCanvas.enabled = false;
+#if UNITY_EDITOR
+        // For testing purposes, also write to a file in the project folder
+        //File.WriteAllBytes(Application.dataPath + "SavedScreen.png", bytes);
+#endif
     }
 
 }

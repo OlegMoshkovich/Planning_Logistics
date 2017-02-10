@@ -96,7 +96,7 @@ public class AssetManager : MonoBehaviour {
 			if (Physics.Raycast(ray, out hit, 100.0f))
 			{
 				//Debug.Log ("something is hit");	
-				GameObject go = (GameObject) Instantiate(Resources.Load<GameObject>("AssetsLibrary/" + assetType), new Vector3(hit.point.x,hit.point.y,hit.point.z), Quaternion.Euler (-90, 0, 0));
+				GameObject go = (GameObject) Instantiate(Resources.Load<GameObject>("AssetsLibrary/" + assetType), new Vector3(hit.point.x,hit.point.y,hit.point.z), Quaternion.Euler (0, 0, 0));
                 if (go.GetComponent<SyncedAsset>() != null) go.GetComponent<SyncedAsset>().type = assetType;
                 go.name = assetType;
 
