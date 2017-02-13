@@ -1431,6 +1431,26 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 19c8bbf171788ad46912594c859325a9, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &113200236 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1000011232021486, guid: 19c8bbf171788ad46912594c859325a9,
+    type: 2}
+  m_PrefabInternal: {fileID: 113200235}
+--- !u!114 &113200237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 113200236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5223af2aee83de409229c77e9f3ccd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  url: https://dal.objectstorage.open.softlayer.com/v1/AUTH_6b5f695362b44c22822db23d3cc591e1
+  container: broadway61/
+  authToken: gAAAAABYodco1ZJtl0KVNDpRQo2b3_IMBzE-KVox_kkWBNm4QP6dPqYDBtP2kjj67SHwXifN97-V4jWVS9Yf4ADVqdCECkVrxOAGF08h6K2mqgwf5dwLgbbe52L1YhzMcN3xDt1UxbxYE5VvZztnl8UfNfHgRXwOJ5T8K6Tj4PUPurKr8wcAhRk
+  req: {fileID: 0}
 --- !u!1 &123653621 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100372, guid: 6d00f23b0de11424b988958367c8001f, type: 3}

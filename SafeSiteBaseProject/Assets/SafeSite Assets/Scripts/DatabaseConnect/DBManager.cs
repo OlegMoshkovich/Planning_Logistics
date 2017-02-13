@@ -2,11 +2,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using SimpleJSON;
+using System.Linq;
 
 public class DBManager : MonoBehaviour {
     public string databaseURL = "https://7913dc07-9b69-4a17-8329-cb43b00bbd14-bluemix:5d53ba229591931afc62e00011b05687a17ce40012615c32a826b8219f106d2d@7913dc07-9b69-4a17-8329-cb43b00bbd14-bluemix.cloudant.com/";
     public string projectName = "broadway61/";
 
+    [HideInInspector]
     public WebRequest req;
 
     void Start () {
@@ -45,6 +47,7 @@ public class DBManager : MonoBehaviour {
     }
 
     private SyncedAsset[] saArray;
+    private SyncedHazard[] shArray;
 
     public void DestroyAllSynchedAssets()
     {
@@ -65,15 +68,34 @@ public class DBManager : MonoBehaviour {
         headers.Add("Content-Type", "application/json");
         string postData = "{\"docs\":[";
         saArray = FindObjectsOfType<SyncedAsset>();
+        shArray = HazardManager.main.Hazards.GetComponentsInChildren<SyncedHazard>();
         for(int i=0; i < saArray.Length; i++)
         {
-            JSONNode n = JSON.Parse(JsonUtility.ToJson(saArray[i]));
-            if (n["_id"] == null || n["_rev"] == null) {
-                n.Remove("_id");
-                n.Remove("_rev");
-                    }
-            postData += n.ToString();
-            if (i != saArray.Length - 1) postData += ",";
+            if (saArray[i].type != "Hazard")
+            {
+                JSONNode n = JSON.Parse(JsonUtility.ToJson(saArray[i]));
+                if (n["_id"] == null || n["_rev"] == null)
+                {
+                    n.Remove("_id");
+                    n.Remove("_rev");
+                }
+                postData += n.ToString();
+                Debug.Log("IndexSA : " + i + "/ " + saArray.Length);
+                if (i != saArray.Length - 1) postData += ",";
+            }
+        }
+        if (shArray.Length > 0 && postData[postData.Length-1] != ',') postData += ",";
+        for (int i = 0; i < shArray.Length; i++)
+        {
+                JSONNode n = JSON.Parse(JsonUtility.ToJson(shArray[i]));
+                if (n["_id"] == null || n["_rev"] == null)
+                {
+                    n.Remove("_id");
+                    n.Remove("_rev");
+                }
+                postData += n.ToString();
+            Debug.Log("Index : " + i + "/ " + shArray.Length);
+                if (i != shArray.Length - 1) postData += ",";
         }
         postData += "]}";
         Debug.Log("Posting Data: " + postData);

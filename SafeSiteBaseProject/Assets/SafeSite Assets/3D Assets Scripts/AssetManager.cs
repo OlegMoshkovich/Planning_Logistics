@@ -91,7 +91,7 @@ public class AssetManager : MonoBehaviour {
 		RaycastHit hit;
 		Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-		if (Input.GetKeyDown ("p") & assetType != null) {
+		if (Input.GetKeyDown ("p") && assetType != null) {
 			Debug.Log ("p is pressed");
 			if (Physics.Raycast(ray, out hit, 100.0f))
 			{

@@ -7,9 +7,9 @@ public class ObjectMove : MonoBehaviour
 
 	private Vector3 screenPoint;
 
-    private void Start()
+    protected void Start()
     {
-        if ((GetComponent<CapsuleCollider>() == null) & (GetComponent<BoxCollider>() == null) & (GetComponent<MeshCollider>() == null)) this.gameObject.AddComponent<MeshCollider>();
+        if ((GetComponent<CapsuleCollider>() == null) && (GetComponent<BoxCollider>() == null) && (GetComponent<MeshCollider>() == null)) this.gameObject.AddComponent<MeshCollider>();
     }
 
     //private Vector3 offset;

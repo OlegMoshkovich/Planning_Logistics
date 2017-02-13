@@ -27,7 +27,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1000010311552696
 GameObject:
   m_ObjectHideFlags: 1
@@ -465,7 +465,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000013230189182}
-  - 114: {fileID: 114000010112699596}
+  - 114: {fileID: 114000012937932658}
   m_Layer: 0
   m_Name: Hazard
   m_TagString: Untagged
@@ -1002,28 +1002,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &114000010112699596
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012684156560}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b12a525154d7d54285d2766e8df365a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _id: 
-  _rev: 
-  name: 
-  type: 
-  position: {x: 0, y: 0, z: 0}
-  rotation: {x: 0, y: 0, z: 0, w: 0}
-  alwaysStatic: 0
-  movement: 0
-  status: 0
-  description: 
-  image: 
 --- !u!114 &114000010138262524
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2416,6 +2394,30 @@ MonoBehaviour:
   openTakePictureButton: {fileID: 114000012063921696}
   takePicturePanel: {fileID: 1000011345585098}
   cameraRawImage: {fileID: 114000012169385600}
+  synchedHazard: {fileID: 114000012937932658}
+--- !u!114 &114000012937932658
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012684156560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b12a525154d7d54285d2766e8df365a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: 
+  _rev: 
+  name: 
+  type: 
+  position: {x: 0, y: 0, z: 0}
+  rotation: {x: 0, y: 0, z: 0, w: 0}
+  alwaysStatic: 0
+  movement: 0
+  status: 0
+  description: 
+  imageURL: SavedScreen.png
+  imagePlaceholder: {fileID: 114000014020908542}
 --- !u!114 &114000013053477646
 MonoBehaviour:
   m_ObjectHideFlags: 1

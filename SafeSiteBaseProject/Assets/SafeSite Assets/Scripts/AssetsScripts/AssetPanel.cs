@@ -157,7 +157,7 @@ public class AssetPanel : MonoBehaviour
         RectTransform[] rectTransforms = gameObject.transform.GetComponentsInChildren<RectTransform>();
         foreach(RectTransform rectT in rectTransforms)
         {
-            if (rectT.gameObject.active & rectT.gameObject.transform.parent == gameObject.transform & (rectT!= this.gameObject.GetComponent<RectTransform>()))
+            if (rectT.gameObject.active && rectT.gameObject.transform.parent == gameObject.transform && (rectT!= this.gameObject.GetComponent<RectTransform>()))
             {
                 rectT.anchoredPosition = new Vector2(rectT.anchoredPosition.x, -sumOfHeights);
                 sumOfHeights += rectT.sizeDelta.y;

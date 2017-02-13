@@ -1,21 +1,20 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 [System.Serializable]
 public class SyncedHazard : SyncedAsset {
 
     public Status status;
     public string description;
-    public byte[] image;
+    public string imageURL;
 
-	// Use this for initialization
-	void Start () {
-        Debug.Log(JsonUtility.ToJson(this));
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+    
+    private RawImage imagePlaceholder;
+
+    // Use this for initialization
+    void Start () {
+        //Debug.Log(JsonUtility.ToJson(this));       
 	}
 }
 public enum Status { red, orange, green }

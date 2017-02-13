@@ -9,7 +9,7 @@ public class ClickAndDrag : MonoBehaviour {
         private void Start()
         {
             //Check Object has collider, if not add one
-            if (GetComponent<MeshCollider>() == null & GetComponent<BoxCollider>() == null & GetComponent<CapsuleCollider>())
+            if (GetComponent<MeshCollider>() == null && GetComponent<BoxCollider>() == null && GetComponent<CapsuleCollider>())
             {
                 MeshCollider collider = this.gameObject.AddComponent<MeshCollider>();
                 collider.isTrigger = true;

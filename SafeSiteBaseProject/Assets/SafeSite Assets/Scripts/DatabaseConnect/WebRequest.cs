@@ -2,6 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using SimpleJSON;
+using System.Net;
+using UnityEngine.Networking;
 
 public class WebRequest : MonoBehaviour {
 
@@ -93,7 +95,8 @@ public class WebRequest : MonoBehaviour {
         {
             onProcessingFinished = callbackFunction;
 #if UNITY_EDITOR
-            Debug.Log("Sending HTTP Request with data: " + postData.ToString());
+            if (postData != null) Debug.Log("Sending HTTP Request with data: " + postData.ToString());
+            else Debug.Log("Sending GET Request to: " + url);
 #endif
             StartCoroutine(POSTRequest(url, postData, headers));
         }   

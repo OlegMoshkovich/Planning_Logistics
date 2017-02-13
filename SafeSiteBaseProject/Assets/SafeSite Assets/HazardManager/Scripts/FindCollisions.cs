@@ -5,7 +5,7 @@ public class FindCollisions : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	    if(GetComponent<BoxCollider>() == null & GetComponent<MeshCollider>() == null & GetComponent<CapsuleCollider>() == null )
+	    if(GetComponent<BoxCollider>() == null && GetComponent<MeshCollider>() == null && GetComponent<CapsuleCollider>() == null )
         {
             MeshCollider addedCollider = this.gameObject.AddComponent<MeshCollider>();
             addedCollider.isTrigger = true;
