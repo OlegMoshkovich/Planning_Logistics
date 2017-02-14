@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using System;
+using UnityEngine.EventSystems;
 
 [RequireComponent(typeof(DBManager))]
 public class AssetManager : MonoBehaviour {
@@ -14,7 +15,7 @@ public class AssetManager : MonoBehaviour {
 
     //Create Folders in Tree
     GameObject workers;
-    GameObject indicatorsParent;
+    public GameObject indicatorsParent;
     GameObject assets;
     GameObject forklifts;
     GameObject ladders;
@@ -48,7 +49,7 @@ public class AssetManager : MonoBehaviour {
 
         //Set up Tree
         TreeViewManager.main.TreeView.Add(workers);
-        //TreeViewManager.main.TreeView.Add(indicatorsParent);
+        TreeViewManager.main.TreeView.Add(indicatorsParent);
         TreeViewManager.main.TreeView.Add(assets);
         TreeViewManager.main.TreeView.AddChild(assets, forklifts);
         TreeViewManager.main.TreeView.AddChild(assets, ladders);
@@ -92,8 +93,9 @@ public class AssetManager : MonoBehaviour {
 	private void placeAsset(string assetType){
 		RaycastHit hit;
 		Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-		if (Input.GetKeyDown ("p") && assetType != null) {
+        //If Keyboard place P, if touch screen press screen
+		if ((Input.GetKeyDown ("p") && assetType != null) || (((Input.touchCount == 1 && Input.GetTouch(0).phase == TouchPhase.Began) && assetType != null) && !EventSystem.current.IsPointerOverGameObject())) {
+            if (Input.multiTouchEnabled) drawerActive = false;
 			Debug.Log ("p is pressed");
 			if (Physics.Raycast(ray, out hit, 100.0f))
 			{

@@ -24,10 +24,10 @@ public class HazardManager : MonoBehaviour
 
         Collisions = new GameObject();
         Collisions.name = "Collisions";
-        TreeViewManager.main.TreeView.Add(Collisions);
+        TreeViewManager.main.TreeView.AddChild(AssetManager.main.indicatorsParent,Collisions);
         Edges = new GameObject();
         Edges.name = "Fall Risks";
-        TreeViewManager.main.TreeView.Add(Edges);
+        TreeViewManager.main.TreeView.AddChild(AssetManager.main.indicatorsParent, Edges);
 
 
     }

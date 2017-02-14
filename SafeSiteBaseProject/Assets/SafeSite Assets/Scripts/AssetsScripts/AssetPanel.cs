@@ -29,65 +29,81 @@ public class AssetPanel : MonoBehaviour
     }
     private void Update()
     {
-        if(Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
+        //if Mouse or touch is outside Panel Raycast to update panel
+        if (Input.multiTouchEnabled)
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit))
+            if (Input.touchCount == 1 )
             {
-                //If new asset Selected, refresh panel and assign new selected object
-                if (selectedAsset != hit.transform.gameObject)
+                if(!RectTransformUtility.RectangleContainsScreenPoint(this.gameObject.GetComponent<RectTransform>(), Input.GetTouch(0).position, Camera.main))
                 {
-                    gameObject.active = false;
-                    gameObject.active = true;
-                    //selectedAsset = hit.transform.gameObject;
+                    RaycastAndUpdatePanel();
                 }
-                selectedAsset = hit.transform.gameObject;
-                //Activate Panel
-                this.GetComponentInParent<Canvas>().enabled = true;
-                
-                ////////////////////////////////////
-                /// Update Properties of Panel/////
-                /// ////////////////////////////////
-
-                //Update Data
-                nameText.text = selectedAsset.name;
-
-                //Check if Synced Asset
-                if (selectedAsset.GetComponent<SyncedAsset>() != null)
-                {
-                    if(!selectedAsset.GetComponent<SyncedAsset>().sa_alwaysStatic) movementTypeDropdown.gameObject.active = true;
-                    movementTypeDropdown.GetComponent<ChangeMovement>().target = selectedAsset;
-                    movementTypeDropdown.value = (int)selectedAsset.GetComponent<SyncedAsset>().sa_movement;
-
-                    //Check if RTLS
-                    DisplayRTLS();
-                }
-                else
-                {
-                    movementTypeDropdown.gameObject.active = false;
-                    addRTLSPanel.active = false;
-                }
-
-                //Check if Asset has Telemetry
-
-                DisplayTelemetry();
-
-                
-                //Check if Zones
-                DisplayZoneInfo();
-
-                //Size Panel
-                updatePanelsLayout();
-            }
-            //No asset selected
-            else
-            {
-                this.GetComponentInParent<Canvas>().enabled = false;
-                addTelemetryPanel.active = false; 
             }
         }
+        else if(Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
+        {
+            RaycastAndUpdatePanel();           
+        }
         
+    }
+
+    public void RaycastAndUpdatePanel()
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit))
+        {
+            //If new asset Selected, refresh panel and assign new selected object
+            if (selectedAsset != hit.transform.gameObject)
+            {
+                gameObject.active = false;
+                gameObject.active = true;
+                //selectedAsset = hit.transform.gameObject;
+            }
+            selectedAsset = hit.transform.gameObject;
+            //Activate Panel
+            this.GetComponentInParent<Canvas>().enabled = true;
+
+            ////////////////////////////////////
+            /// Update Properties of Panel/////
+            /// ////////////////////////////////
+
+            //Update Data
+            nameText.text = selectedAsset.name;
+
+            //Check if Synced Asset
+            if (selectedAsset.GetComponent<SyncedAsset>() != null)
+            {
+                if (!selectedAsset.GetComponent<SyncedAsset>().sa_alwaysStatic) movementTypeDropdown.gameObject.active = true;
+                movementTypeDropdown.GetComponent<ChangeMovement>().target = selectedAsset;
+                movementTypeDropdown.value = (int)selectedAsset.GetComponent<SyncedAsset>().sa_movement;
+
+                //Check if RTLS
+                DisplayRTLS();
+            }
+            else
+            {
+                movementTypeDropdown.gameObject.active = false;
+                addRTLSPanel.active = false;
+            }
+
+            //Check if Asset has Telemetry
+
+            DisplayTelemetry();
+
+
+            //Check if Zones
+            DisplayZoneInfo();
+
+            //Size Panel
+            updatePanelsLayout();
+        }
+        //No asset selected
+        else
+        {
+            this.GetComponentInParent<Canvas>().enabled = false;
+            addTelemetryPanel.active = false;
+        }
     }
 
     private void DisplayRTLS()
