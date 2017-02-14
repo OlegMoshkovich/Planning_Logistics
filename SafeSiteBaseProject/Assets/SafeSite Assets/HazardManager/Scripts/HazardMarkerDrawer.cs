@@ -25,11 +25,9 @@ public class HazardMarkerDrawer : MonoBehaviour {
                 worldPoint -= ray.direction*0.1f;
                 GameObject newHazardMarker = (GameObject)Instantiate(Resources.Load<GameObject>("AssetsLibrary/Hazard"), HazardManager.main.Hazards.transform);
                 newHazardMarker.name = "Hazard";
-                newHazardMarker.GetComponent<SyncedAsset>().type = "Hazard";
+                newHazardMarker.GetComponent<SyncedAsset>().sa_type = "Hazard";
 				newHazardMarker.transform.position = worldPoint;
                 newHazardMarker.transform.rotation.SetEulerAngles(Camera.main.transform.eulerAngles.x, Camera.main.transform.eulerAngles.y, Camera.main.transform.eulerAngles.z);
-                
-				HazardManager.main.listOfHazards.Add(newHazardMarker);
                 
 				//Move Camera to hazard
 				CameraSwitch.main.SetTarget(newHazardMarker.transform);

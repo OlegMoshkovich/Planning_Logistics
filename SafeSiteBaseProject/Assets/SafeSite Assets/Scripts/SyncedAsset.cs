@@ -8,14 +8,16 @@ public class SyncedAsset : MonoBehaviour {
     public string _id;
     public string _rev;
 
-    public string name;
-    public string type;
+    public string sa_name;
+    public string sa_type;
+    public string sa_timeCreated;
+    public string sa_timeChanged;
 
-    public Vector3 position;
-    public Quaternion rotation;
+    public Vector3 sa_position;
+    public Quaternion sa_rotation;
 
-    public bool alwaysStatic;
-    public MovementType movement;
+    public bool sa_alwaysStatic;
+    public MovementType sa_movement;
 
 
     public void UpdateWithJSON(string s)
@@ -23,11 +25,15 @@ public class SyncedAsset : MonoBehaviour {
         JsonUtility.FromJsonOverwrite(s, this);
         updateGameObjectFromParameters();
     }
-
+    public static string GetUTCTimeStamp()
+    {
+        return System.DateTime.UtcNow.ToString("yyyyMMddHHmmss");
+    }
     // Use this for initialization
     void Start () {
+        if (sa_timeCreated != null) sa_timeCreated = GetUTCTimeStamp();
         //Debug.Log(JsonUtility.ToJson(this));
-	}
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -36,18 +42,21 @@ public class SyncedAsset : MonoBehaviour {
 
     private void updateParametersFromGameObject()
     {
-        name = gameObject.name;
-        position = transform.position;
-        rotation = transform.rotation;
+        sa_name = gameObject.name;
+        sa_position = transform.position;
+        sa_rotation = transform.rotation;
+
+        sa_timeChanged = GetUTCTimeStamp();
     }
     private void updateGameObjectFromParameters()
     {
-        gameObject.name = name;
-        transform.position = position;
-        transform.rotation = rotation;
-        if (this.gameObject.GetComponent<NavMeshAgent>() != null)
+        gameObject.name = sa_name;
+        transform.position = sa_position;
+        transform.rotation = sa_rotation;
+        var navMeshAgent = gameObject.GetComponent<NavMeshAgent>();
+        if (navMeshAgent != null)
         {
-            this.gameObject.GetComponent<NavMeshAgent>().Warp(transform.position);
+            navMeshAgent.Warp(transform.position);
         }
     }
 }

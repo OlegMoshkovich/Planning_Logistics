@@ -37,6 +37,8 @@ public class AssetManager : MonoBehaviour {
         otherAssets = new GameObject();
         otherAssets.name = "Others";
         otherAssets.transform.parent = assets.transform;
+        indicatorsParent = new GameObject();
+        indicatorsParent.name = "Safescan Indicators";
         
     }
 
@@ -46,7 +48,7 @@ public class AssetManager : MonoBehaviour {
 
         //Set up Tree
         TreeViewManager.main.TreeView.Add(workers);
-        TreeViewManager.main.TreeView.Add(indicatorsParent);
+        //TreeViewManager.main.TreeView.Add(indicatorsParent);
         TreeViewManager.main.TreeView.Add(assets);
         TreeViewManager.main.TreeView.AddChild(assets, forklifts);
         TreeViewManager.main.TreeView.AddChild(assets, ladders);
@@ -71,8 +73,8 @@ public class AssetManager : MonoBehaviour {
     {
         try {
             Debug.Log("Create From JSON: " + doc.ToString());
-            string type = doc["type"].Value;
-            Vector3 position = new Vector3(float.Parse(doc["position"]["x"].Value), float.Parse(doc["position"]["y"].Value), float.Parse(doc["position"]["z"].Value));
+            string type = doc[S.SA_TYPE].Value;
+            Vector3 position = new Vector3(float.Parse(doc[S.SA_POSITION]["x"].Value), float.Parse(doc[S.SA_POSITION]["y"].Value), float.Parse(doc[S.SA_POSITION]["z"].Value));
             GameObject go = (GameObject)Instantiate(Resources.Load<GameObject>("AssetsLibrary/" + type), position, transform.rotation);
             if (go.GetComponent<SyncedAsset>() == null) Debug.LogError("Prefab missing Synched Asset");
             else
@@ -97,7 +99,7 @@ public class AssetManager : MonoBehaviour {
 			{
 				//Debug.Log ("something is hit");	
 				GameObject go = (GameObject) Instantiate(Resources.Load<GameObject>("AssetsLibrary/" + assetType), new Vector3(hit.point.x,hit.point.y,hit.point.z), Quaternion.Euler (0, 0, 0));
-                if (go.GetComponent<SyncedAsset>() != null) go.GetComponent<SyncedAsset>().type = assetType;
+                if (go.GetComponent<SyncedAsset>() != null) go.GetComponent<SyncedAsset>().sa_type = assetType;
                 go.name = assetType;
 
                 //Return cursor to default

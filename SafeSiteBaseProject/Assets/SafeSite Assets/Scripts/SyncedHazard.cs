@@ -7,7 +7,7 @@ public class SyncedHazard : SyncedAsset {
 
     public Status status;
     public string description;
-    public string imageURL;
+    public string sa_imageURL;
 
     
     private RawImage imagePlaceholder;

@@ -8,8 +8,6 @@ using System.Collections.Generic;
 public class HazardManager : MonoBehaviour
 {
     public GameObject HazardMarkerPrefab;
-    public List<GameObject> listOfHazards = new List<GameObject>();
-    public List<GameObject> listOfCollisions = new List<GameObject>();
     public GameObject Hazards;
     public GameObject Collisions;
     public GameObject Edges;
@@ -24,12 +22,12 @@ public class HazardManager : MonoBehaviour
         Hazards.name = "Hazards";
         TreeViewManager.main.TreeView.Add(Hazards);
 
-        /*Collisions = new GameObject();
+        Collisions = new GameObject();
         Collisions.name = "Collisions";
         TreeViewManager.main.TreeView.Add(Collisions);
         Edges = new GameObject();
         Edges.name = "Fall Risks";
-        TreeViewManager.main.TreeView.Add(Edges);*/
+        TreeViewManager.main.TreeView.Add(Edges);
 
 
     }

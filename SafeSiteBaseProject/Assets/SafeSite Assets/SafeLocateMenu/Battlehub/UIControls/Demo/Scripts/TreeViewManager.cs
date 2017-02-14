@@ -73,8 +73,16 @@ using UnityEngine.EventSystems;
         {
             for (int i = 0; i < TreeView.ItemsCount; i++)
             {
-                GameObject go = (GameObject)TreeView.GetItemContainer(i).Item;
-                TreeView.GetItemContainer(i).GetComponentInChildren<Text>().text = go.name + " (" + go.transform.childCount + ")";
+                ItemContainer container = TreeView.GetItemContainer(i);
+                if (container != null)
+                {
+                    GameObject go = (GameObject)container.Item;
+                    var containerText = container.GetComponentInChildren<Text>();
+                    if (containerText != null) containerText.text = go.name + " (" + go.transform.childCount + ")";
+                    else Debug.Log("Container Text is null");
+                }
+                else Debug.Log("container is null");
+                
             }
         }
         catch (Exception e)

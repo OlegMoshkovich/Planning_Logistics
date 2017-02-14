@@ -14,7 +14,7 @@ public class ChangeMovement : MonoBehaviour {
     {
         if (target == null) target = this.gameObject;
 
-        target.GetComponent<SyncedAsset>().movement = movement;
+        target.GetComponent<SyncedAsset>().sa_movement = movement;
 
         removeMovementScripts();
 

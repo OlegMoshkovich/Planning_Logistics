@@ -67,11 +67,12 @@ public class DBManager : MonoBehaviour {
         headers.Add("X-HTTP-Method-Override", "POST");
         headers.Add("Content-Type", "application/json");
         string postData = "{\"docs\":[";
+
         saArray = FindObjectsOfType<SyncedAsset>();
         shArray = HazardManager.main.Hazards.GetComponentsInChildren<SyncedHazard>();
         for(int i=0; i < saArray.Length; i++)
         {
-            if (saArray[i].type != "Hazard")
+            if (saArray[i].sa_type != "Hazard")
             {
                 JSONNode n = JSON.Parse(JsonUtility.ToJson(saArray[i]));
                 if (n["_id"] == null || n["_rev"] == null)
@@ -80,11 +81,10 @@ public class DBManager : MonoBehaviour {
                     n.Remove("_rev");
                 }
                 postData += n.ToString();
-                Debug.Log("IndexSA : " + i + "/ " + saArray.Length);
                 if (i != saArray.Length - 1) postData += ",";
             }
         }
-        if (shArray.Length > 0 && postData[postData.Length-1] != ',') postData += ",";
+        if (shArray.Length > 0 && postData[postData.Length-1] != ',' && postData[postData.Length - 1] != '[') postData += ",";
         for (int i = 0; i < shArray.Length; i++)
         {
                 JSONNode n = JSON.Parse(JsonUtility.ToJson(shArray[i]));
@@ -94,7 +94,6 @@ public class DBManager : MonoBehaviour {
                     n.Remove("_rev");
                 }
                 postData += n.ToString();
-            Debug.Log("Index : " + i + "/ " + shArray.Length);
                 if (i != shArray.Length - 1) postData += ",";
         }
         postData += "]}";

@@ -56,9 +56,9 @@ public class AssetPanel : MonoBehaviour
                 //Check if Synced Asset
                 if (selectedAsset.GetComponent<SyncedAsset>() != null)
                 {
-                    if(!selectedAsset.GetComponent<SyncedAsset>().alwaysStatic) movementTypeDropdown.gameObject.active = true;
+                    if(!selectedAsset.GetComponent<SyncedAsset>().sa_alwaysStatic) movementTypeDropdown.gameObject.active = true;
                     movementTypeDropdown.GetComponent<ChangeMovement>().target = selectedAsset;
-                    movementTypeDropdown.value = (int)selectedAsset.GetComponent<SyncedAsset>().movement;
+                    movementTypeDropdown.value = (int)selectedAsset.GetComponent<SyncedAsset>().sa_movement;
 
                     //Check if RTLS
                     DisplayRTLS();
