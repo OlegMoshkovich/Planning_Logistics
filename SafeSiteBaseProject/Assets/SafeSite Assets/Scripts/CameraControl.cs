@@ -73,7 +73,7 @@ public class CameraControl : MonoBehaviour {
 
         }
         //Point camera using Mouse right button or dragging finger
-        if (Input.GetMouseButton(1))
+        if (Input.GetMouseButton(1) && !Input.multiTouchEnabled)
             {
                 CameraSwitch.main.followTarget = false;
                 float dx = Input.GetAxis("Horizontal");
