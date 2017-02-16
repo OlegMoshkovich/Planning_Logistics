@@ -466,6 +466,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013230189182}
   - 114: {fileID: 114000012937932658}
+  - 114: {fileID: 114000012041671574}
   m_Layer: 0
   m_Name: Hazard
   m_TagString: Untagged
@@ -2052,6 +2053,17 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
   m_IsOn: 1
+--- !u!114 &114000012041671574
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012684156560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba56b1ecf2dc249319d9a5d803dd0284, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114000012063921696
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2408,16 +2420,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _id: 
   _rev: 
-  name: 
-  type: 
-  position: {x: 0, y: 0, z: 0}
-  rotation: {x: 0, y: 0, z: 0, w: 0}
-  alwaysStatic: 0
-  movement: 0
+  sa_name: 
+  sa_type: 
+  sa_timeCreated: 
+  sa_timeChanged: 
+  sa_position: {x: 0, y: 0, z: 0}
+  sa_rotation: {x: 0, y: 0, z: 0, w: 0}
+  sa_alwaysStatic: 0
+  sa_movement: 0
   status: 0
   description: 
-  imageURL: SavedScreen.png
-  imagePlaceholder: {fileID: 114000014020908542}
+  sa_imageURL: 
 --- !u!114 &114000013053477646
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -48,8 +48,8 @@ public class PictureButton : MonoBehaviour {
         cameraRawImage.gameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(Screen.width, Screen.height);
         cameraRawImage.material.mainTexture = _camTexture;
         _camTexture.Play();
-        float rotationY = _camTexture.videoVerticallyMirrored ? -1.0f : 1.0f;
-        cameraRawImage.transform.localScale = new Vector3(1.0f, rotationY, 0.0f);
+        //float rotationY = _camTexture.videoVerticallyMirrored ? -1.0f : 1.0f;
+        //cameraRawImage.transform.localScale = new Vector3(1.0f, rotationY, 0.0f);
     }
 
     public void OnTakePictureHandler()
@@ -62,7 +62,8 @@ public class PictureButton : MonoBehaviour {
         takePicturePanel.SetActive(false);
         _camTexture.Stop();
         byte[] bytes = cameraPicture.EncodeToPNG();
-        synchedHazard.sa_imageURL = synchedHazard.name + SyncedAsset.GetUTCTimeStamp() +".png" ;
+        string newImageURL = synchedHazard.name + SyncedAsset.GetUTCTimeStamp() + ".png";
+        synchedHazard.sa_imageURL = newImageURL;
         StartCoroutine(ObjectStorageAPI.main.saveImage(bytes, synchedHazard.sa_imageURL));
         
     }
