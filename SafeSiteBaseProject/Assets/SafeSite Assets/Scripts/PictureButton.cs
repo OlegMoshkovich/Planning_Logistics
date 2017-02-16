@@ -32,7 +32,7 @@ public class PictureButton : MonoBehaviour {
         }
 
         //Load Picture
-        if(synchedHazard.sa_imageURL != null && (ObjectStorageAPI.main != null)) ObjectStorageAPI.main.loadImageTrigger(synchedHazard.sa_imageURL, onImageDownloadComplete);
+        if(synchedHazard.sa_imageURL.Count>0 && (ObjectStorageAPI.main != null)) ObjectStorageAPI.main.loadImageTrigger(synchedHazard.sa_imageURL[synchedHazard.sa_imageURL.Count-1], onImageDownloadComplete);
             else Debug.Log("Missing Image URL or ObjectStorageAPI Manager");
     }
 
@@ -63,8 +63,8 @@ public class PictureButton : MonoBehaviour {
         _camTexture.Stop();
         byte[] bytes = cameraPicture.EncodeToPNG();
         string newImageURL = synchedHazard.name + SyncedAsset.GetUTCTimeStamp() + ".png";
-        synchedHazard.sa_imageURL = newImageURL;
-        StartCoroutine(ObjectStorageAPI.main.saveImage(bytes, synchedHazard.sa_imageURL));
+        synchedHazard.sa_imageURL.Add(newImageURL);
+        StartCoroutine(ObjectStorageAPI.main.saveImage(bytes, newImageURL));
         
     }
 
