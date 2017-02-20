@@ -6,8 +6,9 @@ using System.Collections.Generic;
 [System.Serializable]
 public class SyncedHazard : SyncedAsset {
 
-    public Status status;
-    public string description;
+    public Status sh_status;
+    public HazardType sh_type;
+    public string sh_description;
     public List<string> sa_imageURL;
 
     
@@ -19,3 +20,4 @@ public class SyncedHazard : SyncedAsset {
 	}
 }
 public enum Status { red, orange, green }
+public enum HazardType { Trip, Fall, CaughtInBetween, StruckBy, Other}

@@ -5,12 +5,13 @@ using System;
 using UnityEngine.Windows;
 using System.IO;
 
-public class PictureButton : MonoBehaviour {
+public class TakePictureController : MonoBehaviour {
     public RawImage imagePlaceholder;
     public Button openTakePictureButton;
     public GameObject takePicturePanel;
     public RawImage cameraRawImage;
     public SyncedHazard synchedHazard;
+    public Text imageName;
 
     private WebCamTexture _camTexture;
     private Texture2D unityScreencapture;

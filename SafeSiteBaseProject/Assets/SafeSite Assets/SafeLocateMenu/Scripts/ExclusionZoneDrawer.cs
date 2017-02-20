@@ -22,11 +22,11 @@ using System.Collections.Generic;
         void Start()
         {
             lineRendererGO = new GameObject();
-            lineRendererGO.AddComponent<LineRenderer>();
-            lineRenderer = lineRendererGO.GetComponent<LineRenderer>();
+            lineRendererGO.name = "Exclusion Zone Drawer Line";
+            lineRenderer  = lineRendererGO.AddComponent<LineRenderer>();
             lineRenderer.material = ExclusionZoneManager.main.exclusionZoneWarningMaterial;
             linePoints = new List<Vector3>();
-        cubePoints = new List<GameObject>();
+            cubePoints = new List<GameObject>();
         }
 
         // Update is called once per frame
@@ -61,11 +61,12 @@ using System.Collections.Generic;
         }
         void UpdateLine()
         {
+            
             lineRenderer.SetVertexCount(linePoints.Count);
 
             for (int i = lineCount; i < linePoints.Count; i++)
             {
-                lineRenderer.SetPosition(i, linePoints[i]);
+                lineRenderer.SetPosition(i, cubePoints[i].transform.position);
             }
             lineCount = linePoints.Count;
             if (lineCount > 2)
@@ -74,9 +75,7 @@ using System.Collections.Generic;
                 {
                     drawerActive = false;
                     CreateMesh();
-                    
-            }
-
+                }
             }
         }
         void CreateMesh()
@@ -124,8 +123,8 @@ using System.Collections.Generic;
             newExclusionZone.AddComponent<MeshCollider>();
 
         //Add to list of Exclusion Zones
-            newExclusionZone.AddComponent<ExclusionZone>();
-            newExclusionZone.GetComponent<ExclusionZone>().points = linePoints.ToArray();
+            SyncedExclusionZone sEz = newExclusionZone.AddComponent<SyncedExclusionZone>();
+            sEz.points = linePoints.ToArray();
         //Update Tree
             TreeViewManager.main.TreeView.AddChild(ExclusionZoneManager.main.exclusionZones, newExclusionZone);
             TreeViewManager.main.updateTreeText();
@@ -137,39 +136,9 @@ using System.Collections.Generic;
     {
         lineRenderer.SetVertexCount(0);
         linePoints = new List<Vector3>();
+        cubePoints = new List<GameObject>();
     }
 
 
 }
-/*
-using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
 
-    public class ExclusionZoneManager : MonoBehaviour
-{
-    public List<ExclusionZone> ExclusionZones = new List<ExclusionZone>();
-    public Material DangerMaterial;
-    public Material WarningMaterial;
-
-    IEnumerable<GameObject> ListOfActors = new List<GameObject>();
-
-    private bool exclusionZonesVisible = true;
-
-    public void ToggleZones()
-    {
-        //TurnZonesOn/OFF
-    }
-    // Use this for initialization
-    void Start()
-    {
-        if (WorkerManager.main == null) Debug.LogError("missing Worker Manager");
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        ListOfActors = WorkerManager.main.listOfWorkers;
-    }
-}
-*/

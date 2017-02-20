@@ -30,8 +30,6 @@ public class AssetPanel : MonoBehaviour
     private void Update()
     {
         //if Mouse or touch is outside Panel Raycast to update panel
-        if (Input.multiTouchEnabled)
-        {
             if (Input.touchCount == 1 )
             {
                 if(!RectTransformUtility.RectangleContainsScreenPoint(this.gameObject.GetComponent<RectTransform>(), Input.GetTouch(0).position, Camera.main))
@@ -39,7 +37,6 @@ public class AssetPanel : MonoBehaviour
                     RaycastAndUpdatePanel();
                 }
             }
-        }
         else if(Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
         {
             RaycastAndUpdatePanel();           
@@ -157,7 +154,7 @@ public class AssetPanel : MonoBehaviour
 
     private void DisplayZoneInfo()
     {
-        if(selectedAsset.GetComponent<ExclusionZone>() != null)
+        if(selectedAsset.GetComponent<SyncedExclusionZone>() != null)
         {
             zonesPanel.active = true;
         }

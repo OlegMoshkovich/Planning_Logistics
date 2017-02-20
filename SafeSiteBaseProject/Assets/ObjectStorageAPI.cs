@@ -34,12 +34,12 @@ public class ObjectStorageAPI : MonoBehaviour {
     }
     public IEnumerator GetAuthToken()
     {
-        var unityWebRequest = new UnityWebRequest("https://identity.open.softlayer.com/v3/auth/tokens");
-        unityWebRequest.SetRequestHeader("Content-Type", "application/json");
         string postData = "{\"auth\": {\"identity\": {\"methods\": [\"password\"],\"password\": {\"user\": {\"id\": \"" + user_id + "\", \"password\": \"" + user_password + "\"}} },\"scope\": { \"project\": {\"id\": \"" + project_id + "\" } } } }";
-        var uploadHandler = new UploadHandlerRaw(System.Text.Encoding.UTF8.GetBytes(postData));
-        unityWebRequest.method = "POST";
-        unityWebRequest.uploadHandler = uploadHandler;
+        var unityWebRequest = new UnityWebRequest("https://identity.open.softlayer.com/v3/auth/tokens", UnityWebRequest.kHttpVerbPOST)
+                                                {
+                                                    uploadHandler = new UploadHandlerRaw(System.Text.Encoding.UTF8.GetBytes(postData))
+                                                };
+        unityWebRequest.SetRequestHeader("Content-Type", "application/json");
         Debug.Log("Send Request with Data: " + postData);
         yield return unityWebRequest.Send();
         if (unityWebRequest.isError)
@@ -48,7 +48,7 @@ public class ObjectStorageAPI : MonoBehaviour {
         }
         else
         {
-            Debug.Log("Upload Image Response Code : " + unityWebRequest.responseCode.ToString());
+            Debug.Log("Upload Image Response Code : " + unityWebRequest.responseCode);
             authToken = unityWebRequest.GetResponseHeader("X-Subject-Token");
         }
     }

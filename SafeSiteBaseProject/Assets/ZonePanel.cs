@@ -5,7 +5,7 @@ using System.Collections;
 public class ZonePanel : MonoBehaviour {
     public Toggle alertToggle;
 
-    private ExclusionZone ez;
+    private SyncedExclusionZone ez;
 
 	public void OnAlertToggleChangeHandler(bool val)
     {
@@ -14,7 +14,7 @@ public class ZonePanel : MonoBehaviour {
 
     private void OnEnable()
     {
-        ez = AssetPanel.main.selectedAsset.GetComponent<ExclusionZone>();
+        ez = AssetPanel.main.selectedAsset.GetComponent<SyncedExclusionZone>();
         if(alertToggle != null)
         {
             alertToggle.isOn = ez.alert;

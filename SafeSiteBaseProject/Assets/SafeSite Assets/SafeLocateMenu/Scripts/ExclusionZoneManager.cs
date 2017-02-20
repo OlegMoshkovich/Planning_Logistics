@@ -30,7 +30,7 @@ public class ExclusionZoneManager : MonoBehaviour
 
     public bool AddExclusionZone(GameObject ez)
     {
-        if(ez.GetComponent<ExclusionZone>() == null)
+        if(ez.GetComponent<SyncedExclusionZone>() == null)
         {
             Debug.LogError(ez.name + " Missing Exclusion zone");
             return false;

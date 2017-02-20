@@ -48,12 +48,14 @@ public class AssetManager : MonoBehaviour {
         db = GetComponent<DBManager>();
 
         //Set up Tree
+        
         TreeViewManager.main.TreeView.Add(workers);
         TreeViewManager.main.TreeView.Add(indicatorsParent);
         TreeViewManager.main.TreeView.Add(assets);
         TreeViewManager.main.TreeView.AddChild(assets, forklifts);
         TreeViewManager.main.TreeView.AddChild(assets, ladders);
         TreeViewManager.main.TreeView.AddChild(assets, otherAssets);
+        
     }
 
 	//Code to Draw Assets
@@ -101,7 +103,16 @@ public class AssetManager : MonoBehaviour {
 			{
 				//Debug.Log ("something is hit");	
 				GameObject go = (GameObject) Instantiate(Resources.Load<GameObject>("AssetsLibrary/" + assetType), new Vector3(hit.point.x,hit.point.y,hit.point.z), Quaternion.Euler (0, 0, 0));
-                if (go.GetComponent<SyncedAsset>() != null) go.GetComponent<SyncedAsset>().sa_type = assetType;
+                
+                //Update SynchedAsset
+                SyncedAsset sa = go.GetComponent<SyncedAsset>();
+                if (sa == null) Debug.Log("Resource Missing SyncedAsset");
+                else
+                {
+                    sa.sa_type = assetType;
+                    sa.sa_createdBy = UserSettings.main.userName;
+                }
+                
                 go.name = assetType;
 
                 //Return cursor to default

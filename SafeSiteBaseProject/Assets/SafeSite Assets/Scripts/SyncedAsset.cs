@@ -12,6 +12,8 @@ public class SyncedAsset : MonoBehaviour {
     public string sa_type;
     public string sa_timeCreated;
     public string sa_timeChanged;
+    public string sa_createdBy;
+    public string sa_changedBy;
 
     public Vector3 sa_position;
     public Quaternion sa_rotation;

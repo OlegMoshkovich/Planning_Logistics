@@ -8,6 +8,7 @@ public class CameraControl : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        
             Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
             //PANNING ON RIGHT CLICK
             if (Input.GetMouseButton(2))
@@ -32,7 +33,7 @@ public class CameraControl : MonoBehaviour {
 			}
         //Zoom on pinch & Pan on drag two fingers
         float zoomSpeed = 0.01f;
-        float panningSpeed = 0.01f;
+        float panningSpeed = 0.001f;
         if (Input.touchCount == 2)
         {
             // Store both touches.
@@ -73,7 +74,7 @@ public class CameraControl : MonoBehaviour {
 
         }
         //Point camera using Mouse right button or dragging finger
-        if (Input.GetMouseButton(1) && !Input.multiTouchEnabled)
+        if (Input.GetMouseButton(1) && Input.touchCount==0)
             {
                 CameraSwitch.main.followTarget = false;
                 float dx = Input.GetAxis("Horizontal");

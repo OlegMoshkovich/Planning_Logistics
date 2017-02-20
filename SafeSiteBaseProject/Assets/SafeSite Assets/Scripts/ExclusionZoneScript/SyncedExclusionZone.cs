@@ -1,14 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-    public class ExclusionZone : MonoBehaviour
+    public class SyncedExclusionZone : SyncedAsset
     {
         public Vector3[] points;
         public delegate void ExclusionZoneAction (Collision collision);
         public static event ExclusionZoneAction OnExclusionZoneEnter;
         public static event ExclusionZoneAction OnExclusionZoneExit;
-        
-        public float percentOfDanger = 0.8f;
+
+        public bool dynamicSize = false;
         public bool alert = true;
         public string shape; // "Circle", "rectangle", "Mesh "
         public void ExportExclusionZone()
