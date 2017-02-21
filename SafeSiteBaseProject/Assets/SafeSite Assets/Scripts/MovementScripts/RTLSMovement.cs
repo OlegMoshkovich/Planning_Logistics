@@ -47,7 +47,7 @@ public class RTLSMovement : MonoBehaviour {
         //Update Animator speed
         if (GetComponent<Animator>() != null)
         {
-            GetComponent<Animator>().SetFloat("Speed", GetComponent<NavMeshAgent>().speed);
+            GetComponent<Animator>().SetFloat("Speed", 0);
         }
 
         try
@@ -55,7 +55,6 @@ public class RTLSMovement : MonoBehaviour {
             Tag tag = mqttManager.main.listOfQTrackTags[frequency];
             GetComponent<NavMeshAgent>().destination = new Vector3(tag.X, 0.1f, tag.Y);
             GetComponent<NavMeshAgent>().speed = 10;
-            //transform.Translate(tag.X, 0, tag.Y, Space.World);
         }
         catch (Exception e)
         {

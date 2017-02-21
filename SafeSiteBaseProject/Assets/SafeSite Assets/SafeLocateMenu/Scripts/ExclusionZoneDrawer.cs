@@ -11,7 +11,7 @@ using System.Collections.Generic;
         public bool drawerActive = true;
         public List<Vector3> linePoints = new List<Vector3>();
 
-    private List<GameObject> cubePoints = new List<GameObject>();
+        private List<GameObject> cubePoints = new List<GameObject>();
         private float yValue;
 
         public void setDrawerActive(bool value)
@@ -60,8 +60,7 @@ using System.Collections.Generic;
             }
         }
         void UpdateLine()
-        {
-            
+        {            
             lineRenderer.SetVertexCount(linePoints.Count);
 
             for (int i = lineCount; i < linePoints.Count; i++)
@@ -80,11 +79,11 @@ using System.Collections.Generic;
         }
         void CreateMesh()
         {
-
             // Use the triangulator to get indices for creating triangles
             Vector2[] vertices2D = new Vector2[lineCount];
             for (int i = 0; i < lineCount; i++)
             {
+                //linePoints[i] = new Vector3(linePoints[i].x - linePoints[0].x, linePoints[i].y, linePoints[i].z - linePoints[0].z);
                 vertices2D[i].x = linePoints[i].x;
                 vertices2D[i].y = linePoints[i].z;
             }
@@ -109,12 +108,12 @@ using System.Collections.Generic;
             // Set up game object with mesh;
             GameObject newExclusionZone = new GameObject();
             newExclusionZone.transform.parent = ExclusionZoneManager.main.exclusionZones.transform;
+            //newExclusionZone.transform.localPosition = linePoints[0];
             MeshRenderer newExclusionZone_meshRenderer = newExclusionZone.AddComponent<MeshRenderer>();
             newExclusionZone.name = "Exclusion Zone";
             newExclusionZone.transform.Translate(new Vector3(0, 0.1f, 0));
             foreach(GameObject cube in cubePoints)
-            {
-                
+            {                
                 cube.transform.parent = newExclusionZone.transform;
             }
             MeshFilter filter = newExclusionZone.AddComponent<MeshFilter>();

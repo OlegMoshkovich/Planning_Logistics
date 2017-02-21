@@ -67,3 +67,8 @@ public class SyncedAsset : MonoBehaviour {
 public enum MovementType {
     Static, SetMovement, RTLS, Random
 }
+
+public enum AssetType
+{
+    Bobcat, CementTruck, Fence, Forklift, Hazard, Ladder, SafetyNet, Scaffold, SidewalkShed, Worker, Other
+}

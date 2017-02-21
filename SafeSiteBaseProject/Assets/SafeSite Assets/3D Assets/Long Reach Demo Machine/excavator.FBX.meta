@@ -1,0 +1,328 @@
+fileFormatVersion: 2
+guid: b5fe4c7df49e9e649a8962c168f805aa
+timeCreated: 1487696668
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: arm01_a
+    100002: arm01_b
+    100004: arm02_a
+    100006: arm02_b
+    100008: arm03_a
+    100010: arm04_a
+    100012: arm04_b
+    100014: arm04_c
+    100016: base
+    100018: body_a
+    100020: body_b
+    100022: body_c
+    100024: caterpillar01
+    100026: claw01_a
+    100028: claw01_b
+    100030: claw02_a
+    100032: claw02_b
+    100034: claws01
+    100036: claws02
+    100038: claws03
+    100040: claws04
+    100042: //RootNode
+    100044: glass
+    100046: joint(dummy) 01
+    100048: joint(dummy) 02
+    100050: joint(dummy) 03
+    100052: joint(dummy) 04
+    100054: joint(dummy) 05
+    100056: joint(dummy) 06
+    100058: joint(dummy) 07
+    100060: joint(dummy) 08
+    100062: joint(dummy) 09
+    100064: joint(dummy) 10
+    100066: joint(dummy) 11
+    100068: joint(dummy) 12
+    100070: joint(dummy) A
+    100072: joint(dummy) B
+    100074: joint(dummy) C
+    100076: joint(dummy) D
+    100078: joint(dummy) E
+    100080: piston01_a
+    100082: piston01_b
+    100084: piston02_a
+    100086: piston02_b
+    100088: piston03_a
+    100090: piston03_b
+    100092: piston04_a
+    100094: piston04_b
+    100096: piston05_a
+    100098: piston05_b
+    100100: piston06_a
+    100102: piston06_b
+    400000: arm01_a
+    400002: arm01_b
+    400004: arm02_a
+    400006: arm02_b
+    400008: arm03_a
+    400010: arm04_a
+    400012: arm04_b
+    400014: arm04_c
+    400016: base
+    400018: body_a
+    400020: body_b
+    400022: body_c
+    400024: caterpillar01
+    400026: claw01_a
+    400028: claw01_b
+    400030: claw02_a
+    400032: claw02_b
+    400034: claws01
+    400036: claws02
+    400038: claws03
+    400040: claws04
+    400042: //RootNode
+    400044: glass
+    400046: joint(dummy) 01
+    400048: joint(dummy) 02
+    400050: joint(dummy) 03
+    400052: joint(dummy) 04
+    400054: joint(dummy) 05
+    400056: joint(dummy) 06
+    400058: joint(dummy) 07
+    400060: joint(dummy) 08
+    400062: joint(dummy) 09
+    400064: joint(dummy) 10
+    400066: joint(dummy) 11
+    400068: joint(dummy) 12
+    400070: joint(dummy) A
+    400072: joint(dummy) B
+    400074: joint(dummy) C
+    400076: joint(dummy) D
+    400078: joint(dummy) E
+    400080: piston01_a
+    400082: piston01_b
+    400084: piston02_a
+    400086: piston02_b
+    400088: piston03_a
+    400090: piston03_b
+    400092: piston04_a
+    400094: piston04_b
+    400096: piston05_a
+    400098: piston05_b
+    400100: piston06_a
+    400102: piston06_b
+    2300000: arm01_a
+    2300002: arm01_b
+    2300004: arm02_a
+    2300006: arm02_b
+    2300008: arm03_a
+    2300010: arm04_a
+    2300012: arm04_b
+    2300014: arm04_c
+    2300016: base
+    2300018: body_a
+    2300020: body_b
+    2300022: body_c
+    2300024: caterpillar01
+    2300026: claw01_a
+    2300028: claw01_b
+    2300030: claw02_a
+    2300032: claw02_b
+    2300034: claws01
+    2300036: claws02
+    2300038: claws03
+    2300040: claws04
+    2300042: glass
+    2300044: joint(dummy) 01
+    2300046: joint(dummy) 02
+    2300048: joint(dummy) 03
+    2300050: joint(dummy) 04
+    2300052: joint(dummy) 05
+    2300054: joint(dummy) 06
+    2300056: joint(dummy) 07
+    2300058: joint(dummy) 08
+    2300060: joint(dummy) 09
+    2300062: joint(dummy) 10
+    2300064: joint(dummy) 11
+    2300066: joint(dummy) 12
+    2300068: joint(dummy) A
+    2300070: joint(dummy) B
+    2300072: joint(dummy) C
+    2300074: joint(dummy) D
+    2300076: joint(dummy) E
+    2300078: piston01_a
+    2300080: piston01_b
+    2300082: piston02_a
+    2300084: piston02_b
+    2300086: piston03_a
+    2300088: piston03_b
+    2300090: piston04_a
+    2300092: piston04_b
+    2300094: piston05_a
+    2300096: piston05_b
+    2300098: piston06_a
+    2300100: piston06_b
+    3300000: arm01_a
+    3300002: arm01_b
+    3300004: arm02_a
+    3300006: arm02_b
+    3300008: arm03_a
+    3300010: arm04_a
+    3300012: arm04_b
+    3300014: arm04_c
+    3300016: base
+    3300018: body_a
+    3300020: body_b
+    3300022: body_c
+    3300024: caterpillar01
+    3300026: claw01_a
+    3300028: claw01_b
+    3300030: claw02_a
+    3300032: claw02_b
+    3300034: claws01
+    3300036: claws02
+    3300038: claws03
+    3300040: claws04
+    3300042: glass
+    3300044: joint(dummy) 01
+    3300046: joint(dummy) 02
+    3300048: joint(dummy) 03
+    3300050: joint(dummy) 04
+    3300052: joint(dummy) 05
+    3300054: joint(dummy) 06
+    3300056: joint(dummy) 07
+    3300058: joint(dummy) 08
+    3300060: joint(dummy) 09
+    3300062: joint(dummy) 10
+    3300064: joint(dummy) 11
+    3300066: joint(dummy) 12
+    3300068: joint(dummy) A
+    3300070: joint(dummy) B
+    3300072: joint(dummy) C
+    3300074: joint(dummy) D
+    3300076: joint(dummy) E
+    3300078: piston01_a
+    3300080: piston01_b
+    3300082: piston02_a
+    3300084: piston02_b
+    3300086: piston03_a
+    3300088: piston03_b
+    3300090: piston04_a
+    3300092: piston04_b
+    3300094: piston05_a
+    3300096: piston05_b
+    3300098: piston06_a
+    3300100: piston06_b
+    4300000: base
+    4300002: joint(dummy) B
+    4300004: body_b
+    4300006: joint(dummy) A
+    4300008: arm01_a
+    4300010: arm02_a
+    4300012: piston02_a
+    4300014: joint(dummy) C
+    4300016: arm03_a
+    4300018: joint(dummy) D
+    4300020: arm04_a
+    4300022: joint(dummy) E
+    4300024: claws04
+    4300026: piston04_b
+    4300028: joint(dummy) 08
+    4300030: claws03
+    4300032: claws01
+    4300034: claw01_b
+    4300036: claw01_a
+    4300038: piston06_b
+    4300040: joint(dummy) 11
+    4300042: claw02_b
+    4300044: claw02_a
+    4300046: piston05_b
+    4300048: joint(dummy) 12
+    4300050: piston05_a
+    4300052: joint(dummy) 10
+    4300054: piston06_a
+    4300056: joint(dummy) 09
+    4300058: claws02
+    4300060: arm04_c
+    4300062: arm04_b
+    4300064: piston03_a
+    4300066: piston04_a
+    4300068: joint(dummy) 07
+    4300070: joint(dummy) 06
+    4300072: piston03_b
+    4300074: piston02_b
+    4300076: joint(dummy) 05
+    4300078: joint(dummy) 04
+    4300080: arm02_b
+    4300082: joint(dummy) 03
+    4300084: arm01_b
+    4300086: piston01_b
+    4300088: joint(dummy) 01
+    4300090: body_a
+    4300092: piston01_a
+    4300094: joint(dummy) 02
+    4300096: body_c
+    4300098: glass
+    4300100: caterpillar01
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/SafeSite Assets/SafeLocateMenu/Scenes/Safesite.unity
+- path: Assets/Scenes/61Broadway.unity
   isLoaded: 1
   isActive: 1
