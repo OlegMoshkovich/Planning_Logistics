@@ -1,6 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+
+
+//Allows to click rotate object by clicking on it and pressing 'r '
+//For alternative with gizmo download Runtimetools by Battlehub//
+
+
 public class ObjectRotate : MonoBehaviour {
 
 	private bool drawerActive = false;
@@ -14,15 +20,8 @@ public class ObjectRotate : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if(Input.GetKeyDown("r")){
-			drawerActive = true;
-			Debug.Log ("drawer is active");
+            drawerActive = !drawerActive;
+			Debug.Log ("Rotation Drawer is :" + drawerActive);
 		}
-
-		if(Input.GetKeyDown("e")){
-			drawerActive = false;
-			Debug.Log ("drawer is siabled");
-		}
-
-	
 	}
 }

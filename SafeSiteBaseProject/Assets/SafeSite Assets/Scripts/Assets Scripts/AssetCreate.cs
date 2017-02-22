@@ -9,7 +9,6 @@ public class AssetCreate : MonoBehaviour {
     public void createAsset(){
 		AssetManager.main.createNewAsset (assetType, cursorIcon);
 	}
-
 }
 
 

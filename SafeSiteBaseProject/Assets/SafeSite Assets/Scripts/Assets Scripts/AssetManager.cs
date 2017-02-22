@@ -11,11 +11,13 @@ public class AssetManager : MonoBehaviour {
 	//Make Unique Manager
 	public static AssetManager main;
     //Database link
+    [HideInInspector]
     public DBManager db;
 
 
     //Create Folders in Tree
     GameObject workers;
+    [HideInInspector]
     public GameObject indicatorsParent;
     GameObject assets;
     GameObject forklifts;

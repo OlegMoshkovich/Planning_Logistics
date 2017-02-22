@@ -2626,12 +2626,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 610575ac27550c44cb1b3f70d0fc04ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  imagePlaceholder: {fileID: 114000014020908542}
+  cameraPhotoPlaceholder: {fileID: 114000014020908542}
   openTakePictureButton: {fileID: 114000012063921696}
   takePicturePanel: {fileID: 1000011345585098}
   cameraRawImage: {fileID: 114000012169385600}
   synchedHazard: {fileID: 114000012937932658}
-  imageName: {fileID: 0}
+  imageName: {fileID: 114000010148669616}
 --- !u!114 &114000012937932658
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2722,7 +2722,6 @@ MonoBehaviour:
   changedByText: {fileID: 114000013724150814}
   description: {fileID: 114000013662729460}
   status: {fileID: 114000010810347748}
-  hazardPanel: {fileID: 0}
 --- !u!114 &114000013114420756
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -10,6 +10,7 @@ public class AssetPanel : MonoBehaviour
     //SyncedAssetPanel
     public Dropdown movementTypeDropdown;
 
+    [HideInInspector]
     public GameObject selectedAsset;
     //Telemetry Panels
     public GameObject telemetryPanel;
@@ -26,6 +27,11 @@ public class AssetPanel : MonoBehaviour
     private void Awake()
     {
         main = this;
+        //Check all elements are definded
+        if (nameText == null || movementTypeDropdown == null || telemetryPanel == null ||
+            addTelemetryPanel == null || rtlsPanel == null || addRTLSPanel == null ||
+            zonesPanel == null) Debug.LogError("Missing references in Asset Panel");
+
     }
     private void Update()
     {

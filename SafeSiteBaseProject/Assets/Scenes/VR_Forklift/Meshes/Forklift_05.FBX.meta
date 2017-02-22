@@ -1,0 +1,165 @@
+fileFormatVersion: 2
+guid: 3f07e513873c7da47bdd5f13a02f128c
+timeCreated: 1467838203
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Forklift
+    100004: Forklift_Chain
+    100006: Forklift_Arm-A
+    100008: Forklift_Arm-B
+    100010: Forklift_Arm-C
+    100012: Forklift_Arm-D
+    100014: Forklift_Fork_L
+    100016: Forklift_Fork_R
+    100018: Forklift_Lever-A
+    100020: Forklift_Lever-B
+    100022: Forklift_Lever-C
+    100024: Forklift_Steering-Wheel
+    100026: Forklift_Wheel_BL
+    100028: Forklift_Wheel_BR
+    100030: Forklift_Wheel_FL
+    100032: Forklift_Wheel_FR
+    100034: Forklift_Main
+    100036: Forklift_Shadow
+    400000: //RootNode
+    400002: Forklift
+    400004: Forklift_Chain
+    400006: Forklift_Arm-A
+    400008: Forklift_Arm-B
+    400010: Forklift_Arm-C
+    400012: Forklift_Arm-D
+    400014: Forklift_Fork_L
+    400016: Forklift_Fork_R
+    400018: Forklift_Lever-A
+    400020: Forklift_Lever-B
+    400022: Forklift_Lever-C
+    400024: Forklift_Steering-Wheel
+    400026: Forklift_Wheel_BL
+    400028: Forklift_Wheel_BR
+    400030: Forklift_Wheel_FL
+    400032: Forklift_Wheel_FR
+    400034: Forklift_Main
+    400036: Forklift_Shadow
+    2300000: //RootNode
+    2300002: Forklift
+    2300004: Forklift_Chain
+    2300006: Forklift_Arm-A
+    2300008: Forklift_Arm-B
+    2300010: Forklift_Arm-C
+    2300012: Forklift_Arm-D
+    2300014: Forklift_Fork_L
+    2300016: Forklift_Fork_R
+    2300018: Forklift_Lever-A
+    2300020: Forklift_Lever-B
+    2300022: Forklift_Lever-C
+    2300024: Forklift_Steering-Wheel
+    2300026: Forklift_Wheel_BL
+    2300028: Forklift_Wheel_BR
+    2300030: Forklift_Wheel_FL
+    2300032: Forklift_Wheel_FR
+    2300034: Forklift_Main
+    2300036: Forklift_Shadow
+    3300000: //RootNode
+    3300002: Forklift
+    3300004: Forklift_Chain
+    3300006: Forklift_Arm-A
+    3300008: Forklift_Arm-B
+    3300010: Forklift_Arm-C
+    3300012: Forklift_Arm-D
+    3300014: Forklift_Fork_L
+    3300016: Forklift_Fork_R
+    3300018: Forklift_Lever-A
+    3300020: Forklift_Lever-B
+    3300022: Forklift_Lever-C
+    3300024: Forklift_Steering-Wheel
+    3300026: Forklift_Wheel_BL
+    3300028: Forklift_Wheel_BR
+    3300030: Forklift_Wheel_FL
+    3300032: Forklift_Wheel_FR
+    3300034: Forklift_Main
+    3300036: Forklift_Shadow
+    4300000: Forklift
+    4300002: Forklift_Chain
+    4300004: Forklift_Main
+    4300006: Forklift_Wheel_FL
+    4300008: Forklift_Wheel_FR
+    4300010: Forklift_Wheel_BR
+    4300012: Forklift_Wheel_BL
+    4300014: Forklift_Arm-A
+    4300016: Forklift_Arm-B
+    4300018: Forklift_Arm-C
+    4300020: Forklift_Arm-D
+    4300022: Forklift_Fork_R
+    4300024: Forklift_Fork_L
+    4300026: Forklift_Lever-C
+    4300028: Forklift_Steering-Wheel
+    4300030: Forklift_Lever-A
+    4300032: Forklift_Lever-B
+    4300034: Forklift_Shadow
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -6,22 +6,42 @@ using uPLibrary.Networking.M2Mqtt;
 using uPLibrary.Networking.M2Mqtt.Messages;
 using uPLibrary.Networking.M2Mqtt.Utility;
 using uPLibrary.Networking.M2Mqtt.Exceptions;
-
 using System;
 
 public class mqttManager : MonoBehaviour {
     public bool convertUnitsToMeters = true;
-    private MqttClient clientQTrack;
-    private MqttClient clientBlueMix;
+    //Credentials from Bluemix for MQTT, for production should be provided online
+    public string hostName = "tmsmv4.messaging.internetofthings.ibmcloud.com";
+    public string qTrackCliendID = "a:tmsmv4:pabloUnityQTrack";
+    public string qTrackUsername = "a-tmsmv4-m48l9nbvca";
+    public string qTrackPassword = "ZP)G2!vMShPtSup6xH";
+    public string qTrackTopic = "iot-2/type/QTrack/id/+/evt/+/fmt/json";
+    public string hcsTagClientID = "a:tmsmv4:pabloUnityBLE";
+    public string hcsTagUsername = "a-tmsmv4-r2pl0u7lrz";
+    public string hcsTagPassword = "@BAr8DooQs(Eih0Ocb";
+    public string hcsTagTopic = "iot-2/type/QTrack/id/+/evt/+/fmt/json";
+
     public Dictionary<String, Tag> listOfQTrackTags = new Dictionary<String, Tag>();
     public Dictionary<String, HCSTag> listOfHCSTags = new Dictionary<String, HCSTag>();
-    public List<string> incomingLog = new List<string>();
-    public List<string> outgoingLog = new List<string>();
+    public List<string> incomingLog = new List<string>(); //Not Shown in UI. 
+    public List<string> outgoingLog = new List<string>(); //Not Shown in UI
+
+    private MqttClient clientQTrack;
+    private MqttClient clientBlueMix;
 
     public static mqttManager main;
     private void Awake()
     {
         main = this;
+        //Check all fields are complete
+        if (hostName == null || qTrackCliendID == null || qTrackUsername == null ||
+            qTrackTopic == null || hcsTagClientID == null || hcsTagClientID == null ||
+            hcsTagUsername == null || hcsTagPassword == null || hcsTagTopic == null) Debug.LogError("Missing MQTT fields");
+
+#if UNITY_IOS
+        this.enabled = false;
+#endif
+
     }
     // Use this for initialization
     void Start () {
@@ -30,8 +50,8 @@ public class mqttManager : MonoBehaviour {
 		
         // create client instance 
 		//client = new MqttClient(IPAddress.Parse("137.135.91.79"),1883 , false , null );
-        clientBlueMix = new MqttClient("tmsmv4.messaging.internetofthings.ibmcloud.com", 1883, false, null);
-        clientQTrack = new MqttClient("tmsmv4.messaging.internetofthings.ibmcloud.com", 1883, false, null);
+        clientBlueMix = new MqttClient(hostName, 1883, false, null);
+        clientQTrack = new MqttClient(hostName, 1883, false, null);
 
         // register to message received 
         clientQTrack.MqttMsgPublishReceived += clientQTrack_MqttMsgPublishReceived;
@@ -46,7 +66,7 @@ public class mqttManager : MonoBehaviour {
         clientBlueMix.MqttMsgPublished += logOutgoingData;
 
         try{
-            var QtrackStatus = clientQTrack.Connect("a:tmsmv4:pabloUnityQTrack", "a-tmsmv4-m48l9nbvca", "ZP)G2!vMShPtSup6xH");
+            var QtrackStatus = clientQTrack.Connect(qTrackCliendID, qTrackUsername, qTrackPassword);
             Debug.Log("QTrack MQTT Client status: " + QtrackStatus.ToString());
         }
                 catch (MqttCommunicationException e)
@@ -58,7 +78,7 @@ public class mqttManager : MonoBehaviour {
         try
         {
 
-            var blueMixStatus = clientBlueMix.Connect("a:tmsmv4:pabloUnityBLE", "a-tmsmv4-r2pl0u7lrz", "@BAr8DooQs(Eih0Ocb");
+            var blueMixStatus = clientBlueMix.Connect(hcsTagClientID, hcsTagUsername ,hcsTagPassword );
             Debug.Log("Bluemix connected + status: " + blueMixStatus.ToString());
 
         }
@@ -67,11 +87,9 @@ public class mqttManager : MonoBehaviour {
             Debug.LogError(e.ToString());
         }
 
-
-        
-        //clientBlueMix.Subscribe(new string[] { "iot-2/type/HCSTag/id/+/evt/+/fmt/json" }, new byte[] { MqttMsgBase.QOS_LEVEL_AT_MOST_ONCE });
-        clientBlueMix.Subscribe(new string[] { "iot-2/type/HCS_BLE_Tag/id/+/evt/+/fmt/json" }, new byte[] { MqttMsgBase.QOS_LEVEL_AT_MOST_ONCE });
-        clientQTrack.Subscribe(new string[] { "iot-2/type/QTrack/id/+/evt/+/fmt/json" }, new byte[] { MqttMsgBase.QOS_LEVEL_AT_MOST_ONCE });
+        //Subscribe to Topics
+        clientBlueMix.Subscribe(new string[] { hcsTagTopic }, new byte[] { MqttMsgBase.QOS_LEVEL_AT_MOST_ONCE });
+        clientQTrack.Subscribe(new string[] { qTrackTopic}, new byte[] { MqttMsgBase.QOS_LEVEL_AT_MOST_ONCE });
 
     }
 	void clientQTrack_MqttMsgPublishReceived(object sender, MqttMsgPublishEventArgs e) 

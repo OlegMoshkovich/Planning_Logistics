@@ -653,6 +653,10 @@ namespace AppAdvisory.VSGIF
 			temp.filterMode = FilterMode.Bilinear;
 			temp.anisoLevel = 0;
 
+            //Reset m_sprite
+            m_sprite = new List<Sprite>();
+
+
 			// Process the frame queue
 			while (m_Frames.Count > 0)
 			{

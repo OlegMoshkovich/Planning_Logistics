@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+
+//NOT TESTED//
 namespace Safescan{
 	public enum String { cylinder, cube, sphere }
 	public class ExclusionZone : MonoBehaviour {
