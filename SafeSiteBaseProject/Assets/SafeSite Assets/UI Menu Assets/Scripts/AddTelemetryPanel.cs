@@ -21,9 +21,9 @@ public class AddTelemetryPanel : MonoBehaviour {
 
     private void OnEnable()
     {
-        addTelemetryButton.gameObject.active = true;
-        tagIDText.gameObject.active = false;
-        hcsTagDropdown.gameObject.active = false;
+        addTelemetryButton.gameObject.SetActive(true);
+        tagIDText.gameObject.SetActive(false);
+        hcsTagDropdown.gameObject.SetActive(false);
     }
 
     private void myDropdownValueChangedHandler(Dropdown target)
@@ -34,16 +34,16 @@ public class AddTelemetryPanel : MonoBehaviour {
             HCSTelemetry tag = AssetPanel.main.selectedAsset.GetComponent<HCSTelemetry>();
             tag.macAddress = target.options[target.value].text;
 
-            this.gameObject.active = false;
-            TelemetryPanel.active = true;
+            this.gameObject.SetActive(false);
+            TelemetryPanel.SetActive(true);
         }
         
     }
     private void OnDisable()
     {
-        addTelemetryButton.gameObject.active = true;
-        tagIDText.gameObject.active = false;
-        hcsTagDropdown.gameObject.active = false;
+        addTelemetryButton.gameObject.SetActive( true);
+        tagIDText.gameObject.SetActive(false);
+        hcsTagDropdown.gameObject.SetActive(false);
     }
 
 

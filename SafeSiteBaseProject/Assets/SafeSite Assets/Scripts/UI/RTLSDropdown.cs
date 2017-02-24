@@ -6,9 +6,14 @@ public class RTLSDropdown : MonoBehaviour
 {
     private Dropdown dropdown;
     // Use this for initialization
+
+    private void Awake()
+    {
+        dropdown = GetComponent<Dropdown>();
+    }
     void OnEnable()
     {
-        if (GetComponent<Dropdown>() != null)
+        if ( dropdown != null)
         {
             dropdown = GetComponent<Dropdown>();
             dropdown.ClearOptions();

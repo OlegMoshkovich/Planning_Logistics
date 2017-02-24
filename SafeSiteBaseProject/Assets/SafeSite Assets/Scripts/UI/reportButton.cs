@@ -1,6 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
-using System;
 using AppAdvisory.VSGIF;
 
 public class reportButton : MonoBehaviour {
@@ -17,7 +15,6 @@ public class reportButton : MonoBehaviour {
         {
   
         }
-
     }
 
 

@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/VR_Forklift_06.unity
+- path: Assets/Scenes/61Broadway.unity
   isLoaded: 1
   isActive: 1

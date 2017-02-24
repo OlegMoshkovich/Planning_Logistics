@@ -4,11 +4,16 @@ using System.Collections;
 
 public class HCSTagsDropdown : MonoBehaviour {
     private Dropdown dropdown;
-	// Use this for initialization
-	void OnEnable () {
-        if (GetComponent<Dropdown>() != null)
+    // Use this for initialization
+    protected void Awake()
+    {
+        dropdown = GetComponent<Dropdown>();
+        if (dropdown == null) Debug.LogError("Dropdown field must be iniated");
+    }
+
+    void OnEnable () {
+        if (dropdown != null)
         {
-            dropdown = GetComponent<Dropdown>();
             dropdown.ClearOptions();
             dropdown.options.Add(new Dropdown.OptionData() { text = "none" });
             if (mqttManager.main.listOfHCSTags.Count > 0)

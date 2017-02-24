@@ -23,9 +23,9 @@ public class AddRTLSPanel : MonoBehaviour
 
     private void OnEnable()
     {
-        addRTLSButton.gameObject.active = true;
-        tagIDText.gameObject.active = false;
-        RTLSDropdown.gameObject.active = false;
+        addRTLSButton.gameObject.SetActive( true);
+        tagIDText.gameObject.SetActive(false);
+        RTLSDropdown.gameObject.SetActive(false);
     }
 
     private void myDropdownValueChangedHandler(Dropdown target)
@@ -36,16 +36,16 @@ public class AddRTLSPanel : MonoBehaviour
             RTLSMovement rtls = AssetPanel.main.selectedAsset.GetComponent<RTLSMovement>();
             rtls.frequency = target.options[target.value].text;
 
-            this.gameObject.active = false;
-            RTLSPanel.active = true;
+            gameObject.SetActive(false);
+            RTLSPanel.SetActive(true);
         }
 
     }
     private void OnDisable()
     {
-        addRTLSButton.gameObject.active = true;
-        tagIDText.gameObject.active = false;
-        RTLSDropdown.gameObject.active = false;
+        addRTLSButton.gameObject.SetActive(true);
+        tagIDText.gameObject.SetActive(false);
+        RTLSDropdown.gameObject.SetActive(false);
     }
 
 }

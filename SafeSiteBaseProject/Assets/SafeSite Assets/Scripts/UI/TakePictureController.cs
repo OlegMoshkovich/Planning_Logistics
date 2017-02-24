@@ -17,9 +17,12 @@ public class TakePictureController : MonoBehaviour {
     private Texture2D unityScreencapture;
     private Texture2D cameraPicture;
     
-
+   
     // Use this for initialization
     void Start () {
+        //Check fields are defined
+        if (cameraPhotoPlaceholder == null || openTakePictureButton == null ||
+            takePicturePanel == null || cameraRawImage == null || synchedHazard == null || imageName == null) Debug.LogError("Missing Defined Field");
         //Check if device has camera
         Application.RequestUserAuthorization(UserAuthorization.WebCam);
         Debug.Log("Cameras Detected: " + WebCamTexture.devices.Length);
@@ -60,7 +63,7 @@ public class TakePictureController : MonoBehaviour {
 
     public void OnTakePictureHandler()
     {
-        CancelInvoke("CheckCameraRotation");
+        //CancelInvoke("CheckCameraRotation");
         Debug.Log(_camTexture.width.ToString() + " " + _camTexture.height.ToString());
         cameraPicture = new Texture2D(_camTexture.width, _camTexture.height, TextureFormat.ARGB32, false);
         cameraPicture.SetPixels(_camTexture.GetPixels());

@@ -1,13 +1,17 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
 
 public class ZonePanel : MonoBehaviour {
     public Toggle alertToggle;
 
     private SyncedExclusionZone ez;
 
-	public void OnAlertToggleChangeHandler(bool val)
+    private void Awake()
+    {
+        if (alertToggle == null) Debug.LogError("alert Toggle is not defined");
+    }
+
+    public void OnAlertToggleChangeHandler(bool val)
     {
         if(ez != null ) ez.alert = val;
     }

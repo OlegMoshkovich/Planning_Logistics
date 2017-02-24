@@ -172,7 +172,7 @@ public class mqttManager : MonoBehaviour {
         }
         catch (Exception error)
         {
-            //Debug.Log("error" + error);
+            Debug.Log("error" + error);
         }
     }
 

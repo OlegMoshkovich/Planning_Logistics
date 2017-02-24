@@ -28,22 +28,15 @@ public class AssetManager : MonoBehaviour {
 		main = this;
 
         //Set up Tree
-        workers = new GameObject();
-        workers.name = "Workers";
-        assets = new GameObject();
-        assets.name = "Assets";
-        forklifts = new GameObject();
-        forklifts.name = "Forklifts";
+        workers = new GameObject("Workers");
+        assets = new GameObject("Assets");
+        forklifts = new GameObject("Forklifts");
         forklifts.transform.parent = assets.transform;
-        ladders = new GameObject();
-        ladders.name = "Ladders";
+        ladders = new GameObject("Ladders");
         ladders.transform.parent = assets.transform;
-        otherAssets = new GameObject();
-        otherAssets.name = "Others";
+        otherAssets = new GameObject("Others");
         otherAssets.transform.parent = assets.transform;
-        indicatorsParent = new GameObject();
-        indicatorsParent.name = "Safescan Indicators";
-        
+        indicatorsParent = new GameObject("Safescan Indicators");
     }
 
     private void Start()
@@ -157,6 +150,9 @@ public class AssetManager : MonoBehaviour {
             case AssetType.Hazard:
                 AddToTree(go, HazardManager.main.Hazards);
                 break;
+            case AssetType.ExclusionZone:
+                AddToTree(go, ExclusionZoneManager.main.exclusionZones);
+                break;
             default:
                 AddToTree(go, otherAssets);
                 break;
@@ -188,6 +184,12 @@ public class AssetManager : MonoBehaviour {
     public void CreateAssetFromDoc(string doc)
     {
 
+    }
+
+    public static Collider CheckCollider(GameObject go) //Checks if it has
+    {
+        if (go.GetComponent<Collider>() == null) return go.AddComponent<MeshCollider>();
+        else return go.GetComponent<Collider>();
     }
     
 }

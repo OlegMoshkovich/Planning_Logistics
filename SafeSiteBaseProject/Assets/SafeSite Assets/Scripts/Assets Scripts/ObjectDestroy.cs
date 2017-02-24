@@ -1,8 +1,6 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class ObjectDestroy : MonoBehaviour {
-
 
 	private bool drawerActive = false;
 	void OnMouseDown()

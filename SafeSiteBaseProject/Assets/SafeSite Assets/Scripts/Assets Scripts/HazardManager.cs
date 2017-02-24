@@ -1,9 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
-
-using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
 
 public class HazardManager : MonoBehaviour
 {
@@ -18,22 +13,19 @@ public class HazardManager : MonoBehaviour
     void Start()
     {
         main = this;
-        Hazards = new GameObject();
-        Hazards.name = "Hazards";
+        Hazards = new GameObject("Hazards");
         TreeViewManager.main.TreeView.Add(Hazards);
 
-        Collisions = new GameObject();
-        Collisions.name = "Collisions";
+        Collisions = new GameObject("Collisions");
         TreeViewManager.main.TreeView.AddChild(AssetManager.main.indicatorsParent,Collisions);
-        Edges = new GameObject();
-        Edges.name = "Fall Risks";
+        Edges = new GameObject("Fall Risks");
         TreeViewManager.main.TreeView.AddChild(AssetManager.main.indicatorsParent, Edges);
 
 
     }
     public void AddCollision(Collider collider)
     {
-        Debug.Log("Collision entered");
+        //Debug.Log("Collision entered");
         /*
         GameObject go = GameObject.CreatePrimitive(PrimitiveType.Sphere);
         go.name = "Collision: " + collision.collider.name + " - " + collision.gameObject.name;
@@ -48,7 +40,7 @@ public class HazardManager : MonoBehaviour
     {
         GameObject go = Instantiate(HazardMarkerPrefab, position, Camera.main.transform.rotation) as GameObject;
         go.name = "Fall Indicator";
-        go.transform.parent = Hazards.transform;
+        go.transform.parent = Edges.transform;
         TreeViewManager.main.TreeView.AddChild(Edges, go);
     }
 

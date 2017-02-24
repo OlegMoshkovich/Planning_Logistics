@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 
 [System.Serializable]
@@ -37,7 +36,6 @@ public class SyncedAsset : MonoBehaviour {
         //Debug.Log(JsonUtility.ToJson(this));
     }
 	
-	// Update is called once per frame
 	void Update () {
         updateParametersFromGameObject();
     }
@@ -49,6 +47,7 @@ public class SyncedAsset : MonoBehaviour {
         sa_rotation = transform.rotation;
 
         sa_timeChanged = GetUTCTimeStamp();
+       
     }
     private void updateGameObjectFromParameters()
     {
@@ -60,6 +59,8 @@ public class SyncedAsset : MonoBehaviour {
         {
             navMeshAgent.Warp(transform.position);
         }
+
+        if (gameObject.GetComponent<SyncedExclusionZone>() != null) gameObject.GetComponent<SyncedExclusionZone>().updateMesh();
     }
 }
 
@@ -70,5 +71,5 @@ public enum MovementType {
 
 public enum AssetType
 {
-    Bobcat, CementTruck, Fence, Forklift, Hazard, Ladder, SafetyNet, Scaffold, SidewalkShed, Worker, Other
+    Bobcat, CementTruck, Fence, Forklift, Hazard, ExclusionZone, Ladder, SafetyNet, Scaffold, SidewalkShed, Worker, Other
 }

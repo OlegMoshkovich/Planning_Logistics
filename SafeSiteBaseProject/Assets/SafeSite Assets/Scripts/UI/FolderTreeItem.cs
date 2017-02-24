@@ -4,15 +4,6 @@ using Battlehub.UIControls;
 
 public class FolderTreeItem : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
     public void OnInputChange(string value)
     {
             //ItemContainer itemContainer = this.GetComponent<ItemContainer>();
