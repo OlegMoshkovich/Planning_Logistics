@@ -5598,11 +5598,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7461afb4c5aff6409ec4a37adf06ae4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dropdown: {fileID: 114000013235045178}
+  dropdown: {fileID: 0}
   locationSmoothTime: 0.3
   rotateSmoothFactor: 2
   followTarget: 0
-  cameraNameInputField: {fileID: 114000011993588768}
+  cameraNameInputField: {fileID: 0}
   targetTransform: {fileID: 0}
 --- !u!114 &114000010351346814
 MonoBehaviour:
@@ -5807,7 +5807,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b8f2fdedcdd47b478de64d8fbdac43f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  alertToggle: {fileID: 114000011346857234}
+  alertToggle: {fileID: 0}
 --- !u!114 &114000010430861642
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5929,14 +5929,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7743732bf2c6e3d4ab1b4e4aeb140c80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _LineChart: {fileID: 114000013862258700}
+  _LineChart: {fileID: 0}
   hcsTelemetry: {fileID: 0}
-  badBend: {fileID: 114000013700139200}
-  OrientationObject: {fileID: 1000013201863154}
-  temperatureText: {fileID: 114000012493960454}
-  pressureText: {fileID: 114000010505082014}
-  humidity: {fileID: 114000010181975198}
-  HCSTagIdText: {fileID: 114000013288196312}
+  badBend: {fileID: 0}
+  OrientationObject: {fileID: 4096}
+  temperatureText: {fileID: 0}
+  pressureText: {fileID: 0}
+  humidity: {fileID: 0}
+  HCSTagIdText: {fileID: 0}
 --- !u!114 &114000010458175582
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6257,8 +6257,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1309dcdb2cdf7124aa99f5e49f61eb3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SiblingGraphics: {fileID: 1000010861098854}
-  ChildGraphics: {fileID: 1000010171899334}
+  SiblingGraphics: {fileID: 55890336}
+  ChildGraphics: {fileID: 55890976}
 --- !u!114 &114000010569274466
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7107,10 +7107,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rtls: {fileID: 0}
-  rtlsId: {fileID: 114000010171878336}
-  x_Value: {fileID: 114000012565281566}
-  y_Value: {fileID: 114000012215154732}
-  z_Value: {fileID: 114000014209535694}
+  rtlsId: {fileID: 0}
+  x_Value: {fileID: 0}
+  y_Value: {fileID: 0}
+  z_Value: {fileID: 0}
 --- !u!114 &114000010971303948
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7339,8 +7339,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1309dcdb2cdf7124aa99f5e49f61eb3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SiblingGraphics: {fileID: 1000010830360260}
-  ChildGraphics: {fileID: 1000010098546386}
+  SiblingGraphics: {fileID: 4096}
+  ChildGraphics: {fileID: 55891744}
 --- !u!114 &114000011189643470
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7410,7 +7410,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   url: https://dal.objectstorage.open.softlayer.com/v1/AUTH_6b5f695362b44c22822db23d3cc591e1
-  req: {fileID: 0}
+  webRequest: {fileID: 0}
   user_id: 2ee9cff5e8af45748c04df0907a83451
   user_password: bBRi(AT99WLjHTn=
   project_id: 6b5f695362b44c22822db23d3cc591e1
@@ -8158,7 +8158,7 @@ MonoBehaviour:
   RemoveKey: 127
   CanDrag: 1
   ItemContainerPrefab: {fileID: 168120, guid: c1a1ed5be49ce9d489bfdb8f2f5dbf9f, type: 2}
-  Panel: {fileID: 224000011193607066}
+  Panel: {fileID: 56243360}
   Camera: {fileID: 0}
   ScrollSpeed: 100
   Indent: 20
@@ -9056,8 +9056,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fcc14915d5df5346ac7ec6c884ad3cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  username: 7913dc07-9b69-4a17-8329-cb43b00bbd14-bluemix
+  password: 5d53ba229591931afc62e00011b05687a17ce40012615c32a826b8219f106d2d
   databaseURL: https://7913dc07-9b69-4a17-8329-cb43b00bbd14-bluemix:5d53ba229591931afc62e00011b05687a17ce40012615c32a826b8219f106d2d@7913dc07-9b69-4a17-8329-cb43b00bbd14-bluemix.cloudant.com/
-  req: {fileID: 0}
 --- !u!114 &114000011810058550
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9754,7 +9755,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dea656ce26224204da16044bbf60501d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  processing: 0
 --- !u!114 &114000012085385010
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10375,10 +10375,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83a5502829480f74a90db350d75d4098, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  addRTLSButton: {fileID: 114000012716420520}
-  tagIDText: {fileID: 114000010068069668}
-  RTLSDropdown: {fileID: 114000012862556082}
-  RTLSPanel: {fileID: 1000012785629820}
+  addRTLSButton: {fileID: 0}
+  tagIDText: {fileID: 0}
+  RTLSDropdown: {fileID: 0}
+  RTLSPanel: {fileID: 56231200}
 --- !u!114 &114000012273049450
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11180,10 +11180,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30c430866f718a242af1fc77d10322aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  addTelemetryButton: {fileID: 114000010815480952}
-  tagIDText: {fileID: 114000011945740230}
-  hcsTagDropdown: {fileID: 114000013327259588}
-  TelemetryPanel: {fileID: 1000012577826602}
+  addTelemetryButton: {fileID: 0}
+  tagIDText: {fileID: 0}
+  hcsTagDropdown: {fileID: 0}
+  TelemetryPanel: {fileID: 56294560}
 --- !u!114 &114000012510598490
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -12742,7 +12742,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90e8b377a780db49841f9332d3b5e69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TreeView: {fileID: 114000011502287936}
+  TreeView: {fileID: 0}
 --- !u!114 &114000013055259028
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -13507,7 +13507,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 542aa66d88dd1204aac96f90fd083d54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Treeview: {fileID: 114000011502287936}
+  Treeview: {fileID: 0}
 --- !u!114 &114000013307532486
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -19541,7 +19541,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: 4.000021}
+  m_AnchoredPosition: {x: 0, y: 0.00003385544}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!224 &224000012571746520

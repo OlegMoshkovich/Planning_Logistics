@@ -11,8 +11,10 @@ public class ObjectStorageAPI : MonoBehaviour {
                                                                                 { "DGH Lincoln Center", "lincoln_center/"},
                                                                                 { "VR_Forklift_06", "forkliftvr/"}};
     private string authToken;
-    public WebRequest req;
+    
     public static ObjectStorageAPI main;
+
+    public WebRequest webRequest;
 
     public string user_id = "2ee9cff5e8af45748c04df0907a83451";
     public string user_password = "bBRi(AT99WLjHTn=";
@@ -23,19 +25,18 @@ public class ObjectStorageAPI : MonoBehaviour {
     protected void Awake()
     {
         main = this;
-        req = gameObject.AddComponent<WebRequest>();
-        headers = new Dictionary<string, string>();
-        headers.Add("X-Auth-Token", authToken);
-
-        StartCoroutine(GetAuthToken());
+        webRequest = gameObject.AddComponent<WebRequest>();
+        GetAuthTokenTrigger();
     }
 
-	public void loadImageTrigger(string imageURL, WebRequest.WebRequestEvent onLoadImageComplete )
+	public void loadImageTrigger(string imageURL, WebRequest.UnityWebRequestEvent OnLoadImageComplete )
     {
-        headers["X-Auth-Token"] = authToken;
-        req.HTTPRequest(url+"/"+container[SceneManager.GetActiveScene().name] +imageURL, onLoadImageComplete, null, headers);
+        var req = UnityWebRequest.GetTexture(url + "/" + container[SceneManager.GetActiveScene().name] + imageURL);
+        req.SetRequestHeader("X-Auth-Token", authToken);
+        webRequest.SendUnityWebRequest(req, OnLoadImageComplete);
     }
-    public IEnumerator GetAuthToken()
+
+    public void GetAuthTokenTrigger()
     {
         string postData = "{\"auth\": {\"identity\": {\"methods\": [\"password\"],\"password\": {\"user\": {\"id\": \"" + user_id + "\", \"password\": \"" + user_password + "\"}} },\"scope\": { \"project\": {\"id\": \"" + project_id + "\" } } } }";
         var unityWebRequest = new UnityWebRequest("https://identity.open.softlayer.com/v3/auth/tokens", UnityWebRequest.kHttpVerbPOST)
@@ -44,16 +45,11 @@ public class ObjectStorageAPI : MonoBehaviour {
                                                 };
         unityWebRequest.SetRequestHeader("Content-Type", "application/json");
         Debug.Log("Send Request with Data: " + postData);
-        yield return unityWebRequest.Send();
-        if (unityWebRequest.isError)
-        {
-            Debug.Log(unityWebRequest.error);
-        }
-        else
-        {
-            Debug.Log("Upload Image Response Code : " + unityWebRequest.responseCode);
-            authToken = unityWebRequest.GetResponseHeader("X-Subject-Token");
-        }
+        webRequest.SendUnityWebRequest(unityWebRequest, GetAuthTokenHandler);
+    }
+    public void GetAuthTokenHandler(UnityWebRequest req)
+    {
+        if(req.GetResponseHeader("X-Subject-Token")!=null) authToken = req.GetResponseHeader("X-Subject-Token");
     }
     
 

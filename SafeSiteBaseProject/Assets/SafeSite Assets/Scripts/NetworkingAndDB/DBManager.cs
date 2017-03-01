@@ -2,19 +2,25 @@
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 using SimpleJSON;
+using UnityEngine.Networking;
+using System;
 
 public class DBManager : MonoBehaviour {
-    public string databaseURL = "https://7913dc07-9b69-4a17-8329-cb43b00bbd14-bluemix:5d53ba229591931afc62e00011b05687a17ce40012615c32a826b8219f106d2d@7913dc07-9b69-4a17-8329-cb43b00bbd14-bluemix.cloudant.com/";
+    public string username = "7913dc07-9b69-4a17-8329-cb43b00bbd14-bluemix";
+    public string password = "5d53ba229591931afc62e00011b05687a17ce40012615c32a826b8219f106d2d";
+    public string databaseURL = "https://7913dc07-9b69-4a17-8329-cb43b00bbd14-bluemix.cloudant.com/";
     public Dictionary<string, string> projectName = new Dictionary<string, string>(){{"61Broadway", "broadway61/" },
                                                                                 { "Queens Plaza", "queens_plaza/"},
                                                                                 { "DGH Lincoln Center", "lincoln_center/"},
                                                                                 { "VR_Forklift_06", "forkliftvr/"}};
 
-    [HideInInspector]
-    public WebRequest req;
+    private WebRequest webRequest;
+
+    private string encodedAuthorization;
 
     void Start () {
-        req = this.gameObject.AddComponent<WebRequest>();
+        webRequest = gameObject.AddComponent<WebRequest>();
+        encodedAuthorization = "Basic " + Convert.ToBase64String(System.Text.Encoding.UTF8.GetBytes(username + ":" + password));
     }
 
     public void GetAllAssetsTrigger()
@@ -33,21 +39,23 @@ public class DBManager : MonoBehaviour {
         req.HTTPGETRequest(url, getAllAssetsHandler, headers);
 #else
         string url = databaseURL + projectName[SceneManager.GetActiveScene().name] + "_all_docs?include_docs=true";
-        req.HTTPGETRequest(url, getAllAssetsHandler);
+        var unityWebRequest = UnityWebRequest.Get(url);
+        unityWebRequest.SetRequestHeader("Authorization", encodedAuthorization);
+        webRequest.SendUnityWebRequest(unityWebRequest, getAllAssetsHandler);
 #endif
         DestroyAllSynchedAssets();
     }
 
-    public void getAllAssetsHandler()
+    public void getAllAssetsHandler(UnityWebRequest req)
     {
-        Debug.Log(req.download.text);
-        var n = JSON.Parse(req.download.text);    
-        for(int i =0; i<n["rows"].Count; i++)
+        Debug.Log(req.downloadHandler.text);
+        var n = JSON.Parse(req.downloadHandler.text);
+        for (int i = 0; i < n["rows"].Count; i++)
         {
             AssetManager.main.createAssetFromJSON(n["rows"][i]["doc"]);
         }
         if (CameraManager.main != null) CameraManager.main.SetUpCameras();
-        else Debug.Log("Missing Camera Switch"); 
+        else Debug.Log("Missing Camera Switch");
     }
 
     private SyncedAsset[] saArray;
@@ -67,9 +75,7 @@ public class DBManager : MonoBehaviour {
     public void updateAssetsTrigger()
     {
         string url = databaseURL + projectName[SceneManager.GetActiveScene().name] + "_bulk_docs";
-        var headers = new Dictionary<string, string>();
-        headers.Add("X-HTTP-Method-Override", "POST");
-        headers.Add("Content-Type", "application/json");
+       
         string postData = "{\"docs\":[";
 
         saArray = FindObjectsOfType<SyncedAsset>();
@@ -102,15 +108,16 @@ public class DBManager : MonoBehaviour {
         }
         postData += "]}";
         Debug.Log("Posting Data: " + postData);
-        req.HTTPRequest(url, updateAssetsHandler, System.Text.Encoding.UTF8.GetBytes(postData), headers);
+        var unityReq = UnityWebRequest.Post(url, postData);
+        unityReq.SetRequestHeader("Content-Type", "application/json");
+        unityReq.SetRequestHeader("Authorization", encodedAuthorization);
+        webRequest.SendUnityWebRequest(unityReq, updateAssetsHandler);
     }
 
-    private void updateAssetsHandler()
+    private void updateAssetsHandler(UnityWebRequest req)
     {
-#if UNITY_EDITOR
-        Debug.Log("updateAssetsHandler : " + req.download.text);
-#endif
-        var n = JSON.Parse(req.download.text);
+        Debug.Log("updateAssetsHandler : " + req.downloadHandler.text);
+        var n = JSON.Parse(req.downloadHandler.text);
         for (int i = 0; i < n["rows"].Count; i++)
         {
             Debug.Log(n["rows"][i]["doc"].ToString());
@@ -122,17 +129,15 @@ public class DBManager : MonoBehaviour {
     {
         string url = databaseURL + projectName[SceneManager.GetActiveScene().name] + "_bulk_docs";
         string postData = "{\"docs\":[{\"_id\":\""+_id+ "\",\"_rev\":\"" + _rev + "\",\"_deleted\": true}]}";
-        var headers = new Dictionary<string, string>();
-        headers.Add("X-HTTP-Method-Override", "POST");
-        headers.Add("Content-Type", "application/json");
         Debug.Log(postData);
-        req.HTTPRequest(url, deleteAssetHandler, System.Text.Encoding.UTF8.GetBytes(postData), headers);
+        var unityReq = UnityWebRequest.Post(url, postData);
+        unityReq.SetRequestHeader("Content-Type", "application/json");
+        unityReq.SetRequestHeader("Authorization", encodedAuthorization);
+        webRequest.SendUnityWebRequest(unityReq, deleteAssetHandler);
     }
-    public void deleteAssetHandler()
+    public void deleteAssetHandler(UnityWebRequest req)
     {
-#if UNITY_EDITOR
-        Debug.Log(req.download.text);
-#endif
+        Debug.Log(req.responseCode);
     }
 
     

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Networking;
 
 
 public class TakePictureController : MonoBehaviour {
@@ -33,13 +34,13 @@ public class TakePictureController : MonoBehaviour {
         }
 
         //Load Picture
-        if(synchedHazard.sa_imageURL.Count>0 && (ObjectStorageAPI.main != null)) ObjectStorageAPI.main.loadImageTrigger(synchedHazard.sa_imageURL[synchedHazard.sa_imageURL.Count-1], onImageDownloadComplete);
+        if(synchedHazard.sa_imageURL.Count>0 && (ObjectStorageAPI.main != null)) ObjectStorageAPI.main.loadImageTrigger(synchedHazard.sa_imageURL[synchedHazard.sa_imageURL.Count-1], OnImageDownloadComplete);
             else Debug.Log("Missing Image URL or ObjectStorageAPI Manager");
     }
 
-    public void onImageDownloadComplete()
+    public void OnImageDownloadComplete(UnityWebRequest req)
     {
-        cameraPhotoPlaceholder.texture = ObjectStorageAPI.main.req.download.texture;
+        cameraPhotoPlaceholder.texture = ((DownloadHandlerTexture)req.downloadHandler).texture;
     }
 
     public void onOpenTakePictureHandler()
