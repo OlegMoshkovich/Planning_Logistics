@@ -32,7 +32,8 @@ public class SyncedAsset : MonoBehaviour {
     }
     // Use this for initialization
     void Start () {
-        if (sa_timeCreated != null) sa_timeCreated = GetUTCTimeStamp();
+        if (sa_timeCreated == null) sa_timeCreated = GetUTCTimeStamp();
+        if (sa_createdBy == null) sa_createdBy = UserSettings.main.userName;
         //Debug.Log(JsonUtility.ToJson(this));
     }
 	
@@ -71,5 +72,5 @@ public enum MovementType {
 
 public enum AssetType
 {
-    Bobcat, CementTruck, Fence, Forklift, Hazard, ExclusionZone, Ladder, SafetyNet, Scaffold, SidewalkShed, Worker, Other
+    Bobcat, CementTruck, Fence, Forklift, Hazard, ExclusionZone, Ladder, SafetyNet, Scaffold, SidewalkShed, Worker, Other, Camera, TrashBin
 }

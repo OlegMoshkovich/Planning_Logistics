@@ -3,22 +3,33 @@ using System.Collections;
 
 public class ChangeMovement : MonoBehaviour {
     public GameObject target;
+    public MovementType movement;
 
     public void ChangeMovementTo(int movementIndex)
     {
         MovementType movement = (MovementType)movementIndex;
         ChangeMovementTo(movement);
     }
+    public void ChangeMovementTo()
+    {
+        if (movement != null) ChangeMovementTo(movement);
+        else Debug.Log("movement must be set");
+    }
+    public void OnEnable()
+    {
+        if (AssetPanel.main != null) target = AssetPanel.main.selectedAsset;
+        else Debug.LogError("Missing AssetPanel");
+    }
 
-    public void ChangeMovementTo(MovementType movement)
+    public void ChangeMovementTo(MovementType setMovement)
     {
         if (target == null) target = this.gameObject;
 
-        target.GetComponent<SyncedAsset>().sa_movement = movement;
+        target.GetComponent<SyncedAsset>().sa_movement = setMovement;
 
         removeMovementScripts();
 
-        switch (movement)
+        switch (setMovement)
         {
             case MovementType.Random:
                 target.AddComponent<RandomMovement>();

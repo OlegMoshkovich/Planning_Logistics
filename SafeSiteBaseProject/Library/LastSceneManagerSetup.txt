@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/61Broadway.unity
+- path: Assets/Scenes/DGH Lincoln Center.unity
   isLoaded: 1
   isActive: 1

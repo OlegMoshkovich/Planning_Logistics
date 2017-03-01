@@ -7,7 +7,7 @@ public class AssetPanel : MonoBehaviour
     public static AssetPanel main;
     public Text nameText;
     //SyncedAssetPanel
-    public Dropdown movementTypeDropdown;
+    public GameObject movementButtons;
 
     [HideInInspector]
     public GameObject selectedAsset;
@@ -29,7 +29,7 @@ public class AssetPanel : MonoBehaviour
     {
         main = this;
         //Check all elements are definded
-        if (nameText == null || movementTypeDropdown == null || telemetryPanel == null ||
+        if (nameText == null || movementButtons == null || telemetryPanel == null ||
             addTelemetryPanel == null || rtlsPanel == null || addRTLSPanel == null ||
             zonesPanel == null) Debug.LogError("Missing references in Asset Panel");
 
@@ -80,16 +80,14 @@ public class AssetPanel : MonoBehaviour
             SyncedAsset sa = selectedAsset.GetComponent<SyncedAsset>();
             if (sa != null)
             {
-                if (!sa.sa_alwaysStatic) movementTypeDropdown.gameObject.SetActive(true);
-                movementTypeDropdown.GetComponent<ChangeMovement>().target = selectedAsset;
-                movementTypeDropdown.value = (int)sa.sa_movement;
+                if (!sa.sa_alwaysStatic) movementButtons.gameObject.SetActive(true);
 
                 //Check if RTLS
                 DisplayRTLS();
             }
             else
             {
-                movementTypeDropdown.gameObject.SetActive(false);
+                movementButtons.gameObject.SetActive(false);
                 addRTLSPanel.SetActive(false);
             }
 

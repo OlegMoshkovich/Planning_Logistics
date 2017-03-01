@@ -27,7 +27,7 @@ public class HazardMarkerDrawer : MonoBehaviour {
                 newHazardMarker.transform.rotation.SetEulerAngles(Camera.main.transform.eulerAngles.x, Camera.main.transform.eulerAngles.y, Camera.main.transform.eulerAngles.z);
                 
 				//Move Camera to hazard
-				CameraSwitch.main.SetTarget(newHazardMarker.transform);
+				CameraManager.main.SetTarget(newHazardMarker.transform);
 
                 TreeViewManager.main.TreeView.AddChild(HazardManager.main.Hazards, newHazardMarker);
                 TreeViewManager.main.updateTreeText();

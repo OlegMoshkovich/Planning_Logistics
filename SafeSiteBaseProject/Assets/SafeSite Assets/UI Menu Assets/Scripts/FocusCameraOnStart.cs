@@ -5,7 +5,7 @@ public class FocusCameraOnStart : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        CameraSwitch.main.SetTarget(this.transform);
+        CameraManager.main.SetTarget(this.transform);
 	}
 	
 	// Update is called once per frame

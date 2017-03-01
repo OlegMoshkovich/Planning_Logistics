@@ -45,7 +45,9 @@ public class DBManager : MonoBehaviour {
         for(int i =0; i<n["rows"].Count; i++)
         {
             AssetManager.main.createAssetFromJSON(n["rows"][i]["doc"]);
-        } 
+        }
+        if (CameraManager.main != null) CameraManager.main.SetUpCameras();
+        else Debug.Log("Missing Camera Switch"); 
     }
 
     private SyncedAsset[] saArray;

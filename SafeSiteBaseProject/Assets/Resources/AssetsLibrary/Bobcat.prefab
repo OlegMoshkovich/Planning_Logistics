@@ -1141,13 +1141,13 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000014194682438}
-  - 95: {fileID: 95000012129224256}
   - 195: {fileID: 195000011130595306}
   - 114: {fileID: 114000013197543676}
   - 114: {fileID: 114000011146593052}
   - 114: {fileID: 114000013857560248}
   - 114: {fileID: 114000012327994460}
   - 65: {fileID: 65000010693291752}
+  - 54: {fileID: 54000012265329128}
   m_Layer: 0
   m_Name: Bobcat
   m_TagString: Untagged
@@ -22680,6 +22680,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012463285526}
   m_Mesh: {fileID: 4300098, guid: d94466561310b7e479c0fd2679a3ba72, type: 3}
+--- !u!54 &54000012265329128
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010854155328}
+  serializedVersion: 2
+  m_Mass: 300
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!65 &65000010693291752
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -22690,25 +22705,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 92.105995, y: 65.598114, z: 26.44592}
-  m_Center: {x: -9.399861, y: 32.29904, z: 12.722984}
---- !u!95 &95000012129224256
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000010854155328}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: d94466561310b7e479c0fd2679a3ba72, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
+  m_Size: {x: 92.105995, y: 65.598114, z: 47.856907}
+  m_Center: {x: -9.399861, y: 32.29904, z: 2.0174625}
 --- !u!114 &114000011146593052
 MonoBehaviour:
   m_ObjectHideFlags: 1

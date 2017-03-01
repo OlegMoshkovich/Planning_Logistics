@@ -283,7 +283,6 @@ GameObject:
   - 114: {fileID: 114000010957931874}
   - 114: {fileID: 114000011377183944}
   - 54: {fileID: 54000010259119458}
-  - 114: {fileID: 114000011235116938}
   m_Layer: 0
   m_Name: Forklift
   m_TagString: Untagged
@@ -1097,7 +1096,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000014191363220}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 300
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -1131,7 +1130,7 @@ MonoBehaviour:
   _id: 
   _rev: 
   sa_name: 
-  sa_type: 
+  sa_type: Forklift
   sa_timeCreated: 
   sa_timeChanged: 
   sa_createdBy: 
@@ -1151,46 +1150,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fba9aaa2b5a5146128e5446dc3b96681, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114000011235116938
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000014191363220}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a961995cedcfac146a43008994f76948, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_applicationQuit: 0
-  m_colliders: []
-  m_filter: {fileID: 0}
-  m_skinned: {fileID: 0}
-  Selected:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: 426174746c656875622e525448616e646c65732e4578706f7365546f456469746f72556e6974794576656e742c20417373656d626c792d4353686172702c2056657273696f6e3d302e302e302e302c2043756c747572653d6e65757472616c2c205075626c69634b6579546f6b656e3d6e756c6c
-    m_CallsDirty: 1
-  Unselected:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: 426174746c656875622e525448616e646c65732e4578706f7365546f456469746f72556e6974794576656e742c20417373656d626c792d4353686172702c2056657273696f6e3d302e302e302e302c2043756c747572653d6e65757472616c2c205075626c69634b6579546f6b656e3d6e756c6c
-    m_CallsDirty: 1
-  BoundsObject: {fileID: 0}
-  BoundsType: 0
-  CustomBounds:
-    m_Center: {x: 0, y: 0, z: 0}
-    m_Extent: {x: 0, y: 0, z: 0}
-  CanSelect: 1
-  CanSnap: 1
-  AddColliders: 1
-  DisableOnAwake: 0
-  m_objectType: 0
-  m_markAsDestroyed: 0
-  m_effectiveBoundsType: 0
-  m_hierarchyItem: {fileID: 0}
-  m_children: []
-  m_parent: {fileID: 0}
 --- !u!114 &114000011377183944
 MonoBehaviour:
   m_ObjectHideFlags: 1

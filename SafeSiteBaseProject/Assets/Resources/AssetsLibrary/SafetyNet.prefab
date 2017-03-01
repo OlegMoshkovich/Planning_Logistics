@@ -120,12 +120,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _id: 
   _rev: 
-  name: 
-  type: 
-  position: {x: 0, y: 0, z: 0}
-  rotation: {x: 0, y: 0, z: 0, w: 0}
-  alwaysStatic: 1
-  movement: 0
+  sa_name: 
+  sa_type: SafetyNet
+  sa_timeCreated: 
+  sa_timeChanged: 
+  sa_createdBy: 
+  sa_changedBy: 
+  sa_position: {x: 0, y: 0, z: 0}
+  sa_rotation: {x: 0, y: 0, z: 0, w: 0}
+  sa_alwaysStatic: 1
+  sa_movement: 0
 --- !u!114 &114000012382567260
 MonoBehaviour:
   m_ObjectHideFlags: 1

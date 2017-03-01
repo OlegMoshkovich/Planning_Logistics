@@ -12,7 +12,7 @@ public class CameraControl : MonoBehaviour {
             //PANNING ON RIGHT CLICK
             if (Input.GetMouseButton(2))
             {
-                CameraSwitch.main.followTarget = false;
+                CameraManager.main.followTarget = false;
                 Cursor.SetCursor(cursorPan, Vector2.zero, CursorMode.Auto);
                 this.transform.position -= Input.GetAxis("Horizontal") * transform.TransformDirection(Vector3.right) + Input.GetAxis("Vertical") * transform.TransformDirection(Vector3.up);
             }
@@ -21,18 +21,18 @@ public class CameraControl : MonoBehaviour {
             if (Input.GetAxis("Mouse ScrollWheel") != 0)
             {
                 Cursor.SetCursor(cursorZoom, Vector2.zero, CursorMode.Auto);
-                CameraSwitch.main.followTarget = false;
+                CameraManager.main.followTarget = false;
                 this.transform.position += Input.GetAxis("Mouse ScrollWheel") * transform.TransformDirection(Vector3.forward) + Input.GetAxis("Horizontal") * transform.TransformDirection(Vector3.right) + Input.GetAxis("Vertical") * transform.TransformDirection(Vector3.up);
             }      
             if(Input.GetAxis("JoystickHorizontal") != 0 || Input.GetAxis("JoystickVertical") != 0)
             {
-                CameraSwitch.main.followTarget = false;
+                CameraManager.main.followTarget = false;
                 this.transform.position += Input.GetAxis("JoystickVertical") * transform.TransformDirection(Vector3.forward) + Input.GetAxis("JoystickHorizontal") * transform.TransformDirection(Vector3.right);
            
 			}
-        //Zoom on pinch & Pan on drag two fingers
+        //Zoom on pinch & Pan on drag two fingers //Panning is commented out
         float zoomSpeed = 0.01f;
-        float panningSpeed = 0.005f;
+        float panningSpeed = 0.003f;
         if (Input.touchCount == 2)
         {
             // Store both touches.
@@ -50,7 +50,7 @@ public class CameraControl : MonoBehaviour {
             // Find the difference in the distances between each frame.
             float deltaMagnitudeDiff = prevTouchDeltaMag - touchDeltaMag;
 
-            CameraSwitch.main.followTarget = false;
+            CameraManager.main.followTarget = false;
             this.transform.position += deltaMagnitudeDiff * transform.TransformDirection(Vector3.forward) * zoomSpeed * -1;
             /*//Zoom & Pan with two fingers
             if ((touchZero.deltaPosition + touchOne.deltaPosition).sqrMagnitude < touchZero.deltaPosition.sqrMagnitude) //Fingers move in oposite direction
@@ -67,7 +67,7 @@ public class CameraControl : MonoBehaviour {
         //PANNING with three fingers
         if (Input.touchCount == 3)
         {
-            CameraSwitch.main.followTarget = false;
+            CameraManager.main.followTarget = false;
             Vector2 touchDelta = Input.touches[0].deltaPosition + Input.touches[1].deltaPosition + Input.touches[2].deltaPosition;
             this.transform.position -= touchDelta.x * transform.TransformDirection(Vector3.right) * panningSpeed + touchDelta.y * transform.TransformDirection(Vector3.up) * panningSpeed;
 
@@ -75,7 +75,7 @@ public class CameraControl : MonoBehaviour {
         //Point camera using Mouse right button or dragging finger
         if (Input.GetMouseButton(1) && Input.touchCount==0)
             {
-                CameraSwitch.main.followTarget = false;
+                CameraManager.main.followTarget = false;
                 float dx = Input.GetAxis("Horizontal");
                 float dy = Input.GetAxis("Vertical");
                 float rotationX = transform.localEulerAngles.y + dx * 0.4f;
@@ -88,7 +88,7 @@ public class CameraControl : MonoBehaviour {
         {
             if(Input.touches[0].phase == TouchPhase.Moved)
             {
-                CameraSwitch.main.followTarget = false;
+                CameraManager.main.followTarget = false;
                 float dx = Input.touches[0].deltaPosition.x;
                 float dy = Input.touches[0].deltaPosition.y;
                 float rotationX = transform.localEulerAngles.y + dx * touchRotationSpeed;
