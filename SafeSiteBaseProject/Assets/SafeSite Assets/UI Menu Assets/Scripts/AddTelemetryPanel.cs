@@ -21,9 +21,13 @@ public class AddTelemetryPanel : MonoBehaviour {
 
     private void OnEnable()
     {
-        addTelemetryButton.gameObject.SetActive(true);
-        tagIDText.gameObject.SetActive(false);
-        hcsTagDropdown.gameObject.SetActive(false);
+        if (addTelemetryButton != null && tagIDText != null && hcsTagDropdown != null)
+        {
+            addTelemetryButton.gameObject.SetActive(true);
+            tagIDText.gameObject.SetActive(false);
+            hcsTagDropdown.gameObject.SetActive(false);
+        }
+        else Debug.Log("Missing fields in Add Telemetry Panel");
     }
 
     private void myDropdownValueChangedHandler(Dropdown target)

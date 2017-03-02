@@ -38,7 +38,7 @@ public class mqttManager : MonoBehaviour {
             qTrackTopic == null || hcsTagClientID == null || hcsTagClientID == null ||
             hcsTagUsername == null || hcsTagPassword == null || hcsTagTopic == null) Debug.LogError("Missing MQTT fields");
 
-#if UNITY_IOS
+#if UNITY_IOS || UNITY_ANDROID
         this.enabled = false;
 #endif
 

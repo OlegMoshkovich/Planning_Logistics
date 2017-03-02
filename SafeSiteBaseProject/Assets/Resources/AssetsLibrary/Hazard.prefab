@@ -78,6 +78,7 @@ GameObject:
   - 223: {fileID: 223000011905865206}
   - 114: {fileID: 114000010456628476}
   - 114: {fileID: 114000013137498764}
+  - 114: {fileID: 114000014160977836}
   m_Layer: 5
   m_Name: Button
   m_TagString: Player
@@ -517,8 +518,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013230189182}
   - 114: {fileID: 114000012937932658}
-  - 114: {fileID: 114000012041671574}
   - 114: {fileID: 114000013054828936}
+  - 114: {fileID: 114000010035882812}
   m_Layer: 0
   m_Name: Hazard
   m_TagString: Untagged
@@ -1044,6 +1045,17 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114000010035882812
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012684156560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba56b1ecf2dc249319d9a5d803dd0284, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114000010036808146
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1257,6 +1269,17 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 114000013054828936}
         m_MethodName: updateFieldsFromSynchedHazard
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 114000010035882812}
+        m_MethodName: OnMouseDown
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2277,17 +2300,6 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
   m_IsOn: 1
---- !u!114 &114000012041671574
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012684156560}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba56b1ecf2dc249319d9a5d803dd0284, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114000012063921696
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3176,6 +3188,17 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
+--- !u!114 &114000014160977836
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010361263758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba56b1ecf2dc249319d9a5d803dd0284, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114000014221753470
 MonoBehaviour:
   m_ObjectHideFlags: 1

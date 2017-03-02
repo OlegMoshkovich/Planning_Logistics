@@ -3,11 +3,11 @@
 public class ObjectDestroy : MonoBehaviour {
 
 	private bool drawerActive = false;
-	void OnMouseDown()
+	public void OnMouseDown()
 	{
 		drawerActive = true;
 	}
-	
+    
 	void Update () {
 			if (drawerActive) {
 			    if (Input.GetKeyDown("d")) {

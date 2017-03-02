@@ -108,7 +108,15 @@ public class DBManager : MonoBehaviour {
         }
         postData += "]}";
         Debug.Log("Posting Data: " + postData);
-        var unityReq = UnityWebRequest.Post(url, postData);
+        UploadHandlerRaw uploadHandler = new UploadHandlerRaw(System.Text.Encoding.UTF8.GetBytes(postData));
+        DownloadHandler downloadHandler = new DownloadHandlerBuffer();
+        var unityReq = new UnityWebRequest()
+        {
+            url = url,
+            uploadHandler = uploadHandler,
+            downloadHandler = downloadHandler,
+            method = UnityWebRequest.kHttpVerbPOST
+        };
         unityReq.SetRequestHeader("Content-Type", "application/json");
         unityReq.SetRequestHeader("Authorization", encodedAuthorization);
         webRequest.SendUnityWebRequest(unityReq, updateAssetsHandler);
@@ -116,28 +124,38 @@ public class DBManager : MonoBehaviour {
 
     private void updateAssetsHandler(UnityWebRequest req)
     {
-        Debug.Log("updateAssetsHandler : " + req.downloadHandler.text);
-        var n = JSON.Parse(req.downloadHandler.text);
-        for (int i = 0; i < n["rows"].Count; i++)
-        {
-            Debug.Log(n["rows"][i]["doc"].ToString());
-            saArray[i]._id = n[i]["id"];
-            saArray[i]._rev = n[i]["rev"];
-        }
+        if(req.downloadHandler!=null) if(req.downloadHandler.text !=null) Debug.Log("updateAssetsHandler : " + req.downloadHandler.text);
+        else
+            {
+                var n = JSON.Parse(req.downloadHandler.text);
+                for (int i = 0; i < n["rows"].Count; i++)
+                {
+                    Debug.Log(n["rows"][i]["doc"].ToString());
+                    saArray[i]._id = n[i]["id"];
+                    saArray[i]._rev = n[i]["rev"];
+                }
+            }
+        
     }
     public void deleteAsset(string _id, string _rev)
     {
         string url = databaseURL + projectName[SceneManager.GetActiveScene().name] + "_bulk_docs";
-        string postData = "{\"docs\":[{\"_id\":\""+_id+ "\",\"_rev\":\"" + _rev + "\",\"_deleted\": true}]}";
-        Debug.Log(postData);
-        var unityReq = UnityWebRequest.Post(url, postData);
+        string postData = "{\"docs\":[{\"_id\":\"" + _id + "\",\"_rev\":\"" + _rev + "\",\"_deleted\": true}]}";
+        Debug.Log("Post Data: "+postData);
+        UploadHandlerRaw uploadHandler = new UploadHandlerRaw(System.Text.Encoding.UTF8.GetBytes(postData));
+        var unityReq = new UnityWebRequest()
+        {
+            url = url,
+            uploadHandler = uploadHandler,
+            method = UnityWebRequest.kHttpVerbPOST
+        };
         unityReq.SetRequestHeader("Content-Type", "application/json");
         unityReq.SetRequestHeader("Authorization", encodedAuthorization);
         webRequest.SendUnityWebRequest(unityReq, deleteAssetHandler);
     }
     public void deleteAssetHandler(UnityWebRequest req)
     {
-        Debug.Log(req.responseCode);
+        //if(req.downloadHandler.text != null) Debug.Log(req.downloadHandler.text);
     }
 
     

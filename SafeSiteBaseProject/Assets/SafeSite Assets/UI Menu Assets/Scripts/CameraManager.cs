@@ -10,11 +10,14 @@ public class CameraManager : MonoBehaviour {
 	private List<Camera> listOfCameras = new List<Camera>();
 	public float locationSmoothTime = 0.3F;
 	public float rotateSmoothFactor = 2.0F;
+
+    [HideInInspector]
 	public bool followTarget = false;
 
     public InputField cameraNameInputField;
 
-	public Transform targetTransform;
+    [HideInInspector]
+    public Transform targetTransform;
 
 	public static CameraManager main;
 
@@ -26,7 +29,7 @@ public class CameraManager : MonoBehaviour {
     // Use this for initialization
     void Start() {
         main = this;
-
+        if (cameraNameInputField == null || dropdown == null) Debug.LogError("Camera Manager Missing Fields");
         SetUpCameras();
 	}
 

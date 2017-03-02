@@ -31,8 +31,8 @@ public class CameraControl : MonoBehaviour {
            
 			}
         //Zoom on pinch & Pan on drag two fingers //Panning is commented out
-        float zoomSpeed = 0.01f;
-        float panningSpeed = 0.003f;
+        float zoomSpeed = 0.02f;
+        float panningSpeed = 0.001f;
         if (Input.touchCount == 2)
         {
             // Store both touches.

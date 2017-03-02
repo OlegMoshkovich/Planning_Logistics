@@ -19,13 +19,17 @@ public class ZonePanel : MonoBehaviour {
     private void OnEnable()
     {
         ez = AssetPanel.main.selectedAsset.GetComponent<SyncedExclusionZone>();
-        if(alertToggle != null)
+        if(ez != null)
         {
-            alertToggle.isOn = ez.alert;
+            if (alertToggle != null)
+            {
+                alertToggle.isOn = ez.alert;
+            }
+            else
+            {
+                Debug.LogError("Missing alertToggleValue");
+            }
         }
-        else
-        {
-            Debug.LogError("Missing alertToggleValue");
-        }
+        
     }
 }
