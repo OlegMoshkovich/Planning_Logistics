@@ -1,0 +1,227 @@
+-debug
+-target:library
+-nowarn:0169
+-out:'Temp/Assembly-CSharp.dll'
+-r:'/Applications/Unity/Unity.app/Contents/Managed/UnityEngine.dll'
+-r:'/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll'
+-r:'/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll'
+-r:'/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll'
+-r:'/Applications/Unity/Unity.app/Contents/Managed/UnityEditor.dll'
+-r:'/Applications/Unity/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll'
+-r:'/Applications/Unity/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Common.dll'
+-define:UNITY_5_3_OR_NEWER
+-define:UNITY_5_4_OR_NEWER
+-define:UNITY_5_4_3
+-define:UNITY_5_4
+-define:UNITY_5
+-define:UNITY_ANALYTICS
+-define:ENABLE_NEW_BUGREPORTER
+-define:ENABLE_AUDIO
+-define:ENABLE_CACHING
+-define:ENABLE_CLOTH
+-define:ENABLE_DUCK_TYPING
+-define:ENABLE_EDITOR_RETINA
+-define:ENABLE_RETINA_GUISTYLES
+-define:ENABLE_FRAME_DEBUGGER
+-define:ENABLE_GENERICS
+-define:ENABLE_HOME_SCREEN
+-define:ENABLE_IMAGEEFFECTS
+-define:ENABLE_LIGHT_PROBES_LEGACY
+-define:ENABLE_MICROPHONE
+-define:ENABLE_MULTIPLE_DISPLAYS
+-define:ENABLE_PHYSICS
+-define:ENABLE_PLUGIN_INSPECTOR
+-define:ENABLE_SHADOWS
+-define:ENABLE_SPRITERENDERER_FLIPPING
+-define:ENABLE_SPRITES
+-define:ENABLE_SPRITE_POLYGON
+-define:ENABLE_TERRAIN
+-define:ENABLE_RAKNET
+-define:ENABLE_UNET
+-define:ENABLE_UNITYEVENTS
+-define:ENABLE_VR
+-define:ENABLE_WEBCAM
+-define:ENABLE_WWW
+-define:ENABLE_CLOUD_SERVICES
+-define:ENABLE_CLOUD_SERVICES_COLLAB
+-define:ENABLE_CLOUD_SERVICES_ADS
+-define:ENABLE_CLOUD_HUB
+-define:ENABLE_CLOUD_PROJECT_ID
+-define:ENABLE_CLOUD_SERVICES_CRASH_REPORTING
+-define:ENABLE_CLOUD_SERVICES_PURCHASING
+-define:ENABLE_CLOUD_SERVICES_ANALYTICS
+-define:ENABLE_CLOUD_SERVICES_UNET
+-define:ENABLE_CLOUD_SERVICES_BUILD
+-define:ENABLE_CLOUD_LICENSE
+-define:ENABLE_EDITOR_METRICS
+-define:ENABLE_EDITOR_METRICS_CACHING
+-define:INCLUDE_DYNAMIC_GI
+-define:INCLUDE_GI
+-define:INCLUDE_IL2CPP
+-define:INCLUDE_DIRECTX12
+-define:PLATFORM_SUPPORTS_MONO
+-define:RENDER_SOFTWARE_CURSOR
+-define:INCLUDE_PUBNUB
+-define:ENABLE_LOCALIZATION
+-define:ENABLE_ANDROID_ATLAS_ETC1_COMPRESSION
+-define:ENABLE_EDITOR_TESTS_RUNNER
+-define:UNITY_STANDALONE_OSX
+-define:UNITY_STANDALONE
+-define:ENABLE_SUBSTANCE
+-define:ENABLE_GAMECENTER
+-define:ENABLE_TEXTUREID_MAP
+-define:ENABLE_RUNTIME_GI
+-define:ENABLE_MOVIES
+-define:ENABLE_NETWORK
+-define:ENABLE_CRUNCH_TEXTURE_COMPRESSION
+-define:ENABLE_UNITYWEBREQUEST
+-define:ENABLE_CLUSTERINPUT
+-define:ENABLE_WEBSOCKET_HOST
+-define:ENABLE_MONO
+-define:ENABLE_PROFILER
+-define:DEBUG
+-define:TRACE
+-define:UNITY_ASSERTIONS
+-define:UNITY_EDITOR
+-define:UNITY_EDITOR_64
+-define:UNITY_EDITOR_OSX
+-define:UNITY_TEAM_LICENSE
+'Assets/External/Battlehub/UIControls/Demo/Scripts/ExternalDragItem.cs'
+'Assets/External/Battlehub/UIControls/Demo/Scripts/HCSTreeViewItemScript.cs'
+'Assets/External/Battlehub/UIControls/Demo/Scripts/ListBoxDemo.cs'
+'Assets/External/Battlehub/UIControls/Demo/Scripts/Rotation.cs'
+'Assets/External/Battlehub/UIControls/Demo/Scripts/TreeViewClickManager.cs'
+'Assets/External/Battlehub/UIControls/Demo/Scripts/TreeViewManager.cs'
+'Assets/External/Battlehub/UIControls/Scripts/ItemContainer.cs'
+'Assets/External/Battlehub/UIControls/Scripts/ItemDropMarker.cs'
+'Assets/External/Battlehub/UIControls/Scripts/ItemsControl.cs'
+'Assets/External/Battlehub/UIControls/Scripts/ListBox.cs'
+'Assets/External/Battlehub/UIControls/Scripts/ListBoxItem.cs'
+'Assets/External/Battlehub/UIControls/Scripts/RectTransformChangeListener.cs'
+'Assets/External/Battlehub/UIControls/Scripts/TreeView.cs'
+'Assets/External/Battlehub/UIControls/Scripts/TreeViewDropMarker.cs'
+'Assets/External/Battlehub/UIControls/Scripts/TreeViewExpander.cs'
+'Assets/External/Battlehub/UIControls/Scripts/TreeViewItem.cs'
+'Assets/External/MQTT/scripts/Exceptions/MqttClientException.cs'
+'Assets/External/MQTT/scripts/Exceptions/MqttCommunicationException.cs'
+'Assets/External/MQTT/scripts/Exceptions/MqttConnectionException.cs'
+'Assets/External/MQTT/scripts/Exceptions/MqttTimeoutException.cs'
+'Assets/External/MQTT/scripts/HCS/FollowTag.cs'
+'Assets/External/MQTT/scripts/HCS/HCSTag.cs'
+'Assets/External/MQTT/scripts/HCS/HCSTelemetry.cs'
+'Assets/External/MQTT/scripts/HCS/Tag.cs'
+'Assets/External/MQTT/scripts/HCS/mqttManager.cs'
+'Assets/External/MQTT/scripts/IMqttNetworkChannel.cs'
+'Assets/External/MQTT/scripts/Messages/MqttMsgBase.cs'
+'Assets/External/MQTT/scripts/Messages/MqttMsgConnack.cs'
+'Assets/External/MQTT/scripts/Messages/MqttMsgConnect.cs'
+'Assets/External/MQTT/scripts/Messages/MqttMsgConnectEventArgs.cs'
+'Assets/External/MQTT/scripts/Messages/MqttMsgContext.cs'
+'Assets/External/MQTT/scripts/Messages/MqttMsgDisconnect.cs'
+'Assets/External/MQTT/scripts/Messages/MqttMsgPingReq.cs'
+'Assets/External/MQTT/scripts/Messages/MqttMsgPingResp.cs'
+'Assets/External/MQTT/scripts/Messages/MqttMsgPuback.cs'
+'Assets/External/MQTT/scripts/Messages/MqttMsgPubcomp.cs'
+'Assets/External/MQTT/scripts/Messages/MqttMsgPublish.cs'
+'Assets/External/MQTT/scripts/Messages/MqttMsgPublishEventArgs.cs'
+'Assets/External/MQTT/scripts/Messages/MqttMsgPublishedEventArgs.cs'
+'Assets/External/MQTT/scripts/Messages/MqttMsgPubrec.cs'
+'Assets/External/MQTT/scripts/Messages/MqttMsgPubrel.cs'
+'Assets/External/MQTT/scripts/Messages/MqttMsgSuback.cs'
+'Assets/External/MQTT/scripts/Messages/MqttMsgSubscribe.cs'
+'Assets/External/MQTT/scripts/Messages/MqttMsgSubscribeEventArgs.cs'
+'Assets/External/MQTT/scripts/Messages/MqttMsgSubscribedEventArgs.cs'
+'Assets/External/MQTT/scripts/Messages/MqttMsgUnsuback.cs'
+'Assets/External/MQTT/scripts/Messages/MqttMsgUnsubscribe.cs'
+'Assets/External/MQTT/scripts/Messages/MqttMsgUnsubscribeEventArgs.cs'
+'Assets/External/MQTT/scripts/Messages/MqttMsgUnsubscribedEventArgs.cs'
+'Assets/External/MQTT/scripts/MqttClient.cs'
+'Assets/External/MQTT/scripts/MqttNetworkChannel.cs'
+'Assets/External/MQTT/scripts/MqttSettings.cs'
+'Assets/External/MQTT/scripts/Utility/QueueExtension.cs'
+'Assets/External/MQTT/scripts/Utility/Trace.cs'
+'Assets/External/MeshChart/SampleMeshChart/CameraWork.cs'
+'Assets/External/MeshChart/Script/BarChart.cs'
+'Assets/External/MeshChart/Script/Chart.cs'
+'Assets/External/MeshChart/Script/ChartFrame.cs'
+'Assets/External/MeshChart/Script/LineChart.cs'
+'Assets/External/SimpleJSON.cs'
+'Assets/External/Triangulator.cs'
+'Assets/External/VSGIF/Exemple/Scripts/Buttons/BtnRecord.cs'
+'Assets/External/VSGIF/Exemple/Scripts/Buttons/BtnReset.cs'
+'Assets/External/VSGIF/Exemple/Scripts/Buttons/BtnSave.cs'
+'Assets/External/VSGIF/Exemple/Scripts/Buttons/BtnShare.cs'
+'Assets/External/VSGIF/Exemple/Scripts/CubeColorRandom.cs'
+'Assets/External/VSGIF/Exemple/Scripts/CubeKiller.cs'
+'Assets/External/VSGIF/Exemple/Scripts/CubeSpawner.cs'
+'Assets/External/VSGIF/Exemple/Scripts/Exemple.cs'
+'Assets/External/VSGIF/Exemple/Scripts/GiphyJson.cs'
+'Assets/External/VSGIF/Scripts/Classes.cs'
+'Assets/External/VSGIF/Scripts/Enums.cs'
+'Assets/External/VSGIF/Scripts/GIFElement.cs'
+'Assets/External/VSGIF/Scripts/Record.cs'
+'Assets/External/VSGIF/Scripts/Recorder.cs'
+'Assets/SafeSite Assets/3D Assets/ExclusionZone/DynamicExclusionZone(Backup).cs'
+'Assets/SafeSite Assets/3D Assets/ExclusionZone/ExclusionZoneDrawer.cs'
+'Assets/SafeSite Assets/3D Assets/ExclusionZone/ExclusionZoneManager.cs'
+'Assets/SafeSite Assets/3D Assets/ExclusionZone/ExclusionZoneRect.cs'
+'Assets/SafeSite Assets/3D Assets/Worker/Scripts/CameraFacingBillboard.cs'
+'Assets/SafeSite Assets/3D Assets/Worker/Scripts/HazardController.cs'
+'Assets/SafeSite Assets/3D Assets/Worker/Scripts/HazardMarker.cs'
+'Assets/SafeSite Assets/3D Assets/Worker/Scripts/MenuToggle.cs'
+'Assets/SafeSite Assets/3D Assets/Worker/Scripts/MouseLook2.cs'
+'Assets/SafeSite Assets/3D Assets/Worker/Scripts/PinIcon.cs'
+'Assets/SafeSite Assets/3D Assets/Worker/Scripts/RagdollHelper.cs'
+'Assets/SafeSite Assets/3D Assets/Worker/Scripts/TimeController.cs'
+'Assets/SafeSite Assets/Scripts/Assets Scripts/AssetCreate.cs'
+'Assets/SafeSite Assets/Scripts/Assets Scripts/AssetManager.cs'
+'Assets/SafeSite Assets/Scripts/Assets Scripts/ClickAndDrag.cs'
+'Assets/SafeSite Assets/Scripts/Assets Scripts/DestroyOnTouch.cs'
+'Assets/SafeSite Assets/Scripts/Assets Scripts/Hazard.cs'
+'Assets/SafeSite Assets/Scripts/Assets Scripts/HazardManager.cs'
+'Assets/SafeSite Assets/Scripts/Assets Scripts/HazardStatusChange.cs'
+'Assets/SafeSite Assets/Scripts/Assets Scripts/ObjectDestroy.cs'
+'Assets/SafeSite Assets/Scripts/Assets Scripts/ObjectEnable.cs'
+'Assets/SafeSite Assets/Scripts/Assets Scripts/ObjectMove.cs'
+'Assets/SafeSite Assets/Scripts/Assets Scripts/ObjectRotate.cs'
+'Assets/SafeSite Assets/Scripts/Assets Scripts/SyncedAsset.cs'
+'Assets/SafeSite Assets/Scripts/Assets Scripts/SyncedExclusionZone.cs'
+'Assets/SafeSite Assets/Scripts/Assets Scripts/SyncedHazard.cs'
+'Assets/SafeSite Assets/Scripts/Miscellaneous/S.cs'
+'Assets/SafeSite Assets/Scripts/Miscellaneous/UserSettings.cs'
+'Assets/SafeSite Assets/Scripts/Movement/ChangeMovement.cs'
+'Assets/SafeSite Assets/Scripts/Movement/RTLSMovement.cs'
+'Assets/SafeSite Assets/Scripts/Movement/RandomMovement.cs'
+'Assets/SafeSite Assets/Scripts/Movement/SetPointsMovement.cs'
+'Assets/SafeSite Assets/Scripts/Movement/SimpleCarController.cs'
+'Assets/SafeSite Assets/Scripts/NetworkingAndDB/DBManager.cs'
+'Assets/SafeSite Assets/Scripts/NetworkingAndDB/EmailManager.cs'
+'Assets/SafeSite Assets/Scripts/NetworkingAndDB/ObjectStorageAPI.cs'
+'Assets/SafeSite Assets/Scripts/NetworkingAndDB/WebRequest.cs'
+'Assets/SafeSite Assets/Scripts/Safescan/FindCollisions.cs'
+'Assets/SafeSite Assets/Scripts/Safescan/FindEdges.cs'
+'Assets/SafeSite Assets/Scripts/UI/AssetPanel.cs'
+'Assets/SafeSite Assets/Scripts/UI/CameraControl.cs'
+'Assets/SafeSite Assets/Scripts/UI/FolderTreeItem.cs'
+'Assets/SafeSite Assets/Scripts/UI/HCSTagsDropdown.cs'
+'Assets/SafeSite Assets/Scripts/UI/HazardMarkerDrawer.cs'
+'Assets/SafeSite Assets/Scripts/UI/LookAtCamera.cs'
+'Assets/SafeSite Assets/Scripts/UI/RTLSDropdown.cs'
+'Assets/SafeSite Assets/Scripts/UI/RTLSPanel.cs'
+'Assets/SafeSite Assets/Scripts/UI/SetCanvasRenderCamera.cs'
+'Assets/SafeSite Assets/Scripts/UI/TakePictureController.cs'
+'Assets/SafeSite Assets/Scripts/UI/ZonePanel.cs'
+'Assets/SafeSite Assets/Scripts/UI/reportButton.cs'
+'Assets/SafeSite Assets/UI Menu Assets/Scripts/AddRTLSPanel.cs'
+'Assets/SafeSite Assets/UI Menu Assets/Scripts/AddTelemetryPanel.cs'
+'Assets/SafeSite Assets/UI Menu Assets/Scripts/CameraManager.cs'
+'Assets/SafeSite Assets/UI Menu Assets/Scripts/FeedbackButton.cs'
+'Assets/SafeSite Assets/UI Menu Assets/Scripts/FocusCameraOnStart.cs'
+'Assets/SafeSite Assets/UI Menu Assets/Scripts/Folder.cs'
+'Assets/SafeSite Assets/UI Menu Assets/Scripts/LogTextUpdate.cs'
+'Assets/SafeSite Assets/UI Menu Assets/Scripts/PopulateMovementTypeDropdown.cs'
+'Assets/SafeSite Assets/UI Menu Assets/Scripts/ProjectSwitcher.cs'
+'Assets/SafeSite Assets/UI Menu Assets/Scripts/TelemetryPanel.cs'
+'Assets/SafeSite Assets/UI Menu Assets/Scripts/TreeButtonsManager.cs'
+-r:'/Applications/Unity/Unity.app/Contents/Mono/lib/mono/unity/System.Runtime.Serialization.dll'
+-r:'/Applications/Unity/Unity.app/Contents/Mono/lib/mono/unity/System.Xml.Linq.dll'
